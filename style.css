@@ -1,1 +1,453 @@
 /* Add your CSS here */
+
+/* Style for the big, bold, colorful History title */
+.history-title {
+  font-size: 3em; /* Makes the text big */
+  font-weight: bold; /* Makes the text bold */
+  color: #ff5722; /* Bright orange color as fallback */
+  background: linear-gradient(90deg, #ffeb3b, #2196f3, #4caf50);
+  background-clip: text; /* Standard property for compatibility */
+  -webkit-background-clip: text; /* For Safari/Chrome */
+  -webkit-text-fill-color: transparent; /* For Safari/Chrome */
+  text-align: center; /* Center the title */
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+/* Timeline section: display cards in a row and wrap on small screens */
+section {
+  display: flex; /* Arrange cards in a row */
+  flex-direction: row; /* Horizontal layout */
+  flex-wrap: nowrap; /* Do not wrap to new lines */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  overflow-y: visible;
+  justify-content: flex-start; /* Align cards to the start */
+  align-items: flex-start;
+  gap: 32px; /* Space between cards */
+  padding: 20px 0 40px 0; /* Extra bottom padding for scroll bar */
+  scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+/* Stack timeline cards side by side in one row (horizontal scroll) */
+
+/* Hide default scroll bar for a cleaner look (optional for beginners) */
+section::-webkit-scrollbar {
+  height: 14px;
+  background: #e0e0e0;
+  border-radius: 8px;
+}
+
+/* Each timeline card */
+section div {
+  background: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08), 0 0 10px 2px #00eaff33; /* Glowing effect */
+  border: 1px solid #00eaff44; /* Glowing border */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 30000px; /* Extremely wide slot as requested */
+  height: auto; /* Remove fixed height, allow card to grow with content */
+  min-height: 800px; /* Extra tall cards for more content */
+  overflow: hidden; /* Prevent overflow outside card */
+  flex: 0 0 auto; /* Prevent cards from shrinking or wrapping */
+}
+
+/* All images same size */
+section img, .timeline-card-front img {
+  width: 100%; /* Image fills the width of the card */
+  height: 100%; /* Image fills the height of the image area in the card */
+  object-fit: cover; /* Crop image to fill the box without stretching */
+  border-radius: 6px 6px 0 0; /* Rounded top corners */
+  margin-bottom: 0;
+  display: block;
+  flex-shrink: 0;
+}
+
+/* Make sure the image area in the card is sized by the card's layout */
+.timeline-card-front {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  position: relative; /* Ensure details are positioned relative to this container */
+}
+
+/* Ensure the additional details always show fully within the card slot */
+.timeline-card-details {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  width: 100%;
+  box-sizing: border-box;
+  background: rgba(255,255,255,0.95); /* white background for readability */
+  color: #000;
+  padding: 16px;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.timeline-card-front:hover .timeline-card-details,
+.timeline-card-front:focus .timeline-card-details,
+.timeline-card-front:focus-within .timeline-card-details {
+  display: flex;
+}
+
+/* Headings and paragraphs in the cards */
+section h2, section h3 {
+  margin: 10px 0 5px 0;
+  text-align: center;
+}
+section p {
+  margin: 10px;
+  text-align: center;
+  flex: 1;
+  color: #111; /* Make the text black for all image descriptions */
+  font-size: 1.05em;
+  background: rgba(44, 83, 100, 0.7); /* Slightly dark background for contrast */
+  border-radius: 0 0 6px 6px;
+  padding: 10px 8px 12px 8px;
+  box-shadow: 0 2px 8px rgba(0,234,255,0.08);
+  max-height: none; /* Allow descriptions to show fully */
+  overflow-y: visible; /* No scroll, show all text */
+}
+
+/* Futuristic background for the whole page */
+body {
+  /* Use a dark blue gradient with glowing lines for a tech look */
+  background: linear-gradient(135deg, #0f2027 0%, #2c5364 100%);
+  min-height: 100vh;
+  position: relative;
+  /* Add a subtle grid pattern using a repeating linear-gradient */
+  background-image:
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.04) 0px, rgba(255,255,255,0.04) 1px, transparent 1px, transparent 40px),
+    repeating-linear-gradient(0deg, rgba(255,255,255,0.04) 0px, rgba(255,255,255,0.04) 1px, transparent 1px, transparent 40px),
+    linear-gradient(135deg, #0f2027 0%, #2c5364 100%);
+}
+
+/* Optional: Make text a bit brighter for contrast */
+body, p, h1, h2, h3 {
+  color: #e0f7fa;
+}
+
+/* Make all text black */
+body, p, h1, h2, h3, input, label, span, div, section {
+  color: #111 !important;
+}
+
+/* If you want to make sure links are also black */
+a {
+  color: #111 !important;
+}
+
+/* Timeline card flip effect */
+.timeline-card {
+  perspective: 1000px; /* Needed for 3D flip */
+  width: 250px;
+  height: 340px;
+  margin: 10px;
+}
+
+.timeline-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.timeline-card.flipped .timeline-card-inner {
+  transform: rotateY(180deg);
+}
+
+.timeline-card-front, .timeline-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.timeline-card-front img {
+  width: 100%;
+  height: 500px; /* Much bigger image for visual impact */
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.timeline-card-back {
+  transform: rotateY(180deg);
+  padding: 20px;
+  background: #f5f5f5;
+  color: #111;
+}
+
+.timeline-card h2, .timeline-card h3 {
+  margin: 10px 0 5px 0;
+  text-align: center;
+  color: #111;
+}
+
+.timeline-card-front p, .timeline-card-back p {
+  max-height: none; /* Show all text, no scroll */
+  overflow-y: visible;
+  margin: 10px;
+  padding: 8px;
+  background: #f5f5f5;
+  border-radius: 6px;
+  font-size: 1em;
+  color: #111;
+}
+
+/* Custom scrollbar for Webkit browsers */
+.timeline-card-front p::-webkit-scrollbar, .timeline-card-back p::-webkit-scrollbar {
+  width: 8px;
+}
+.timeline-card-front p::-webkit-scrollbar-thumb, .timeline-card-back p::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+.timeline-card-front p::-webkit-scrollbar-track, .timeline-card-back p::-webkit-scrollbar-track {
+  background: #e0e0e0;
+  border-radius: 4px;
+}
+
+/* Intel Branded Header Styles */
+.intel-header {
+  width: 100%;
+  background: linear-gradient(90deg, #0071c5 0%, #00c3ff 100%);
+  padding: 40px 0 30px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 24px 0 #0071c522;
+  margin-bottom: 32px;
+}
+.intel-header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.intel-logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: 18px;
+}
+.intel-heading {
+  font-size: 3.2em;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 2px;
+  margin: 0 0 10px 0;
+  text-shadow: 0 2px 12px #0071c5aa;
+  text-align: center;
+}
+.intel-subheading {
+  font-size: 1.5em;
+  color: #e0f7fa;
+  font-weight: 400;
+  margin: 0 0 8px 0;
+  text-align: center;
+  letter-spacing: 1px;
+}
+@media (max-width: 600px) {
+  .intel-header {
+    padding: 18px 0 12px 0;
+  }
+  .intel-logo {
+    width: 70px;
+    margin-bottom: 10px;
+  }
+  .intel-heading {
+    font-size: 1.5em;
+  }
+  .intel-subheading {
+    font-size: 1em;
+  }
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 600px) {
+  /* Make the History title smaller on phones */
+  .history-title {
+    font-size: 2em;
+    margin-top: 20px;
+    margin-bottom: 15px;
+  }
+
+  /* Make header content stack and fit better */
+  header div {
+    padding: 10px;
+    text-align: center;
+  }
+  header img {
+    width: 80%;
+    max-width: 200px;
+    height: auto;
+  }
+  header h1 {
+    font-size: 1.5em;
+  }
+  header p {
+    font-size: 1em;
+  }
+
+  /* Timeline section and cards */
+  section {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  section div {
+    width: 99vw;
+    max-width: 99vw;
+    height: auto;
+    min-height: 400px;
+  }
+  .timeline-card-front img {
+    height: 220px;
+  }
+
+  /* Adjust paragraph text in cards for smaller screens */
+  section p {
+    font-size: 1em;
+    padding: 8px 4px 10px 4px;
+    max-height: none; /* Allow descriptions to show fully */
+    overflow-y: visible; /* No scroll, show all text */
+  }
+}
+
+@media (max-width: 800px) {
+  section {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    padding: 10px 0 30px 0;
+  }
+  .timeline-card, section div {
+    width: 99vw;
+    max-width: 99vw;
+    min-height: 400px;
+  }
+  .timeline-card-front img {
+    height: 220px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .timeline-card, section div {
+    width: 99vw;
+    max-width: 99vw;
+    min-height: 400px;
+  }
+  .timeline-card-front img {
+    height: 220px;
+  }
+}
+
+/* Responsive timeline layout: horizontal scroll on large screens, vertical stack on small screens */
+@media (max-width: 1000px) {
+  section {
+    flex-direction: column; /* Stack vertically on small screens */
+    align-items: center;
+    gap: 18px;
+    padding: 10px 0 30px 0;
+    overflow-x: visible;
+  }
+  section div {
+    width: 99vw;
+    max-width: 99vw;
+    min-height: 400px;
+  }
+}
+
+/* Responsive styles for iPad and tablets (landscape and portrait) */
+@media (max-width: 1200px) and (orientation: landscape) {
+  section {
+    gap: 20px;
+    padding: 10px 0 30px 0;
+  }
+  .timeline-card, section div {
+    width: 90vw;
+    max-width: 95vw;
+    min-height: 500px;
+  }
+  .timeline-card-front img {
+    height: 300px;
+  }
+}
+
+@media (max-width: 900px) and (orientation: portrait) {
+  section {
+    gap: 14px;
+    padding: 8px 0 20px 0;
+  }
+  .timeline-card, section div {
+    width: 98vw;
+    max-width: 99vw;
+    min-height: 350px;
+  }
+  .timeline-card-front img {
+    height: 180px;
+  }
+}
+
+/* These rules help the timeline and cards adjust for iPad/tablet screen size and orientation. */
+
+/* Cards now auto-size to fit all text! */
+/* The timeline cards will now grow as needed to fit all the writing, so no text is hidden or cut off. */
+
+/* Cards are now extra wide, extra tall, and stacked in a single horizontal row! */
+
+/* Cards are now much bigger to fit all writing and images comfortably! */
+
+/* Cards are now much wider for better readability! */
+
+/* --- Milestone Card Hover Reveal --- */
+.timeline-card-details {
+  display: none; /* Hide details by default */
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  width: 100%;
+  box-sizing: border-box;
+  background: rgba(255,255,255,0.95); /* white background for readability */
+  color: #000;
+  padding: 16px;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  display: none;
+  flex-direction: column;
+  align-items: flex-start; /* Align text to the left */
+}
+.timeline-card-front:hover .timeline-card-details,
+.timeline-card-front:focus .timeline-card-details,
+.timeline-card-front:focus-within .timeline-card-details {
+  display: flex; /* Show details on hover or focus */
+  opacity: 1;
+}
+
+/* For accessibility: allow keyboard focus to reveal details */
+.timeline-card-front {
+  outline: none;
+}
+.timeline-card-front:focus .timeline-card-details {
+  display: block;
+  opacity: 1;
+}
