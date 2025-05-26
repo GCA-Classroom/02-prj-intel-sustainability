@@ -27,9 +27,23 @@
     </div>
   </header>
 
+  <!-- Progress bar for timeline scroll -->
+  <div id="progress-bar-container">
+    <div id="progress-bar"></div>
+  </div>
+
+  <!-- Dark mode toggle button -->
+  <button id="dark-mode-toggle" aria-label="Toggle dark mode">🌙</button>
+
+  <!-- Search/filter box -->
+  <input type="text" id="search-box" placeholder="Search timeline..." aria-label="Search timeline" />
+
+  <!-- Timeline navigation buttons -->
+  <button id="scroll-left" aria-label="Scroll left">&#8592;</button>
+  <button id="scroll-right" aria-label="Scroll right">&#8594;</button>
+
   <!-- Timeline Cards Section -->
   <section>
-
     <!-- Card 1: 1968 -->
     <div>
       <h2>1968</h2>
@@ -41,7 +55,6 @@
         decades of technological innovation.
       </p>
     </div>
-
     <!-- Card 2: 1971 -->
     <div>
       <h2>1971</h2>
@@ -53,7 +66,6 @@
         of computing devices.
       </p>
     </div>
-
     <!-- Card 3: 1978 -->
     <div>
       <h2>1978</h2>
@@ -64,7 +76,6 @@
         that drives countless PCs and servers in the modern era.
       </p>
     </div>
-
     <!-- Card 4: 1985 -->
     <div>
       <h2>1985</h2>
@@ -76,12 +87,11 @@
         personal computers.
       </p>
     </div>
-
     <!-- Card 5: 2006 -->
     <div>
       <h2>2006</h2>
       <h3>Peak GHG Emissions</h3>
-      <img src="https://placehold.co/250x100" alt="Placeholder Image" />
+      <img src="img/5.jpg" alt="Peak GHG Emissions" />
       <p>
         This year marks Intel's highest annual greenhouse gas emissions 
         for operations. Over subsequent years, Intel invests heavily in 
@@ -89,48 +99,44 @@
         manufacturing to reverse this trend.
       </p>
     </div>
-
     <!-- Card 6: 2020 -->
     <div>
       <h2>2020</h2>
       <h3>RISE Strategy</h3>
-      <img src="https://placehold.co/250x100" alt="Placeholder Image" />
+      <img src="img/6.jpg" alt="RISE Strategy" />
       <p>
         Intel launches its RISE (Responsible, Inclusive, Sustainable, 
         Enabling) strategy and 2030 goals, aiming to drive industry-wide 
         progress on climate action, water stewardship, and waste reduction.
       </p>
     </div>
-
     <!-- Card 7: 2022 -->
     <div>
       <h2>2022</h2>
       <h3>Net-Zero By 2040</h3>
-      <img src="https://placehold.co/250x100" alt="Placeholder Image" />
+      <img src="img/7.jpg" alt="Net-Zero By 2040" />
       <p>
         Intel announces its commitment to achieve net-zero greenhouse 
         gas emissions (Scope 1 and 2) across its global operations 
         by 2040, building on years of environmental initiatives.
       </p>
     </div>
-
     <!-- Card 8: 2023 -->
     <div>
       <h2>2023</h2>
       <h3>Renewable Electricity</h3>
-      <img src="https://placehold.co/250x100" alt="Placeholder Image" />
+      <img src="img/8.jpg" alt="Renewable Electricity" />
       <p>
         The company achieves 99% renewable electricity usage worldwide, 
         helping to drastically lower carbon emissions and driving progress 
         toward Intel's long-term sustainability goals.
       </p>
     </div>
-
     <!-- Card 9: 2024 -->
     <div>
       <h2>2024</h2>
       <h3>Sustainability Summit</h3>
-      <img src="https://placehold.co/250x100" alt="Placeholder Image" />
+      <img src="img/9.jpg" alt="Sustainability Summit" />
       <p>
         Intel hosts its first Sustainability Summit, uniting suppliers, 
         government officials, and industry leaders to collaborate on 
@@ -138,6 +144,24 @@
       </p>
     </div>
   </section>
+
+  <!-- Tooltip for fun facts -->
+  <div id="tooltip" role="tooltip" style="display:none;"></div>
+
+  <!-- Modal for card details -->
+  <div id="modal" style="display:none;">
+    <div id="modal-content">
+      <span id="modal-close" aria-label="Close modal">&times;</span>
+      <div id="modal-body"></div>
+      <button id="share-btn">Share</button>
+    </div>
+  </div>
+
+  <!-- Back to top button -->
+  <button id="back-to-top" aria-label="Back to top">↑</button>
+
   <p>Scroll to view timeline | Hover over cards to learn more!</p>
+  <!-- Add script for interactivity -->
+  <script src="script.js"></script>
 </body>
 </html>
