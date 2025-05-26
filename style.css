@@ -1,1 +1,331 @@
 /* Add your CSS here */
+
+/* Style for the whole page */
+body {
+  font-family: Arial, sans-serif; /* Easy-to-read font */
+  margin: 0;
+  padding: 0;
+  background-color: #f5f7fa; /* Light background color */
+}
+
+/* Header section styles */
+header {
+  background-color: #0071c5; /* Intel blue */
+  color: white;
+  padding: 30px 0;
+  text-align: center;
+}
+header img {
+  width: 100px; /* Set logo size */
+  margin-bottom: 10px;
+}
+header h1 {
+  margin: 10px 0 5px 0;
+  font-size: 2em;
+}
+header p {
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+/* Timeline section styles using Flexbox and scroll snap */
+section {
+  display: flex; /* Arrange cards in a row */
+  flex-wrap: nowrap; /* Prevent wrapping for horizontal scroll */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  scroll-snap-type: x mandatory; /* Enable scroll snap on x-axis */
+  gap: 20px;
+  padding: 30px 10px;
+  justify-content: flex-start; /* Align cards to the left */
+  background: #f5f7fa;
+}
+
+/* Timeline card styles with scroll snap */
+section > div {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 16px;
+  min-width: 260px; /* Minimum width for horizontal scroll */
+  max-width: 260px;
+  box-sizing: border-box;
+  transition: transform 0.3s cubic-bezier(0.4, 0.2, 0.2, 1),
+              box-shadow 0.3s cubic-bezier(0.4, 0.2, 0.2, 1),
+              background 0.3s;
+  /* Smooth transition for transform, shadow, and background */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  scroll-snap-align: start; /* Snap each card to the start of the scroll area */
+  perspective: 800px; /* Needed for 3D flip effect */
+  position: relative;
+}
+section > div:hover {
+  transform: translateY(-10px) scale(1.05); /* More lift and scale on hover */
+  box-shadow: 0 8px 24px rgba(0, 113, 197, 0.18); /* Stronger blue shadow on hover */
+  background: #eaf6fd; /* Subtle blue background on hover */
+}
+section img {
+  width: 100%;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+section h2 {
+  margin: 0 0 5px 0;
+  color: #0071c5;
+  font-size: 1.2em;
+}
+section h3 {
+  margin: 0 0 10px 0;
+  font-size: 1em;
+}
+section p {
+  font-size: 0.95em;
+  color: #333;
+  text-align: center;
+}
+
+/* Card flip effect styles */
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.4,0.2,0.2,1);
+  transform-style: preserve-3d;
+}
+section > div.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  top: 0; left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.card-back {
+  background: #eaf6fd;
+  color: #0071c5;
+  transform: rotateY(180deg);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 16px;
+}
+body.dark-mode .card-back {
+  background: #23272b;
+  color: #e0e0e0;
+}
+.card-back p {
+  margin: 0;
+  font-size: 1em;
+  text-align: center;
+}
+.card-back .flip-back {
+  margin-top: 12px;
+  padding: 6px 14px;
+  border: none;
+  background: #0071c5;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.card-back .flip-back:hover {
+  background: #005a99;
+}
+
+/* Progress bar styles */
+#progress-bar-container {
+  width: 100%;
+  height: 6px;
+  background: #e0e0e0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+#progress-bar {
+  height: 100%;
+  width: 0%;
+  background: #0071c5;
+  transition: width 0.2s;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background: #181a1b;
+  color: #e0e0e0;
+}
+body.dark-mode header {
+  background: #222b36;
+  color: #e0e0e0;
+}
+body.dark-mode section > div {
+  background: #23272b;
+  color: #e0e0e0;
+}
+body.dark-mode #progress-bar {
+  background: #00bfff;
+}
+body.dark-mode #modal-content {
+  background: #23272b;
+  color: #e0e0e0;
+}
+
+/* Dark mode toggle button */
+#dark-mode-toggle {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 110;
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2em;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: background 0.2s;
+}
+body.dark-mode #dark-mode-toggle {
+  background: #23272b;
+  color: #e0e0e0;
+}
+
+/* Search box styles */
+#search-box {
+  display: block;
+  margin: 20px auto 10px auto;
+  padding: 8px 12px;
+  font-size: 1em;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 220px;
+}
+
+/* Timeline scroll buttons */
+#scroll-left, #scroll-right {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 105;
+  background: #0071c5;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5em;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: background 0.2s, opacity 0.2s;
+}
+#scroll-left { left: 10px; }
+#scroll-right { right: 10px; }
+#scroll-left:hover, #scroll-right:hover { opacity: 1; background: #005a99; }
+
+/* Modal popup styles */
+#modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+}
+#modal-content {
+  background: #fff;
+  padding: 24px;
+  border-radius: 10px;
+  min-width: 260px;
+  max-width: 90vw;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  position: relative;
+  text-align: center;
+}
+#modal-close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+#share-btn {
+  margin-top: 16px;
+  padding: 8px 16px;
+  border: none;
+  background: #0071c5;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+#share-btn:hover { background: #005a99; }
+
+/* Tooltip styles */
+#tooltip {
+  position: absolute;
+  background: #222b36;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.95em;
+  pointer-events: none;
+  z-index: 300;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  max-width: 220px;
+}
+
+/* Back to top button */
+#back-to-top {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 120;
+  background: #0071c5;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.3em;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+#back-to-top:hover { background: #005a99; }
+
+/* Responsive design: stack cards vertically on small screens */
+@media (max-width: 700px) {
+  section {
+    flex-direction: column; /* Stack cards vertically */
+    overflow-x: visible;
+    scroll-snap-type: none;
+    align-items: center; /* Center cards */
+  }
+  section > div {
+    min-width: 95%;
+    max-width: 350px;
+  }
+  #scroll-left, #scroll-right {
+    display: none;
+  }
+  #dark-mode-toggle {
+    top: 8px;
+    right: 8px;
+    width: 36px;
+    height: 36px;
+    font-size: 1em;
+  }
+  #back-to-top {
+    bottom: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    font-size: 1em;
+  }
+}
