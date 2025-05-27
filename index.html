@@ -1,143 +1,705 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Intel: Sustainability Through the Ages</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intel Sustainability Goals</title>
+  <style>
+    /* Set the background color to white and text color to Intel blue */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff; /* White background */
+      color: #0071c5;   /* Intel blue text */
+    }
+
+    /* Header styles */
+    .header {
+      display: flex;
+      flex-direction: column; /* Stack items vertically on mobile */
+      align-items: center;
+      padding: 16px 0;
+      background: rgba(0, 113, 197, 0.07); /* Very light blue for header */
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      /* Add padding so the blue rectangle doesn't touch the edges */
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+
+    /* Rectangle background behind the nav buttons */
+    .nav-bg {
+      background: #0071c5; /* Intel blue */
+      border-radius: 16px;
+      padding: 12px 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 2px 8px rgba(0,113,197,0.07);
+    }
+
+    /* Navigation button styles */
+    nav {
+      display: flex;
+      justify-content: center; /* Center the buttons horizontally */
+      gap: 8px; /* Space between buttons */
+      width: auto;
+      margin: 0 auto;
+    }
+    .nav-btn {
+      background: #e6f2fb; /* Light blue background for the button */
+      color: #0071c5;      /* Intel blue text */
+      border: none;
+      border-radius: 8px;
+      padding: 10px 18px;
+      font-size: 1rem;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 2px 6px rgba(0,113,197,0.07);
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-btn:hover {
+      background: #0071c5; /* Intel blue on hover */
+      color: #fff;         /* White text on hover */
+    }
+
+    /* Hero section styles */
+    .hero {
+      display: flex;
+      flex-direction: column; /* Stack vertically on mobile */
+      align-items: center;
+      justify-content: center;
+      padding: 40px 16px;
+      text-align: center;
+      background: #f5faff; /* Very light blue background for hero */
+      border-radius: 12px;
+      margin: 24px 8px;
+    }
+
+    .hero-img {
+      width: 100%;
+      max-width: 320px;
+      border-radius: 10px;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+
+    .headline {
+      font-size: 2rem;
+      margin: 16px 0 8px 0;
+      font-weight: bold;
+      color: #0071c5; /* Intel blue */
+    }
+
+    .subheading {
+      font-size: 1.1rem;
+      margin: 0;
+      max-width: 300px;
+      color: #0071c5; /* Intel blue */
+    }
+
+    /* Media Query: On screens 600px and wider, arrange hero content horizontally */
+    @media (min-width: 600px) {
+      .header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 16px 32px;
+      }
+      .hero {
+        flex-direction: row; /* Arrange hero content side by side */
+        text-align: left;
+        align-items: center;
+        justify-content: center;
+        padding: 60px 0;
+        margin: 32px auto;
+        max-width: 800px;
+      }
+      .hero-img {
+        margin-bottom: 0;
+        margin-right: 32px;
+        max-width: 350px;
+      }
+      .hero-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+      }
+      .headline, .subheading {
+        text-align: left;
+        max-width: none;
+      }
+    }
+
+    /* Timeline section styles */
+    .timeline {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 8px;
+    }
+    /* Each card */
+    .timeline-card {
+      position: relative;
+      background: #fff;
+      color: #0071c5;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      margin-bottom: 40px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* Add a simple hover effect for the card */
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+    .timeline-card:hover {
+      box-shadow: 0 6px 24px rgba(0,113,197,0.15);
+      transform: translateY(-4px) scale(1.02);
+      cursor: pointer;
+    }
+    /* Period label on top */
+    .timeline-period {
+      background: #0071c5;
+      color: #fff;
+      padding: 4px 16px;
+      border-radius: 20px;
+      font-weight: bold;
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+    /* Card content: image and text */
+    .timeline-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+    .timeline-img {
+      width: 100%;
+      max-width: 180px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      transition: 0.3s;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .timeline-text {
+      font-size: 1rem;
+      text-align: center;
+    }
+    /* Guiding line between cards */
+    .timeline-line {
+      width: 4px;
+      height: 40px;
+      background: #0071c5;
+      margin: 0 auto;
+      border-radius: 2px;
+    }
+    /* Responsive: side-by-side on larger screens */
+    @media (min-width: 700px) {
+      .timeline-card {
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 24px;
+      }
+      .timeline-period {
+        position: absolute;
+        left: -40px;
+        top: 24px;
+        margin-bottom: 0;
+        min-width: 120px;
+        text-align: center;
+      }
+      .timeline-content {
+        flex-direction: row;
+        align-items: center;
+        width: auto;
+        margin-left: 100px;
+      }
+      .timeline-img {
+        margin-bottom: 0;
+        margin-right: 24px;
+      }
+      .timeline-text {
+        text-align: left;
+      }
+      .timeline-line {
+        position: absolute;
+        left: 50%;
+        top: 100%;
+        transform: translateX(-50%);
+        width: 4px;
+        height: 40px;
+      }
+    }
+
+    /* Make the timeline horizontally scrollable with snap */
+    .timeline-scroll {
+      overflow-x: auto;
+      width: 100%;
+      padding-bottom: 24px;
+    }
+
+    /* The timeline uses flex to lay out cards in a row */
+    .timeline {
+      display: flex;
+      gap: 24px;
+      scroll-snap-type: x mandatory; /* Enable scroll snap */
+      padding-bottom: 24px;
+      align-items: flex-start;
+    }
+
+    /* Each card will snap to the center of the scroll area */
+    .timeline-card {
+      min-width: 320px;
+      max-width: 350px;
+      background: #fff;
+      color: #0071c5;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      scroll-snap-align: center; /* Snap each card to the center */
+      transition: box-shadow 0.3s, transform 0.3s;
+      margin: 0 8px;
+    }
+
+    /* Add a simple hover effect for the card */
+    .timeline-card:hover {
+      box-shadow: 0 8px 32px rgba(0,113,197,0.18);
+      transform: translateY(-8px) scale(1.04) rotate(-1deg);
+      cursor: pointer;
+    }
+
+    /* Period label on top */
+    .timeline-period {
+      background: #0071c5;
+      color: #fff;
+      padding: 4px 16px;
+      border-radius: 20px;
+      font-weight: bold;
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+
+    /* Card content: image and text */
+    .timeline-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+
+    .timeline-img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .timeline-text {
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    /* Timeline Section with Four Scroll Snap Areas */
+    .timeline-scroll {
+      overflow-x: auto;
+      width: 100%;
+      padding-bottom: 24px;
+    }
+    .timeline {
+      display: flex;
+      gap: 24px;
+      scroll-snap-type: x mandatory; /* Enable scroll snap */
+      padding-bottom: 24px;
+      align-items: flex-start;
+    }
+    .timeline-card {
+      min-width: 320px;
+      max-width: 350px;
+      background: #fff;
+      color: #0071c5;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      scroll-snap-align: center; /* Snap each card to the center */
+      transition: box-shadow 0.3s, transform 0.3s;
+      margin: 0 8px;
+    }
+    .timeline-card:hover {
+      box-shadow: 0 8px 32px rgba(0,113,197,0.18);
+      transform: translateY(-8px) scale(1.04) rotate(-1deg);
+      cursor: pointer;
+    }
+    .timeline-img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .timeline-text {
+      font-size: 1rem;
+      text-align: center;
+    }
+    .timeline-period {
+      background: #0071c5;
+      color: #fff;
+      padding: 4px 16px;
+      border-radius: 20px;
+      font-weight: bold;
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+
+    /* Make the timeline horizontally scrollable with snap only for future cards */
+    .timeline-scroll {
+      overflow-x: auto;
+      width: 100%;
+      padding-bottom: 24px;
+    }
+    .timeline {
+      display: flex;
+      gap: 24px;
+      scroll-snap-type: x mandatory; /* Enable scroll snap */
+      padding-bottom: 24px;
+      align-items: flex-start;
+    }
+    .timeline-card {
+      min-width: 320px;
+      max-width: 350px;
+      background: #fff;
+      color: #0071c5;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* Only future cards snap */
+      margin: 0 8px;
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+    .future-card {
+      scroll-snap-align: center;
+    }
+    .timeline-card:hover {
+      box-shadow: 0 8px 32px rgba(0,113,197,0.18);
+      transform: translateY(-8px) scale(1.04) rotate(-1deg);
+      cursor: pointer;
+    }
+    .timeline-img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .timeline-text {
+      font-size: 1rem;
+      text-align: center;
+    }
+    .timeline-period {
+      background: #0071c5;
+      color: #fff;
+      padding: 4px 16px;
+      border-radius: 20px;
+      font-weight: bold;
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+  </style>
 </head>
 <body>
-
-  <!-- Header / Hero Section -->
-  <header>
-    <div>
-      <!-- Ask Copilot to teach you about `.svg` 🙂 -->
-      <img src="img/intel-header-logo.svg" alt="Intel Logo" />
-      <!-- Main Heading -->
-      <h1>
-        Sustainability Through the Ages
-      </h1>
-
-      <!-- Subheading / Description -->
-      <p>
-        Explore Intel's journey through time, discovering how our commitment
-        to innovation has shaped a more sustainable future for technology 
-        and our planet.
-      </p>
+  <!-- Header with navigation buttons -->
+  <header class="header">
+    <!-- Rectangle background for nav buttons -->
+    <div class="nav-bg">
+      <nav>
+        <!-- Each button links to its card using an anchor and id -->
+        <button class="nav-btn" onclick="scrollToCard('card1')">When the Business Started</button>
+        <button class="nav-btn" onclick="scrollToCard('card2')">Early 2000s</button>
+        <button class="nav-btn" onclick="scrollToCard('card3')">Current Time</button>
+        <button class="nav-btn" onclick="scrollToCard('future1')">The Future</button>
+      </nav>
     </div>
   </header>
 
-  <!-- Timeline Cards Section -->
-  <section>
-
-    <!-- Card 1: 1968 -->
-    <div>
-      <h2>1968</h2>
-      <h3>Intel Founded</h3>
-      <img src="img/1.jpg" alt="Placeholder Image" />
-      <p>
-        Robert Noyce and Gordon Moore rename the newly formed company 
-        NM Electronics to Intel Corporation, laying the foundation for 
-        decades of technological innovation.
-      </p>
-    </div>
-
-    <!-- Card 2: 1971 -->
-    <div>
-      <h2>1971</h2>
-      <h3>First Microprocessor</h3>
-      <img src="img/2.jpg" alt="Placeholder Image" />
-      <p>
-        Intel debuts the 4004, the world's first commercial microprocessor, 
-        igniting the microprocessor revolution and propelling the future 
-        of computing devices.
-      </p>
-    </div>
-
-    <!-- Card 3: 1978 -->
-    <div>
-      <h2>1978</h2>
-      <h3>8086 Processor</h3>
-      <img src="img/3.jpg" alt="Placeholder Image" />
-      <p>
-        Launch of the 8086 processor, establishing the x86 architecture 
-        that drives countless PCs and servers in the modern era.
-      </p>
-    </div>
-
-    <!-- Card 4: 1985 -->
-    <div>
-      <h2>1985</h2>
-      <h3>386 Processor</h3>
-      <img src="img/4.jpg" alt="Placeholder Image" />
-      <p>
-        Intel introduces the 386 processor with 32-bit architecture, 
-        ushering in a new era of performance and multitasking for 
-        personal computers.
-      </p>
-    </div>
-
-    <!-- Card 5: 2006 -->
-    <div>
-      <h2>2006</h2>
-      <h3>Peak GHG Emissions</h3>
-      <img src="https://placehold.co/250x100" alt="Placeholder Image" />
-      <p>
-        This year marks Intel's highest annual greenhouse gas emissions 
-        for operations. Over subsequent years, Intel invests heavily in 
-        chemical abatement, renewable energy, and energy-efficient 
-        manufacturing to reverse this trend.
-      </p>
-    </div>
-
-    <!-- Card 6: 2020 -->
-    <div>
-      <h2>2020</h2>
-      <h3>RISE Strategy</h3>
-      <img src="https://placehold.co/250x100" alt="Placeholder Image" />
-      <p>
-        Intel launches its RISE (Responsible, Inclusive, Sustainable, 
-        Enabling) strategy and 2030 goals, aiming to drive industry-wide 
-        progress on climate action, water stewardship, and waste reduction.
-      </p>
-    </div>
-
-    <!-- Card 7: 2022 -->
-    <div>
-      <h2>2022</h2>
-      <h3>Net-Zero By 2040</h3>
-      <img src="https://placehold.co/250x100" alt="Placeholder Image" />
-      <p>
-        Intel announces its commitment to achieve net-zero greenhouse 
-        gas emissions (Scope 1 and 2) across its global operations 
-        by 2040, building on years of environmental initiatives.
-      </p>
-    </div>
-
-    <!-- Card 8: 2023 -->
-    <div>
-      <h2>2023</h2>
-      <h3>Renewable Electricity</h3>
-      <img src="https://placehold.co/250x100" alt="Placeholder Image" />
-      <p>
-        The company achieves 99% renewable electricity usage worldwide, 
-        helping to drastically lower carbon emissions and driving progress 
-        toward Intel's long-term sustainability goals.
-      </p>
-    </div>
-
-    <!-- Card 9: 2024 -->
-    <div>
-      <h2>2024</h2>
-      <h3>Sustainability Summit</h3>
-      <img src="https://placehold.co/250x100" alt="Placeholder Image" />
-      <p>
-        Intel hosts its first Sustainability Summit, uniting suppliers, 
-        government officials, and industry leaders to collaborate on 
-        next-generation sustainable semiconductor manufacturing.
-      </p>
+  <!-- Hero section with background, headline, and subheading -->
+  <section class="hero">
+    <!-- Intel-themed image for the hero section -->
+    <img 
+      src="https://images.unsplash.com/photo-1649006708938-cf885c646df6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aW50ZWx8ZW58MHx8MHx8fDA%3D" 
+      alt="Intel Circuit Board" 
+      class="hero-img"
+    />
+    <!-- Group headline and subheading for easier layout control -->
+    <div class="hero-text">
+      <h1 class="headline">Intel's Sustainability Goals</h1>
+      <p class="subheading">Building a greener future through innovation and responsibility.</p>
     </div>
   </section>
-  <p>Scroll to view timeline | Hover over cards to learn more!</p>
+
+  <!-- Timeline Section -->
+  <section class="timeline-section">
+    <!-- Vertical timeline for the first three eras -->
+    <div class="timeline-vertical">
+      <!-- 1. When the Business Started (hover to cycle info) -->
+      <div class="timeline-card" id="card1"
+        onmouseenter="cycleHoverInfo(this, 0)">
+        <div class="timeline-period">1968–1999</div>
+        <div class="timeline-content">
+          <img class="timeline-img"
+            src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=300&q=80"
+            alt="Early Intel Factory"
+            data-images='[
+              "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=300&q=80",
+              "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=300&q=80"
+            ]'
+            data-index="0"
+          />
+          <div class="timeline-text"
+            data-infos='[
+              "<strong>1968</strong>: Intel is founded by Robert Noyce and Gordon Moore in Mountain View, California.",
+              "<strong>1994</strong>: First environmental health and safety reports.",
+              "<strong>1995–1999</strong>: Invests in energy efficiency and tracks greenhouse gas emissions."
+            ]'
+            data-info-index="0"
+          >
+            <strong>1968</strong>: Intel is founded by Robert Noyce and Gordon Moore in Mountain View, California.
+          </div>
+        </div>
+      </div>
+      <!-- 2. Early 2000s (hover to cycle info) -->
+      <div class="timeline-card" id="card2"
+        onmouseenter="cycleHoverInfo(this, 1)">
+        <div class="timeline-period">2000–2010</div>
+        <div class="timeline-content">
+          <img class="timeline-img"
+            src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=300&q=80"
+            alt="Intel Sustainability 2000s"
+            data-images='[
+              "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=300&q=80",
+              "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=300&q=80"
+            ]'
+            data-index="0"
+          />
+          <div class="timeline-text"
+            data-infos='[
+              "<strong>2003</strong>: Board-level oversight for corporate responsibility.",
+              "<strong>2008</strong>: ESG-linked compensation for executives.",
+              "<strong>2009</strong>: Addressed conflict minerals and ethical sourcing."
+            ]'
+            data-info-index="0"
+          >
+            <strong>2003</strong>: Board-level oversight for corporate responsibility.
+          </div>
+        </div>
+      </div>
+      <!-- 3. Current Time (hover to cycle info) -->
+      <div class="timeline-card" id="card3"
+        onmouseenter="cycleHoverInfo(this, 2)">
+        <div class="timeline-period">2020–2025</div>
+        <div class="timeline-content">
+          <img class="timeline-img"
+            src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=300&q=80"
+            alt="RISE 2030 Strategy"
+            data-images='[
+              "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=300&q=80",
+              "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=300&q=80",
+              "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=300&q=80"
+            ]'
+            data-index="0"
+          />
+          <div class="timeline-text"
+            data-infos='[
+              "<strong>2020</strong>: Launched the RISE 2030 strategy: Responsible, Inclusive, Sustainable, Enabling.",
+              "<strong>2021</strong>: Set goal to reach net-zero Scope 1 and 2 emissions by 2040.",
+              "<strong>2022</strong>: Achieved 99% renewable electricity usage globally.",
+              "<strong>2023</strong>: Net-positive in water use in U.S., India, Mexico, and Costa Rica. Restored over 100% of freshwater use in Arizona.",
+              "<strong>2024</strong>: Continued innovation with energy-efficient AI chips (e.g., Gaudi 3).",
+              "<strong>2025</strong>: Focus on circular economy and sustainable product design."
+            ]'
+            data-info-index="0"
+          >
+            <strong>2020</strong>: Launched the RISE 2030 strategy: Responsible, Inclusive, Sustainable, Enabling.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Horizontal scroll snap for the Future cards -->
+    <div class="timeline-scroll">
+      <div class="timeline timeline-horizontal">
+        <!-- 4. Future Cards (scroll snap for each) -->
+        <div class="timeline-card future-card" id="future1" style="scroll-snap-align: center;">
+          <div class="timeline-period">2030</div>
+          <div class="timeline-content">
+            <img class="timeline-img"
+              src="https://images.unsplash.com/photo-1465101178521-c1a9136a3b41?auto=format&fit=crop&w=300&q=80"
+              alt="2030 Sustainability"
+            />
+            <div class="timeline-text">
+              <strong>2030</strong>: 100% renewable electricity, 60B gallons water conserved, zero waste to landfill, 10x energy efficiency.
+            </div>
+          </div>
+        </div>
+        <div class="timeline-card future-card" id="future2" style="scroll-snap-align: center;">
+          <div class="timeline-period">2040</div>
+          <div class="timeline-content">
+            <img class="timeline-img"
+              src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=300&q=80"
+              alt="2040 Sustainability"
+            />
+            <div class="timeline-text">
+              <strong>2040</strong>: Net-zero emissions globally.
+            </div>
+          </div>
+        </div>
+        <div class="timeline-card future-card" id="future3" style="scroll-snap-align: center;">
+          <div class="timeline-period">2050</div>
+          <div class="timeline-content">
+            <img class="timeline-img"
+              src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=300&q=80"
+              alt="2050 Sustainability"
+            />
+            <div class="timeline-text">
+              <strong>2050</strong>: Supplier-level net-zero emissions and 100% renewable energy adoption.<br>
+              <em>Intel is aiming not just for compliance, but for leadership in sustainable innovation across the entire tech ecosystem.</em>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+  /* --- Timeline Section Styles --- */
+
+  /* Vertical timeline for the first three cards */
+  .timeline-section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 8px;
+  }
+
+  /* Stack the first three cards vertically */
+  .timeline-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  /* Horizontal scroll for the future cards */
+  .timeline-scroll {
+    overflow-x: auto;
+    width: 100%;
+    padding-bottom: 24px;
+    margin-top: 32px;
+  }
+  .timeline-horizontal {
+    display: flex;
+    gap: 24px;
+    scroll-snap-type: x mandatory; /* Enable scroll snap */
+    padding-bottom: 24px;
+    align-items: flex-start;
+  }
+
+  /* Each card style */
+  .timeline-card {
+    min-width: 320px;
+    max-width: 350px;
+    background: #fff;
+    color: #0071c5;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    transition: box-shadow 0.3s, transform 0.3s;
+  }
+  .future-card {
+    scroll-snap-align: center;
+    margin: 0 8px;
+  }
+  .timeline-card:hover {
+    box-shadow: 0 8px 32px rgba(0,113,197,0.18);
+    transform: translateY(-8px) scale(1.04) rotate(-1deg);
+    cursor: pointer;
+  }
+  .timeline-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .timeline-text {
+    font-size: 1rem;
+    text-align: center;
+  }
+  .timeline-period {
+    background: #0071c5;
+    color: #fff;
+    padding: 4px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    font-size: 1rem;
+  }
+  </style>
+
+  <!-- Simple JavaScript for cycling info and images on hover -->
+  <script>
+    // For each vertical card: cycle through info and images on hover
+    function cycleHoverInfo(card, cardIndex) {
+      var img = card.querySelector('.timeline-img');
+      var text = card.querySelector('.timeline-text');
+      var images = JSON.parse(img.getAttribute('data-images'));
+      var infos = JSON.parse(text.getAttribute('data-infos'));
+      var infoIndex = parseInt(text.getAttribute('data-info-index'), 10);
+
+      // Move to the next info/image, or loop back to the first
+      infoIndex = (infoIndex + 1) % infos.length;
+      img.src = images[infoIndex % images.length];
+      text.innerHTML = infos[infoIndex];
+      text.setAttribute('data-info-index', infoIndex);
+    }
+
+    // Reset to the first info/image when mouse leaves
+    function resetHoverInfo(card, cardIndex) {
+      var img = card.querySelector('.timeline-img');
+      var text = card.querySelector('.timeline-text');
+      var images = JSON.parse(img.getAttribute('data-images'));
+      var infos = JSON.parse(text.getAttribute('data-infos'));
+      img.src = images[0];
+      text.innerHTML = infos[0];
+      text.setAttribute('data-info-index', 0);
+    }
+
+    // Smooth scroll to card when button is clicked
+    function scrollToCard(cardId) {
+      var card = document.getElementById(cardId);
+      if(card) {
+        card.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    }
+  </script>
 </body>
 </html>
