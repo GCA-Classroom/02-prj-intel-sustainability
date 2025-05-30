@@ -1,7 +1,9 @@
- {
+/* Apply font, margin, and background to the whole page */
+body {
   font-family: "Courier New", Courier, monospace;
   margin: 0;
-  background: #f4f8fb;} 
+  background: #f4f8fb;
+}
 
 header {
   background: linear-gradient(90deg, #0071C5 60%, #005999 100%);
@@ -147,4 +149,4 @@ div p {
 header, section, button {
   font-family: "Courier New", Courier, monospace;
 }
- CSS here */
+
