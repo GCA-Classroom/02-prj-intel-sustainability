@@ -1,23 +1,81 @@
+<!--
+  This HTML file shows Intel's sustainability timeline.
+  The information on each timeline card is hidden until you click the "Show Details" button.
+  Only simple HTML, CSS, and a little JavaScript are used, with comments to help you learn.
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Intel: Sustainability Through the Ages</title>
+  <!-- Link to external CSS file -->
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Simple styles for the timeline section */
+    section {
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+    /* Style each card */
+    .timeline-card {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 20px;
+      background-color: #fff;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.05);
+      position: relative;
+      transition: box-shadow 0.2s;
+    }
+    .timeline-card img {
+      width: 100%;
+      max-width: 250px;
+      border-radius: 4px;
+      display: block;
+      margin-bottom: 10px;
+    }
+    /* Hide the info by default */
+    .timeline-info {
+      display: none;
+      margin-top: 10px;
+    }
+    /* Style the main heading */
+    header h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+    /* Style the subheading */
+    header p {
+      font-weight: bold;
+    }
+    /* Style the button */
+    .show-btn {
+      margin: 8px 0;
+      padding: 6px 14px;
+      border-radius: 4px;
+      border: 1px solid #0071c5;
+      background: #eaf4fb;
+      color: #0071c5;
+      cursor: pointer;
+      font-size: 1em;
+    }
+    .show-btn:active {
+      background: #d0e7f8;
+    }
+  </style>
 </head>
 <body>
 
   <!-- Header / Hero Section -->
   <header>
     <div>
-      <!-- Ask Copilot to teach you about `.svg` 🙂 -->
+      <!-- Intel logo as SVG image -->
       <img src="img/intel-header-logo.svg" alt="Intel Logo" />
       <!-- Main Heading -->
       <h1>
         Sustainability Through the Ages
       </h1>
-
       <!-- Subheading / Description -->
       <p>
         Explore Intel's journey through time, discovering how our commitment
@@ -29,115 +87,163 @@
 
   <!-- Timeline Cards Section -->
   <section>
-
     <!-- Card 1: 1968 -->
-    <div>
+    <div class="timeline-card">
       <h2>1968</h2>
       <h3>Intel Founded</h3>
-      <img src="img/1.jpg" alt="Placeholder Image" />
-      <p>
-        Robert Noyce and Gordon Moore rename the newly formed company 
-        NM Electronics to Intel Corporation, laying the foundation for 
-        decades of technological innovation.
-      </p>
+      <img src="img/1.jpg" alt="Intel founders" />
+      <button class="show-btn">Show Details</button>
+      <div class="timeline-info">
+        <b>
+          Robert Noyce and Gordon Moore rename the newly formed company 
+          NM Electronics to Intel Corporation, laying the foundation for 
+          decades of technological innovation.
+        </b>
+      </div>
     </div>
 
     <!-- Card 2: 1971 -->
-    <div>
+    <div class="timeline-card">
       <h2>1971</h2>
       <h3>First Microprocessor</h3>
-      <img src="img/2.jpg" alt="Placeholder Image" />
-      <p>
-        Intel debuts the 4004, the world's first commercial microprocessor, 
-        igniting the microprocessor revolution and propelling the future 
-        of computing devices.
-      </p>
+      <img src="img/2.jpg" alt="Intel 4004 microprocessor" />
+      <button class="show-btn">Show Details</button>
+      <div class="timeline-info">
+        <b>
+          Intel debuts the 4004, the world's first commercial microprocessor, 
+          igniting the microprocessor revolution and propelling the future 
+          of computing devices.
+        </b>
+      </div>
     </div>
 
     <!-- Card 3: 1978 -->
-    <div>
+    <div class="timeline-card">
       <h2>1978</h2>
       <h3>8086 Processor</h3>
-      <img src="img/3.jpg" alt="Placeholder Image" />
-      <p>
-        Launch of the 8086 processor, establishing the x86 architecture 
-        that drives countless PCs and servers in the modern era.
-      </p>
+      <img src="img/3.jpg" alt="Intel 8086 processor" />
+      <button class="show-btn">Show Details</button>
+      <div class="timeline-info">
+        <b>
+          Launch of the 8086 processor, establishing the x86 architecture 
+          that drives countless PCs and servers in the modern era.
+        </b>
+      </div>
     </div>
 
     <!-- Card 4: 1985 -->
-    <div>
+    <div class="timeline-card">
       <h2>1985</h2>
       <h3>386 Processor</h3>
-      <img src="img/4.jpg" alt="Placeholder Image" />
-      <p>
-        Intel introduces the 386 processor with 32-bit architecture, 
-        ushering in a new era of performance and multitasking for 
-        personal computers.
-      </p>
+      <img src="img/4.jpg" alt="Intel 386 processor" />
+      <button class="show-btn">Show Details</button>
+      <div class="timeline-info">
+        <b>
+          Intel introduces the 386 processor with 32-bit architecture, 
+          ushering in a new era of performance and multitasking for 
+          personal computers.
+        </b>
+      </div>
     </div>
 
     <!-- Card 5: 2006 -->
-    <div>
+    <div class="timeline-card">
       <h2>2006</h2>
       <h3>Peak GHG Emissions</h3>
-      <img src="https://placehold.co/250x100" alt="Placeholder Image" />
-      <p>
-        This year marks Intel's highest annual greenhouse gas emissions 
-        for operations. Over subsequent years, Intel invests heavily in 
-        chemical abatement, renewable energy, and energy-efficient 
-        manufacturing to reverse this trend.
-      </p>
+      <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=250&q=80" alt="Factory with emissions" />
+      <button class="show-btn">Show Details</button>
+      <div class="timeline-info">
+        <b>
+          This year marks Intel's highest annual greenhouse gas emissions 
+          for operations. Over subsequent years, Intel invests heavily in 
+          chemical abatement, renewable energy, and energy-efficient 
+          manufacturing to reverse this trend.
+        </b>
+      </div>
     </div>
 
     <!-- Card 6: 2020 -->
-    <div>
+    <div class="timeline-card">
       <h2>2020</h2>
       <h3>RISE Strategy</h3>
-      <img src="https://placehold.co/250x100" alt="Placeholder Image" />
-      <p>
-        Intel launches its RISE (Responsible, Inclusive, Sustainable, 
-        Enabling) strategy and 2030 goals, aiming to drive industry-wide 
-        progress on climate action, water stewardship, and waste reduction.
-      </p>
+      <img src="https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=250&q=80" alt="Teamwork for sustainability" />
+      <button class="show-btn">Show Details</button>
+      <div class="timeline-info">
+        <b>
+          Intel launches its RISE (Responsible, Inclusive, Sustainable, 
+          Enabling) strategy and 2030 goals, aiming to drive industry-wide 
+          progress on climate action, water stewardship, and waste reduction.
+        </b>
+      </div>
     </div>
 
     <!-- Card 7: 2022 -->
-    <div>
+    <div class="timeline-card">
       <h2>2022</h2>
       <h3>Net-Zero By 2040</h3>
-      <img src="https://placehold.co/250x100" alt="Placeholder Image" />
-      <p>
-        Intel announces its commitment to achieve net-zero greenhouse 
-        gas emissions (Scope 1 and 2) across its global operations 
-        by 2040, building on years of environmental initiatives.
-      </p>
+      <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=250&q=80" alt="Green earth" />
+      <button class="show-btn">Show Details</button>
+      <div class="timeline-info">
+        <b>
+          Intel announces its commitment to achieve net-zero greenhouse 
+          gas emissions (Scope 1 and 2) across its global operations 
+          by 2040, building on years of environmental initiatives.
+        </b>
+      </div>
     </div>
 
     <!-- Card 8: 2023 -->
-    <div>
+    <div class="timeline-card">
       <h2>2023</h2>
       <h3>Renewable Electricity</h3>
-      <img src="https://placehold.co/250x100" alt="Placeholder Image" />
-      <p>
-        The company achieves 99% renewable electricity usage worldwide, 
-        helping to drastically lower carbon emissions and driving progress 
-        toward Intel's long-term sustainability goals.
-      </p>
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=250&q=80" alt="Solar panels in a field" />
+      <button class="show-btn">Show Details</button>
+      <div class="timeline-info">
+        <b>
+          The company achieves 99% renewable electricity usage worldwide, 
+          helping to drastically lower carbon emissions and driving progress 
+          toward Intel's long-term sustainability goals.
+        </b>
+      </div>
     </div>
 
     <!-- Card 9: 2024 -->
-    <div>
+    <div class="timeline-card">
       <h2>2024</h2>
       <h3>Sustainability Summit</h3>
-      <img src="https://placehold.co/250x100" alt="Placeholder Image" />
-      <p>
-        Intel hosts its first Sustainability Summit, uniting suppliers, 
-        government officials, and industry leaders to collaborate on 
-        next-generation sustainable semiconductor manufacturing.
-      </p>
+      <img src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?auto=format&fit=crop&w=250&q=80" alt="Team discussion" />
+      <button class="show-btn">Show Details</button>
+      <div class="timeline-info">
+        <b>
+          Intel hosts its first Sustainability Summit, uniting suppliers, 
+          government officials, and industry leaders to collaborate on 
+          next-generation sustainable semiconductor manufacturing.
+        </b>
+      </div>
     </div>
   </section>
-  <p>Scroll to view timeline | Hover over cards to learn more!</p>
+  <!-- Simple instruction for users -->
+  <p>Scroll down to view the timeline! Click "Show Details" to learn more about each card.</p>
+
+  <!-- Simple JavaScript to show/hide info when button is clicked -->
+  <script>
+    // Get all the show buttons
+    var buttons = document.querySelectorAll('.show-btn');
+    // Loop through each button
+    buttons.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        // Find the info div next to the button
+        var info = btn.nextElementSibling;
+        // Toggle display
+        if (info.style.display === "block") {
+          info.style.display = "none";
+          btn.textContent = "Show Details";
+        } else {
+          info.style.display = "block";
+          btn.textContent = "Hide Details";
+        }
+      });
+    });
+  </script>
 </body>
 </html>
