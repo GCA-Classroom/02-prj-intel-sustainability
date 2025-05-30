@@ -1,1 +1,149 @@
-/* Add your CSS here */
+body {
+  font-family: "Courier New", Courier, monospace;
+  margin: 0;
+  background: #f4f8fb;
+
+header {
+  background: linear-gradient(90deg, #0071C5 60%, #005999 100%);
+  color: white;
+  text-align: center;
+  padding: 40px 20px 30px 20px;
+  position: relative; 
+}
+
+
+header div {
+  background: rgba(87, 142, 205, 0.85); 
+  display: inline-block;
+  padding: 30px 30px 20px 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+}
+
+
+header img {
+  width: 80px;         /* Smaller width for better proportion */
+  max-width: 30vw;     /* Responsive: never more than 30% of viewport width */
+  height: auto;        /* Keep the aspect ratio */
+  margin-bottom: 16px; /* Less space below the logo */
+  background: rgb(119, 118, 118);   /* White background for contrast */
+  border-radius: 12px;
+  padding: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+
+header h1 {
+  margin: 10px 0 10px 0;
+  font-size: 2.2em;
+}
+
+
+header p {
+  color: white; /* White text for visibility */
+  font-size: 1.1em;
+  margin-bottom: 0;
+}
+
+
+section {
+  display: flex; /* Use Flexbox for horizontal layout */
+  overflow-x: auto; /* Allow horizontal scrolling */
+  gap: 20px; /* Space between cards */
+  padding: 30px 20px;
+}
+
+/* Each timeline card */
+section > div {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  min-width: 250px;
+  max-width: 250px;
+  padding: 18px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+}
+
+/* Card hover effect */
+section > div:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  z-index: 1;
+}
+
+/* Card images */
+section img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Card headings */
+section h2 {
+  color: #0071C5;
+  margin: 0 0 5px 0;
+  font-size: 1.2em;
+}
+
+section h3 {
+  margin: 0 0 10px 0;
+  font-size: 1em;
+  color: #ffffff;
+}
+
+/* Responsive: Stack cards vertically on small screens */
+@media (max-width: 700px) {
+  section {
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px 5px;
+  }
+  section > div {
+    max-width: 100%;
+    min-width: 0;
+  }
+}
+
+/* Style the scroll instruction */
+body > p {
+  text-align: center;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* Card 8: 2023 */
+div {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 18px;
+  margin: 0 0 20px 0;
+}
+
+div h2 {
+  color: #0071C5;
+  margin: 0 0 10px 0;
+  font-size: 1.5em;
+}
+
+div h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.2em;
+  color: #333;
+}
+
+div img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+div p {
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Make sure header and section also use Courier New */
+header, section, button {
+  font-family: "Courier New", Courier, monospace;
+}
