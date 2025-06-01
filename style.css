@@ -1,1 +1,214 @@
 /* Add your CSS here */
+
+/* Basic body styling for default font */
+body {
+    font-family: sans-serif; /* Use a common sans-serif font stack */
+    margin: 0; /* Remove default browser margin */
+    line-height: 1.6; /* Improve readability */
+}
+
+/* Header styling */
+header {
+    /* Intel-blue gradient background */
+    background: linear-gradient(to bottom, #0071c5, #005b9e); /* Example Intel-like blue gradient */
+    color: #ffffff; /* White text for good contrast */
+    padding: 40px 20px; /* Add padding top/bottom and left/right */
+    text-align: center; /* Center inline and block content within the header */
+}
+
+/* Logo styling */
+header img {
+    max-width: 180px; /* Set a maximum width for the logo */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Allows margin auto to work for centering */
+    margin-left: auto; /* Center the logo */
+    margin-right: auto; /* Center the logo */
+    margin-bottom: 20px; /* Space below the logo */
+}
+
+/* Headline styling */
+header h1 {
+    font-size: 2.8em; /* Increased font size for the main headline */
+    margin-top: 0; /* Remove default top margin if any */
+    margin-bottom: 10px; /* Space below the headline */
+    /* Color is inherited from header, explicitly setting is also fine: color: #ffffff; */
+}
+
+header p {
+    /* Responsive font size: 
+       Similar to h1, 3vw means the font size will be 3% of the viewport's width.
+       Consider CSS clamp() e.g., font-size: clamp(14px, 3vw, 20px); for better control.
+    */
+    font-size: 1.2em; /* Adjusted for better readability, or use vw/clamp */
+    /* font-size: clamp(16px, 2.5vw, 22px); */ /* Example using clamp */
+    /* Margin: Adjusts spacing. Top margin is removed. */
+    margin-top: 0;
+    /* Max-width: Prevents the paragraph from becoming too wide on large screens, improving readability. */
+    max-width: 600px;
+    /* Margin auto for left/right: Centers the paragraph block. */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px; /* Space below the subheading */
+    padding: 0 15px; /* Add some horizontal padding inside the paragraph */
+    /* Color is inherited from header, explicitly setting is also fine: color: #ffffff; */
+}
+
+/* Styles for the timeline section */
+.timeline-section {
+    padding: 40px 20px; /* Add some padding around the timeline section */
+    text-align: center; /* Center the heading of the timeline */
+    background-color: #fff; /* Optional: set a background for the section */
+}
+
+.timeline-section h2 {
+    margin-bottom: 30px; /* Space below the timeline heading */
+    font-size: 2em; /* Make the heading larger */
+    color: #333; /* Darker text color for the heading */
+}
+
+/* Styles for the timeline container 
+   This container uses Flexbox to manage the layout of timeline cards.
+   This is a modern layout approach because Flexbox provides a powerful and flexible
+   way to arrange items in a single dimension (either a row or a column).
+*/
+.timeline-container {
+    /* Mobile-first approach: Default styles are for small screens. */
+    display: flex; /* Enables Flexbox layout. */
+    /* On small screens, timeline cards stack vertically. */
+    flex-direction: column; 
+    align-items: center; /* Centers cards horizontally when stacked in a column. */
+    gap: 20px; /* Adds space between timeline cards. */
+    /* No horizontal scroll or snap needed for vertical layout on small screens. */
+}
+
+/* Styles for individual timeline cards */
+.timeline-card {
+    background-color: #ffffff; /* White background for cards. */
+    border: 1px solid #ddd; /* Border for cards. */
+    border-radius: 8px; /* Rounded corners for a softer look. */
+    padding: 20px; /* Padding inside cards. */
+    /* For vertical stacking (small screens): */
+    width: 80%; /* Card width relative to the container. */
+    max-width: 350px; /* Maximum width to maintain readability. */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth. */
+    text-align: left; /* Align text to the left within cards. */
+    /* Transition for smooth hover effects on transform and box-shadow. */
+    /* Added transform to the transition property and set duration */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+/* Styling for elements inside the timeline card */
+.timeline-card h2 { /* Year */
+    font-size: 1.8em; /* Larger font size for the year */
+    color: #0071c5; /* Intel blue color for the year */
+    margin-top: 0; /* Remove default top margin */
+    margin-bottom: 5px; /* Small space below the year */
+}
+
+.timeline-card h3 { /* Title */
+    font-size: 1.3em; /* Font size for the event title */
+    color: #333; /* Dark grey color for the title */
+    margin-top: 0; /* Remove default top margin */
+    margin-bottom: 10px; /* Space below the title */
+}
+
+
+/* Styles for images within timeline cards */
+.timeline-card img {
+  height: 150px; /* Set a fixed height for the image */
+  width: 100%; /* Make image take the full width of its container */
+  object-fit: cover; /* Ensure the image covers the area, cropping if necessary */
+  display: block; /* Allows the use of margin auto for centering */
+  margin-top: 10px; /* Add space above the image */
+  margin-bottom: 10px; /* Add space below the image */
+  margin-left: auto; /* Center the image horizontally */
+  margin-right: auto; /* Center the image horizontally */
+}
+
+.timeline-card p { /* Description text */
+    font-size: 0.95em; /* Standard font size for description */
+    line-height: 1.6; /* Improve readability */
+    color: #555; /* Medium grey for text */
+    margin-bottom: 0; /* Remove bottom margin if it's the last element, or adjust as needed */
+}
+
+/* Hover effect for timeline cards */
+.timeline-card:hover {
+    /* Slightly enlarge, lift, and rotate the card on hover for a "pop" effect */
+    transform: scale(1.05) translateY(-5px) rotate(1deg); 
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Enhance shadow for a "lifted" effect */
+}
+
+/* Add scroll snapping to the timeline container */
+.timeline-container {
+  /* Enables horizontal scroll snapping */
+  scroll-snap-type: x mandatory; /* 'x' for horizontal, 'mandatory' forces snapping */
+  /* Ensure the container allows overflow to actually scroll */
+  overflow-x: auto; 
+  /* We already have display: flex from previous steps, which is good */
+}
+
+/* Align timeline cards for scroll snapping */
+.timeline-card {
+  /* Aligns the center of the card with the snap point of the container */
+  scroll-snap-align: center; 
+  /* We already have flex-shrink: 0 from previous steps, which is important for consistent card sizing */
+}
+
+/* Media query for larger screens (e.g., tablets and desktops, wider than 768px).
+   This is how we make the timeline responsive: different styles for different screen sizes.
+*/
+@media (min-width: 769px) {
+    .timeline-container {
+        /* On larger screens, switch to a horizontal layout for timeline cards. */
+        flex-direction: row;
+        
+        /* Enable horizontal scrolling if items overflow. */
+        overflow-x: auto; 
+        /* Hide vertical scrollbar if it appears due to overflow-x (browser dependent) */
+        overflow-y: hidden;
+
+        /* Improve scrolling experience with scroll snapping.
+           'x' means snapping along the horizontal axis.
+           'mandatory' means the browser must snap to a snap point.
+        */
+        scroll-snap-type: x mandatory; 
+        
+        /* Adjust alignment for horizontal layout. 'flex-start' aligns items to the start of the container.
+           'stretch' would make all cards the same height if they have different content amounts.
+        */
+        align-items: flex-start; 
+        
+        padding-top: 10px; /* Add some padding at the top */
+        padding-bottom: 20px; /* Add padding at the bottom, e.g., for the scrollbar. */
+        /* Ensure the container itself doesn't get too wide, or allow it to fill space */
+        /* max-width: 1200px; */ /* Optional: constrain width of the timeline */
+        /* margin-left: auto; */ /* Optional: center the timeline if max-width is set */
+        /* margin-right: auto; */ /* Optional: center the timeline if max-width is set */
+    }
+
+    .timeline-card {
+        /* For horizontal layout on large screens:
+           'flex: 0 0 auto' means items don't grow, don't shrink, and size is based on content or explicit width.
+           Using a fixed width (e.g., 300px) creates uniformly sized cards in the row.
+        */
+        flex: 0 0 300px; /* Cards will have a fixed width of 300px and won't grow or shrink. */
+        
+        /* Each card becomes a snap point for the horizontal scroll.
+           'start' means the scroll will snap to the start edge of the card.
+        */
+        scroll-snap-align: start; 
+        
+        /* Override width settings from the mobile view if necessary.
+           flex-basis (the 300px above) generally handles this.
+        */
+        width: 300px; /* Explicitly set width, matching flex-basis */
+        max-width: none; /* Remove max-width constraint from mobile view */
+        height: auto; /* Allow card height to adjust to content, or set a fixed height */
+        /* min-height: 200px; */ /* Optional: ensure cards have a minimum height */
+    }
+}
+
+/* A suggestion for better responsive typography for h1 and p using clamp() */
+/* Example for h1: font-size: clamp(24px, 5vw, 36px); */
+/* Example for p: font-size: clamp(14px, 3vw, 22px); */
