@@ -81,7 +81,7 @@ header p {
     /* No horizontal scroll or snap needed for vertical layout on small screens. */
 }
 
-/* Styles for individual timeline cards */
+/* Styles for individual timeline cards - OH */
 .timeline-card {
     background-color: #ffffff; /* White background for cards. */
     border: 1px solid #ddd; /* Border for cards. */
