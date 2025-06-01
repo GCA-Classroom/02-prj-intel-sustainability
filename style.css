@@ -1,1 +1,177 @@
 /* Add your CSS here */
+
+/* Set a blue background to match Intel branding */
+body {
+  background: linear-gradient(135deg, #0071c5 0%, #005fa3 100%);
+  color: #fff; /* White text for contrast */
+  margin: 0;
+  font-family: Arial, sans-serif;
+  padding-bottom: 40px; /* Add space at the bottom of the page */
+}
+
+/* Center the header content */
+header {
+  text-align: center;
+  padding: 40px 10px 30px 10px; /* Add space around header */
+}
+
+/* Style the Intel logo */
+header img {
+  width: 120px; /* Set logo size */
+  height: auto;
+  margin-bottom: 20px; /* Space below logo */
+}
+
+/* Style the main headline */
+header h1 {
+  font-size: 2.2em; /* Make headline large */
+  margin: 10px 0 15px 0;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Style the subheading/description */
+header p {
+  font-size: 1.1em;
+  max-width: 500px;
+  margin: 0 auto; /* Center the paragraph */
+  color: #e0f0ff; /* Slightly lighter for subheading */
+}
+
+/* Timeline section styles */
+section {
+  /* Use Flexbox to align timeline cards in a row */
+  display: flex; /* Enables Flexbox */
+  flex-direction: row; /* Arrange cards horizontally */
+  justify-content: flex-start; /* Align cards to the left */
+  align-items: stretch; /* Make cards the same height */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  gap: 20px; /* Space between cards */
+  padding: 20px 0;
+  scroll-behavior: smooth;
+  scrollbar-color: #0071c5 #e0f0ff; /* Custom colors for modern look */
+  scrollbar-width: thin; /* Make scrollbar thinner */
+  scroll-snap-type: x mandatory; /* Enable horizontal scroll snap */
+}
+
+/* Style each timeline card */
+section > div {
+  background: #fff; /* White background for cards */
+  color: #222; /* Dark text for readability */
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  min-width: 250px; /* Minimum width for each card */
+  max-width: 250px;
+  flex: 0 0 250px; /* Prevent cards from shrinking */
+  padding: 20px 16px 18px 16px; /* Add more padding for a clean look */
+  text-align: center;
+  font-family: 'Segoe UI', Arial, 'Roboto', sans-serif; /* Intel-like font */
+  transition: box-shadow 0.2s; /* Smooth hover effect */
+  border: 1px solid #e0e7ef; /* Subtle border for definition */
+  cursor: pointer; /* Indicate that the card is interactive */
+  scroll-snap-align: start; /* Snap card to the start of the scroll area */
+}
+
+/* Add a hover effect for interactivity */
+section > div:hover {
+  box-shadow: 0 4px 16px rgba(0,113,197,0.15);
+  border-color: #0071c5;
+  transform: scale(1.03);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+/* Make cards accessible for keyboard users */
+section > div:focus {
+  outline: 2px solid #0071c5;
+}
+
+/* Allow cards to be focusable */
+section > div {
+  /* Add tabindex for accessibility in HTML if needed */
+}
+
+/* Style the year */
+section > div h2 {
+  color: #0071c5; /* Intel blue for year */
+  font-size: 1.5em;
+  margin: 0 0 6px 0;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Style the milestone title */
+section > div h3 {
+  color: #222;
+  font-size: 1.15em;
+  margin: 0 0 10px 0;
+  font-weight: 600;
+}
+
+/* Style the card description */
+section > div p {
+  color: #444;
+  font-size: 1em;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Make images fit the card */
+section > div img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+/* Extra details inside each card (hidden by default) */
+section > div .details {
+  display: none; /* Hide details initially */
+  margin-top: 12px;
+  background: #eaf6fd; /* Light blue background */
+  color: #0071c5; /* Intel blue text */
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 0.97em;
+}
+
+/* Show details when hovering over the card */
+section > div:hover .details {
+  display: block;
+}
+
+/* Simple footer style */
+footer {
+  margin-top: 40px;         /* Space above the footer */
+  padding-top: 16px;        /* Padding at the top of the footer */
+  border-top: 1px solid #e0f0ff; /* Light blue divider line */
+  opacity: 0.85;            /* Slightly faded for a modern look */
+}
+
+/* Style the horizontal scrollbar for the timeline section */
+/* For Chrome, Edge, and Safari browsers */
+section::-webkit-scrollbar {
+  height: 10px; /* Height of horizontal scrollbar */
+}
+section::-webkit-scrollbar-thumb {
+  background: #0071c5; /* Intel blue for the scrollbar thumb */
+  border-radius: 6px;   /* Rounded corners */
+}
+section::-webkit-scrollbar-track {
+  background: #e0f0ff;  /* Light blue track */
+  border-radius: 6px;
+}
+
+/* Responsive: Stack cards vertically on small screens */
+@media (max-width: 700px) {
+  section {
+    flex-direction: column; /* Stack cards vertically */
+    gap: 16px;
+    overflow-x: visible; /* No horizontal scroll */
+    align-items: stretch; /* Make cards full width */
+  }
+  section > div {
+    max-width: 100%;
+    min-width: 0;
+    width: 100%;
+  }
+}
