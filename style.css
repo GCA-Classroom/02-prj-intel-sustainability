@@ -1,1 +1,228 @@
-/* Add your CSS here */
+/*
+  style.css - Styles for Intel Sustainability Timeline
+  This file contains simple, beginner-friendly CSS for a responsive timeline.
+  Comments are included to help you understand each part.
+*/
+
+/* Timeline Container Styles */
+.timeline {
+  /* Use flexbox to stack cards vertically (column) by default */
+  display: flex;
+  flex-direction: column; /* stack children vertically */
+  /* Add a blue line on the left side */
+  border-left: 3px solid #0071c5; /* Intel blue */
+  margin: 48px 0 30px 20px; /* more space above timeline for clarity */
+  padding-left: 20px; /* space between line and cards */
+  background: #f0f7fa; /* light blue background to help timeline stand out */
+  border-radius: 10px; /* rounded corners for a modern look */
+  border: 1px solid #cce0f6; /* subtle border for separation */
+  box-shadow: 0 2px 8px rgba(0,113,197,0.04); /* subtle shadow for depth */
+  padding-top: 18px; /* extra space at the top inside the timeline */
+}
+
+/* Timeline Card Styles */
+.timeline-card {
+  background: #f5faff; /* very light blue */
+  border: 1px solid #cce0f6; /* light blue border */
+  border-radius: 8px; /* rounded corners */
+  margin-bottom: 24px; /* space between cards */
+  padding: 20px 18px 18px 18px; /* more padding for a clean look */
+  position: relative; /* for the dot */
+  max-width: 400px; /* keeps cards from being too wide */
+  font-family: 'Segoe UI', Arial, sans-serif; /* Intel-like font */
+  color: #003057; /* Intel dark blue for text */
+  box-shadow: 0 2px 8px rgba(0,113,197,0.04); /* subtle shadow for depth */
+  /* Animation: start hidden and moved down */
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s, transform 0.6s;
+}
+
+.timeline-card h2 {
+  font-size: 1.3em;
+  color: #0071c5; /* Intel blue for year */
+  margin: 0 0 6px 0;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.timeline-card h3 {
+  font-size: 1.1em;
+  color: #005792; /* slightly darker blue for title */
+  margin: 0 0 10px 0;
+  font-weight: 600;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.timeline-card p {
+  font-size: 1em;
+  color: #003057;
+  margin: 0;
+  line-height: 1.5;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.timeline-card img {
+  width: 100%; /* make image fill the card width */
+  max-width: 350px; /* set a max width for consistency */
+  height: 180px; /* fixed height for all images for a clean, sleek look */
+  object-fit: cover; /* crop images to fit the box without distortion */
+  border-radius: 4px;
+  margin: 12px 0 14px 0;
+  box-shadow: 0 1px 4px rgba(0,113,197,0.07);
+}
+
+/* When the card is visible, fade in and slide up */
+.timeline-card.timeline-card--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Add a blue dot for each event */
+.timeline-card::before {
+  content: "";
+  position: absolute;
+  left: -32px; /* position to the left of the card */
+  top: 24px;
+  width: 16px;
+  height: 16px;
+  background: #0071c5; /* Intel blue */
+  border-radius: 50%; /* makes it a circle */
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 2px #0071c5;
+}
+
+/* Hide extra details by default */
+.timeline-details {
+  display: none; /* hidden by default */
+  margin-top: 10px;
+  font-size: 0.97em;
+  color: #005792; /* slightly darker blue for details */
+  background: #eaf4fb; /* very light blue background for details */
+  border-radius: 4px;
+  padding: 8px 10px;
+}
+
+/* Show details when hovering over the card */
+.timeline-card:hover .timeline-details {
+  display: block; /* show on hover */
+}
+
+/* Responsive: stack timeline and cards on small screens */
+@media (max-width: 600px) {
+  .timeline {
+    /* On small screens, remove flexbox and blue line for simplicity */
+    display: block; /* stack cards normally (no flexbox) */
+    border-left: none; /* remove the blue line */
+    padding-left: 0; /* remove left padding */
+    margin-left: 0; /* remove left margin */
+  }
+  .timeline-card {
+    max-width: 100%; /* make cards full width */
+    margin-left: 0; /* remove left margin */
+    padding: 12px; /* slightly smaller padding for mobile */
+    margin-bottom: 32px; /* more space between cards on mobile for clarity */
+  }
+  .timeline-card::before {
+    display: none; /* hide the blue dot for each event */
+  }
+  .timeline-card img {
+    max-width: 100%; /* make images fit the card */
+  }
+  h2, h3, p {
+    font-size: 1em; /* make text a bit smaller for mobile */
+  }
+}
+
+/* Horizontal scroll for timeline on large screens */
+@media (min-width: 801px) {
+  .timeline {
+    /* Use flexbox to arrange cards side by side (row) on large screens */
+    flex-direction: row; /* arrange cards side by side */
+    overflow-x: auto; /* allow horizontal scrolling */
+    border-left: none; /* remove vertical line */
+    border-top: 3px solid #0071c5; /* add a blue line on top */
+    padding-left: 0;
+    padding-top: 20px; /* space between line and cards */
+    margin-left: 0;
+    margin-top: 30px;
+  }
+  .timeline-card {
+    min-width: 320px; /* minimum width for each card */
+    max-width: 400px;
+    margin-right: 24px; /* space between cards */
+    margin-bottom: 0; /* remove bottom margin */
+  }
+  .timeline-card::before {
+    /* move the dot above the card for horizontal layout */
+    left: 50%;
+    top: -32px;
+    transform: translateX(-50%);
+    box-shadow: 0 0 0 2px #0071c5;
+  }
+}
+
+/* Add a little hover effect for fun */
+.timeline-card:hover {
+  /* This makes the card pop out a bit and changes the background color when you hover */
+  background: #e6f2fb; /* change background color on hover */
+  border-color: #0071c5; /* change border color on hover */
+  transform: scale(1.03); /* slightly scale up the card */
+  transition: background 0.3s, border-color 0.3s, transform 0.3s; /* smooth transition for all effects */
+}
+
+/* Style the hero/header section */
+header {
+  background: #0071c5; /* Intel blue background */
+  color: #fff; /* white text for contrast */
+  padding: 32px 0 24px 0; /* space above and below */
+  text-align: center; /* center all content */
+}
+
+/* Style the logo image */
+header img {
+  width: 120px; /* set logo width */
+  height: auto; /* keep aspect ratio */
+  margin-bottom: 16px; /* space below logo */
+}
+
+/* Style the main headline */
+header h1 {
+  font-size: 2.7em; /* larger text for a bold, modern look */
+  margin: 0 0 12px 0; /* space below headline */
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Style the subheading/description */
+header p {
+  font-size: 1.15em;
+  margin: 0 auto;
+  max-width: 500px; /* keep text readable */
+  color: #e0eefa; /* lighter blue for softer contrast */
+}
+
+@media (max-width: 600px) {
+  header {
+    padding: 20px 0 16px 0;
+  }
+  header img {
+    width: 80px;
+    margin-bottom: 10px;
+  }
+  header h1 {
+    font-size: 1.3em;
+  }
+  header p {
+    font-size: 1em;
+    max-width: 95vw;
+  }
+}
+
+/*
+.timeline - the main timeline container
+.timeline-card - each event card on the timeline
+.timeline-card::before - the blue dot for each event
+Responsive section - makes the timeline look good on phones
+*/
