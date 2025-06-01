@@ -30,7 +30,7 @@
   position: relative; /* for the dot */
   max-width: 400px; /* keeps cards from being too wide */
   font-family: 'Segoe UI', Arial, sans-serif; /* Intel-like font */
-  color: #003057; /* Intel dark blue for text */
+  color: #1a1a1a; /* darker text for better contrast and accessibility */
   box-shadow: 0 2px 8px rgba(0,113,197,0.04); /* subtle shadow for depth */
   /* Animation: start hidden and moved down */
   opacity: 0;
@@ -40,7 +40,7 @@
 
 .timeline-card h2 {
   font-size: 1.3em;
-  color: #0071c5; /* Intel blue for year */
+  color: #005792; /* darker blue for better contrast */
   margin: 0 0 6px 0;
   font-weight: bold;
   letter-spacing: 1px;
@@ -49,7 +49,7 @@
 
 .timeline-card h3 {
   font-size: 1.1em;
-  color: #005792; /* slightly darker blue for title */
+  color: #003057; /* even darker blue for better contrast */
   margin: 0 0 10px 0;
   font-weight: 600;
   font-family: 'Segoe UI', Arial, sans-serif;
@@ -57,7 +57,7 @@
 
 .timeline-card p {
   font-size: 1em;
-  color: #003057;
+  color: #1a1a1a; /* darker text for better readability */
   margin: 0;
   line-height: 1.5;
   font-family: 'Segoe UI', Arial, sans-serif;
@@ -98,8 +98,8 @@
   display: none; /* hidden by default */
   margin-top: 10px;
   font-size: 0.97em;
-  color: #005792; /* slightly darker blue for details */
-  background: #eaf4fb; /* very light blue background for details */
+  color: #1a1a1a; /* dark text for accessibility */
+  background: #f7fafc; /* lighter background for better contrast */
   border-radius: 4px;
   padding: 8px 10px;
 }
@@ -226,3 +226,5 @@ header p {
 .timeline-card::before - the blue dot for each event
 Responsive section - makes the timeline look good on phones
 */
+
+/* Accessibility note: Using darker text and lighter backgrounds helps people with vision problems read the content more easily. */
