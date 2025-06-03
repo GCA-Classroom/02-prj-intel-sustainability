@@ -1,1 +1,277 @@
 /* Add your CSS here */
+
+/* Style the header with a blue gradient background */
+header {
+  /* Gradient from light blue to dark blue, now left to right */
+  background: linear-gradient(to right, #6793be, #0256ab);
+  padding: 60px 0; /* More space above and below */
+  text-align: center; /* Center all content inside header */
+  min-height: 75vh; /* Make header about 75% of the screen height */
+  display: flex; /* Use flex to center content vertically */
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+}
+
+/* Make the Intel logo a bit larger and center it */
+header img {
+  display: block;        /* Make the image a block element */
+  margin: 0 auto 24px auto; /* More space below the logo */
+  width: 180px; /* Make logo bigger */
+  height: auto;          /* Keep the aspect ratio */
+}
+
+/* Make the main heading much larger and add more spacing */
+header h1 {
+  font-size: 3.5em; /* Much bigger text for the main heading */
+  color: #fff; /* White text for contrast */
+  margin: 40px auto 32px auto; /* Center h1 horizontally */
+  font-weight: bold; /* Make text bold */
+  letter-spacing: 2px; /* Add spacing between letters */
+  text-transform: uppercase; /* Make all letters capitalized */
+  max-width: 700px; /* Limit the width so it doesn't stretch too far */
+  text-align: center; /* Ensure text is centered */
+}
+
+/* Add a blue line bar under the h1 */
+header h1::after {
+  content: "";
+  display: block;
+  margin: 24px auto 0 auto; /* More space above the bar */
+  width: 120px; /* Make the bar longer */
+  height: 6px;  /* Make the bar thicker */
+  background: #fff; /* Change bar color to white */
+  border-radius: 2px; /* Rounded edges */
+}
+
+/* Make the subheading/description text even larger and add spacing */
+header p {
+  font-size: 1.5em; /* Even larger text for the subheading */
+  font-weight: bold; /* Make subheading bold */
+  color: #e0eaff; /* Light blue for softer look */
+  margin: 32px auto 0 auto; /* More space above and center horizontally */
+  max-width: 700px; /* Slightly wider for readability */
+}
+
+/* Navigation bar styles */
+.navbar {
+  width: 100%;
+  background: #fff; /* White background */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 32px;
+  min-height: 56px;
+  box-sizing: border-box;
+  border-bottom: 2px solid #e0eaff; /* Subtle bottom border */
+  font-family: inherit; /* Use same font as rest of page */
+}
+
+/* Site name (now on the left) */
+.site-name {
+  color: #1677d7; /* Blue color used for card fonts */
+  font-size: 1.3em;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 12px 0;
+}
+
+/* Navigation links (now on the right) */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  /* No extra styles needed */
+}
+
+.nav-links a {
+  color: #1677d7; /* Blue color for links */
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: bold;
+  padding: 12px 4px;
+  transition: color 0.2s;
+  font-family: inherit; /* Cohesive font */
+}
+
+.nav-links a:hover {
+  color: #0256ab; /* Darker blue on hover */
+}
+
+/* Responsive: stack nav and site name on small screens */
+@media (max-width: 700px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 12px;
+  }
+  .site-name {
+    align-self: flex-start;
+    padding-bottom: 8px;
+  }
+  .nav-links {
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    margin-bottom: 4px;
+    align-items: flex-start;
+  }
+}
+
+/* Timeline section header styling */
+.timeline-header {
+  font-size: 2.2em;
+  color: #1677d7;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 16px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Timeline cards container: display cards in a row and allow scrolling if needed */
+.timeline-cards {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  padding: 32px 16px;
+  justify-content: flex-start; /* Align cards to the left for natural scrolling */
+  max-width: 100vw; /* Allow the container to use the full viewport width */
+  margin: 0 auto;
+  scroll-snap-type: x mandatory;
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Each card snaps to the scroll position */
+.card {
+  background: #fff; /* White background for cards */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Soft shadow */
+  padding: 20px 16px 16px 16px; /* Space inside the card */
+  min-width: 240px; /* Minimum width for each card */
+  max-width: 260px; /* Maximum width for each card */
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  align-items: center; /* Center content horizontally */
+  position: relative;
+  overflow: hidden;
+  scroll-snap-align: start;
+  transition: 
+    transform 0.25s cubic-bezier(0.4,0.2,0.2,1),
+    box-shadow 0.25s cubic-bezier(0.4,0.2,0.2,1);
+}
+
+/* Bold and larger year */
+.card h2 {
+  font-size: 2em; /* Large text for the year */
+  font-weight: bold; /* Bold text */
+  margin: 0 0 8px 0; /* Space below */
+  color: #1677d7; /* Blue color for year */
+  text-align: center;
+}
+
+/* Smaller subtitle for the event */
+.card h3 {
+  font-size: 1.1em; /* Smaller than h2 */
+  font-weight: normal; /* Not bold */
+  margin: 0 0 12px 0; /* Space below */
+  color: #333;
+  text-align: center;
+}
+
+/* Hide the card description by default */
+.card p {
+  display: flex; /* Use flex to center text */
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 16px; /* Match image margin */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 98%;
+  max-width: 230px;
+  height: calc(90% - 24px); /* Fill most of the image area */
+  background: rgba(2, 86, 171, 0.92); /* Blue overlay with some transparency */
+  color: #fff;
+  font-size: 1em;
+  text-align: center;
+  margin: 0;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.10);
+  padding: 18px;
+  opacity: 0; /* Hide by default */
+  pointer-events: none; /* Prevent accidental hover */
+  z-index: 2; /* Above the image */
+  transition: opacity 0.2s;
+  backdrop-filter: blur(2px); /* Subtle blur behind overlay */
+}
+
+/* Add engaging hover effect for cards */
+.card:hover {
+  transform: translateY(-12px) scale(1.04); /* Lift and slightly enlarge */
+  box-shadow: 0 8px 24px rgba(22,119,215,0.18), 0 2px 8px rgba(0,0,0,0.10);
+  z-index: 3;
+}
+
+/* Card image: larger, more square, with padding */
+.card img {
+  width: 98%;           /* Make image fill almost the entire card width */
+  max-width: 230px;     /* Increase max width for a bigger image */
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  height: auto;
+  margin: 10px 0 8px 0; /* Slightly less margin to fit bigger image */
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  background: #f0f4fa;
+  padding: 10px;
+  z-index: 1; /* Make sure image is below overlay */
+}
+
+/* Show the overlay when hovering over the card */
+.card:hover p {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.2s;
+}
+
+/* Style for the bottom info text */
+.page-info {
+  font-size: 1.3em; /* Slightly bigger text */
+  color: #000000;   /* Light gray text */
+  text-align: center;
+  font-weight: bold;
+  margin: 48px auto 24px auto;
+  max-width: 700px;
+  position: relative;
+}
+
+/* Add a blue bar above the info text */
+.page-info::before {
+  content: "";
+  display: block;
+  margin: 0 auto 18px auto;
+  width: 120px;
+  height: 6px;
+  background: #1677d7; /* Blue color used for card fonts */
+  border-radius: 2px;
+}
+
+/* Responsive: Stack cards vertically on small screens */
+@media (max-width: 900px) {
+  .timeline-cards {
+    flex-direction: column; /* Stack cards vertically */
+    max-width: 100%;        /* Remove width limit */
+    overflow-x: visible;    /* No horizontal scroll */
+    gap: 32px;              /* More space between cards vertically */
+    align-items: center;    /* Center cards */
+  }
+  .card {
+    width: 90vw;            /* Make cards fill most of the screen width */
+    max-width: 340px;
+  }
+}
