@@ -12,13 +12,13 @@ header {
     /* Intel-blue gradient background */
     background: linear-gradient(to bottom, #0071c5, #005b9e); /* Example Intel-like blue gradient */
     color: #ffffff; /* White text for good contrast */
-    padding: 40px 20px; /* Add padding top/bottom and left/right */
+    padding: 60px 20px; /* Increased top/bottom padding to make header taller */
     text-align: center; /* Center inline and block content within the header */
 }
 
 /* Logo styling */
 header img {
-    max-width: 180px; /* Set a maximum width for the logo */
+    max-width: 250px; /* Increased maximum width for a larger logo */
     height: auto; /* Maintain aspect ratio */
     display: block; /* Allows margin auto to work for centering */
     margin-left: auto; /* Center the logo */
