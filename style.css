@@ -162,10 +162,7 @@ footer {
 }
 
 /* Accessibility enhancements */
-img {
-  alt: "";
-  role: presentation;
-}
+
 
 button {
   font-family: inherit;
