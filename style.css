@@ -1,152 +1,172 @@
-/* Apply font, margin, and background to the whole page */
+/* Global styles */
 body {
   font-family: "Courier New", Courier, monospace;
   margin: 0;
   background: #f4f8fb;
+  direction: ltr; /* Default direction */
 }
 
+/* RTL support */
+html[dir="rtl"] body {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Header */
 header {
   background: linear-gradient(90deg, #0071C5 60%, #005999 100%);
   color: white;
   text-align: center;
   padding: 40px 20px 30px 20px;
-  position: relative; 
+  position: relative;
 }
-
 
 header div {
   background: rgba(87, 141, 202, 0.85); 
   display: inline-block;
-  padding: 30px 30px 20px 30px;
+  padding: 30px;
   border-radius: 16px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.10);
 }
 
-
 header img {
-  width: 80px;         /* Smaller width for better proportion */
-  max-width: 30vw;     /* Responsive: never more than 30% of viewport width */
-  height: auto;        /* Keep the aspect ratio */
-  margin-bottom: 16px; /* Less space below the logo */
-  background: rgb(119, 118, 118);   /* White background for contrast */
+  width: 80px;
+  max-width: 30vw;
+  height: auto;
+  margin-bottom: 16px;
+  background: #777;
   border-radius: 12px;
   padding: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.10);
 }
 
 header h1 {
-  margin: 10px 0 10px 0;
+  margin: 10px 0;
   font-size: 2.2em;
 }
 
-
 header p {
-  color: white; /* White text for visibility */
   font-size: 1.1em;
   margin-bottom: 0;
 }
 
-
-section {
-  display: flex; /* Use Flexbox for horizontal layout */
-  overflow-x: auto; /* Allow horizontal scrolling */
-  gap: 20px; /* Space between cards */
-  padding: 30px 20px;
-  scroll-snap-type: x mandatory; /* Enables scroll snap */
+/* Three-column section (Bootstrap grid layout assumed in HTML) */
+.three-col-section {
+  padding: 40px 20px;
 }
 
-/* Each timeline card */
-section > div {
-  background: white;
+.card-custom {
+  background: #fff;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  min-width: 250px;
-  max-width: 250px;
-  padding: 18px;
-  transition: transform 0.2s, box-shadow 0.2s;
-  position: relative;
-}
-
-/* Card hover effect */
-section > div:hover {
-  transform: scale(1.04) translateY(-4px); /* Subtle scale and lift */
-  box-shadow: 0 8px 24px rgba(0,0,0,0.18); /* Stronger shadow */
-}
-
-/* Card images */
-section img {
-  width: 100%;
-  border-radius: 8px;
-  margin-bottom: 10px;
-}
-
-/* Card headings */
-section h2 {
-  color: #0071C5;
-  margin: 0 0 5px 0;
-  font-size: 1.2em;
-}
-
-section h3 {
-  margin: 0 0 10px 0;
-  font-size: 1em;
-  color: #ffffff;
-}
-
-/* Responsive: Stack cards vertically on small screens */
-@media (max-width: 700px) {
-  section {
-    flex-direction: column;
-    gap: 16px;
-    padding: 20px 5px;
-  }
-  section > div {
-    max-width: 100%;
-    min-width: 0;
-  }
-}
-
-/* Style the scroll instruction */
-body > p {
+  padding: 20px;
   text-align: center;
-  color: #555;
   margin-bottom: 30px;
+  min-height: 300px;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-/* Card 8: 2023 */
-div {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  padding: 18px;
-  margin: 0 0 20px 0;
+.card-custom:hover {
+  transform: scale(1.04) translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
 }
 
-div h2 {
-  color: #0071c5;
-  margin: 0 0 10px 0;
-  font-size: 1.5em;
+.card-custom h2 {
+  color: #0071C5;
+  font-size: 1.4em;
+  margin-bottom: 12px;
 }
 
-div h3 {
-  margin: 0 0 10px 0;
-  font-size: 1.2em;
-  color: #343434;
+.card-custom i {
+  font-size: 1.6em;
+  display: block;
+  margin-bottom: 8px;
+  color: #0071C5;
 }
 
-div img {
-  width: 100%;
+.card-custom button {
+  margin-top: 10px;
+  background: #0071c5;
+  color: white;
+  border: none;
+  padding: 8px 16px;
   border-radius: 8px;
-  margin-bottom: 10px;
+  cursor: pointer;
 }
 
-div p {
-  color: #555;
-  line-height: 1.6;
+.card-custom button:hover {
+  background: #005999;
 }
 
-/* Make sure header and section also use Courier New */
-header, section, button {
-  font-family: "Courier New", Courier, monospace;
+/* Subscription form */
+.subscription {
+  background: #eaf4fb;
+  padding: 40px 20px;
+  text-align: center;
+  border-top: 3px solid #0071c5;
 }
 
+.subscription input[type="email"] {
+  padding: 10px;
+  width: 300px;
+  max-width: 90%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-right: 10px;
+}
+
+.subscription button {
+  padding: 10px 20px;
+  background: #0071c5;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.subscription button:hover {
+  background: #005999;
+}
+
+/* Footer */
+footer {
+  background: #0071c5;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+}
+
+/* Bootstrap Carousel styling */
+.carousel-item img {
+  max-height: 400px;
+  object-fit: cover;
+  width: 100%;
+  border-radius: 12px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 700px) {
+  header div {
+    width: 90%;
+  }
+
+  .subscription input[type="email"] {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .subscription button {
+    width: 100%;
+  }
+}
+
+/* Accessibility enhancements */
+img {
+  alt: "";
+  role: presentation;
+}
+
+button {
+  font-family: inherit;
+}
