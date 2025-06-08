@@ -1,1 +1,169 @@
-/* Add your CSS here */
+/* Global styles */
+body {
+  font-family: "Courier New", Courier, monospace;
+  margin: 0;
+  background: #f4f8fb;
+  direction: ltr; /* Default direction */
+}
+
+/* RTL support */
+html[dir="rtl"] body {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Header */
+header {
+  background: linear-gradient(90deg, #0071C5 60%, #005999 100%);
+  color: white;
+  text-align: center;
+  padding: 40px 20px 30px 20px;
+  position: relative;
+}
+
+header div {
+  background: rgba(87, 141, 202, 0.85); 
+  display: inline-block;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+}
+
+header img {
+  width: 80px;
+  max-width: 30vw;
+  height: auto;
+  margin-bottom: 16px;
+  background: #777;
+  border-radius: 12px;
+  padding: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+
+header h1 {
+  margin: 10px 0;
+  font-size: 2.2em;
+}
+
+header p {
+  font-size: 1.1em;
+  margin-bottom: 0;
+}
+
+/* Three-column section (Bootstrap grid layout assumed in HTML) */
+.three-col-section {
+  padding: 40px 20px;
+}
+
+.card-custom {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 30px;
+  min-height: 300px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card-custom:hover {
+  transform: scale(1.04) translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+}
+
+.card-custom h2 {
+  color: #0071C5;
+  font-size: 1.4em;
+  margin-bottom: 12px;
+}
+
+.card-custom i {
+  font-size: 1.6em;
+  display: block;
+  margin-bottom: 8px;
+  color: #0071C5;
+}
+
+.card-custom button {
+  margin-top: 10px;
+  background: #0071c5;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.card-custom button:hover {
+  background: #005999;
+}
+
+/* Subscription form */
+.subscription {
+  background: #eaf4fb;
+  padding: 40px 20px;
+  text-align: center;
+  border-top: 3px solid #0071c5;
+}
+
+.subscription input[type="email"] {
+  padding: 10px;
+  width: 300px;
+  max-width: 90%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-right: 10px;
+}
+
+.subscription button {
+  padding: 10px 20px;
+  background: #0071c5;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.subscription button:hover {
+  background: #005999;
+}
+
+/* Footer */
+footer {
+  background: #0071c5;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+}
+
+/* Bootstrap Carousel styling */
+.carousel-item img {
+  max-height: 400px;
+  object-fit: cover;
+  width: 100%;
+  border-radius: 12px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 700px) {
+  header div {
+    width: 90%;
+  }
+
+  .subscription input[type="email"] {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .subscription button {
+    width: 100%;
+  }
+}
+
+/* Accessibility enhancements */
+
+
+button {
+  font-family: inherit;
+}

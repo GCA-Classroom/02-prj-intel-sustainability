@@ -1,0 +1,42 @@
+/* Custom styles for the Bootstrap timeline application */
+
+/* Ensure the text flows from right to left */
+body {
+    direction: rtl; /* Set text direction to right-to-left */
+}
+
+/* Style for the timeline cards */
+.timeline-card {
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 16px; /* Padding inside the card */
+    margin-bottom: 20px; /* Space between cards */
+    background-color: #fff; /* White background for cards */
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+/* Style for the timeline images */
+.timeline-card img {
+    width: 100%; /* Make images responsive */
+    max-width: 250px; /* Limit maximum width */
+    border-radius: 4px; /* Rounded corners for images */
+    display: block; /* Ensure images are block elements */
+    margin-bottom: 10px; /* Space below images */
+}
+
+/* Style for the buttons */
+.show-btn {
+    margin: 8px 0; /* Space around buttons */
+    padding: 6px 14px; /* Padding inside buttons */
+    border-radius: 4px; /* Rounded corners for buttons */
+    border: 1px solid #0071c5; /* Border color */
+    background: #eaf4fb; /* Light background color */
+    color: #0071c5; /* Text color */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 1em; /* Font size */
+}
+
+/* Change button background on active state */
+.show-btn:active {
+    background: #d0e7f8; /* Darker background when active */
+}
