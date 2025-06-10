@@ -128,7 +128,7 @@ header p {
 .timeline-card p { /* Description text */
     font-size: 0.95em; /* Standard font size for description */
     line-height: 1.6; /* Improve readability */
-    color: #555; /* Medium grey for text */
+    color: #333333; /* Darkened grey for better contrast (was #555) */
     margin-bottom: 0; /* Remove bottom margin if it's the last element, or adjust as needed */
 }
 
@@ -212,3 +212,60 @@ header p {
 /* A suggestion for better responsive typography for h1 and p using clamp() */
 /* Example for h1: font-size: clamp(24px, 5vw, 36px); */
 /* Example for p: font-size: clamp(14px, 3vw, 22px); */
+
+/* Styling for the new three-column section */
+.three-column-section {
+    background-color: #f8f9fa; /* Light background color for the section */
+    /* Padding is added using Bootstrap class py-5 in HTML */
+}
+
+.three-column-section h2 {
+    color: #333; /* Darker text color for the heading */
+    /* Margin bottom is added using Bootstrap class mb-5 in HTML */
+}
+
+.three-column-section h3 {
+    margin-top: 15px; /* Space above the column heading */
+    margin-bottom: 10px; /* Space below the column heading */
+    color: #0071c5; /* Intel blue for column headings */
+}
+
+.three-column-section p {
+    font-size: 0.95em;
+    color: #333333; /* Darkened grey for better contrast (was #555) */
+    min-height: 60px; /* Give some min height to align "Learn More" buttons if text length varies */
+}
+
+/* Styling for icons in the three-column section */
+.column-icon {
+    font-size: 3rem; /* Make icons larger */
+    margin-bottom: 15px; /* Space below the icon */
+    color: #0071c5; /* Intel blue color for icons, or choose specific colors */
+}
+
+/* Styling for the subscription form section */
+.subscription-form-section {
+    background-color: #e9ecef; /* A slightly different light background */
+    /* Padding is added using Bootstrap class py-5 in HTML */
+}
+
+.subscription-form-section h2 {
+    color: #333; /* Darker text color for the heading */
+    /* Margin bottom is added using Bootstrap class mb-4 in HTML */
+}
+
+/* Optional: Style for the form itself if needed, though Bootstrap handles most of it */
+.subscription-form-section form {
+    background-color: #ffffff; /* White background for the form card area */
+    padding: 30px; /* Add padding inside the form area */
+    border-radius: 8px; /* Rounded corners for the form area */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow */
+}
+
+/* Footer styling */
+/* Enhance visibility of footer links on hover */
+/* Updated to reflect that base color is now text-light, hover can be brighter or underlined */
+footer a.text-light:hover {
+    color: #ffffff !important; /* Even brighter white on hover */
+    text-decoration: underline !important; /* Add underline on hover for clarity */
+}
