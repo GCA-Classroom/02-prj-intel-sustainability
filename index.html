@@ -28,10 +28,9 @@
   </header>
 
   <!-- Timeline Cards Section -->
-  <section>
-
-    <!-- Card 1: 1968 -->
-    <div>
+  <section class="timeline">
+    <!-- Each timeline card gets a class for styling -->
+    <div class="timeline-card">
       <h2>1968</h2>
       <h3>Intel Founded</h3>
       <img src="img/1.jpg" alt="Placeholder Image" />
@@ -41,9 +40,7 @@
         decades of technological innovation.
       </p>
     </div>
-
-    <!-- Card 2: 1971 -->
-    <div>
+    <div class="timeline-card">
       <h2>1971</h2>
       <h3>First Microprocessor</h3>
       <img src="img/2.jpg" alt="Placeholder Image" />
@@ -53,9 +50,7 @@
         of computing devices.
       </p>
     </div>
-
-    <!-- Card 3: 1978 -->
-    <div>
+    <div class="timeline-card">
       <h2>1978</h2>
       <h3>8086 Processor</h3>
       <img src="img/3.jpg" alt="Placeholder Image" />
@@ -64,9 +59,7 @@
         that drives countless PCs and servers in the modern era.
       </p>
     </div>
-
-    <!-- Card 4: 1985 -->
-    <div>
+    <div class="timeline-card">
       <h2>1985</h2>
       <h3>386 Processor</h3>
       <img src="img/4.jpg" alt="Placeholder Image" />
@@ -76,12 +69,11 @@
         personal computers.
       </p>
     </div>
-
-    <!-- Card 5: 2006 -->
-    <div>
+    <div class="timeline-card">
       <h2>2006</h2>
       <h3>Peak GHG Emissions</h3>
-      <img src="https://placehold.co/250x100" alt="Placeholder Image" />
+      <!-- Changed to a factory/industry image to represent emissions -->
+      <img src="img/5.png" alt="Factory Emissions" />
       <p>
         This year marks Intel's highest annual greenhouse gas emissions 
         for operations. Over subsequent years, Intel invests heavily in 
@@ -89,48 +81,44 @@
         manufacturing to reverse this trend.
       </p>
     </div>
-
-    <!-- Card 6: 2020 -->
-    <div>
+    <div class="timeline-card">
       <h2>2020</h2>
       <h3>RISE Strategy</h3>
-      <img src="https://placehold.co/250x100" alt="Placeholder Image" />
+      <!-- Changed to a team/strategy image to represent collaboration -->
+      <img src="img/6.png" alt="Team Collaboration" />
       <p>
         Intel launches its RISE (Responsible, Inclusive, Sustainable, 
         Enabling) strategy and 2030 goals, aiming to drive industry-wide 
         progress on climate action, water stewardship, and waste reduction.
       </p>
     </div>
-
-    <!-- Card 7: 2022 -->
-    <div>
+    <div class="timeline-card">
       <h2>2022</h2>
       <h3>Net-Zero By 2040</h3>
-      <img src="https://placehold.co/250x100" alt="Placeholder Image" />
+      <!-- Changed to a net-zero/green energy image -->
+      <img src="img/7.png" alt="Green Energy" />
       <p>
         Intel announces its commitment to achieve net-zero greenhouse 
         gas emissions (Scope 1 and 2) across its global operations 
         by 2040, building on years of environmental initiatives.
       </p>
     </div>
-
-    <!-- Card 8: 2023 -->
-    <div>
+    <div class="timeline-card">
       <h2>2023</h2>
       <h3>Renewable Electricity</h3>
-      <img src="https://placehold.co/250x100" alt="Placeholder Image" />
+      <!-- Changed to a renewable energy image (solar panels) -->
+      <img src="img/8.png" alt="Solar Panels" />
       <p>
         The company achieves 99% renewable electricity usage worldwide, 
         helping to drastically lower carbon emissions and driving progress 
         toward Intel's long-term sustainability goals.
       </p>
     </div>
-
-    <!-- Card 9: 2024 -->
-    <div>
+    <div class="timeline-card">
       <h2>2024</h2>
       <h3>Sustainability Summit</h3>
-      <img src="https://placehold.co/250x100" alt="Placeholder Image" />
+      <!-- Changed to a conference/summit image -->
+      <img src="img/9.png" alt="Conference Summit" />
       <p>
         Intel hosts its first Sustainability Summit, uniting suppliers, 
         government officials, and industry leaders to collaborate on 
@@ -139,5 +127,55 @@
     </div>
   </section>
   <p>Scroll to view timeline | Hover over cards to learn more!</p>
+
+  <!-- More Intel News and Reviews Section -->
+  <section>
+    <!-- Section heading -->
+    <h2 style="color:#4da3ff; margin-top:40px;">Latest Intel News &amp; Reviews</h2>
+    <!-- News articles list -->
+    <div style="background:#1b263b; border-radius:8px; padding:20px; margin-bottom:24px; border:1.5px solid #4da3ff;">
+      <!-- News item 1 -->
+      <h3 style="color:#0071c5;">Intel Unveils Eco-Friendly Processor</h3>
+      <p style="color:#eaf6ff;">
+        In a surprise announcement, Intel revealed its new "EcoCore" processor, made from 100% recycled silicon and powered by renewable energy. Early reviews praise its performance and low carbon footprint.
+      </p>
+      <!-- News item 2 -->
+      <h3 style="color:#0071c5;">Review: Intel Solar Laptop</h3>
+      <p style="color:#eaf6ff;">
+        TechReview Weekly calls the new Intel SolarBook "a game changer for students and travelers," highlighting its solar charging panel and all-day battery life.
+      </p>
+      <!-- News item 3 -->
+      <h3 style="color:#0071c5;">Intel Launches Green Data Center</h3>
+      <p style="color:#eaf6ff;">
+        The world's first data center cooled entirely by rainwater opens in Oregon. Intel says it will save millions of gallons of water each year.
+      </p>
+      <!-- News item 4 -->
+      <h3 style="color:#0071c5;">Community Spotlight: Intel Clean Tech Grant</h3>
+      <p style="color:#eaf6ff;">
+        Five high school teams win Intel's Clean Tech Grant for their creative ideas to reduce e-waste in local communities.
+      </p>
+    </div>
+  </section>
+
+  <!-- Reviews Section -->
+  <section>
+    <h2 style="color:#4da3ff;">What People Are Saying</h2>
+    <div style="background:#22305a; border-radius:8px; padding:20px; border:1.5px solid #0071c5;">
+      <!-- Review 1 -->
+      <p style="color:#eaf6ff;">
+        <strong>Jane D., Tech Blogger:</strong> "Intel's commitment to sustainability is inspiring. The new EcoCore chip is fast and eco-friendly!"
+      </p>
+      <!-- Review 2 -->
+      <p style="color:#eaf6ff;">
+        <strong>Green Future Magazine:</strong> "With nearly 100% renewable energy use, Intel sets a new standard for tech companies."
+      </p>
+      <!-- Review 3 -->
+      <p style="color:#eaf6ff;">
+        <strong>Student Reviewer:</strong> "The SolarBook lets me study anywhere, even outside. I love the solar charging!"
+      </p>
+    </div>
+  </section>
+
+  <!-- ...existing code below if any... -->
 </body>
 </html>

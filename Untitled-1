@@ -1,0 +1,94 @@
+/* Add this CSS to your stylesheet */
+
+/* Set a clean, modern font similar to Intel's branding */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif; /* Intel uses Segoe UI */
+  background-color: #f5f7fa; /* Light background */
+  color: #222; /* Dark text for readability */
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the header to look like Intel's blue bar */
+header {
+  background-color: #0071c5; /* Intel blue */
+  color: #fff; /* White text */
+  padding: 20px 0; /* Space above and below */
+  text-align: center; /* Center the text */
+}
+
+/* Style navigation links to match Intel's style */
+nav a {
+  color: #fff; /* White links */
+  text-decoration: none; /* Remove underline */
+  margin: 0 15px; /* Space between links */
+  font-weight: bold; /* Make links bold */
+  font-size: 1.1em; /* Slightly larger text */
+}
+
+/* Add a hover effect to navigation links */
+nav a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* Style main content area */
+main {
+  background-color: #fff; /* White background */
+  padding: 30px; /* Space inside the box */
+  margin: 30px auto; /* Center the main content */
+  max-width: 800px; /* Limit width for readability */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07); /* Soft shadow */
+}
+
+/* Style headings to match Intel's look */
+h1, h2, h3 {
+  color: #0071c5; /* Intel blue for headings */
+  font-weight: 600; /* Semi-bold */
+}
+
+/* Style buttons to look like Intel */
+button, .btn {
+  background-color: #0071c5; /* Intel blue */
+  color: #fff; /* White text */
+  border: none; /* No border */
+  padding: 10px 24px; /* Space inside button */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 1em; /* Normal size */
+  cursor: pointer; /* Pointer on hover */
+  transition: background 0.2s;
+}
+
+/* Button hover effect */
+button:hover, .btn:hover {
+  background-color: #005fa3; /* Slightly darker blue */
+}
+
+/* Style footer */
+footer {
+  background-color: #222; /* Dark footer */
+  color: #fff; /* White text */
+  text-align: center; /* Centered text */
+  padding: 15px 0; /* Space above and below */
+  font-size: 0.95em; /* Slightly smaller text */
+}
+
+/* Add a simple border to images for a clean look */
+img {
+  border-radius: 4px; /* Rounded corners */
+  border: 1px solid #e0e0e0; /* Light border */
+  max-width: 100%; /* Responsive images */
+  height: auto;
+}
+
+/* Add comments to help students understand each part */
+/* 
+- body: Sets the main font and background color.
+- header: Styles the top bar with Intel's blue.
+- nav a: Styles navigation links.
+- main: Styles the main content area.
+- h1, h2, h3: Styles headings with Intel blue.
+- button, .btn: Styles buttons to match Intel.
+- footer: Styles the bottom of the page.
+- img: Adds a border and rounded corners to images.
+*/
