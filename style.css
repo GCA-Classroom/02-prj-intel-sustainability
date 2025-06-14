@@ -1,1 +1,199 @@
-/* Add your CSS here */
+/* Dark mode styles with blue accents for Intel branding */
+
+/* --- Intel-branded background and header styles --- */
+
+/* Set a dark blue gradient background for the whole page */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif; /* Intel uses Segoe UI */
+  background: linear-gradient(135deg, #101624 0%, #16213a 100%);
+  color: #eaf6ff; /* Light blueish text for readability */
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the header with a deeper blue and white text */
+header {
+  background-color: #003366; /* Deep Intel blue */
+  color: #fff;
+  padding: 28px 0 18px 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* Add a subtle shadow for contrast */
+  box-shadow: 0 2px 12px rgba(0, 51, 102, 0.15);
+}
+
+/* Make the Intel logo smaller and add margin below */
+header img {
+  max-width: 140px;
+  width: 100%;
+  margin-bottom: 18px;
+  margin-top: 0;
+}
+
+/* Headline: large, bold, with extra contrast */
+header h1 {
+  font-size: 2.3em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  color: #4da3ff; /* Bright Intel blue */
+  text-shadow: 0 2px 8px rgba(0,113,197,0.10);
+}
+
+/* Subheading/description: lighter color, more readable */
+header p {
+  font-size: 1.18em;
+  color: #eaf6ff;
+  max-width: 600px;
+  margin: 0 auto 8px auto;
+  line-height: 1.5;
+  opacity: 0.92;
+}
+
+/* --- Timeline card improvements for Intel style --- */
+
+/* Timeline container: add padding and blue accent border */
+.timeline {
+  display: flex; /* Use Flexbox to lay out timeline cards */
+  flex-direction: row; /* Arrange cards in a row (horizontal) */
+  overflow-x: auto; /* Allow horizontal scrolling */
+  gap: 24px; /* Space between cards */
+  padding: 40px 0 32px 0;
+  border: 2px solid #0071c5; /* Stronger Intel blue border */
+  scroll-snap-type: x mandatory;
+  background: #16213a; /* Dark blue background */
+  border-radius: 10px;
+  margin-bottom: 24px;
+  scrollbar-width: thin;
+  scrollbar-color: #0071c5 #101624;
+}
+
+/* Each timeline card styles for dark mode */
+.timeline-card {
+  background: #1b263b; /* Dark card background */
+  border-radius: 8px;
+  border: 1.5px solid #4da3ff; /* Brighter blue border */
+  box-shadow: 0 4px 16px rgba(0,113,197,0.10);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  min-width: 260px;
+  max-width: 280px;
+  padding: 22px 18px 18px 18px;
+  margin: 0;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  /* Add a transition for smooth resizing and shadow changes */
+  transition: 
+    transform 0.35s cubic-bezier(0.4, 0.2, 0.2, 1), 
+    box-shadow 0.35s cubic-bezier(0.4, 0.2, 0.2, 1),
+    border-color 0.25s,
+    background 0.25s;
+  cursor: pointer;
+}
+
+/* Timeline card headings: bold, blue, and spaced */
+.timeline-card h2 {
+  color: #0071c5;
+  font-size: 1.5em;
+  margin: 0 0 4px 0;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.timeline-card h3 {
+  color: #4da3ff;
+  font-size: 1.1em;
+  margin: 0 0 10px 0;
+  font-weight: 600;
+}
+
+/* Timeline card image: add spacing and border */
+.timeline-card img {
+  display: block;
+  margin: 0 auto 10px auto;
+  border-radius: 4px;
+  border: 1px solid #2356a8;
+  max-width: 100%;
+  height: auto;
+  box-shadow: 0 2px 8px rgba(0,113,197,0.08);
+}
+
+/* Timeline card text: readable, with spacing */
+.timeline-card p {
+  display: none;
+  font-size: 1em;
+  margin-top: 10px;
+  line-height: 1.5;
+  color: #eaf6ff;
+  background: rgba(16,22,36,0.92);
+  padding: 8px 10px;
+  border-radius: 6px;
+  border-left: 3px solid #0071c5;
+}
+
+/* Hover effect for timeline cards */
+.timeline-card:hover {
+  transform: scale(1.02) rotate(-2deg);
+  box-shadow: 0 4px 16px rgba(0,113,197,0.25);
+  z-index: 1;
+  border-color: #0071c5;
+  background: #22305a; /* Slightly lighter blue on hover */
+}
+
+/* Show the paragraph when hovering over the card */
+.timeline-card:hover p {
+  display: block;
+}
+
+/* Make timeline scrollable on small screens and stack cards vertically */
+@media (max-width: 700px) {
+  .timeline {
+    flex-direction: column; /* Stack cards vertically */
+    overflow-x: visible; /* No horizontal scroll needed */
+    gap: 16px; /* Less space between cards vertically */
+    padding-left: 8px;
+    padding-right: 8px;
+    scroll-snap-type: none; /* Disable snap on vertical layout */
+  }
+  header img {
+    max-width: 90px;
+  }
+  header h1 {
+    font-size: 1.4em;
+  }
+  header p {
+    font-size: 1em;
+  }
+  .timeline-card {
+    min-width: 0; /* Allow cards to shrink */
+    max-width: 100%; /* Cards take full width */
+    width: 100%;
+  }
+}
+
+/* Optional: Hide default scrollbar for Chrome, Safari, Edge */
+.timeline::-webkit-scrollbar {
+  height: 8px;
+}
+.timeline::-webkit-scrollbar-thumb {
+  background: #0071c5;
+  border-radius: 4px;
+}
+.timeline::-webkit-scrollbar-track {
+  background: #101624;
+}
+
+/* 
+- body: Sets dark background and light text.
+- header: Uses deep blue for the top bar.
+- nav a: Blue links, white on hover.
+- main: Dark card with blue border.
+- h1, h2, h3: Bright blue headings.
+- button, .btn: Blue buttons for dark mode.
+- footer: Deep blue with light text.
+- img: Blue border for images.
+- .timeline: Dark blue background and blue border.
+- .timeline-card: Dark card, blue border, hover effect.
+*/
