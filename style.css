@@ -1,1 +1,247 @@
-/* Add your CSS here */
+/* Base Styles */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+  background: #0a1930;  /* Intel-like deep blue */
+}
+
+/* Header Section */
+/* Hero Header Color Animation */
+@keyframes headerColorCycle {
+  0%   { background-color: #003c71; }
+  25%  { background-color: #00539c; }
+  50%  { background-color: #022d54; }
+  75%  { background-color: #004080; }
+  100% { background-color: #003c71; }
+}
+
+header {
+  animation: headerColorCycle 15s ease infinite;
+  padding: 50px;
+  text-align: center;
+  color: #fff;
+}
+
+header {
+  padding: 50px;
+  text-align: center;
+  background: #003c71;
+  color: #fff;
+}
+
+header div {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+header img {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+header p {
+  font-size: 1.2rem;
+}
+
+/* Timeline Section */
+section {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  background: #022d54;
+}
+
+section::-webkit-scrollbar {
+  height: 10px;
+}
+
+section::-webkit-scrollbar-thumb {
+  background: #00539c;
+  border-radius: 5px;
+}
+
+section div {
+  background: #003c71;
+  padding: 20px;
+  border-radius: 20px;
+  flex: 0 0 250px;
+  scroll-snap-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.5s ease;
+  position: relative;
+  color: #fff;
+  border: 3px solid #00539c;
+  background-image: linear-gradient( #003c71, #022d54);
+}
+
+/* Animated Border */
+section div::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border: 5px solid #00539c;
+  border-radius: 25px;
+  background: linear-gradient(90deg, #00539c, #003c71, #022d54, #00539c);
+  background-size: 400% 400%;
+  animation: borderAnimate 15s ease infinite;
+  z-index: -1;
+}
+
+@keyframes borderAnimate {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+section div h2 {
+  margin-bottom: 10px;
+}
+
+section div p {
+  max-height: 0;
+  overflow: hidden;
+  transform: translateY(20px);
+  transition: max-height 0.5s ease, transform 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+}
+
+/* Hover Interaction */
+section div:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 30px #000000cc;
+  background-image: linear-gradient( #00539c, #003c71, #022d54);
+  animation: colorShift 10s ease infinite;
+}
+
+@keyframes colorShift {
+  0% { background-image: linear-gradient( #00539c, #003c71, #022d54); }
+  25% { background-image: linear-gradient( #022d54, #003c71, #00539c); }
+  50% { background-image: linear-gradient( #003c71, #022d54, #00539c); }
+  75% { background-image: linear-gradient( #00539c, #022d54, #003c71); }
+  100% { background-image: linear-gradient( #00539c, #003c71, #022d54); }
+}
+
+section div:hover p {
+  max-height: 500px;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Image Styles with Hover Effects */
+section div img {
+  width: 100%;
+  border-radius: 20px;
+  margin-bottom: 15px;
+  transition: transform 0.5s ease, box-shadow 0.5s ease, filter 0.5s ease;
+  filter: brightness(0.9);
+}
+
+section div:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 20px 30px #000000cc;
+  filter: brightness(1);
+}
+
+/* Call to Action Text */
+body p:last-child {
+  text-align: center;
+  padding-bottom: 20px;
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+/* Responsive Stack for Small Screens */
+@media (max-width: 767px) {
+  section {
+    flex-direction: column;
+    overflow-x: hidden;
+    scroll-snap-type: none;
+  }
+
+  section div {
+    margin-bottom: 20px;
+    transform: none;
+    box-shadow: none;
+  }
+}
+body {
+  position: relative;
+  overflow-x: hidden;
+  background-color: #022d54; /* fallback background */
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Black wave ripple background */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 200vw; /* wider for animation movement */
+  height: 200vh;
+  background: repeating-radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 0.05) 0,
+    rgba(0, 0, 0, 0.05) 20px,
+    transparent 21px,
+    transparent 40px
+  );
+  animation: waveRipple 20s linear infinite;
+  z-index: 0;
+  pointer-events: none; /* so content is clickable */
+  transform: translateX(-50%);
+}
+
+/* Make sure main content sits above the ripple */
+header, section, p {
+  position: relative;
+  z-index: 1;
+}
+
+/* The ripple animation moves the pattern horizontally */
+@keyframes waveRipple {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 200px 0;
+  }
+}
+header h1 {
+  position: relative;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #0a66c2; /* Intel blue base color */
+  overflow: hidden;
+  background: linear-gradient(
+    90deg,
+    #0a66c2 20%,
+    #a0c4ff 40%,
+    #e0f0ff 50%,
+    #a0c4ff 60%,
+    #0a66c2 80%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shiningWave 4s linear infinite;
+}
+
+@keyframes shiningWave {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
