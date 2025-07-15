@@ -1,9 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- Add dir="rtl" to enable right-to-left layout -->
+<html lang="en" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Intel: Sustainability Through the Ages</title>
+  <!-- Bootstrap 5 CSS CDN Link -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <!-- Bootstrap Icons CDN Link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -28,116 +33,323 @@
   </header>
 
   <!-- Timeline Cards Section -->
-  <section>
+  <section class="timeline-section">
+    <h2>Our Journey Through Time</h2> <!-- Added a heading for the timeline -->
+    <div class="timeline-container">
 
-    <!-- Card 1: 1968 -->
-    <div>
-      <h2>1968</h2>
-      <h3>Intel Founded</h3>
-      <img src="img/1.jpg" alt="Placeholder Image" />
-      <p>
-        Robert Noyce and Gordon Moore rename the newly formed company 
-        NM Electronics to Intel Corporation, laying the foundation for 
-        decades of technological innovation.
-      </p>
-    </div>
+      <!-- Card 1: 1968 -->
+      <div class="timeline-card">
+        <h2>1968</h2>
+        <h3>Intel Founded</h3>
+        <img src="img/1.jpg" alt="Archival photo of early Intel building or founders" />
+        <p>
+          Robert Noyce and Gordon Moore rename the newly formed company 
+          NM Electronics to Intel Corporation, laying the foundation for 
+          decades of technological innovation.
+        </p>
+      </div>
 
-    <!-- Card 2: 1971 -->
-    <div>
-      <h2>1971</h2>
-      <h3>First Microprocessor</h3>
-      <img src="img/2.jpg" alt="Placeholder Image" />
-      <p>
-        Intel debuts the 4004, the world's first commercial microprocessor, 
-        igniting the microprocessor revolution and propelling the future 
-        of computing devices.
-      </p>
-    </div>
+      <!-- Card 2: 1971 -->
+      <div class="timeline-card">
+        <h2>1971</h2>
+        <h3>First Microprocessor</h3>
+        <img src="img/2.jpg" alt="Intel 4004 Microprocessor chip" />
+        <p>
+          Intel debuts the 4004, the world's first commercial microprocessor, 
+          igniting the microprocessor revolution and propelling the future 
+          of computing devices.
+        </p>
+      </div>
 
-    <!-- Card 3: 1978 -->
-    <div>
-      <h2>1978</h2>
-      <h3>8086 Processor</h3>
-      <img src="img/3.jpg" alt="Placeholder Image" />
-      <p>
-        Launch of the 8086 processor, establishing the x86 architecture 
-        that drives countless PCs and servers in the modern era.
-      </p>
-    </div>
+      <!-- Card 3: 1978 -->
+      <div class="timeline-card">
+        <h2>1978</h2>
+        <h3>8086 Processor</h3>
+        <img src="img/3.jpg" alt="Intel 8086 Processor chip" />
+        <p>
+          Launch of the 8086 processor, establishing the x86 architecture 
+          that drives countless PCs and servers in the modern era.
+        </p>
+      </div>
 
-    <!-- Card 4: 1985 -->
-    <div>
-      <h2>1985</h2>
-      <h3>386 Processor</h3>
-      <img src="img/4.jpg" alt="Placeholder Image" />
-      <p>
-        Intel introduces the 386 processor with 32-bit architecture, 
-        ushering in a new era of performance and multitasking for 
-        personal computers.
-      </p>
-    </div>
+      <!-- Card 4: 1985 -->
+      <div class="timeline-card">
+        <h2>1985</h2>
+        <h3>386 Processor</h3>
+        <img src="img/4.jpg" alt="Intel 386 Processor chip" />
+        <p>
+          Intel introduces the 386 processor with 32-bit architecture, 
+          ushering in a new era of performance and multitasking for 
+          personal computers.
+        </p>
+      </div>
 
-    <!-- Card 5: 2006 -->
-    <div>
-      <h2>2006</h2>
-      <h3>Peak GHG Emissions</h3>
-      <img src="https://placehold.co/250x100" alt="Placeholder Image" />
-      <p>
-        This year marks Intel's highest annual greenhouse gas emissions 
-        for operations. Over subsequent years, Intel invests heavily in 
-        chemical abatement, renewable energy, and energy-efficient 
-        manufacturing to reverse this trend.
-      </p>
-    </div>
+      <!-- Card 5: 2006 -->
+      <div class="timeline-card">
+        <h2>2006</h2>
+        <h3>Peak GHG Emissions</h3>
+        <img src="img/5.jpg" alt="Graph showing Intel's greenhouse gas emissions peaking in 2006" />
+        <p>
+          This year marks Intel's highest annual greenhouse gas emissions 
+          for operations. Over subsequent years, Intel invests heavily in 
+          chemical abatement, renewable energy, and energy-efficient 
+          manufacturing to reverse this trend.
+        </p>
+      </div>
 
-    <!-- Card 6: 2020 -->
-    <div>
-      <h2>2020</h2>
-      <h3>RISE Strategy</h3>
-      <img src="https://placehold.co/250x100" alt="Placeholder Image" />
-      <p>
-        Intel launches its RISE (Responsible, Inclusive, Sustainable, 
-        Enabling) strategy and 2030 goals, aiming to drive industry-wide 
-        progress on climate action, water stewardship, and waste reduction.
-      </p>
-    </div>
+      <!-- Card 6: 2020 -->
+      <div class="timeline-card">
+        <h2>2020</h2>
+        <h3>RISE Strategy</h3>
+        <img src="img/6.jpg" alt="Graphic illustrating Intel's RISE strategy for sustainability" />
+        <p>
+          Intel launches its RISE (Responsible, Inclusive, Sustainable, 
+          Enabling) strategy and 2030 goals, aiming to drive industry-wide 
+          progress on climate action, water stewardship, and waste reduction.
+        </p>
+      </div>
 
-    <!-- Card 7: 2022 -->
-    <div>
-      <h2>2022</h2>
-      <h3>Net-Zero By 2040</h3>
-      <img src="https://placehold.co/250x100" alt="Placeholder Image" />
-      <p>
-        Intel announces its commitment to achieve net-zero greenhouse 
-        gas emissions (Scope 1 and 2) across its global operations 
-        by 2040, building on years of environmental initiatives.
-      </p>
-    </div>
+      <!-- Card 7: 2022 -->
+      <div class="timeline-card">
+        <h2>2022</h2>
+        <h3>Net-Zero By 2040</h3>
+        <img src="img/7.jpg" alt="Visual representation of Intel's Net-Zero by 2040 commitment" />
+        <p>
+          Intel announces its commitment to achieve net-zero greenhouse 
+          gas emissions (Scope 1 and 2) across its global operations 
+          by 2040, building on years of environmental initiatives.
+        </p>
+      </div>
 
-    <!-- Card 8: 2023 -->
-    <div>
-      <h2>2023</h2>
-      <h3>Renewable Electricity</h3>
-      <img src="https://placehold.co/250x100" alt="Placeholder Image" />
-      <p>
-        The company achieves 99% renewable electricity usage worldwide, 
-        helping to drastically lower carbon emissions and driving progress 
-        toward Intel's long-term sustainability goals.
-      </p>
-    </div>
+      <!-- Card 8: 2023 -->
+      <div class="timeline-card">
+        <h2>2023</h2>
+        <h3>Renewable Electricity</h3>
+        <img src="img/8.jpg" alt="Image of renewable energy sources like solar panels or wind turbines at an Intel facility" />
+        <p>
+          The company achieves 99% renewable electricity usage worldwide, 
+          helping to drastically lower carbon emissions and driving progress 
+          toward Intel's long-term sustainability goals.
+        </p>
+      </div>
 
-    <!-- Card 9: 2024 -->
-    <div>
-      <h2>2024</h2>
-      <h3>Sustainability Summit</h3>
-      <img src="https://placehold.co/250x100" alt="Placeholder Image" />
-      <p>
-        Intel hosts its first Sustainability Summit, uniting suppliers, 
-        government officials, and industry leaders to collaborate on 
-        next-generation sustainable semiconductor manufacturing.
-      </p>
+      <!-- Card 9: 2024 -->
+      <div class="timeline-card">
+        <h2>2024</h2>
+        <h3>Sustainability Summit</h3>
+        <img src="img/9.jpg" alt="Photo from Intel's Sustainability Summit event" />
+        <p>
+          Intel hosts its first Sustainability Summit, uniting suppliers, 
+          government officials, and industry leaders to collaborate on 
+          next-generation sustainable semiconductor manufacturing.
+        </p>
+      </div>
+    </div> <!-- Closing timeline-container -->
+    <p>Scroll to view timeline | Hover over cards to learn more!</p>
+  </section>
+
+  <!-- Bootstrap Accordion for RISE Strategy FAQs -->
+  <section class="container my-5">
+    <!-- Section heading styled to match the hero section -->
+    <h2 class="text-center mb-4" style="color: #0071c5;">RISE Strategy FAQs</h2>
+    <!-- Bootstrap Accordion Component with custom structure for clarity -->
+    <div class="accordion shadow rounded-4" id="riseFaqAccordion" style="background: #f8f9fa;">
+      <!-- FAQ 1 -->
+      <div class="accordion-item border-0 mb-3 rounded-3" style="overflow: hidden;">
+        <h2 class="accordion-header" id="faqHeadingOne">
+          <button class="accordion-button bg-primary bg-gradient text-white fw-bold rounded-0 rounded-top-3" type="button"
+            data-bs-toggle="collapse" data-bs-target="#faqCollapseOne" aria-expanded="true" aria-controls="faqCollapseOne"
+            style="font-size: 1.1em;">
+            What does RISE stand for?
+          </button>
+        </h2>
+        <div id="faqCollapseOne" class="accordion-collapse collapse show" aria-labelledby="faqHeadingOne" data-bs-parent="#riseFaqAccordion">
+          <div class="accordion-body bg-white text-dark rounded-bottom-3">
+            RISE stands for Responsible, Inclusive, Sustainable, and Enabling. It is Intel's strategy to drive positive impact for people and the planet.
+          </div>
+        </div>
+      </div>
+      <!-- FAQ 2 -->
+      <div class="accordion-item border-0 mb-3 rounded-3" style="overflow: hidden;">
+        <h2 class="accordion-header" id="faqHeadingTwo">
+          <button class="accordion-button collapsed bg-primary bg-gradient text-white fw-bold rounded-0 rounded-top-3" type="button"
+            data-bs-toggle="collapse" data-bs-target="#faqCollapseTwo" aria-expanded="false" aria-controls="faqCollapseTwo"
+            style="font-size: 1.1em;">
+            What are the main goals of the RISE strategy?
+          </button>
+        </h2>
+        <div id="faqCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqHeadingTwo" data-bs-parent="#riseFaqAccordion">
+          <div class="accordion-body bg-white text-dark rounded-bottom-3">
+            The main goals include advancing climate action, fostering diversity and inclusion, promoting responsible business practices, and enabling technology solutions for global challenges.
+          </div>
+        </div>
+      </div>
+      <!-- FAQ 3 -->
+      <div class="accordion-item border-0 mb-3 rounded-3" style="overflow: hidden;">
+        <h2 class="accordion-header" id="faqHeadingThree">
+          <button class="accordion-button collapsed bg-primary bg-gradient text-white fw-bold rounded-0 rounded-top-3" type="button"
+            data-bs-toggle="collapse" data-bs-target="#faqCollapseThree" aria-expanded="false" aria-controls="faqCollapseThree"
+            style="font-size: 1.1em;">
+            How does RISE support sustainability?
+          </button>
+        </h2>
+        <div id="faqCollapseThree" class="accordion-collapse collapse" aria-labelledby="faqHeadingThree" data-bs-parent="#riseFaqAccordion">
+          <div class="accordion-body bg-white text-dark rounded-bottom-3"></div>
+            RISE supports sustainability by setting ambitious goals for reducing greenhouse gas emissions, conserving water, minimizing waste, and using renewable energy in Intel's operations.
+          </div>
+        </div>
+      </div>
     </div>
   </section>
-  <p>Scroll to view timeline | Hover over cards to learn more!</p>
+
+  <!-- New Three-Column Section with Bootstrap Grid -->
+  <section class="three-column-section py-5"> <!-- py-5 adds padding top and bottom -->
+    <div class="container"> <!-- Bootstrap container for proper alignment and padding -->
+      <h2 class="text-center mb-5">Our Core Pillars</h2> <!-- Section heading -->
+      <div class="row text-center"> <!-- Bootstrap row to hold the columns -->
+        
+        <!-- Column 1 -->
+        <div class="col-md-4 mb-4"> <!-- col-md-4 makes it 1/3 width on medium screens and up, stacks on smaller. mb-4 adds margin bottom -->
+          <i class="bi bi-lightbulb-fill column-icon"></i> <!-- Bootstrap Icon -->
+          <h3>Innovation</h3>
+          <p>Driving technological advancements that pave the way for a sustainable future.</p>
+          <a href="#" class="btn btn-primary">Learn More</a> <!-- Bootstrap button -->
+        </div>
+
+        <!-- Column 2 -->
+        <div class="col-md-4 mb-4">
+          <i class="bi bi-tree-fill column-icon"></i> <!-- Bootstrap Icon -->
+          <h3>Environment</h3>
+          <p>Committing to practices that protect our planet and conserve resources.</p>
+          <a href="#" class="btn btn-outline-success">Learn More</a> <!-- Bootstrap outline button -->
+        </div>
+
+        <!-- Column 3 -->
+        <div class="col-md-4 mb-4">
+          <i class="bi bi-people-fill column-icon"></i> <!-- Bootstrap Icon -->
+          <h3>Community</h3>
+          <p>Empowering people and communities through inclusive and responsible actions.</p>
+          <a href="#" class="btn btn-link">Learn More</a> <!-- Bootstrap link-styled button -->
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Subscription Form Section -->
+  <section class="subscription-form-section py-5"> <!-- py-5 adds padding top and bottom -->
+    <div class="container">
+      <div class="row justify-content-center"> <!-- Center the column on medium screens and up -->
+        <div class="col-md-8 col-lg-6"> <!-- Define column width for responsiveness -->
+          <h2 class="text-center mb-4">Subscribe to Our Newsletter</h2>
+          <form>
+            <!-- Name Field -->
+            <div class="mb-3"> <!-- Margin bottom for spacing -->
+              <label for="inputName" class="form-label">Name</label>
+              <input type="text" class="form-control" id="inputName" aria-describedby="nameHelp" placeholder="Enter your name">
+              <!-- <small id="nameHelp" class="form-text text-muted">We'll never share your name with anyone else.</small> -->
+            </div>
+
+            <!-- Email Field -->
+            <div class="mb-3">
+              <label for="inputEmail" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter your email">
+              <!-- Changed text-muted to text-body-secondary for potentially better contrast, or remove class if default is better -->
+              <small id="emailHelp" class="form-text text-body-secondary">We'll never share your email with anyone else.</small>
+            </div>
+            
+            <!-- Submit Button -->
+            <div class="d-grid"> <!-- d-grid makes the button full width, optional -->
+              <button type="submit" class="btn btn-primary">Subscribe</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="bg-dark text-light py-4"> <!-- Bootstrap classes for background, text color, and padding -->
+    <div class="container"> <!-- Bootstrap container for proper alignment and padding -->
+      <div class="row">
+        <!-- Footer Links -->
+        <div class="col-12 mb-3"> <!-- Full width column, margin bottom for spacing -->
+          <ul class="list-inline text-center"> <!-- Centered list of inline links -->
+            <li class="list-inline-item">
+              <!-- Changed text-white-50 to text-light for better contrast -->
+              <a href="#" class="text-decoration-none text-light">Privacy Policy</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="text-decoration-none text-light">Terms of Use</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="text-decoration-none text-light">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <!-- Copyright Notice -->
+        <div class="col-12"> <!-- Full width column -->
+          <!-- Copyright text centered on small screens, left-aligned on medium and up -->
+          <!-- Changed text-white-50 to text-light for better contrast -->
+          <p class="mb-0 text-center text-md-start text-light">
+            © 2024 Intel Corporation. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JavaScript Bundle CDN Link (includes Popper.js) -->
+  <!-- This should be placed at the end of the body, before the closing </body> tag -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+  <!-- Custom JavaScript for RTL/LTR detection and toggling -->
+  <script>
+    // Function to update text direction based on the lang attribute
+    function updateTextDirection() {
+      const htmlElement = document.documentElement;
+      // Get the base language code (e.g., 'en' from 'en-US', 'ar' from 'ar-AE')
+      const lang = (htmlElement.getAttribute('lang') || '').toLowerCase().split('-')[0]; 
+      
+      // Common RTL language codes
+      const rtlLanguages = ['ar', 'he', 'fa', 'ur', 'yi', 'sd', 'ps']; 
+
+      // Note on "AI" in language detection:
+      // While true AI-driven language detection can be very sophisticated,
+      // for client-side JavaScript in a browser, a common and effective approach
+      // is to rely on the 'lang' attribute (often set by the server or translation tools)
+      // and a predefined list of language codes, as implemented here.
+      // More advanced AI would typically involve larger libraries or server-side processing.
+
+      if (rtlLanguages.includes(lang)) {
+        htmlElement.setAttribute('dir', 'rtl');
+        // console.log('Language detected as RTL (' + lang + '), setting dir="rtl"');
+      } else {
+        htmlElement.setAttribute('dir', 'ltr');
+        // console.log('Language detected as LTR or not specified as RTL (' + lang + '), setting dir="ltr"');
+      }
+    }
+
+    // Call the function on initial page load to set the direction
+    updateTextDirection();
+
+    // Observe changes to the lang attribute on the <html> element
+    // This is useful for tools like Google Translate that might change the lang attribute dynamically
+    const observer = new MutationObserver((mutationsList) => {
+      for (const mutation of mutationsList) {
+        // Check if the 'lang' attribute was the one that changed
+        if (mutation.type === 'attributes' && mutation.attributeName === 'lang') {
+          // console.log('Lang attribute changed, updating direction...');
+          updateTextDirection(); // Re-evaluate and set the text direction
+          break; // No need to check other mutations in this list if lang changed
+        }
+      }
+    });
+
+    // Start observing the document element (<html> tag) for attribute changes
+    observer.observe(document.documentElement, { attributes: true });
+  </script>
 </body>
 </html>
