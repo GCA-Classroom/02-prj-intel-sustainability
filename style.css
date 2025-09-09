@@ -1,1 +1,145 @@
+/* Pleasant design line between h1 and p in header */
+.header-divider {
+	border: none;
+	height: 4px;
+	width: 180px;
+	margin: 18px auto 18px auto;
+	background: linear-gradient(90deg, #898bf1 0%, #3d3d47 100%);
+	border-radius: 2px;
+	opacity: 0.7;
+	display: block;
+}
+/* Center the ending paragraph at the bottom of the page */
+p:last-of-type {
+	text-align: center;
+	margin-top: 32px;
+	font-size: 18px;
+}
+.header-text {
+	text-align: center; /* Center all text inside header-text */
+	max-width: 520px;
+  width: 100%;
+  margin: 0 auto;
+}
+.header-text p {
+	font-size: 24px; /* Larger font size for header paragraph */
+	width: 85%; /* Make paragraph narrower for better readability */
+	margin-left: auto;
+	margin-right: auto;
+	color: #fff; /* White font for header paragraph */
+  line-height: 1.6; /* Increase line spacing for pleasant reading */
+  margin-bottom: 18px; /* Space below paragraph */
+}
+/* Make all h1 headings uppercase */
+h1 {
+	text-transform: uppercase;
+	font-size: 40px; /* Larger font size for better visibility */
+	color: #fff; /* White font for header h1 */
+}
+header {
+	background: #6f6f72; /* Light grey background for the header section only */
+}
 /* Add your CSS here */
+/* Style the timeline section to use flexbox */
+section {
+	display: flex; /* Use flexbox to arrange children in a row */
+	flex-direction: row; /* Place cards side by side */
+	gap: 32px; /* More space between cards */
+	overflow-x: auto; /* Allow horizontal scrolling if needed */
+	padding: 32px 0; /* More space above and below the row */
+	width: 1088px; /* 4 cards * 240px + 3*32px gap = 1088px */
+	max-width: 100vw; /* Don't overflow screen */
+	margin: 0 auto; /* Center the section horizontally */
+	/* Hide scrollbar on mobile for cleaner look */
+	scrollbar-width: thin;
+}
+
+/* Style each card */
+section > div {
+	background: #cfcfcf7e; /* Light background for cards */
+	border-radius: 16px; /* More rounded corners for a softer look */
+	box-shadow: 0 4px 16px rgba(0,0,0,0.10); /* Slightly stronger shadow for depth */
+	padding: 24px 18px; /* More padding for breathing room */
+	min-width: 240px; /* Slightly wider cards for better readability */
+	max-width: 240px; /* Maximum width for each card */
+	flex: 0 0 240px; /* Each card is exactly 240px wide, does not shrink or grow */
+	margin: 8px 0; /* Vertical margin for separation */
+	transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+	position: relative; /* Needed for hover effect */
+	cursor: pointer; /* Show pointer on hover */
+}
+
+/* Hide card info by default */
+section > div h3,
+section > div p {
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.2s;
+	height: 0;
+	overflow: hidden;
+}
+
+/* Show info on hover */
+section > div:hover h3,
+section > div:hover p {
+	opacity: 1;
+	pointer-events: auto;
+	height: auto;
+	overflow: visible;
+}
+
+/* Responsive: Show fewer cards on small screens */
+@media (max-width: 1100px) {
+	section {
+		width: 816px; /* 3 cards * 240px + 2*32px gap */
+	}
+}
+
+@media (max-width: 850px) {
+	section {
+		width: 544px; /* 2 cards * 240px + 1*32px gap */
+	}
+}
+
+@media (max-width: 600px) {
+  section {
+    width: 240px; /* Show one card at a time on small screens */
+  }
+  .header-text p {
+    font-size: 18px; /* Smaller text for mobile */
+    width: 95%;      /* Use more of the screen width */
+  }
+  h1 {
+    font-size: 28px; /* Smaller heading for mobile */
+  }
+}
+
+/* Simple hover effect for cards */
+section > div:hover {
+	transform: scale(1.05);
+	background: #898bf1; /* Lilac background on hover */
+	z-index: 1;
+}
+
+/* Style for the Intel header logo */
+.intel-logo {
+    width: 180px; /* Make the logo bigger */
+    height: auto; /* Keep aspect ratio */
+    display: block;
+    margin: 32px auto 16px auto; /* Center and add space */
+    padding: 12px; /* Add padding around the logo */
+    background: #3d3d47; /* Soft background for appeal */
+    border-radius: 24px; /* Rounded corners */
+    box-shadow: 0 8px 24px rgba(137, 139, 241, 0.18); /* Soft lilac shadow */
+    transition: transform 0.2s;
+}
+
+.intel-logo:hover {
+    transform: scale(1.08); /* Slightly enlarge on hover */
+    box-shadow: 0 12px 32px rgba(137, 139, 241, 0.28); /* Stronger shadow */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
