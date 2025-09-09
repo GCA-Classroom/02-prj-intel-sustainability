@@ -33,7 +33,7 @@ p:last-of-type {
 /* Make all h1 headings uppercase */
 h1 {
 	text-transform: uppercase;
-	font-size: 40px; /* Larger font size for better visibility */
+	font-size: 4px; /* Larger font size for better visibility */
 	color: #fff; /* White font for header h1 */
 }
 header {
