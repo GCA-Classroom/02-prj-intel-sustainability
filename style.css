@@ -1,1 +1,154 @@
-/* Add your CSS here */
+/* Global Reset & Fonts */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f9fafb;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header / Hero */
+header {
+  background: linear-gradient(135deg, #0071c5, #00437a);
+  color: white;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+header img {
+  width: 140px;   /* Resize logo */
+  height: auto;
+  margin-bottom: 1.5rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+header p {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.15rem;
+  opacity: 0.95;
+}
+
+/* Timeline Section */
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin: 3rem auto;
+  max-width: 900px;
+  padding: 0 1rem;
+}
+
+section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  background: #0071c5;
+  transform: translateX(-50%);
+}
+
+/* Timeline Cards */
+section > div {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section > div:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 113, 197, 0.25);
+}
+
+/* Timeline Positioning */
+section > div:nth-child(odd) {
+  align-self: flex-start;
+}
+
+section > div:nth-child(even) {
+  align-self: flex-end;
+}
+
+/* Dots on Timeline */
+section > div::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  width: 18px;
+  height: 18px;
+  background: #0071c5;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+section > div:nth-child(odd)::before {
+  left: -40px;
+}
+
+section > div:nth-child(even)::before {
+  right: -40px;
+}
+
+/* Card Text */
+h2 {
+  color: #0071c5;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Card Images */
+section > div img {
+  width: 100%;              /* fills card width */
+  max-height: 220px;        /* consistent height */
+  object-fit: cover;        /* crops without distortion */
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+section > div:hover img {
+  transform: scale(1.03);
+}
+
+/* Footer Note */
+body > p {
+  text-align: center;
+  margin: 3rem 0;
+  font-style: italic;
+  color: #666;
+}
+
