@@ -11,7 +11,7 @@ nav {
     text-align: center;
     justify-content: space-between;
     display: flex;
-    align-items: ;
+    align-items: flex-start;
 }
 .nav-logo {
   width:100px;
@@ -38,34 +38,38 @@ h1 {
     text-align: center;
     margin-top: 20px;
 }
-.card {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin: 20px;
-    padding: 20px;
-    text-align: center;
-}
 .carousel {
-  position: relative;
-  width: 400px;
-  height: 400px;
-  margin: 0 auto;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding: 20px;
+    scroll-behavior: smooth;
+    color: #f4f4f4;
 }
-
 .card {
-  position: absolute;
-  width: 150px;
-  height: 150px;
-  transition: all 0.5s ease;
-  opacity: 0.5;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  padding: 10px;
-}
+    background-color: #3793d8;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 0 0 auto;
+    width: 300px;
+    padding: 20px;
+    scroll-snap-align: start;
+    text-align: center;
+  }
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    align-items: center;
 
-/* Initial positions */
-.card1 { top: 0; left: 0; opacity: 1; }
-.card2 { top: 0; right: 0; opacity: 0.75; }
-.card3 { bottom: 0; right: 0; opacity: 0.5; }
-.card4 { bottom: 0; left: 0; opacity: 0.75; }
+.carousel-cards {
+    position: absolute;
+    transition: all 0.5s ease;
+    opacity: 0.5;
+}
+.carousel-cards.active {
+    opacity: 1;
+    transform: scale(1.05);
+}
