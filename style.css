@@ -99,7 +99,7 @@ section {
   align-items: center;
   box-sizing: border-box;
   padding: 24px; /* More padding for bigger cards */
-  background: #fff;
+  background: #f0f0f0; /* Light gray background for timeline cards */
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   text-align: center;
 }
@@ -129,7 +129,7 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #f5f5f5; /* Slightly different background for back */
+  background: #f0f0f0; /* Light gray background for timeline cards */
 }
 
 /* Remove old card styles for section > div if needed */
