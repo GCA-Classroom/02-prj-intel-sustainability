@@ -126,6 +126,12 @@ section {
   height: 140px;     /* Adjust height for RISE image */
 }
 
+/* Make Card 7's image sized appropriately for the timeline card */
+.card:nth-child(7) .card-front img {
+  width: 140px;      /* Adjust width for Net-Zero image */
+  height: 140px;     /* Adjust height for Net-Zero image */
+}
+
 /* Reduce spacing between h2 and h3 on card front */
 .card-front h2 {
   margin-bottom: 4px;    /* Less space below h2 */
@@ -182,8 +188,27 @@ section {
   }
   .card-front img,
   .card:nth-child(5) .card-front img,
-  .card:nth-child(6) .card-front img {
+  .card:nth-child(6) .card-front img,
+  .card:nth-child(7) .card-front img {
     width: 80px;
     height: 80px;
+  }
+}
+
+/* Stack timeline cards vertically on small screens */
+@media (max-width: 700px) {
+  section {
+    flex-direction: column;   /* Stack cards vertically */
+    align-items: center;      /* Center cards horizontally */
+    height: auto;             /* Let height grow as needed */
+    overflow-x: visible;      /* No horizontal scroll needed */
+  }
+  .card {
+    max-width: 95vw;          /* Cards take most of screen width */
+    min-width: 160px;
+    width: 100%;
+    margin-bottom: 16px;      /* Space between stacked cards */
+    height: 300px;            /* Slightly smaller height for mobile */
+    flex: 1 1 75%;           /* Cards take full width */
   }
 }
