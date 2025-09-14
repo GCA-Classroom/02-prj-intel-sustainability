@@ -16,9 +16,22 @@ h1, h2, h3 {
 header {
   background-color: #0071c5; /* Intel blue */
   text-align: center;        /* Center all content in header */
-  padding: 40px 0;           /* Add space above and below header */
+  padding: 0;                /* Remove old padding */
   color: white;              /* Make text white for contrast */
   margin-bottom: 40px;       /* Add space below header */
+  min-height: 40vh;          /* Always at least 40% of viewport height */
+  display: flex;             /* Use flexbox for vertical centering */
+  align-items: center;       /* Center content vertically */
+  justify-content: center;   /* Center content horizontally */
+}
+
+/* Make the header content responsive */
+header > div {
+  width: 100%;
+  max-width: 600px;          /* Limit width for readability */
+  margin: 0 auto;
+  padding: 40px 16px;        /* Add padding inside the hero */
+  box-sizing: border-box;
 }
 
 /* Center the main heading (h1) */
@@ -66,9 +79,10 @@ section {
   /* Set perspective for 3D flip effect */
   perspective: 1000px; /* Needed for 3D flip */
   flex: 0 0 31%;       /* Show 4 cards at a time (4 * 31% + gaps ≈ 100%) */
-  max-width: 320px;    /* Make cards bigger */
-  min-width: 180px;    /* Allow smaller cards on small screens */
-  height: 340px;       /* Make cards bigger and square */
+  width: 23%;              /* Use percentage for flexible width */
+  min-width: 160px;        /* Minimum width for small screens */
+  max-width: 320px;        /* Maximum width for large screens */
+  height: 340px;           /* Default height */
   margin: 0;           /* Remove default margin */
   box-sizing: border-box;
   /* Space between cards handled by section's gap */
@@ -132,6 +146,18 @@ section {
   height: 140px;     /* Adjust height for Net-Zero image */
 }
 
+/* Make Card 8's image sized appropriately for the timeline card */
+.card:nth-child(8) .card-front img {
+  width: 140px;      /* Adjust width for Electricity image */
+  height: 140px;     /* Adjust height for Electricity image */
+}
+
+/* Make Card 9's image sized appropriately for the timeline card */
+.card:nth-child(9) .card-front img {
+  width: 140px;      /* Adjust width for Sustainability Summit image */
+  height: 140px;     /* Adjust height for Sustainability Summit image */
+}
+
 /* Reduce spacing between h2 and h3 on card front */
 .card-front h2 {
   margin-bottom: 4px;    /* Less space below h2 */
@@ -156,59 +182,108 @@ section {
   ...old styles...
 } */
 
-/* Timeline container: centers timeline cards and limits visible area */
+/* Responsive timeline container */
 .timeline-container {
-  display: flex;              /* Use flexbox to center content */
-  justify-content: center;    /* Center horizontally */
-  align-items: center;        /* Center vertically if needed */
-  width: 100%;                /* Use full width on small screens */
-  max-width: 1320px;          /* Limit max width on large screens */
-  margin: 0 auto;             /* Center container */
-  overflow: hidden;           /* Hide overflow outside container */
-  /* Add padding for small screens */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  overflow: hidden;
   padding-left: 0;
   padding-right: 0;
 }
 
-@media (max-width: 900px) {
-  .timeline-container {
-    max-width: 100%;
-    padding-left: 0;
-    padding-right: 0;
-  }
-  section {
-    gap: 12px;                /* Less gap between cards */
-    padding: 12px 4px;
-  }
+/* Responsive timeline section */
+section {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 20px 10px;
+  scroll-behavior: smooth;
+  flex-wrap: nowrap;
+  height: auto;
+  align-items: center;
+}
+
+/* Responsive timeline cards */
+.card {
+  perspective: 1000px;
+  flex: 0 0 31%;
+  width: 23%;              /* Use percentage for flexible width */
+  min-width: 160px;        /* Minimum width for small screens */
+  max-width: 320px;        /* Maximum width for large screens */
+  height: 340px;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Responsive adjustments for timeline on medium screens */
+@media (max-width: 1100px) {
   .card {
-    max-width: 90vw;
-    min-width: 160px;
+    width: 30%;            /* Cards get wider as screen shrinks */
+    height: 300px;         /* Slightly shorter */
+  }
+}
+
+/* Responsive adjustments for timeline on smaller screens */
+@media (max-width: 900px) {
+  .card {
+    width: 45%;            /* Cards get even wider */
     height: 260px;
-    flex: 0 0 80vw;           /* Cards take most of the screen width */
+    min-width: 140px;
+    max-width: 90vw;
   }
   .card-front img,
   .card:nth-child(5) .card-front img,
   .card:nth-child(6) .card-front img,
-  .card:nth-child(7) .card-front img {
-    width: 80px;
-    height: 80px;
+  .card:nth-child(7) .card-front img,
+  .card:nth-child(8) .card-front img,
+  .card:nth-child(9) .card-front img {
+    width: 70px;
+    height: 70px;
   }
 }
 
-/* Stack timeline cards vertically on small screens */
+/* Stack timeline cards vertically on small screens and adjust card size */
 @media (max-width: 700px) {
   section {
-    flex-direction: column;   /* Stack cards vertically */
-    align-items: center;      /* Center cards horizontally */
-    height: auto;             /* Let height grow as needed */
-    overflow-x: visible;      /* No horizontal scroll needed */
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    overflow-x: visible;
+    overflow-y: visible;
   }
   .card {
-    max-width: 95vw;          /* Cards take most of screen width */
-    min-width: 160px;
-    width: 100%;
-    margin-bottom: 16px;      /* Space between stacked cards */
-    height: 300px;            /* Slightly smaller height for mobile */
-    flex: 1 1 75%;           /* Cards take full width */
+    width: 98vw;           /* Cards take almost full screen width */
+    min-width: 140px;
+    max-width: 99vw;
+    margin-bottom: 32px;
+    height: 420px;         /* Make cards a little bigger */
+    flex: 1 1 100%;
+    cursor: pointer; /* Show pointer to indicate clickable */
+  }
+  .card-inner {
+    height: 100%;
+  }
+  /* Hide everything except the date by default */
+  .card-front h3,
+  .card-front img,
+  .card-back {
+    display: none;
+  }
+  .card-front h2 {
+    font-size: 2.2em;      /* Make the date bigger */
+    margin: auto 0;
+  }
+  /* When card is active (clicked), show all content */
+  .card.active .card-front h3,
+  .card.active .card-front img,
+  .card.active .card-back {
+    display: block;
+  }
+  .card.active .card-front h2 {
+    font-size: 1.4em; /* Make date smaller when expanded */
   }
 }

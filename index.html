@@ -158,8 +158,8 @@
           <div class="card-front">
             <h2>2022</h2>
             <h3>Net-Zero By 2040</h3>
-            <!-- Use the actual image from the img folder -->
-            <img src="img/net zero.png" alt="2022 Net-Zero Event Image" />
+            <!-- Make sure the filename and path are correct -->
+            <img src="img/Netzero.png" alt="2022 Net-Zero Event Image" />
           </div>
           <div class="card-back">
             <p>
@@ -177,7 +177,8 @@
           <div class="card-front">
             <h2>2023</h2>
             <h3>Renewable Electricity</h3>
-            <img src="https://via.placeholder.com/120x120?text=2023" alt="2023 Event Image" />
+            <!-- Use the actual image from the img folder -->
+            <img src="img/electricty.png" alt="2023 Renewable Electricity Event Image" />
           </div>
           <div class="card-back">
             <p>
@@ -195,7 +196,8 @@
           <div class="card-front">
             <h2>2024</h2>
             <h3>Sustainability Summit</h3>
-            <img src="https://via.placeholder.com/120x120?text=2024" alt="2024 Event Image" />
+            <!-- Use the actual image from the img folder -->
+            <img src="img/sustainable.jpeg" alt="2024 Sustainability Summit Event Image" />
           </div>
           <div class="card-back">
             <p>
@@ -208,5 +210,21 @@
       </div>
     </section>
   </div>
+  <!-- Add this script for card click functionality on small screens -->
+  <script>
+    // Only run this on small screens
+    if (window.innerWidth <= 700) {
+      // Get all timeline cards
+      var cards = document.querySelectorAll('.card');
+      cards.forEach(function(card) {
+        card.addEventListener('click', function() {
+          // Remove 'active' from all cards
+          cards.forEach(function(c) { c.classList.remove('active'); });
+          // Add 'active' to the clicked card
+          card.classList.add('active');
+        });
+      });
+    }
+  </script>
 </body>
 </html>
