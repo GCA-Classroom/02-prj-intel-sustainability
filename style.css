@@ -21,24 +21,25 @@ header {
   margin-bottom: 40px;       /* Add space below header */
 }
 
-/* Center the info line above the timeline cards */
-body > p {
-  text-align: center;
-  font-size: 1.1em; /* Slightly larger for visibility */
-  margin-bottom: 16px; /* Space below the line */
-}
-
 /* Center the main heading (h1) */
 header h1 {
   margin-top: 20px;          /* Space above the heading */
   margin-bottom: 10px;       /* Space below the heading */
-  font-size: 2.5em;          /* Make the heading larger */
+  font-size: 3em;            /* Larger font size for hero heading */
   font-weight: bold;         /* Make the heading bold */
 }
 
-/* Make sure header paragraph is also white */
+/* Make sure header paragraph is also white and larger */
 header p {
   color: white;
+  font-size: 1.2em;          /* Larger font size for hero paragraph */
+}
+
+/* Center the info line above the timeline cards */
+body > p {
+  text-align: center;
+  font-size: 1.1em; /* Slightly larger for visibility */
+  margin-bottom: 18px; /* Space below the line */
 }
 
 /* Make the Intel logo smaller and center it */
