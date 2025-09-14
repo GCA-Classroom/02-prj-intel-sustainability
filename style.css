@@ -54,10 +54,10 @@ section {
   display: flex;                /* Use flexbox for horizontal layout */
   overflow-x: auto;             /* Enable horizontal scrolling */
   gap: 20px;                    /* Space between cards */
-  padding: 20px 50px 20px 50px; /* Top, right, bottom, left padding (more space on right) */
+  padding: 20px 10px;         /* Less padding on small screens */
   scroll-behavior: smooth;      /* Smooth scrolling */
   flex-wrap: nowrap;            /* Don't wrap cards to next line */
-  height: 320px;                /* Height matches card size */
+  height: auto;               /* Let height grow as needed */
   align-items: center;          /* Center cards vertically */
 }
 
@@ -67,7 +67,7 @@ section {
   perspective: 1000px; /* Needed for 3D flip */
   flex: 0 0 31%;       /* Show 4 cards at a time (4 * 31% + gaps ≈ 100%) */
   max-width: 320px;    /* Make cards bigger */
-  min-width: 260px;    /* Minimum width for small screens */
+  min-width: 180px;    /* Allow smaller cards on small screens */
   height: 340px;       /* Make cards bigger and square */
   margin: 0;           /* Remove default margin */
   box-sizing: border-box;
@@ -114,6 +114,18 @@ section {
   object-fit: contain;   /* Show entire image, no cropping */
 }
 
+/* Make Card 5's image smaller for better fit */
+.card:nth-child(5) .card-front img {
+  width: 120px;      /* Smaller width for Card 5 image */
+  height: 120px;     /* Smaller height for Card 5 image */
+}
+
+/* Make Card 6's image sized appropriately for the timeline card */
+.card:nth-child(6) .card-front img {
+  width: 140px;      /* Adjust width for RISE image */
+  height: 140px;     /* Adjust height for RISE image */
+}
+
 /* Reduce spacing between h2 and h3 on card front */
 .card-front h2 {
   margin-bottom: 4px;    /* Less space below h2 */
@@ -143,7 +155,35 @@ section {
   display: flex;              /* Use flexbox to center content */
   justify-content: center;    /* Center horizontally */
   align-items: center;        /* Center vertically if needed */
-  width: 1320px;              /* Show only 4 cards at a time (4 * 320px + 3 * 20px gap) */
+  width: 100%;                /* Use full width on small screens */
+  max-width: 1320px;          /* Limit max width on large screens */
   margin: 0 auto;             /* Center container */
   overflow: hidden;           /* Hide overflow outside container */
+  /* Add padding for small screens */
+  padding-left: 0;
+  padding-right: 0;
+}
+
+@media (max-width: 900px) {
+  .timeline-container {
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  section {
+    gap: 12px;                /* Less gap between cards */
+    padding: 12px 4px;
+  }
+  .card {
+    max-width: 90vw;
+    min-width: 160px;
+    height: 260px;
+    flex: 0 0 80vw;           /* Cards take most of the screen width */
+  }
+  .card-front img,
+  .card:nth-child(5) .card-front img,
+  .card:nth-child(6) .card-front img {
+    width: 80px;
+    height: 80px;
+  }
 }
