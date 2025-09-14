@@ -1,17 +1,22 @@
 /* Add your CSS here */
 body {
     font-family: roboto, sans-serif;
-    margin: 0;
-    padding: 0;
+    margin: 10;
+    padding: .55em;
     background-color: #f4f4f4;
+}
+header p {
+    text-align: center;
+    font-size: 1.5em;
+    color: #333;
+    padding: .55em;
 }
 nav {
     background-color: #0071c5;
-    padding: 30px 20px;
+    padding: 2em 1em;
     text-align: center;
     justify-content: space-between;
     display: flex;
-    align-items: flex-start;
 }
 .nav-logo {
   width:100px;
@@ -23,7 +28,8 @@ nav {
   display: flex;
   gap: 15px;
   margin: 0;
-  padding: 0;
+  padding: 10px;
+  font-size: 1.25em;
 }
 .nav-links li {
   margin-left: 20px;
@@ -37,6 +43,8 @@ h1 {
     color: #000000;
     text-align: center;
     margin-top: 20px;
+    padding: 20px;
+    font-size: 2em;
 }
 .carousel {
     display: flex;
@@ -46,30 +54,54 @@ h1 {
     padding: 20px;
     scroll-behavior: smooth;
     color: #f4f4f4;
+    position: relative;
+}
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .card {
     background-color: #3793d8;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
     flex: 0 0 auto;
     width: 300px;
     padding: 20px;
     scroll-snap-align: start;
     text-align: center;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    flex-shrink: 0;
   }
+.card-info {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.5s ease, max-height 0.3s ease
+}
+.card:hover .card-info {
+  opacity: 1;
+  max-height: 200px; /* Adjust based on content */
+}
 .card img {
     width: 100%;
     height: auto;
     border-radius: 10px;
     margin-bottom: 15px;
     align-items: center;
+}
+.card:hover img {
+  opacity : 0.8;
+}
 
 .carousel-cards {
     position: absolute;
-    transition: all 0.5s ease;
+    transition: transform 0.5s ease, opacity 0.5s ease;
     opacity: 0.5;
 }
 .carousel-cards.active {
     opacity: 1;
-    transform: scale(1.05);
+    transform: scale(1.2);
+    z-index: 2;
 }
