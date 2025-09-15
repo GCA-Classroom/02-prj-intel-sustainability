@@ -8,7 +8,7 @@ body {
 }
 header p {
     text-align: center;
-    font-size: 1.5em;
+    font-size: 1.25em;
     color: #333;
     padding: .55em;
 }
@@ -25,6 +25,7 @@ nav {
   width:7em;
   height:auto;
   margin-right: 10em;
+  padding-left: 1em;
 }
 .nav-links {
   list-style: none;
@@ -46,7 +47,7 @@ h1 {
     color: #000000;
     text-align: center;
     margin-top: 1em;
-    padding: .75em;
+    padding: .50em;
     font-size: 2em;
 }
 .carousel {
