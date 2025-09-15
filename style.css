@@ -1,1 +1,305 @@
 /* Add your CSS here */
+/* ===== Header Styling ===== */
+header {
+  background: linear-gradient(90deg, #004080, #0071c5); /* Intel-like blue gradient */
+  color: white;
+  text-align: center;
+  padding: 3rem 1rem;
+  border-bottom: 4px solid #e6e6e6; /* subtle separation */
+}
+
+/* Logo */
+header img {
+  width: 120px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+/* Main Heading */
+header h1 {
+  font-size: 2.5rem;
+  margin: 0.5rem 0;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Subheading */
+header p {
+  max-width: 700px;
+  margin: 0.5rem auto 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #f0f8ff; /* softer white for readability */
+}
+
+/* ===== Base / Reset ===== */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: #f6fbff;
+  color: #111827;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ===== Header (blue + white) ===== */
+header {
+  background: linear-gradient(90deg, #003a66 0%, #0071c5 100%);
+  color: #ffffff;
+  text-align: center;
+  padding: 3rem 1rem;
+  border-bottom: 4px solid rgba(255,255,255,0.06);
+}
+header img {
+  width: 120px;
+  height: auto;
+  display: block;
+  margin: 0 auto 1rem;
+}
+header h1 {
+  margin: 0.25rem 0;
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+}
+header p {
+  margin: 0.6rem auto 0;
+  max-width: 720px;
+  color: rgba(255,255,255,0.95);
+  line-height: 1.5;
+  font-size: 1.05rem;
+}
+
+/* ===== Timeline container (targets your <section>) =====
+   Works with your original markup: <section> containing multiple <div> cards
+*/
+section {
+  display: flex;
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+  overflow-x: auto;                  /* horizontal scroll on wide screens */
+  scroll-snap-type: x mandatory;     /* helpful snap behavior */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Nice thin track and blue thumb for the timeline scrollbar (desktop) */
+section::-webkit-scrollbar { height: 10px; }
+section::-webkit-scrollbar-track { background: #eaf5ff; border-radius: 10px; }
+section::-webkit-scrollbar-thumb { background: #0071c5; border-radius: 10px; }
+
+/* ===== Each milestone card (targets section > div) ===== */
+section > div {
+  flex: 0 0 320px;        /* fixed card width when horizontal */
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 6px 18px rgba(8,20,40,0.06);
+  border: 1px solid rgba(3, 60, 110, 0.04);
+  scroll-snap-align: start;
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+  position: relative;
+  min-height: 140px;
+}
+
+/* Typography inside cards */
+section > div h2 {
+  margin: 0 0 0.25rem;
+  font-size: 0.98rem;
+  color: #003a66;
+  letter-spacing: 0.3px;
+  font-weight: 600;
+}
+section > div h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.02rem;
+  color: #0071c5;
+  font-weight: 700;
+  line-height: 1.15;
+}
+section > div p {
+  margin: 0;
+  font-size: 0.96rem;
+  color: #222;
+  line-height: 1.55;
+  max-height: 3.6em;      /* show approx 3 lines by default */
+  overflow: hidden;
+  transition: max-height 0.32s ease, opacity 0.28s ease;
+  opacity: 0.98;
+}
+
+/* Hover / focus reveal */
+section > div:hover,
+section > div:focus-within {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 34px rgba(8,20,40,0.12);
+}
+section > div:hover p,
+section > div:focus-within p {
+  max-height: 40em; /* expands to show full text */
+}
+
+/* Add a subtle "more" indicator at card bottom (pure CSS pseudo-element) */
+section > div::after {
+  content: "";
+  display: block;
+  height: 6px;
+  width: 48px;
+  background: linear-gradient(90deg, rgba(0,113,197,0.12), rgba(0,113,197,0));
+  border-radius: 999px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 10px;
+  opacity: 0.25;
+  transition: opacity 0.28s ease, bottom 0.28s ease;
+}
+section > div:hover::after,
+section > div:focus-within::after { opacity: 0; bottom: 6px; }
+
+/* ===== Responsive: stack vertically on small screens ===== */
+@media (max-width: 768px) {
+  section {
+    flex-direction: column;   /* stack vertically */
+    overflow-x: hidden;
+    padding: 1rem;
+  }
+  section > div {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+  /* on mobile, show full text by default for readability */
+  section > div p { max-height: none; }
+  /* reduce lift on mobile */
+  section > div:hover { transform: none; box-shadow: 0 6px 14px rgba(8,20,40,0.06); }
+}
+
+/* ===== Accessibility: visible focus ring for keyboard users ===== */
+section > div:focus-within,
+section > div:focus {
+  outline: 3px solid rgba(0,113,197,0.12);
+  outline-offset: 4px;
+}
+
+/* ===== Timeline Cards with Blue Overlay ===== */
+section > div {
+  flex: 0 0 320px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 6px 18px rgba(8,20,40,0.06);
+  border: 1px solid rgba(3, 60, 110, 0.04);
+  scroll-snap-align: start;
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+  position: relative;
+  overflow: hidden; /* make sure overlay stays inside rounded corners */
+}
+
+/* Overlay layer */
+section > div::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 113, 197, 0.35); /* Intel blue, semi-transparent */
+  border-radius: inherit;
+  transition: opacity 0.35s ease;
+  pointer-events: none; /* keeps text clickable */
+  z-index: 1;
+}
+
+/* Text sits above overlay */
+section > div * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Hover/focus removes overlay */
+section > div:hover::before,
+section > div:focus-within::before {
+  opacity: 0;
+}
+
+/* Keep your previous hover lift effect */
+section > div:hover,
+section > div:focus-within {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 34px rgba(8,20,40,0.12);
+}
+
+
+/* Images inside timeline cards */
+section > div img {
+  width: 100%;
+  height: 160px;              /* uniform height for consistency */
+  object-fit: cover;          /* crop while keeping proportions */
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+/* Card hover enhancements */
+section > div {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+section > div:hover,
+section > div:focus-within {
+  transform: translateY(-10px) scale(1.03); /* lift + gentle zoom */
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Timeline container with scroll snap */
+section {
+  display: flex;
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;  /* snap along x-axis */
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;        /* smooth snap on scroll */
+}
+
+/* Each card will align to the snap points */
+section > div {
+  scroll-snap-align: start;
+}
+
+/* Card hover enhancements */
+section > div {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+section > div:hover,
+section > div:focus-within {
+  transform: translateY(-10px) scale(1.03); /* lift + gentle zoom */
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ===== Mobile behavior ===== */
+@media (max-width: 768px) {
+  section {
+    flex-direction: column;   /* stack vertically */
+    overflow-x: hidden;
+  }
+
+  section > div {
+    flex: 1 1 auto;
+    width: 100%;
+    transition: all 0.35s ease;
+  }
+
+  /* On hover or tap/focus: expand card to full size */
+  section > div:hover,
+  section > div:focus-within {
+    width: 100%;
+    transform: none; /* no lift, just expand */
+    box-shadow: 0 10px 24px rgba(0,0,0,0.15);
+  }
+
+  /* Ensure card text is always visible on mobile */
+  section > div p {
+    max-height: none;
+    overflow: visible;
+  }
+}
