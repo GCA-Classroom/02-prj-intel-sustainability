@@ -1,7 +1,7 @@
 /* Add your CSS here */
 body {
     font-family: roboto, sans-serif;
-    margin: 10;
+    margin: 0;
     padding: .55em;
     background-color: #f4f4f4;
 }
@@ -17,22 +17,24 @@ nav {
     text-align: center;
     justify-content: space-between;
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 }
 .nav-logo {
-  width:100px;
+  width:7em;
   height:auto;
-  margin-right: 20px;
+  margin-right: 10em;
 }
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 15px;
+  gap: .55em;
   margin: 0;
-  padding: 10px;
+  padding: .55em;
   font-size: 1.25em;
 }
 .nav-links li {
-  margin-left: 20px;
+  margin-left: 1em;
 }
 .nav-links a {
     color: white;
@@ -42,37 +44,40 @@ nav {
 h1 {
     color: #000000;
     text-align: center;
-    margin-top: 20px;
-    padding: 20px;
+    margin-top: 1em;
+    padding: .75em;
     font-size: 2em;
 }
 .carousel {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    gap: 20px;
-    padding: 20px;
+    gap: 1em;
+    padding: 1em;
     scroll-behavior: smooth;
     color: #f4f4f4;
     position: relative;
+    max-width: 100%;
+    overflow-x: auto;
 }
 .carousel-track {
   display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
+  gap: 1em;
+  overflow-x: auto;
   justify-content: center;
 }
 .card {
     background-color: #3793d8;
-    border-radius: 15px;
+    border-radius: .75em;
     box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
     flex: 0 0 auto;
-    width: 300px;
-    padding: 20px;
+    width: 100%;
+    padding: 1em;
     scroll-snap-align: start;
     text-align: center;
     transition: transform 0.3s ease, opacity 0.3s ease;
     flex-shrink: 0;
+    max-width: 300px;
   }
 .card-info {
   opacity: 0;
@@ -82,26 +87,51 @@ h1 {
 }
 .card:hover .card-info {
   opacity: 1;
-  max-height: 200px; /* Adjust based on content */
+  max-height: 10em; /* Adjust based on content */
 }
 .card img {
     width: 100%;
     height: auto;
-    border-radius: 10px;
-    margin-bottom: 15px;
+    border-radius: .55em;
+    margin-bottom: .55em;
     align-items: center;
 }
 .card:hover img {
   opacity : 0.8;
 }
 
-.carousel-cards {
-    position: absolute;
-    transition: transform 0.5s ease, opacity 0.5s ease;
-    opacity: 0.5;
-}
 .carousel-cards.active {
     opacity: 1;
     transform: scale(1.2);
     z-index: 2;
+}
+@media (max-width: 768px) {
+    .carousel {
+        flex-direction: row;
+        align-items: center;
+    }
+    .card {
+        width: 80%;
+        margin-bottom: 1em;
+    }
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    nav {
+      flex-direction: column;
+      align-items: center;
+    }
+    .nav-links {
+        flex-direction: column;
+        gap: .25em;
+        padding: 0;
+    }
+    .nav-links li {
+        margin-left: 0;
+    }
+    .nav-logo {
+        margin-right: 0;
+        margin-bottom: 1em;
+    }
 }
