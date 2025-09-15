@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: .55em;
     background-color: #f4f4f4;
+    overflow-x: hidden;
 }
 header p {
     text-align: center;
@@ -65,6 +66,8 @@ h1 {
   gap: 1em;
   overflow-x: auto;
   justify-content: center;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: 25%;
 }
 .card {
     background-color: #3793d8;
