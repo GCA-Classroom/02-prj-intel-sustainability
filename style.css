@@ -1,1 +1,62 @@
 /* Add your CSS here */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+header {
+  text-align: center;
+  padding: 20px;
+  background-color: lightblue;
+}
+img {
+  max-width: 200px;
+  max-height:200px;
+  height: auto;
+}
+.card-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+  background-color: lightcyan;
+  height: 100%;
+}
+.card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  padding: 20px;
+  text-align: center;
+}
+.card h2 {
+  color: #333;
+}
+
+.footer {
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  margin: 20px 0;
+}
+
+.card::hover {
+  background-color: #e0f7fa;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.card p {
+  display: none;
+}
+
+/* Show the paragraph when hovering over the card */
+.card:hover p {
+  display: block;
+}
