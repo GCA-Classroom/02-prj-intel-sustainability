@@ -98,7 +98,7 @@ h1 {
 }
 .card:hover .card-info {
   opacity: 1;
-  max-height: 10em; /* Adjust based on content */
+  max-height: 10em;
 }
 .card img {
     width: 100%;
