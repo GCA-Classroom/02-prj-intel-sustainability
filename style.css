@@ -3,7 +3,7 @@ body {
     font-family: roboto, sans-serif;
     margin: 0;
     padding: .55em;
-    background-color: #dbdbf2;
+    background-color: #ffffff;
     overflow-x: hidden;
 }
 header p {
@@ -55,12 +55,18 @@ h1 {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     gap: 1em;
-    padding: 1em;
+    padding-right:0.5em;
+    padding-left:0.5em;
     scroll-behavior: smooth;
     color: #f4f4f4;
     position: relative;
     max-width: 100%;
-    overflow-x: auto;
+    margin: 0 auto;
+}
+.carousel-container {
+  overflow: hidden;
+  width: 75%;
+  display: flex;
 }
 .carousel-track {
   display: flex;
@@ -68,14 +74,15 @@ h1 {
   overflow-x: auto;
   justify-content: center;
   scroll-snap-type: x mandatory;
-  scroll-padding-left: 25%;
+  scroll-padding-left: 3em;
+  min-width: max-content;
 }
 .card {
     background-color: #3793d8;
     border-radius: .75em;
     box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
     flex: 0 0 auto;
-    width: 100%;
+    width: 300px;
     padding: 1em;
     scroll-snap-align: start;
     text-align: center;
@@ -139,3 +146,6 @@ h1 {
         margin-bottom: 1em;
     }
 }
+* [
+  box-sizing: border-box;
+]
