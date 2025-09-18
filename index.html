@@ -7,19 +7,20 @@
   
   <style> 
     body  {
-      font-family: Cochin sans-serif;
+      font-family: 'Courier New', Courier, monospace;
       margin: 0;
       padding: 0;
-      background-color: #0f518f;
-      color: #fffbfb;
+      background-color: #faf9f9;
+      color: #1f1b1b;
     }
-    body  {
-      font-family: Cochin sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #3c4a57;
-      color: #fffbfb;
+
+    header {
+      background: linear-gradient(135deg, #005eb8, #084b7e, #068fdf); 
+      color: white;
+      padding: 4rem 1rem;
+      text-align: center;
     }
+    
   </style>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -28,12 +29,14 @@
   <!-- Header / Hero Section -->
   <header>
     <div>
+      
       <!-- Ask Copilot to teach you about `.svg`. 🙂 You'll need to resize the logo with CSS. -->
-      <img src="img/intel-header-logo.svg" alt="Intel Logo" />
+      <img src="img/intel-header-logo.svg" alt="Intel Logo" /> 
       <!-- Main Heading -->
       <h1>
         Sustainability Through the Ages
-      </h1>
+      </h1> 
+      
 
       <!-- Subheading / Description -->
       <p>
@@ -41,22 +44,20 @@
         to innovation has shaped a more sustainable future for technology 
         and our planet.
       </p>
-      <p>
-        Explore Intel's journey through time, discovering how our commitment
-        to innovation has shaped a more sustainable future for technology 
-        and our planet.
-      </p>
+    
     </div>
   </header>
 
   <!-- Timeline Cards Section -->
-  <section>
+  <section class="timeline-section">
+    <div class="timeline">
 
     <!-- Card 1: 1968 -->
-    <div>
+    <div class="IntelFoundedCard">
       <h2>1968</h2>
       <h3>Intel Founded</h3>
       <!-- Add image -->
+       <img src="img/1.jpg.svg" alt="Intel Founding" />
       <p>
         Robert Noyce and Gordon Moore rename the newly formed company 
         NM Electronics to Intel Corporation, laying the foundation for 
@@ -69,6 +70,7 @@
       <h2>1971</h2>
       <h3>First Microprocessor</h3>
       <!-- Add image -->
+       <img src="img/2.jpg" alt="First Microprocessor" />
       <p>
         Intel debuts the 4004, the world's first commercial microprocessor, 
         igniting the microprocessor revolution and propelling the future 
@@ -81,6 +83,7 @@
       <h2>1978</h2>
       <h3>8086 Processor</h3>
       <!-- Add image -->
+        <img src="img/3.jpg" alt="8086 Processor" />
       <p>
         Launch of the 8086 processor, establishing the x86 architecture 
         that drives countless PCs and servers in the modern era.
@@ -92,6 +95,7 @@
       <h2>1985</h2>
       <h3>386 Processor</h3>
       <!-- Add image -->
+        <img src="img/4.jpg" alt="386 Processor" />
       <p>
         Intel introduces the 386 processor with 32-bit architecture, 
         ushering in a new era of performance and multitasking for 
@@ -104,6 +108,7 @@
       <h2>2006</h2>
       <h3>Peak GHG Emissions</h3>
       <!-- Add image -->
+       <img src="ghg emmissions" alt="">
       <p>
         This year marks Intel's highest annual greenhouse gas emissions 
         for operations. Over subsequent years, Intel invests heavily in 

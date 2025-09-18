@@ -1,1 +1,27 @@
 /* Add your CSS here */
+/*workflow: 1) center heading content, 2) insert cards for each decade, 3) style cards with hover effects, 4) ensure responsiveness*/
+img[src$=".svg"] {
+    width: 200px; /* Adjust the size as needed */
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    
+}
+
+h1 {
+    font-size: 2.5em;        /* Makes the title bigger */
+    color: #fffbfb;          /* Changes the text color */
+    text-align: center;      /* Centers the title */
+    margin-top: 50px;        /* Adds space above */
+    font-family: 'Courier New', Courier, monospace, sans-serif; /* Changes the font */
+    line-height: 1.6
+}
+
+.header p {
+    font-size: 1.2rem;        /* Makes the paragraph text bigger */
+    text-align: center;      /* Centers the paragraph text */
+    margin: 1rem auto 0;        /* Adds space above */
+    line-height: 1.6;        /* Improves readability with line spacing */
+}             
