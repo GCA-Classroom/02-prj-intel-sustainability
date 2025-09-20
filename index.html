@@ -1,158 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Intel: Sustainability Through the Ages</title>
   <link rel="stylesheet" href="style.css" />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- FontAwesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
+
+  <!-- Language Switch Buttons -->
+  <div class="d-flex justify-content-end p-2">
+    <button class="btn btn-light btn-sm lang-btn" data-lang="en">English</button>
+    <button class="btn btn-light btn-sm lang-btn" data-lang="fr">Français</button>
+    <button class="btn btn-light btn-sm lang-btn" data-lang="ar">العربية</button>
+  </div>
 
   <!-- Header / Hero Section -->
   <header>
     <div>
       <img src="img/intel-header-logo.svg" alt="Intel Logo" />
-      <h1>Sustainability Through the Ages</h1>
-      <p>
-        Explore Intel's journey through time, discovering how our commitment
-        to innovation has shaped a more sustainable future for technology 
-        and our planet.
+      <h1 id="header-title" data-en="Sustainability Through the Ages" data-fr="Durabilité à travers les âges"
+        data-ar="الاستدامة عبر العصور">
+        Sustainability Through the Ages
+      </h1>
+      <p id="header-subtitle"
+        data-en="Explore Intel's journey through time, discovering how our commitment to innovation has shaped a more sustainable future for technology and our planet."
+        data-fr="Explorez le parcours d'Intel à travers le temps, découvrant comment notre engagement envers l'innovation a façonné un avenir plus durable pour la technologie et notre planète."
+        data-ar="استكشف رحلة إنتل عبر الزمن، اكتشف كيف شكل التزامنا بالابتكار مستقبلًا أكثر استدامة للتكنولوجيا وكوكبنا.">
+        Explore Intel's journey through time, discovering how our commitment to innovation has shaped a more sustainable future for technology and our planet.
       </p>
     </div>
   </header>
 
   <!-- Timeline Cards Section -->
-  <section>
+  <section class="timeline-section d-flex flex-wrap justify-content-center gap-3 p-3">
 
-    <!-- Card 1: 1968 -->
-    <div>
+    <!-- Card 1 -->
+    <div class="timeline-card" data-en-title="Intel Founded" data-fr-title="Fondation d'Intel" data-ar-title="تأسيس إنتل"
+      data-en-text="Robert Noyce and Gordon Moore rename the newly formed company NM Electronics to Intel Corporation, laying the foundation for decades of technological innovation."
+      data-fr-text="Robert Noyce et Gordon Moore renommèrent la nouvelle entreprise NM Electronics en Intel Corporation, posant les bases de décennies d'innovation technologique."
+      data-ar-text="قام روبرت نويز وغوردون مور بإعادة تسمية الشركة الجديدة NM Electronics إلى Intel Corporation، مما وضع أساسًا لعقود من الابتكار التكنولوجي.">
       <h2>1968</h2>
       <h3>Intel Founded</h3>
       <div class="card-image">
         <img src="img/1.jpg" alt="Intel 1968 Logo" />
       </div>
-      <p>
-        Robert Noyce and Gordon Moore rename the newly formed company 
-        NM Electronics to Intel Corporation, laying the foundation for 
-        decades of technological innovation.
-      </p>
+      <p>Robert Noyce and Gordon Moore rename the newly formed company NM Electronics to Intel Corporation, laying the foundation for decades of technological innovation.</p>
     </div>
 
-    <!-- Card 2: 1971 -->
-    <div>
+    <!-- Card 2 -->
+    <div class="timeline-card" data-en-title="First Microprocessor" data-fr-title="Premier microprocesseur" data-ar-title="أول معالج دقيق"
+      data-en-text="Intel debuts the 4004, the world's first commercial microprocessor, igniting the microprocessor revolution and propelling the future of computing devices."
+      data-fr-text="Intel lance le 4004, le premier microprocesseur commercial au monde, déclenchant la révolution des microprocesseurs et propulsant l'avenir des appareils informatiques."
+      data-ar-text="أطلقت إنتل المعالج 4004، أول معالج دقيق تجاري في العالم، مما أشعل ثورة المعالجات ودفع مستقبل أجهزة الحاسوب.">
       <h2>1971</h2>
       <h3>First Microprocessor</h3>
       <div class="card-image">
         <img src="img/2.jpg" alt="Intel 4004 Microprocessor" />
       </div>
-      <p>
-        Intel debuts the 4004, the world's first commercial microprocessor, 
-        igniting the microprocessor revolution and propelling the future 
-        of computing devices.
-      </p>
+      <p>Intel debuts the 4004, the world's first commercial microprocessor, igniting the microprocessor revolution and propelling the future of computing devices.</p>
     </div>
 
-    <!-- Card 3: 1978 -->
-    <div>
+    <!-- Card 3 -->
+    <div class="timeline-card" data-en-title="8086 Processor" data-fr-title="Processeur 8086" data-ar-title="معالج 8086"
+      data-en-text="Launch of the 8086 processor, establishing the x86 architecture that drives countless PCs and servers in the modern era."
+      data-fr-text="Lancement du processeur 8086, établissant l'architecture x86 qui alimente d'innombrables PC et serveurs à l'ère moderne."
+      data-ar-text="إطلاق معالج 8086، مؤسسًا بنية x86 التي تشغل عددًا لا يحصى من أجهزة الكمبيوتر والخوادم في العصر الحديث.">
       <h2>1978</h2>
       <h3>8086 Processor</h3>
       <div class="card-image">
         <img src="img/3.jpg" alt="Intel 8086 Processor" />
       </div>
-      <p>
-        Launch of the 8086 processor, establishing the x86 architecture 
-        that drives countless PCs and servers in the modern era.
-      </p>
+      <p>Launch of the 8086 processor, establishing the x86 architecture that drives countless PCs and servers in the modern era.</p>
     </div>
 
-    <!-- Card 4: 1985 -->
-    <div>
+    <!-- Card 4 -->
+    <div class="timeline-card" data-en-title="386 Processor" data-fr-title="Processeur 386" data-ar-title="معالج 386"
+      data-en-text="Intel introduces the 386 processor with 32-bit architecture, ushering in a new era of performance and multitasking for personal computers."
+      data-fr-text="Intel présente le processeur 386 avec une architecture 32 bits, inaugurant une nouvelle ère de performance et de multitâche pour les ordinateurs personnels."
+      data-ar-text="قدمت إنتل المعالج 386 ببنية 32 بت، مما أطلق عصرًا جديدًا من الأداء وتعدد المهام لأجهزة الكمبيوتر الشخصية.">
       <h2>1985</h2>
       <h3>386 Processor</h3>
       <div class="card-image">
         <img src="img/4.jpg" alt="Intel 386 Processor" />
       </div>
-      <p>
-        Intel introduces the 386 processor with 32-bit architecture, 
-        ushering in a new era of performance and multitasking for 
-        personal computers.
-      </p>
+      <p>Intel introduces the 386 processor with 32-bit architecture, ushering in a new era of performance and multitasking for personal computers.</p>
     </div>
 
-    <!-- Card 5: 2006 -->
-    <div>
+    <!-- Card 5 -->
+    <div class="timeline-card" data-en-title="Peak GHG Emissions" data-fr-title="Pic d'émissions de GES" data-ar-title="ذروة انبعاثات غازات الدفيئة"
+      data-en-text="This year marks Intel's highest annual greenhouse gas emissions for operations. Over subsequent years, Intel invests heavily in chemical abatement, renewable energy, and energy-efficient manufacturing to reverse this trend."
+      data-fr-text="Cette année marque le plus haut niveau annuel d'émissions de gaz à effet de serre d'Intel. Au cours des années suivantes, Intel investit massivement dans la réduction chimique, les énergies renouvelables et la fabrication économe en énergie pour inverser cette tendance."
+      data-ar-text="تمثل هذه السنة أعلى انبعاثات سنوية لغازات الدفيئة لعمليات إنتل. على مدى السنوات التالية، استثمرت إنتل بشكل كبير في الحد من المواد الكيميائية والطاقة المتجددة والتصنيع الموفر للطاقة لعكس هذا الاتجاه.">
       <h2>2006</h2>
       <h3>Peak GHG Emissions</h3>
       <div class="card-image">
         <img src="img/intel-header-logo.svg" alt="Intel Sustainability" />
       </div>
-      <p>
-        This year marks Intel's highest annual greenhouse gas emissions 
-        for operations. Over subsequent years, Intel invests heavily in 
-        chemical abatement, renewable energy, and energy-efficient 
-        manufacturing to reverse this trend.
-      </p>
+      <p>This year marks Intel's highest annual greenhouse gas emissions for operations. Over subsequent years, Intel invests heavily in chemical abatement, renewable energy, and energy-efficient manufacturing to reverse this trend.</p>
     </div>
 
-    <!-- Card 6: 2020 -->
-    <div>
+    <!-- Card 6 -->
+    <div class="timeline-card" data-en-title="RISE Strategy" data-fr-title="Stratégie RISE" data-ar-title="استراتيجية RISE"
+      data-en-text="Intel launches its RISE (Responsible, Inclusive, Sustainable, Enabling) strategy and 2030 goals, aiming to drive industry-wide progress on climate action, water stewardship, and waste reduction."
+      data-fr-text="Intel lance sa stratégie RISE (Responsable, Inclusif, Durable, Facilitant) et ses objectifs 2030, visant à stimuler les progrès de l'industrie en matière d'action climatique, de gestion de l'eau et de réduction des déchets."
+      data-ar-text="أطلقت إنتل استراتيجيتها RISE (المسؤولة والشاملة والمستدامة والتمكينية) وأهداف 2030، بهدف دفع التقدم الصناعي في العمل المناخي وإدارة المياه وتقليل النفايات.">
       <h2>2020</h2>
       <h3>RISE Strategy</h3>
       <div class="card-image">
         <img src="img/chip.jpg" alt="Chip" />
       </div>
-      <p>
-        Intel launches its RISE (Responsible, Inclusive, Sustainable, 
-        Enabling) strategy and 2030 goals, aiming to drive industry-wide 
-        progress on climate action, water stewardship, and waste reduction.
-      </p>
+      <p>Intel launches its RISE (Responsible, Inclusive, Sustainable, Enabling) strategy and 2030 goals, aiming to drive industry-wide progress on climate action, water stewardship, and waste reduction.</p>
     </div>
 
-    <!-- Card 7: 2022 -->
-    <div>
+    <!-- Card 7 -->
+    <div class="timeline-card" data-en-title="Net-Zero By 2040" data-fr-title="Neutralité carbone d'ici 2040" data-ar-title="صفر انبعاثات بحلول 2040"
+      data-en-text="Intel announces its commitment to achieve net-zero greenhouse gas emissions (Scope 1 and 2) across its global operations by 2040, building on years of environmental initiatives."
+      data-fr-text="Intel annonce son engagement à atteindre zéro émission nette de gaz à effet de serre (Scope 1 et 2) dans l'ensemble de ses opérations mondiales d'ici 2040, en s'appuyant sur des initiatives environnementales de longue date."
+      data-ar-text="تعلن إنتل عن التزامها بالوصول إلى صافي انبعاثات صفرية من غازات الدفيئة (النطاق 1 و2) في جميع عملياتها العالمية بحلول عام 2040، استنادًا إلى سنوات من المبادرات البيئية.">
       <h2>2022</h2>
       <h3>Net-Zero By 2040</h3>
       <div class="card-image">
         <img src="img/green.jpg" alt="Net-Zero Commitment" />
       </div>
-      <p>
-        Intel announces its commitment to achieve net-zero greenhouse 
-        gas emissions (Scope 1 and 2) across its global operations 
-        by 2040, building on years of environmental initiatives.
-      </p>
+      <p>Intel announces its commitment to achieve net-zero greenhouse gas emissions (Scope 1 and 2) across its global operations by 2040, building on years of environmental initiatives.</p>
     </div>
 
-    <!-- Card 8: 2023 -->
-    <div>
+    <!-- Card 8 -->
+    <div class="timeline-card" data-en-title="Renewable Electricity" data-fr-title="Électricité renouvelable" data-ar-title="الكهرباء المتجددة"
+      data-en-text="The company achieves 99% renewable electricity usage worldwide, helping to drastically lower carbon emissions and driving progress toward Intel's long-term sustainability goals."
+      data-fr-text="L'entreprise atteint 99 % d'utilisation d'électricité renouvelable dans le monde, contribuant à réduire considérablement les émissions de carbone et à faire progresser les objectifs de durabilité à long terme d'Intel."
+      data-ar-text="تصل الشركة إلى استخدام 99٪ من الكهرباء المتجددة عالميًا، مما يساعد على خفض الانبعاثات الكربونية بشكل كبير ودفع التقدم نحو أهداف الاستدامة طويلة المدى لإنتل.">
       <h2>2023</h2>
       <h3>Renewable Electricity</h3>
       <div class="card-image">
         <img src="img/energy.jpg" alt="Renewable Energy Achievement" />
       </div>
-      <p>
-        The company achieves 99% renewable electricity usage worldwide, 
-        helping to drastically lower carbon emissions and driving progress 
-        toward Intel's long-term sustainability goals.
-      </p>
+      <p>The company achieves 99% renewable electricity usage worldwide, helping to drastically lower carbon emissions and driving progress toward Intel's long-term sustainability goals.</p>
     </div>
 
-    <!-- Card 9: 2024 -->
-    <div>
+    <!-- Card 9 -->
+    <div class="timeline-card" data-en-title="Sustainability Summit" data-fr-title="Sommet sur la durabilité" data-ar-title="قمة الاستدامة"
+      data-en-text="Intel hosts its first Sustainability Summit, uniting suppliers, government officials, and industry leaders to collaborate on next-generation sustainable semiconductor manufacturing."
+      data-fr-text="Intel organise son premier Sommet sur la durabilité, réunissant fournisseurs, responsables gouvernementaux et leaders de l'industrie pour collaborer sur la fabrication durable de semi-conducteurs de nouvelle génération."
+      data-ar-text="تستضيف إنتل أول قمة استدامة لها، تجمع الموردين والمسؤولين الحكوميين وقادة الصناعة للتعاون في تصنيع أشباه الموصلات المستدامة من الجيل التالي.">
       <h2>2024</h2>
       <h3>Sustainability Summit</h3>
       <div class="card-image">
         <img src="img/comp.jpg" alt="Sustainability Summit" />
       </div>
-      <p>
-        Intel hosts its first Sustainability Summit, uniting suppliers, 
-        government officials, and industry leaders to collaborate on 
-        next-generation sustainable semiconductor manufacturing.
-      </p>
+      <p>Intel hosts its first Sustainability Summit, uniting suppliers, government officials, and industry leaders to collaborate on next-generation sustainable semiconductor manufacturing.</p>
     </div>
 
   </section>
 
-  <p>Scroll to view timeline | Hover over cards to learn more!</p>
+  <p class="timeline-note text-center">Scroll to view timeline | Hover over cards to learn more!</p>
+
+  <!-- Three-Column Section -->
+  <section class="container my-5 three-column-section">
+    <div class="row text-center">
+      <div class="col-md-4 mb-4">
+        <div class="col-card">
+          <div class="card-image">
+            <img src="img/Innovation.jpg" alt="Innovation Icon">
+          </div>
+          <h3 class="col-title" data-en="Innovation" data-fr="Innovation" data-ar="الابتكار">Innovation</h3>
+          <p class="col-text" data-en="Driving sustainable solutions through cutting-edge technology."
+            data-fr="Favoriser des solutions durables grâce à la technologie de pointe."
+            data-ar="دفع الحلول المستدامة من خلال التكنولوجيا المتقدمة.">
+            Driving sustainable solutions through cutting-edge technology.
+          </p>
+          <a href="#" class="btn btn-primary btn-sm mt-2" data-en="Learn More" data-fr="En savoir plus"
+            data-ar="أعرف أكثر">Learn More</a>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="col-card">
+          <div class="card-image">
+            <img src="img/Enviroment.jpg" alt="Environment Icon">
+          </div>
+          <h3 class="col-title" data-en="Environment" data-fr="Environnement" data-ar="البيئة">Environment</h3>
+          <p class="col-text" data-en="Commitment to reducing carbon footprint."
+            data-fr="Engagement à réduire l'empreinte carbone." data-ar="الالتزام بتقليل البصمة الكربونية.">
+            Commitment to reducing carbon footprint.
+          </p>
+          <a href="#" class="btn btn-primary btn-sm mt-2" data-en="Learn More" data-fr="En savoir plus"
+            data-ar="أعرف أكثر">Learn More</a>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="col-card">
+          <div class="card-image">
+            <img src="img/community.jpg" alt="Community Icon">
+          </div>
+          <h3 class="col-title" data-en="Community" data-fr="Communauté" data-ar="المجتمع">Community</h3>
+          <p class="col-text" data-en="Empowering global communities." data-fr="Renforcer les communautés mondiales."
+            data-ar="تمكين المجتمعات العالمية.">
+            Empowering global communities.
+          </p>
+          <a href="#" class="btn btn-primary btn-sm mt-2" data-en="Learn More" data-fr="En savoir plus"
+            data-ar="أعرف أكثر">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subscription Form -->
+  <section class="bg-light py-5 subscription-form">
+    <div class="container text-center">
+      <h2 id="newsletter-title" data-en="Subscribe to Our Sustainability Newsletter"
+        data-fr="Abonnez-vous à notre newsletter sur la durabilité" data-ar="اشترك في نشرتنا الإخبارية للاستدامة">
+        Subscribe to Our Sustainability Newsletter
+      </h2>
+      <form class="row g-3 justify-content-center mt-3" aria-label="Sustainability Newsletter Form">
+        <div class="col-auto">
+          <label for="subscriberEmail" class="visually-hidden" data-en="Email address" data-fr="Adresse e-mail"
+            data-ar="البريد الإلكتروني">Email address</label>
+          <input type="email" class="form-control" id="subscriberEmail" placeholder="Enter your email" required>
+        </div>
+        <div class="col-auto">
+          <button type="submit" class="btn btn-success" data-en="Subscribe" data-fr="S'abonner"
+            data-ar="اشترك">Subscribe</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3">
+    <p>&copy; 2025 Intel Corporation | <a href="#" class="text-white">Privacy Policy</a> | <a href="#"
+        class="text-white">Terms of Use</a> | <a href="#" class="text-white">Contact</a></p>
+  </footer>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- RTL / Multilingual Script -->
+  <script>
+    const langBtns = document.querySelectorAll('.lang-btn');
+
+    langBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.getAttribute('data-lang');
+        document.documentElement.lang = lang;
+
+        // RTL or LTR direction
+        if (lang === 'ar') {
+          document.documentElement.dir = 'rtl';
+          document.body.classList.add('text-end');
+        } else {
+          document.documentElement.dir = 'ltr';
+          document.body.classList.remove('text-end');
+        }
+
+        // Timeline cards
+        document.querySelectorAll('.timeline-card').forEach(card => {
+          card.querySelector('h3').innerText = card.dataset[`${lang}Title`];
+          card.querySelector('p').innerText = card.dataset[`${lang}Text`];
+        });
+
+        // Three-column section
+        document.querySelectorAll('.col-title').forEach(el => el.innerText = el.dataset[lang]);
+        document.querySelectorAll('.col-text').forEach(el => el.innerText = el.dataset[lang]);
+        document.querySelectorAll('.btn.btn-primary').forEach(el => el.innerText = el.dataset[lang]);
+
+        // Newsletter
+        document.querySelector('button.btn-success').innerText = document.querySelector('button.btn-success').dataset[lang];
+        document.getElementById('newsletter-title').innerText = document.getElementById('newsletter-title').dataset[lang];
+
+        // Header
+        document.getElementById('header-title').innerText = document.getElementById('header-title').dataset[lang];
+        document.getElementById('header-subtitle').innerText = document.getElementById('header-subtitle').dataset[lang];
+      });
+    });
+  </script>
 
 </body>
+
 </html>
