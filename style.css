@@ -1,3 +1,54 @@
+/* Clean, modern footer styles */
+footer {
+	background: #f8f9fa;
+	border-top: none;
+	box-shadow: 0 -2px 12px rgba(0,0,0,0.04);
+	padding: 24px 0 12px 0;
+	margin: 0;
+	width: 100vw;
+	position: relative;
+	left: 50%;
+	right: 50%;
+	transform: translateX(-50%);
+}
+footer nav {
+	margin-bottom: 8px;
+}
+footer nav a {
+	color: #0071C5;
+	text-decoration: none;
+	font-weight: 500;
+	margin: 0 12px;
+	transition: color 0.2s;
+}
+footer nav a:hover, footer nav a:focus {
+	color: #0056b3;
+	text-decoration: underline;
+}
+footer .copyright {
+	color: #555;
+	font-size: 0.95em;
+	background: none;
+	padding: 12px 0 0 0;
+	margin-top: 8px;
+}
+/* Responsive design for tablets (iPad, width 768px to 1024px) */
+@media (min-width: 700px) and (max-width: 1100px) {
+	.container .row > div[class^="col-md-"] {
+		margin-bottom: 32px !important;
+	}
+	.container .row {
+		gap: 0 !important;
+	}
+	.container h2.d-flex {
+		font-size: 1.5em !important;
+	}
+	.container h2.d-flex span {
+		width: 36px !important;
+		height: 36px !important;
+		margin-right: 10px !important;
+	}
+}
 /* Hide milestone details by default, show on hover */
 .milestone-details {
 	max-height: 0;
@@ -11,6 +62,14 @@
 	opacity: 1;
 }
 /* Add your CSS here */
+/* Lock hamburger menu button to top left, always visible */
+#hamburgerBtn {
+	position: absolute !important;
+	top: 0 !important;
+	left: 0 !important;
+	margin: 16px !important;
+	z-index: 2000 !important;
+}
 /* Force hero title and subtitle text to white */
 header h1 {
 	color: #fff !important;
@@ -87,12 +146,12 @@ body {
 	justify-content: center; /* Center the boxes horizontally */
 	align-items: flex-start;
 	overflow-x: auto;
-	gap: 40px;
-		padding: 100px 8px 100px 8px;
+			gap: 12px;
+					padding: 100px 40px 100px 1200px;
 	margin: 0 auto;
 	scroll-snap-type: x mandatory;
 	scrollbar-width: thin;
-	scrollbar-color: #0071C5 #e3f0ff;
+	scrollbar-color: #000000 #e3f0ff;
 }
 
 
@@ -101,10 +160,11 @@ body {
 	background: #fff;
 	border-radius: 16px;
 	box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-	min-width: 50px;
-  max-width: 410px;
+		min-width: 220px;
+		max-width: 280px;
+		min-height: 270px;
 	flex: 0 0 auto;
-	padding: 20px;
+	padding: 18px;
 	transition: box-shadow 0.3s, transform 0.3s;
 	position: relative;
 	scroll-snap-align: start;
@@ -114,7 +174,8 @@ body {
 .milestone:hover {
 	/* Card grows and shadow deepens on hover, but less tilt/scale to stay on page */
 	box-shadow: 0 8px 24px rgba(0,113,197,0.15);
-	transform: translateY(-6px) scale(1.025) rotate(-1deg);
+		transform: translateY(-6px) scale(1.025) rotate(-1deg);
+		min-height: 280px;
 	z-index: 2;
 }
 
@@ -159,15 +220,20 @@ body {
 
 /* Responsive design for mobile */
 @media (max-width: 700px) {
-	.timeline {
-		flex-direction: column;
-		overflow-x: visible;
-		max-width: 100%;
-	}
-	.milestone {
-		min-width: 0;
-		width: 100%;
-		margin-bottom: 20px;
-	}
+		.timeline {
+			flex-direction: column !important;
+			overflow-x: visible !important;
+			max-width: 100% !important;
+			align-items: stretch !important;
+			gap: 0 !important;
+			padding: 20px 8px 20px 8px !important;
+		}
+		.milestone {
+			min-width: 0 !important;
+			max-width: 100% !important;
+			width: 100% !important;
+			margin-bottom: 20px !important;
+			height: auto !important;
+		}
 }
 
