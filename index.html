@@ -1,25 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- Tells the browser this is an HTML5 document -->
+<html lang="en" dir="ltr">
+<!-- Sets the language of the page to English -->
 <head>
+  <!-- Contains meta information and links for the page -->
   <meta charset="UTF-8" />
+  <!-- Sets the character encoding to UTF-8 (supports most characters) -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Makes the page responsive on mobile devices -->
   <title>Intel: Sustainability Through the Ages</title>
+  <!-- Sets the title shown in the browser tab -->
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
+  <!-- Links to the CSS file for styling -->
 </head>
 <body>
+  <!-- Offcanvas Hamburger Menu Button (top left, fixed) -->
+  <button id="hamburgerBtn" class="btn btn-outline-primary position-fixed top-0 start-0 m-3" style="z-index: 1050;" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-label="Open menu">
+    <span class="bi bi-list" style="font-size: 2em;"></span>
+  </button>
+
+  <!-- Offcanvas Sidebar Menu -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="sidebarMenuLabel">Menu</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <h6 class="mb-3">FAQ</h6>
+      <div class="accordion mb-4" id="faqAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faqOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              FAQ: What is Intel's RISE strategy?
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="faqOne" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              RISE stands for Responsible, Inclusive, Sustainable, Enabling. It's Intel's plan to drive progress on climate action, water stewardship, and waste reduction by 2030.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faqTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              FAQ: How does Intel conserve water?
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="faqTwo" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Intel conserves billions of gallons of water annually and works with local communities to restore watersheds and support a healthy environment.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faqThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              FAQ: What is a circular economy?
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="faqThree" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              A circular economy means reusing, recycling, and upcycling materials to reduce waste and keep resources in use for as long as possible.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Menu Links -->
+    </div>
+  </div>
+  <!-- Main content of the webpage starts here -->
 
   <!-- Header / Hero Section -->
   <header>
+
+    <!-- The top section with logo, headline, and description -->
     <div>
-      <!-- Ask Copilot to teach you about `.svg`. 🙂 You'll need to resize the logo with CSS. -->
-      <img src="img/intel-header-logo.svg" alt="Intel Logo" />
+    <!-- Container for hero content -->
+    <!-- Ask Copilot to teach you about `.svg`. 🙂 You'll need to resize the logo with CSS. -->
+    <img src="img/intel-header-logo.svg" alt="Intel Logo" class="hero-logo" />
+      <!-- Displays the Intel logo image -->
       <!-- Main Heading -->
       <h1>
+        <!-- Big headline for the page -->
         Sustainability Through the Ages
       </h1>
 
       <!-- Subheading / Description -->
       <p>
+        <!-- Short description about Intel's sustainability journey -->
         Explore Intel's journey through time, discovering how our commitment
         to innovation has shaped a more sustainable future for technology 
         and our planet.
@@ -28,116 +100,326 @@
   </header>
 
   <!-- Timeline Cards Section -->
-  <section>
+  <div style="overflow-x: auto; width: 100vw; max-width: 100%;">
+    <section class="timeline">
+    <!-- Horizontal timeline container -->
 
     <!-- Card 1: 1968 -->
-    <div>
+    <div class="milestone">
+      <img src="img/1.jpg" alt="Intel Founded" class="milestone-img" />
       <h2>1968</h2>
       <h3>Intel Founded</h3>
-      <!-- Add image -->
-      <p>
+      <div class="milestone-details">
         Robert Noyce and Gordon Moore rename the newly formed company 
         NM Electronics to Intel Corporation, laying the foundation for 
         decades of technological innovation.
-      </p>
+      </div>
     </div>
 
     <!-- Card 2: 1971 -->
-    <div>
+    <div class="milestone">
+      <img src="img/2.jpg" alt="First Microprocessor" class="milestone-img" />
       <h2>1971</h2>
       <h3>First Microprocessor</h3>
-      <!-- Add image -->
-      <p>
+      <div class="milestone-details">
         Intel debuts the 4004, the world's first commercial microprocessor, 
         igniting the microprocessor revolution and propelling the future 
         of computing devices.
-      </p>
+      </div>
     </div>
 
     <!-- Card 3: 1978 -->
-    <div>
+    <div class="milestone">
+      <img src="img/3.jpg" alt="8086 Processor" class="milestone-img" />
       <h2>1978</h2>
       <h3>8086 Processor</h3>
-      <!-- Add image -->
-      <p>
+      <div class="milestone-details">
         Launch of the 8086 processor, establishing the x86 architecture 
         that drives countless PCs and servers in the modern era.
-      </p>
+      </div>
     </div>
 
     <!-- Card 4: 1985 -->
-    <div>
+    <div class="milestone">
+      <img src="img/4.jpg" alt="386 Processor" class="milestone-img" />
       <h2>1985</h2>
       <h3>386 Processor</h3>
-      <!-- Add image -->
-      <p>
+      <div class="milestone-details">
         Intel introduces the 386 processor with 32-bit architecture, 
         ushering in a new era of performance and multitasking for 
         personal computers.
-      </p>
+      </div>
     </div>
 
     <!-- Card 5: 2006 -->
-    <div>
+    <div class="milestone">
+      <img src="img/1.jpg" alt="Peak GHG Emissions" class="milestone-img" />
       <h2>2006</h2>
       <h3>Peak GHG Emissions</h3>
-      <!-- Add image -->
-      <p>
+      <div class="milestone-details">
         This year marks Intel's highest annual greenhouse gas emissions 
         for operations. Over subsequent years, Intel invests heavily in 
         chemical abatement, renewable energy, and energy-efficient 
         manufacturing to reverse this trend.
-      </p>
+      </div>
     </div>
 
     <!-- Card 6: 2020 -->
-    <div>
+  <div class="milestone" id="rise-card">
+      <img src="img/2.jpg" alt="RISE Strategy" class="milestone-img" />
       <h2>2020</h2>
       <h3>RISE Strategy</h3>
-      <!-- Add image -->
-      <p>
+      <div class="milestone-details">
         Intel launches its RISE (Responsible, Inclusive, Sustainable, 
         Enabling) strategy and 2030 goals, aiming to drive industry-wide 
         progress on climate action, water stewardship, and waste reduction.
-      </p>
+      </div>
     </div>
 
     <!-- Card 7: 2022 -->
-    <div>
+  <div class="milestone" id="commitment-card">
+      <img src="img/3.jpg" alt="Net-Zero By 2040" class="milestone-img" />
       <h2>2022</h2>
       <h3>Net-Zero By 2040</h3>
-      <!-- Add image -->
-      <p>
+      <div class="milestone-details">
         Intel announces its commitment to achieve net-zero greenhouse 
         gas emissions (Scope 1 and 2) across its global operations 
         by 2040, building on years of environmental initiatives.
-      </p>
+      </div>
     </div>
 
     <!-- Card 8: 2023 -->
-    <div>
+    <div class="milestone">
+      <img src="img/4.jpg" alt="Renewable Electricity" class="milestone-img" />
       <h2>2023</h2>
       <h3>Renewable Electricity</h3>
-      <!-- Add image -->
-      <p>
+      <div class="milestone-details">
         The company achieves 99% renewable electricity usage worldwide, 
         helping to drastically lower carbon emissions and driving progress 
         toward Intel's long-term sustainability goals.
-      </p>
+      </div>
     </div>
 
     <!-- Card 9: 2024 -->
-    <div>
+  <div class="milestone" id="water-card">
+      <img src="img/1.jpg" alt="Sustainability Summit" class="milestone-img" />
       <h2>2024</h2>
       <h3>Sustainability Summit</h3>
-      <!-- Add image -->
-      <p>
+      <div class="milestone-details">
         Intel hosts its first Sustainability Summit, uniting suppliers, 
         government officials, and industry leaders to collaborate on 
         next-generation sustainable semiconductor manufacturing.
-      </p>
+      </div>
     </div>
   </section>
-  <p>Scroll to view timeline | Hover over cards to learn more!</p>
+    <p><span dir="ltr">Scroll to view timeline | Hover over cards to learn more!</span></p>
+
+
+  <!-- 3-Column Content Section -->
+  <section>
+  <div class="container my-5 text-center">
+      <div class="row">
+        <!-- Column 1 -->
+        <div class="col-md-4 mb-4">
+          <h2 class="d-flex align-items-center justify-content-center">
+            <span style="display: inline-flex; align-items: center; margin-right: 8px; width: 40px; height: 40px; border-radius: 50%; background-color: #0d6efd; justify-content: center;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-brightness-high-fill" viewBox="0 0 16 16" aria-label="Sun icon for RISE strategy">
+                <path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"/>
+              </svg>
+            </span>
+            RISE Strategy
+          </h2>
+          <p class="text-center">
+            Under its RISE (Responsible, Inclusive, Sustainable, Enabling) strategy, 
+            Intel sets ambitious 2030 goals, including driving industry-wide 
+            progress on climate action, water stewardship, and waste reduction.
+          </p>
+          <div class="text-center">
+            <a href="#rise-card" class="btn btn-primary" id="riseLearnMore">Learn More</a>
+          </div>
+        </div>
+        <!-- Column 2 -->
+        <div class="col-md-4 mb-4">
+          <h2 class="d-flex align-items-center justify-content-center">
+            <span style="display: inline-flex; align-items: center; margin-right: 8px; width: 40px; height: 40px; border-radius: 50%; background-color: #0d6efd; justify-content: center;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-leaf-fill" viewBox="0 0 16 16" aria-label="Leaf icon for commitment">
+                <path d="M1.4 1.7c.217.289.65.84 1.725 1.274 1.093.44 2.885.774 5.834.528 2.02-.168 3.431.51 4.326 1.556C14.161 6.082 14.5 7.41 14.5 8.5q0 .344-.027.734C13.387 8.252 11.877 7.76 10.39 7.5c-2.016-.288-4.188-.445-5.59-2.045-.142-.162-.402-.102-.379.112.108.985 1.104 1.82 1.844 2.308 2.37 1.566 5.772-.118 7.6 3.071.505.8 1.374 2.7 1.75 4.292.07.298-.066.611-.354.715a.7.7 0 0 1-.161.042 1 1 0 0 1-1.08-.794c-.13-.97-.396-1.913-.868-2.77C12.173 13.386 10.565 14 8 14c-1.854 0-3.32-.544-4.45-1.435-1.124-.887-1.889-2.095-2.39-3.383-1-2.562-1-5.536-.65-7.28L.73.806z"/>
+              </svg>
+            </span>
+            Commitment
+          </h2>
+          <p class="text-center">
+            In 2022, Intel pledged to achieve net-zero greenhouse gas emissions 
+            (Scope 1 and 2) by 2040. This commitment builds on decades of 
+            environmental initiatives and partnerships across the semiconductor 
+            industry.
+          </p>
+          <div class="text-center">
+            <a href="#commitment-card" class="btn btn-primary" id="commitmentLearnMore">Learn More</a>
+          </div>
+        </div>
+        <!-- Column 3 -->
+        <div class="col-md-4 mb-4">
+          <h2 class="d-flex align-items-center justify-content-center">
+            <span style="display: inline-flex; align-items: center; margin-right: 8px; width: 40px; height: 40px; border-radius: 50%; background-color: #0d6efd; justify-content: center;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-recycle" viewBox="0 0 16 16" aria-label="Recycle icon for water and waste">
+                <path d="M9.302 1.256a1.5 1.5 0 0 0-2.604 0l-1.704 2.98a.5.5 0 0 0 .869.497l1.703-2.981a.5.5 0 0 1 .868 0l2.54 4.444-1.256-.337a.5.5 0 1 0-.26.966l2.415.647a.5.5 0 0 0 .613-.353l.647-2.415a.5.5 0 1 0-.966-.259l-.333 1.242zM2.973 7.773l-1.255.337a.5.5 0 1 1-.26-.966l2.416-.647a.5.5 0 0 1 .612.353l.647 2.415a.5.5 0 0 1-.966.259l-.333-1.242-2.545 4.454a.5.5 0 0 0 .434.748H5a.5.5 0 0 1 0 1H1.723A1.5 1.5 0 0 1 .421 12.24zm10.89 1.463a.5.5 0 1 0-.868.496l1.716 3.004a.5.5 0 0 1-.434.748h-5.57l.647-.646a.5.5 0 1 0-.708-.707l-1.5 1.5a.5.5 0 0 0 0 .707l1.5 1.5a.5.5 0 1 0 .708-.707l-.647-.647h5.57a1.5 1.5 0 0 0 1.302-2.244z"/>
+              </svg>
+            </span>
+            Water &amp; Waste
+          </h2>
+          <p class="text-center">
+            Intel conserves billions of gallons of water annually and 
+            collaborates with local communities to restore watersheds.
+            Intel also upcycles and recycles materials to reduce waste and 
+            advance a circular economy.
+          </p>
+          <div class="text-center">
+            <a href="#water-card" class="btn btn-primary" id="waterLearnMore">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subscription Form -->
+
+  <!-- Subscription Form (Bootstrap, accessible) -->
+  <section class="container my-5">
+  <h2 class="text-center">Subscribe to our Newsletter</h2>
+    <form class="row g-3" aria-label="Newsletter Subscription" id="newsletterForm">
+      <div class="col-md-8">
+        <label for="email" class="form-label visually-hidden">Email address</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter your email" required aria-required="true" aria-label="Email address">
+      </div>
+      <div class="col-md-4">
+        <button type="submit" class="btn btn-primary w-100">Subscribe</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- Bootstrap Modal for subscription confirmation -->
+  <div class="modal fade" id="subscribeModal" tabindex="-1" aria-labelledby="subscribeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="subscribeModalLabel">Thank You!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          You have successfully subscribed to our newsletter.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Example -->
+  <footer class="bg-light text-center py-4 mt-5">
+    <nav>
+      <a href="https://example.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+      <a href="https://example.com/terms-of-use" target="_blank" rel="noopener">Terms of Use</a>
+      <a href="https://example.com/contact" target="_blank" rel="noopener">Contact</a>
+    </nav>
+    <div class="copyright">&copy; 2025 Intel Corporation. All rights reserved.</div>
+  </footer>
+</footer>
+
+<!-- Bootstrap JS Bundle -->
+<script>
+// Center the RISE Strategy card when 'Learn More' is clicked
+document.getElementById('riseLearnMore').addEventListener('click', function(e) {
+  e.preventDefault();
+  var card = document.getElementById('rise-card');
+  if (card) {
+    card.scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'});
+  }
+});
+// Center the Commitment card when 'Learn More' is clicked
+document.getElementById('commitmentLearnMore').addEventListener('click', function(e) {
+  e.preventDefault();
+  var card = document.getElementById('commitment-card');
+  if (card) {
+    card.scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'});
+  }
+});
+// Center the Water & Waste card when 'Learn More' is clicked
+document.getElementById('waterLearnMore').addEventListener('click', function(e) {
+  e.preventDefault();
+  var card = document.getElementById('water-card');
+  if (card) {
+    card.scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'});
+  }
+});
+</script>
+<script>
+// Hide hamburger when menu is open, show when closed
+var hamburgerBtn = document.getElementById('hamburgerBtn');
+var sidebarMenu = document.getElementById('sidebarMenu');
+sidebarMenu.addEventListener('show.bs.offcanvas', function () {
+  hamburgerBtn.style.display = 'none';
+});
+sidebarMenu.addEventListener('hidden.bs.offcanvas', function () {
+  hamburgerBtn.style.display = '';
+});
+</script>
+<script>
+// Center the RISE Strategy card when 'Learn More' is clicked
+document.getElementById('riseLearnMore').addEventListener('click', function(e) {
+  e.preventDefault();
+  var card = document.getElementById('rise-card');
+  if (card) {
+    card.scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'});
+  }
+});
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+<!-- Show modal on newsletter form submit -->
+<script>
+document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var modal = new bootstrap.Modal(document.getElementById('subscribeModal'));
+  modal.show();
+  this.reset();
+});
+</script>
+
+<!-- Auto-detect language and adjust RTL layout -->
+<script>
+// List of common RTL language codes
+const rtlLangs = ['ar', 'he', 'fa', 'ur'];
+
+function checkAndApplyRTL() {
+  const html = document.documentElement;
+  const lang = html.lang ? html.lang.substr(0,2).toLowerCase() : '';
+  const isRTL = rtlLangs.includes(lang);
+  html.setAttribute('dir', isRTL ? 'rtl' : 'ltr');
+  document.body.style.textAlign = isRTL ? 'right' : 'center';
+
+  // Add or remove Bootstrap RTL class
+  if (isRTL) {
+    document.body.classList.add('bootstrap-rtl');
+  } else {
+    document.body.classList.remove('bootstrap-rtl');
+  }
+
+  // Optionally, update text alignment for all .container and .row elements
+  document.querySelectorAll('.container, .row').forEach(function(el) {
+    el.style.textAlign = isRTL ? 'right' : 'left';
+  });
+}
+
+// Run on page load
+checkAndApplyRTL();
+
+// Also check periodically in case Google Translate or other tools change the language
+setInterval(checkAndApplyRTL, 2000);
+</script>
+
 </body>
 </html>
