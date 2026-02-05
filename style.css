@@ -1,1 +1,221 @@
-/* Add your CSS here */
+/* Global styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+  color: #1a1a1a;
+}
+
+/* Hero section */
+.hero {
+  background: linear-gradient(135deg, #0071c5, #004a86);
+  color: white;
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.hero img {
+  max-width: 110px;
+  margin-bottom: 1.25rem;
+}
+
+.hero h1 {
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  margin-bottom: 0.75rem;
+}
+
+.hero p {
+  font-size: 1rem;
+  opacity: 0.95;
+}
+
+/* Hero divider */
+.hero-divider {
+  width: 60px;
+  height: 3px;
+  background-color: #7fc6ff;
+  margin: 0 auto 1.25rem auto;
+  border-radius: 2px;
+}
+
+/* Timeline section */
+#timeline {
+  padding-top: 2rem;
+  padding-bottom: 2.5rem;
+  background-color: #f4f6f9;
+}
+
+#timeline h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.footer-note {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+/* Timeline wrapper */
+.timeline-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Scroll container */
+.timeline-scroll {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding: 2rem 0.5rem;
+  width: 100%;
+}
+
+/* Cards container */
+.timeline-cards {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+  position: relative;
+  padding: 2rem 0;
+}
+
+/* Timeline line */
+.timeline-cards::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #0071c5;
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+/* Card */
+.card {
+  background: white;
+  border-radius: 10px;
+  border-top: 4px solid #0071c5;
+  width: 260px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+/* Card headings */
+.card h2 {
+  font-size: 1.5rem;
+  color: #0071c5;
+  margin: 0;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  margin: 0.5rem 0 0;
+}
+
+/* Card image template */
+.card-image {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.card-image img {
+  width: 250px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 6px;
+  background-color: #e6f1fb;
+}
+
+/* Description overlay */
+.card-description {
+  position: absolute;
+  inset: 0;
+  background-color: #0071c5;
+  color: white;
+  padding: 1.5rem;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.4s ease;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 3;
+}
+
+.card:hover .card-description,
+.card.is-active .card-description {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:hover h2,
+.card:hover h3,
+.card.is-active h2,
+.card.is-active h3,
+.card:hover .card-image,
+.card.is-active .card-image {
+  opacity: 0;
+}
+
+/* Hover effect */
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+/* Arrow buttons */
+.arrow {
+  background-color: #ffffff;
+  border: none;
+  color: #0071c5;
+  font-size: 2rem;
+  padding: 0.4rem 0.75rem;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.arrow:hover {
+  background-color: #e6f1fb;
+}
+
+@media (max-width: 768px) {
+  .arrow {
+    display: none;
+  }
+
+  .card {
+    width: 240px;
+  }
+}
+
+.page-footer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #333;
+}
