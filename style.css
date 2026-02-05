@@ -142,8 +142,8 @@ body {
 }
 
 .card-image img {
-  width: 250px;   /* EDIT WIDTH */
-  height: 160px;  /* EDIT HEIGHT */
+  width: 250px;
+  height: 160px;
   object-fit: cover;
   border-radius: 6px;
   background-color: #e6f1fb;
@@ -219,4 +219,3 @@ body {
   font-size: 0.8rem;
   color: #333;
 }
-
