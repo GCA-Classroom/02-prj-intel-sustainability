@@ -1,1 +1,265 @@
-/* Add your CSS here */
+/* Basic reset to make spacing predictable */
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/* Simple color and font system for the whole page */
+:root {
+	--blue-ink: #0b2b46;
+	--blue-ocean: #0071c5;
+	--blue-mist: #e6f2fb;
+	--sand: #f2f7fb;
+	--leaf: #0b63a8;
+	--white: #ffffff;
+	--shadow: 0 10px 30px rgba(11, 43, 70, 0.15);
+}
+
+body {
+	font-family: "Work Sans", "Segoe UI", Tahoma, sans-serif;
+	color: var(--blue-ink);
+	background: linear-gradient(180deg, var(--blue-mist), var(--sand));
+	line-height: 1.6;
+}
+
+/* Make the text and page width feel comfortable */
+.container {
+	width: 90%;
+	max-width: 1100px;
+	margin: 0 auto;
+}
+
+/* Hero section styling */
+.hero {
+	padding: 84px 0 56px;
+	text-align: center;
+	/* Intel-branded background using blue gradients */
+	background:
+		radial-gradient(circle at top, rgba(0, 113, 197, 0.4), transparent 55%),
+		linear-gradient(120deg, #0b2b46 0%, #0071c5 55%, #0b63a8 100%);
+}
+
+.logo {
+	width: 140px;
+	margin-bottom: 16px;
+	background: var(--white);
+	padding: 8px 12px;
+	border-radius: 999px;
+	box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+	font-family: "Playfair Display", Georgia, serif;
+	font-size: clamp(2.4rem, 4.6vw, 3.6rem);
+	letter-spacing: 0.6px;
+	margin-bottom: 12px;
+	color: var(--white);
+}
+
+.hero-lead {
+	max-width: 720px;
+	margin: 0 auto;
+	color: #e9f3fa;
+	font-size: clamp(1rem, 2vw, 1.15rem);
+}
+
+/* Timeline layout */
+.timeline {
+	position: relative;
+	padding: 32px 0 16px;
+}
+
+/* Flexbox row layout for large screens (horizontal scrolling) */
+.timeline .container {
+	position: relative;
+	display: flex;
+	gap: 20px;
+	overflow-x: auto;
+	padding: 12px 8px 32px;
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+	scroll-padding-left: 8px;
+}
+
+/* The horizontal line that runs through the timeline */
+.timeline-line {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 58px;
+	height: 4px;
+	background: linear-gradient(90deg, var(--blue-ocean), var(--leaf));
+	border-radius: 2px;
+	opacity: 0.5;
+}
+
+.timeline-item {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	flex: 0 0 300px;
+	margin: 0;
+	padding-top: 28px;
+	scroll-snap-align: start;
+	scroll-snap-stop: always;
+}
+
+/* Make the horizontal scrollbar look cleaner */
+.timeline .container::-webkit-scrollbar {
+	height: 10px;
+}
+
+.timeline .container::-webkit-scrollbar-track {
+	background: rgba(11, 43, 70, 0.08);
+	border-radius: 999px;
+}
+
+.timeline .container::-webkit-scrollbar-thumb {
+	background: linear-gradient(90deg, var(--blue-ocean), var(--leaf));
+	border-radius: 999px;
+}
+
+.timeline-dot {
+	position: absolute;
+	left: 50%;
+	top: 18px;
+	transform: translateX(-50%);
+	width: 16px;
+	height: 16px;
+	background: var(--white);
+	border: 3px solid var(--blue-ocean);
+	border-radius: 50%;
+	transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.timeline-card {
+	width: 100%;
+	background: var(--white);
+	padding: 20px;
+	border-radius: 16px;
+	box-shadow: var(--shadow);
+	border: 1px solid rgba(11, 43, 70, 0.08);
+	transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.timeline-card h2 {
+	color: var(--leaf);
+	font-size: 1.2rem;
+	margin-bottom: 6px;
+}
+
+.timeline-card h3 {
+	font-size: 1.25rem;
+	margin-bottom: 10px;
+}
+
+.timeline-card p {
+	color: #2d4a5f;
+}
+
+/* Timeline images inside each card */
+.timeline-image {
+	width: 100%;
+	height: 160px;
+	object-fit: cover;
+	border-radius: 12px;
+	margin: 8px 0 12px;
+}
+
+/* Extra details stay hidden until hover */
+.timeline-detail {
+	max-height: 0;
+	opacity: 0;
+	overflow: hidden;
+	margin-top: 0;
+	transition: max-height 0.35s ease, opacity 0.35s ease, margin-top 0.35s ease;
+}
+
+.timeline-item:hover .timeline-detail {
+	max-height: 120px;
+	opacity: 1;
+	margin-top: 10px;
+}
+
+/* Hover effects for interactivity */
+.timeline-item:hover .timeline-card {
+	transform: translateY(-6px);
+	box-shadow: 0 16px 35px rgba(11, 43, 70, 0.2);
+	border-color: rgba(15, 110, 166, 0.35);
+}
+
+.timeline-item:hover .timeline-dot {
+	transform: translateX(-50%) scale(1.2);
+	background: var(--blue-ocean);
+}
+
+.hint {
+	text-align: center;
+	padding: 12px 0 40px;
+	font-size: 0.95rem;
+	color: #35566b;
+}
+
+/* Add a gentle entrance animation for cards */
+.timeline-card {
+	animation: float-in 0.6s ease both;
+}
+
+@keyframes float-in {
+	from {
+		opacity: 0;
+		transform: translateY(12px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 800px) {
+	/* Stack cards vertically and switch to a vertical timeline line */
+	.timeline .container {
+		display: block;
+		overflow-x: visible;
+		padding: 0 0 24px;
+	}
+
+	.timeline-line {
+		left: 16px;
+		right: auto;
+		top: 0;
+		bottom: 0;
+		width: 4px;
+		height: auto;
+		background: linear-gradient(180deg, var(--blue-ocean), var(--leaf));
+	}
+
+	.timeline-item {
+		padding-top: 0;
+		margin: 24px 0;
+	}
+
+	.timeline-dot {
+		left: 16px;
+		top: 28px;
+		transform: none;
+	}
+
+	.timeline-card {
+		margin-left: 32px;
+	}
+}
+
+/* Give extra breathing room on very small screens */
+@media (max-width: 480px) {
+	.hero {
+		padding: 36px 0 24px;
+	}
+
+	.timeline-card {
+		padding: 16px;
+	}
+}
