@@ -1,1 +1,200 @@
 /* Add your CSS here */
+
+/* Base font for the whole page */
+body {
+  font-family: "Lato", sans-serif; /* Clean, readable body text */
+}
+
+/* Headings use Rubik for stronger emphasis */
+h1,
+h2,
+h3 {
+  font-family: "Rubik", sans-serif;
+}
+
+/* Header banner with a blue gradient */
+header {
+  /* Gradient background for the banner */
+  background: linear-gradient(135deg, #0b63b6, #1f8ad8);
+  color: white; /* Keep text readable on blue */
+  text-align: center; /* Center everything */
+  padding: 24px 16px; /* More compact spacing */
+}
+
+/* Limit the width so text is easy to read */
+header div {
+  max-width: 760px; /* Shorter lines = easier reading */
+  margin: 0 auto; /* Center the content */
+}
+
+/* Smaller logo for a compact header */
+header img {
+  width: 120px; /* Compact logo size */
+  height: auto; /* Keep logo proportions */
+  margin-bottom: 12px; /* Space below logo */
+}
+
+/* Slightly smaller title for compact layout */
+header h1 {
+  font-size: 3.5rem; /* Much larger main title */
+  margin: 0 0 10px; /* Space below title */
+}
+
+/* Readable paragraph with comfortable spacing */
+header p {
+  font-size: 1rem; /* Standard readable size */
+  line-height: 1.5; /* Comfortable line spacing */
+  margin: 0; /* Remove extra space */
+}
+
+/* Timeline container */
+.timeline {
+  /* Put cards in a row */
+  display: flex;
+  flex-direction: row; /* Default: horizontal timeline */
+  gap: 16px; /* Space between cards */
+  overflow-x: auto; /* Horizontal scroll */
+  padding: 16px; /* Space around the cards */
+  /* Hide the scrollbar but keep scrolling */
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Old Edge */
+}
+
+/* Hide scrollbar in Chrome/Safari */
+.timeline::-webkit-scrollbar {
+  display: none;
+}
+
+/* Each timeline card */
+.card {
+  /* Show 4 cards at a time */
+  flex: 0 0 25%;
+  box-sizing: border-box;
+
+  /* Let cards grow to fit their content */
+  height: auto;
+
+  /* Allow a color overlay when hovering */
+  position: relative;
+
+  /* Simple card styling */
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+
+  /* Keep overlay and text inside the card */
+  overflow: hidden;
+}
+
+/* Year text color inside each card */
+.card h2 {
+  color: #0b3d91; /* Deep blue for the year */
+}
+
+/* Image space inside each card */
+.card-image {
+  width: 70%; /* Smaller square to leave clear space below */
+  aspect-ratio: 1 / 1; /* Square placeholder */
+  border-radius: 6px;
+  height: auto; /* Let aspect-ratio control the height */
+  margin: 8px auto 28px; /* Center and add space below */
+  display: block; /* Make sure margins apply cleanly to images */
+}
+
+/* Blue overlay to help focus on revealed text */
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(6, 48, 120, 0.8); /* Darker, more blue overlay */
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 900px) {
+  .card {
+    /* Show 3 cards at a time */
+    flex: 0 0 33.333%;
+  }
+}
+
+@media (max-width: 700px) {
+  .card {
+    /* Show 2 cards at a time */
+    flex: 0 0 50%;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    /* Show 1 card at a time */
+    flex: 0 0 100%;
+  }
+}
+
+/* Stack cards vertically on small screens */
+@media (max-width: 600px) {
+  .timeline {
+    flex-direction: column; /* Vertical stack */
+    overflow-x: visible; /* No horizontal scroll */
+    overflow-y: auto; /* Allow vertical scrolling */
+    max-height: 80vh; /* Keep timeline scrollable on small screens */
+  }
+
+  .card {
+    /* Keep a consistent width when stacked */
+    flex: 0 0 25%;
+    height: auto;
+  }
+}
+
+/* Hide the description by default */
+.card p {
+  opacity: 0; /* Make the text invisible */
+  transition: opacity 0.2s ease; /* Smooth fade in/out */
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  top: 16px; /* Keep text inside the card */
+  bottom: 16px; /* Ensure full text area fits */
+  transform: none;
+  z-index: 2; /* Keep text above the blue overlay */
+  color: white;
+  text-align: left; /* Left-align the hover text */
+  font-size: clamp(0.95rem, 1.6vw, 1.4rem); /* Scale for all sizes */
+  line-height: 1.4; /* Add space between lines */
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45); /* Improve contrast */
+  overflow-y: auto; /* Allow full text without cutting off */
+}
+
+/* Make hover text scroll bar hidden (optional) */
+.card p::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* Show it when the card is hovered */
+.card:hover p {
+  opacity: 1; /* Make the text visible */
+}
+
+/* Show the blue overlay on hover */
+.card:hover::after {
+  opacity: 1;
+}
+
+/* Show it when the card is focused (keyboard users) */
+.card:focus-within p {
+  opacity: 1; /* Make the text visible */
+}
+
+/* Show the blue overlay on focus */
+.card:focus-within::after {
+  opacity: 1;
+}

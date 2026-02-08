@@ -4,6 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Intel: Sustainability Through the Ages</title>
+  <!-- Google Fonts: Rubik (headings) and Lato (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Rubik:wght@500;700&display=swap"
+    rel="stylesheet"
+  />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -28,13 +35,14 @@
   </header>
 
   <!-- Timeline Cards Section -->
-  <section>
+  <section class="timeline">
 
     <!-- Card 1: 1968 -->
-    <div>
+    <div class="card">
       <h2>1968</h2>
       <h3>Intel Founded</h3>
-      <!-- Add image -->
+      <!-- Image for this year -->
+      <img class="card-image" src="img/1968.jpg" alt="Intel founded in 1968" />
       <p>
         Robert Noyce and Gordon Moore rename the newly formed company 
         NM Electronics to Intel Corporation, laying the foundation for 
@@ -43,10 +51,11 @@
     </div>
 
     <!-- Card 2: 1971 -->
-    <div>
+    <div class="card">
       <h2>1971</h2>
       <h3>First Microprocessor</h3>
-      <!-- Add image -->
+      <!-- Image for this year -->
+      <img class="card-image" src="img/1971.jpg" alt="Intel 4004 microprocessor in 1971" />
       <p>
         Intel debuts the 4004, the world's first commercial microprocessor, 
         igniting the microprocessor revolution and propelling the future 
@@ -55,10 +64,11 @@
     </div>
 
     <!-- Card 3: 1978 -->
-    <div>
+    <div class="card">
       <h2>1978</h2>
       <h3>8086 Processor</h3>
-      <!-- Add image -->
+      <!-- Image for this year -->
+      <img class="card-image" src="img/1978.jpg" alt="Intel 8086 processor in 1978" />
       <p>
         Launch of the 8086 processor, establishing the x86 architecture 
         that drives countless PCs and servers in the modern era.
@@ -66,10 +76,11 @@
     </div>
 
     <!-- Card 4: 1985 -->
-    <div>
+    <div class="card">
       <h2>1985</h2>
       <h3>386 Processor</h3>
-      <!-- Add image -->
+      <!-- Image for this year -->
+      <img class="card-image" src="img/1985.jpg" alt="Intel 386 processor in 1985" />
       <p>
         Intel introduces the 386 processor with 32-bit architecture, 
         ushering in a new era of performance and multitasking for 
@@ -78,10 +89,11 @@
     </div>
 
     <!-- Card 5: 2006 -->
-    <div>
+    <div class="card">
       <h2>2006</h2>
       <h3>Peak GHG Emissions</h3>
-      <!-- Add image -->
+      <!-- Image for this year -->
+      <img class="card-image" src="img/2006.jpg" alt="Intel emissions milestone in 2006" />
       <p>
         This year marks Intel's highest annual greenhouse gas emissions 
         for operations. Over subsequent years, Intel invests heavily in 
@@ -91,10 +103,11 @@
     </div>
 
     <!-- Card 6: 2020 -->
-    <div>
+    <div class="card">
       <h2>2020</h2>
       <h3>RISE Strategy</h3>
-      <!-- Add image -->
+      <!-- Image for this year -->
+      <img class="card-image" src="img/2020.jpg" alt="Intel RISE strategy in 2020" />
       <p>
         Intel launches its RISE (Responsible, Inclusive, Sustainable, 
         Enabling) strategy and 2030 goals, aiming to drive industry-wide 
@@ -103,10 +116,11 @@
     </div>
 
     <!-- Card 7: 2022 -->
-    <div>
+    <div class="card">
       <h2>2022</h2>
       <h3>Net-Zero By 2040</h3>
-      <!-- Add image -->
+      <!-- Image for this year -->
+      <img class="card-image" src="img/2022.png" alt="Intel net-zero commitment in 2022" />
       <p>
         Intel announces its commitment to achieve net-zero greenhouse 
         gas emissions (Scope 1 and 2) across its global operations 
@@ -115,10 +129,11 @@
     </div>
 
     <!-- Card 8: 2023 -->
-    <div>
+    <div class="card">
       <h2>2023</h2>
       <h3>Renewable Electricity</h3>
-      <!-- Add image -->
+      <!-- Image for this year -->
+      <img class="card-image" src="img/2023.jpg" alt="Intel renewable electricity in 2023" />
       <p>
         The company achieves 99% renewable electricity usage worldwide, 
         helping to drastically lower carbon emissions and driving progress 
@@ -127,17 +142,47 @@
     </div>
 
     <!-- Card 9: 2024 -->
-    <div>
+    <div class="card">
       <h2>2024</h2>
       <h3>Sustainability Summit</h3>
-      <!-- Add image -->
+      <!-- Image for this year -->
+      <img class="card-image" src="img/2024.jpg" alt="Intel Sustainability Summit in 2024" />
       <p>
         Intel hosts its first Sustainability Summit, uniting suppliers, 
         government officials, and industry leaders to collaborate on 
         next-generation sustainable semiconductor manufacturing.
       </p>
     </div>
-  </section>
-  <p>Scroll to view timeline | Hover over cards to learn more!</p>
+    </section>
+
+    <!-- Instruction text centered -->
+    <p style="text-align: center;">Scroll to view timeline | Hover over cards to learn more!</p>
+
+
+  <!-- Make vertical wheel scroll move the timeline left/right -->
+  <script>
+    const timeline = document.querySelector(".timeline");
+
+    if (timeline) {
+      const smallScreen = window.matchMedia("(max-width: 600px)");
+
+      timeline.addEventListener(
+        "wheel",
+        (event) => {
+          if (smallScreen.matches) {
+            return; // Use normal vertical scrolling when stacked
+          }
+
+          if (event.deltaY === 0) {
+            return;
+          }
+
+          event.preventDefault();
+          timeline.scrollLeft += event.deltaY;
+        },
+        { passive: false }
+      );
+    }
+  </script>
 </body>
 </html>
