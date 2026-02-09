@@ -1,1 +1,371 @@
 /* Add your CSS here */
+
+/* Body with background image and metallic gold/black color scheme */
+body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/rubaitul-azad-3WhPfoOX888-unsplash.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: #D4AF37;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Compact header with minimal visual weight */
+header {
+  background-color: rgba(0, 0, 0, 0.75); /* More transparent */
+  color: #D4AF37;
+  padding: 25px 20px; /* Much smaller padding */
+  text-align: center;
+  position: relative;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.3); /* Thinner border */
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Expand header on hover to show full content */
+header:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 40px 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+header div {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Compact logo */
+header img {
+  width: 100px; /* Smaller logo */
+  height: auto;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.3));
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Larger logo on hover */
+header:hover img {
+  width: 140px;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 4px 12px rgba(255, 215, 0, 0.5));
+}
+
+/* Compact heading with reflective gold gradient */
+h1 {
+  background: linear-gradient(135deg, #B8860B 0%, #FFD700 25%, #FFED4E 40%, #FFD700 50%, #D4AF37 75%, #B8860B 100%);
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.8em; /* Smaller size */
+  font-weight: 600;
+  margin: 8px 0;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
+  animation: reflectiveGlare 3s ease-in-out infinite;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Larger heading on header hover */
+header:hover h1 {
+  font-size: 2.5em;
+  margin: 15px 0;
+}
+
+@keyframes reflectiveGlare {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Hidden description by default - reveals on hover */
+header p {
+  color: #E5E5E5;
+  font-size: 1.1em;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+  font-weight: 300;
+  letter-spacing: 0.3px;
+  /* Hidden by default */
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transform: translateY(-10px);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reveal description on header hover */
+header:hover p {
+  opacity: 1;
+  max-height: 200px;
+  margin-top: 15px;
+  transform: translateY(0);
+}
+
+section {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll; /* Changed from auto to scroll */
+  overflow-y: hidden;
+  padding: 60px 20px 80px 20px; /* More vertical padding */
+  gap: 30px; /* Gap between cards */
+  scroll-behavior: smooth;
+  scrollbar-width: thin; /* Thinner scrollbar for Firefox */
+  scrollbar-color: #FFD700 rgba(0, 0, 0, 0.3); /* Gold thumb, transparent track */
+  min-height: 70vh; /* Make section take up more vertical space */
+  width: 100%; /* Use full width */
+  box-sizing: border-box; /* Include padding in width calculation */
+  
+  /* CSS Scroll Snap for smooth navigation */
+  scroll-snap-type: x proximity; /* Less strict - snaps when close */
+  -webkit-overflow-scrolling: touch; /* Better mobile support */
+}
+
+/* Thicker, more visually appealing scrollbar for webkit browsers */
+section::-webkit-scrollbar {
+  height: 10px; /* Thin but visible scrollbar */
+  background: rgba(0, 0, 0, 0.2); /* Slightly visible background */
+}
+
+section::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.15); /* Subtle track */
+  border-radius: 8px;
+}
+
+section::-webkit-scrollbar-thumb {
+  background: linear-gradient(to right, #B8860B, #FFD700, #FFED4E, #FFD700, #B8860B); /* Gold gradient */
+  border-radius: 4px;
+  border: none;
+  box-shadow: none;
+  transition: all 0.3s ease-in-out;
+}
+
+section::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to right, #FFD700, #FFED4E, #FFFACD, #FFED4E, #FFD700); /* Brighter on hover */
+  box-shadow: 0 3px 12px rgba(255, 215, 0, 0.7); /* Stronger glow */
+  transform: scaleY(1.1);
+}
+
+/* Cards with reflective borders and rotating glare effect */
+section div {
+  min-width: 350px;
+  max-width: 350px;
+  min-height: 400px; /* Ensure cards have minimum height */
+  flex-shrink: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  /* Circuit board background */
+  background-image: url('img/a-circuit-board-with-many-lines-and-dots-free-png.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
+  border: 3px solid transparent;
+  border-image: linear-gradient(135deg, #B8860B 0%, #FFD700 25%, #FFED4E 50%, #FFD700 75%, #B8860B 100%) 1;
+  border-radius: 10px;
+  padding: 25px; /* Slightly more padding */
+  margin: 0;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6); /* Add depth with shadow */
+  
+  /* Scroll snap alignment */
+  scroll-snap-align: start; /* Snap to start of each card */
+  scroll-margin-left: 20px; /* Space from left edge when snapped */
+}
+
+/* Rotating glare overlay */
+section div::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent 30%, rgba(255, 237, 78, 0.1) 45%, rgba(255, 237, 78, 0.3) 50%, rgba(255, 237, 78, 0.1) 55%, transparent 70%);
+  animation: rotatingGlare 4s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes rotatingGlare {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+section div:hover {
+  transform: scale(1.05);
+  border-image: linear-gradient(135deg, #FFD700 0%, #FFED4E 25%, #FFFACD 50%, #FFED4E 75%, #FFD700 100%) 1;
+  box-shadow: 0 12px 36px rgba(255, 215, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+section div:hover::before {
+  animation-duration: 2s;
+}
+
+/* Reflective gold text on years */
+h2 {
+  background: linear-gradient(90deg, #B8860B 0%, #FFD700 30%, #FFED4E 50%, #FFD700 70%, #B8860B 100%);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2em;
+  margin: 0 0 10px 0;
+  position: relative;
+  z-index: 1;
+  animation: reflectiveGlare 4s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+/* Reflective gold on titles */
+h3 {
+  background: linear-gradient(90deg, #B8860B 0%, #D4AF37 40%, #FFD700 50%, #D4AF37 60%, #B8860B 100%);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.5em;
+  margin: 10px 0;
+  position: relative;
+  z-index: 1;
+  animation: reflectiveGlare 5s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+section div p {
+  color: #E5E5E5;
+  line-height: 1.6;
+  font-size: 1em;
+  position: relative;
+  z-index: 1;
+  /* Hide description by default */
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.4s ease, max-height 0.4s ease;
+  flex-grow: 1; /* Fill available space for consistent card heights */
+}
+
+/* Show description on hover */
+section div:hover p {
+  opacity: 1;
+  max-height: 500px; /* Large enough for any description */
+}
+
+section div img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin: 15px 0;
+  border: 2px solid transparent;
+  border-image: linear-gradient(90deg, #B8860B 0%, #FFD700 50%, #B8860B 100%) 1;
+  position: relative;
+  z-index: 1;
+}
+
+body > p {
+  text-align: center;
+  background: linear-gradient(90deg, #B8860B 0%, #FFD700 25%, #FFED4E 50%, #FFD700 75%, #B8860B 100%);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 30px 20px; /* More vertical padding */
+  font-size: 1.1em;
+  margin: 0;
+  animation: reflectiveGlare 6s ease-in-out infinite;
+  min-height: 80px; /* Ensure footer has height */
+  cursor: pointer; /* Indicate interactivity */
+  transition: all 0.3s ease; /* Smooth hover transition */
+}
+
+/* Interactive footer hover effect */
+body > p:hover {
+  background-color: rgba(0, 0, 0, 0.95);
+  padding: 35px 20px;
+  min-height: 90px;
+}
+
+@media (max-width: 768px) {
+  section {
+    flex-direction: column; /* Stack vertically */
+    overflow-x: visible;
+    overflow-y: auto;
+    align-items: center;
+    padding: 20px 10px 40px 10px; /* Minimal padding for mobile */
+    gap: 10px; /* Reduce gap between cards */
+    min-height: auto; /* Don't enforce min-height on mobile */
+    /* Disable scroll snap on mobile for vertical scrolling */
+    scroll-snap-type: none;
+  }
+  
+section div {
+    min-width: 100%;
+    max-width: 95vw; /* Use 95% of viewport width for better fit */
+    margin: 6px auto; /* Reduce margins */
+    /* Disable scroll snap alignment on mobile */
+    scroll-snap-align: none;
+  }
+  
+  /* Responsive adjustments for compact header */
+  header {
+    padding: 20px 15px;
+  }
+  
+  header:hover {
+    padding: 30px 15px;
+  }
+  
+  header img {
+    width: 80px;
+  }
+  
+  header:hover img {
+    width: 100px;
+  }
+  
+  h1 {
+    font-size: 1.5em;
+  }
+  
+  header:hover h1 {
+    font-size: 2em;
+  }
+  
+  header p {
+    font-size: 0.95em;
+  }
+  
+  /* Adjust card and image sizing for better fit on mobile */
+  section div {
+    min-height: 240px; /* Reduce minimum height */
+    padding: 10px; /* Minimal padding */
+    border: 2px solid #B8860B; /* Simpler border for mobile to avoid cutoff */
+    border-image: none; /* Remove border-image on mobile */
+  }
+  
+  h2 {
+    font-size: 1.3em; /* Further reduce year text */
+    margin: 0 0 5px 0;
+  }
+  
+  h3 {
+    font-size: 0.95em; /* Further reduce title text */
+    margin: 3px 0;
+  }
+  
+  section div p {
+    font-size: 0.85em; /* Reduce paragraph text */
+    line-height: 1.4;
+  }
+  
+  section div img {
+    margin: 6px 0; /* Further reduce image margins */
+    max-height: 120px; /* Further limit image height */
+  }
+}

@@ -1,0 +1,301 @@
+/* Add your CSS here */
+
+/* Body with background image and metallic gold/black color scheme */
+body {
+  /* Set background image */
+  background-image: url('img/rubaitul-azad-3WhPfoOX888-unsplash.jpg');
+  background-size: cover; /* Make image cover the entire page */
+  background-position: center; /* Center the image */
+  background-attachment: fixed; /* Keep background fixed while scrolling */
+  background-repeat: no-repeat; /* Don't repeat the image */
+  
+  /* Set text color to metallic gold */
+  color: #D4AF37;
+  
+  /* Remove default margin */
+  margin: 0;
+  padding: 0;
+  
+  /* Set font family */
+  font-family: Arial, sans-serif;
+}
+
+/* Header styling with black background and gold text */
+header {
+  background-color: rgba(0, 0, 0, 0.85); /* Black with slight transparency */
+  color: #D4AF37; /* Metallic gold text */
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* Center the header content */
+header div {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Style the Intel logo */
+header img {
+  width: 150px; /* Resize the logo */
+  height: auto;
+  margin-bottom: 20px;
+}
+
+/* Main heading styling with reflective gold gradient */
+h1 {
+  /* Create reflective gradient effect */
+  background: linear-gradient(135deg, 
+    #B8860B 0%,    /* Dark gold */
+    #FFD700 25%,   /* Bright gold */
+    #FFED4E 40%,   /* Light gold glare */
+    #FFD700 50%,   /* Bright gold */
+    #D4AF37 75%,   /* Medium gold */
+    #B8860B 100%   /* Dark gold */
+  );
+  background-size: 200% 200%; /* Make gradient larger for animation */
+  background-clip: text; /* Clip gradient to text */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; /* Make text transparent to show gradient */
+  
+  font-size: 2.5em;
+  margin: 10px 0;
+  
+  /* Animate the glare effect */
+  animation: reflectiveGlare 3s ease-in-out infinite;
+}
+
+/* Keyframe animation for moving glare */
+@keyframes reflectiveGlare {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Subheading paragraph */
+header p {
+  color: #D4AF37; /* Metallic gold */
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+/* Timeline section styling */
+section {
+  /* Use Flexbox for horizontal layout on large screens */
+  display: flex;
+  flex-direction: row; /* Cards go horizontally */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  overflow-y: hidden; /* Hide vertical overflow */
+  padding: 40px 20px;
+  gap: 20px; /* Space between cards */
+  
+  /* Smooth scrolling */
+  scroll-behavior: smooth;
+  
+  /* Custom scrollbar styling */
+  scrollbar-width: thin;
+  scrollbar-color: #D4AF37 rgba(0, 0, 0, 0.3);
+}
+
+/* Webkit browsers scrollbar styling */
+section::-webkit-scrollbar {
+  height: 8px; /* Scrollbar height for horizontal scrolling */
+}
+
+section::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+section::-webkit-scrollbar-thumb {
+  background: #D4AF37; /* Gold scrollbar */
+  border-radius: 4px;
+}
+
+section::-webkit-scrollbar-thumb:hover {
+  background: #FFD700; /* Brighter gold on hover */
+}
+
+/* Timeline card styling with reflective border */
+section div {
+  /* Set minimum and maximum width for cards */
+  min-width: 350px; /* Minimum card width for horizontal scroll */
+  max-width: 350px; /* Fixed width for uniform cards */
+  flex-shrink: 0; /* Prevent cards from shrinking */
+  
+  background-color: rgba(0, 0, 0, 0.8); /* Black background with transparency */
+  
+  /* Create reflective gold border using gradient */
+  border: 3px solid transparent; /* Make border transparent for gradient */
+  border-image: linear-gradient(135deg,
+    #B8860B 0%,
+    #FFD700 25%,
+    #FFED4E 50%,  /* Bright glare in center */
+    #FFD700 75%,with enhanced glare */
+section div:hover {
+  transform: scale(1.05); /* Slightly enlarge card on hover */
+  
+  /* Brighter reflective border on hover */
+  border-image: linear-gradient(135deg,
+    #FFD700 0%,
+    #FFED4E 25%,
+    #FFFACD 50%,  /* Very bright glare */
+    #FFED4E 75%,
+    #FFD700 100%
+  ) 1;
+}
+
+/* Speed up glare animation on hover */
+section div:hover::before {
+  animation-duration: 2s;
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px;
+  margin: 0; /* Remove margin since we use gap in flexbox */
+  transition: all 0.3s ease; /* Smooth animation on hover */
+  position: relative; /* For pseudo-element positioning */
+  overflow: hidden; /* Contain glare effect */
+}
+
+/* Add moving glare effect overlay */
+section div::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255, 237, 78, 0.1) 45%,
+    rgba(255, 237, 78, 0.3) 50%,  /* Bright glare */
+    rgba(255, 237, 78, 0.1) 55%,
+    transparent 70%
+  );
+  animation: rotatingGlare 4s linear infinite;
+  pointer-events: none; /* Don't block interactions */
+}
+
+/* Keyframe for rotating glare effect */
+@keyframes rotatingGlare {
+  0% {
+    transform: rotate(0dewith reflective effect */
+h2 {
+  /* Reflective gold gradient */
+  background: linear-gradient(90deg,
+    #B8860B 0%,
+    #FFD700 30%,
+    #FFED4E 50%,  /* Bright center */
+    #FFD700 70%,
+    #B8860B 100%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  font-size: 2em;
+  margin: 0 0 10px 0;
+  position: relative;
+  z-index: 1; /* Keep above glare overlay */
+  
+  /* Subtle glare animation with different timing */
+  animation: reflectiveGlare 4s ease-in-out infinite;
+  animation-delay: 0.5s; /* Offset from h1 animation */
+}
+
+/* Card title styling with metallic sheen */
+h3 {
+  /* Subtle reflective gradient */
+  background: linear-gradient(90deg,
+    #B8860B 0%,
+    #D4AF37 40%,
+    #FFD700 50%,
+  position: relative;
+  z-index: 1; /* Keep above glare overlay */
+}
+
+/* Timeline images styling with gold reflective border */
+section div img {
+  width: 100%; /* Make image full width of card */
+  height: auto;
+  border-radius: 5px; /* Slightly rounded corners */
+  margin: 15px 0;
+  
+  /* Reflective gold borderwith reflective gold */
+body > p {
+  text-align: center;
+  
+  /* Reflective gold gradient text */
+  background: linear-gradient(90deg,
+    #B8860B 0%,
+    #FFD700 25%,
+    #FFED4E 50%,
+    #FFD700 75%,
+    #B8860B 100%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  background-color: rgba(0, 0, 0, 0.8); /* Black background */
+  padding: 20px;
+  font-size: 1.1em;
+  margin: 0;
+  
+  /* Animate the glare */
+  animation: reflectiveGlare 6s ease-in-out infinite images styling */
+section div img {
+  width: 100%; /* Make image full width of card */
+  height: auto;
+  border-radius: 5px; /* Slightly rounded corners */
+  margin: 15px 0;
+  border: 1px solid #D4AF37; /* Gold border around images */
+}
+
+/* Bottom instruction text */
+body > p {
+  text-align: center;
+ 
+
+/* Responsive design: Stack cards vertically on smaller screens */
+@media (max-width: 768px) {
+  /* Change timeline to vertical layout */
+  section {
+    flex-direction: column; /* Stack cards vertically */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    overflow-y: visible; /* Allow normal vertical scrolling */
+    align-items: center; /* Center cards horizontally */
+  }
+  
+  /* Make cards full width on small screens */
+  section div {
+    min-width: 100%; /* Full width */
+    max-width: 500px; /* Maximum width for readability */
+    margin: 20px 0; /* Add vertical spacing between cards */
+  }
+  
+  /* Adjust header padding for mobile */
+  header {
+    padding: 30px 15px;
+  }
+  
+  /* Adjust font sizes for mobile */
+  h1 {
+    font-size: 2em;
+  }
+  
+  header p {
+    font-size: 1em;
+  }
+} color: #FFD700; /* Bright gold */
+  background-color: rgba(0, 0, 0, 0.8); /* Black background */
+  padding: 20px;
+  font-size: 1.1em;
+  margin: 0;
+}
