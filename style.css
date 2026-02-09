@@ -1,1 +1,134 @@
 /* Add your CSS here */
+
+html {
+  margin-top: 0px;
+  padding: 0px;
+  border:0;
+  background-color: white;
+}
+header {
+  padding: 100px;
+  display: flex;
+  justify-content:center;
+}
+
+
+
+
+header {
+  background-image:url("img/image7.jpg");
+  color: white;
+  font: bolder 1.5em avenir, sans-serif;
+}
+body{ color: black;
+
+}
+
+#header{
+color: white;
+}
+
+.logo{
+  width: 16%;
+  height: auto;
+} 
+
+h1{ font-family: "avenir" , sans-serif;
+  font-weight:bold ;
+  color: white;
+
+}
+
+h2{
+  font-weight:bold ;
+}
+h3{
+  font-weight: bold;
+}
+
+p{font: 1.1em avenir, sans-serif;}
+
+section {
+  padding: 100px 20px;
+   font: 1.5em avenir, sans-serif;
+}
+
+.milestone-container {
+  display: flex;
+  flex-wrap: nowrap; /* Keeps items in a line */
+  overflow-x: auto; /* Enables horizontal scroll */
+  gap: 20px;
+  padding: 10px;
+  padding-bottom: -200px;
+  scroll-snap-type: y mandatory;
+}
+
+.milestone-item {
+  flex: 0 0 auto; /* Items don't shrink or grow */
+  width: 250px; 
+  padding-left: 0%;
+  padding-right: 0%;
+}
+
+
+@media (max-width: 768px) {
+  .milestone-container {
+    flex-direction:column; 
+    overflow-x: hidden; 
+  }
+  
+  .milestone-item {
+    width: 100%; /* Full width for stacked cards */
+  }
+}
+
+.milestone-container img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+
+.hover-container {
+    /* Basic styling for the box/area that can be hovered over */
+    width: 200px;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+/* Common styles for the text spans */
+.initial-text,
+.hover-text {
+    display: block; /* Ensures they take up their own line */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transitions for opacity and movement */
+}
+
+/* Initial state: The hover text is hidden */
+.hover-text {
+    opacity: 0;
+    /* Optional: move the text slightly out of view so it fades in nicely */
+    transform: translateY(10px);
+}
+
+/* Hover state: When the container is hovered */
+.hover-container:hover .initial-text {
+    opacity: 0;
+    transform: translateY(-10px); /* Moves the initial text up and out */
+}
+
+.hover-container:hover .hover-text {
+    opacity: 1;
+    justify-content: center;
+    transform:translateY(-40%); /* Moves the hover text into view */
+}
+
+
+.hover-container:hover {
+    background-color: #0068b5;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
