@@ -60,8 +60,8 @@ body {
 	margin: 0 auto 18px auto; /* center timeline */
 	scroll-behavior: smooth;  /* smooth scrolling for a nicer feel */
 	-webkit-overflow-scrolling: touch;
-	/* Optional: enable scroll snapping for a nicer horizontal scroll */
-	scroll-snap-type: x proximity;
+	/* Stronger scroll snap: cards will align when scrolling stops */
+	scroll-snap-type: x mandatory;
 }
 
 /* Each milestone card */
@@ -72,8 +72,9 @@ body {
 	min-width: 260px;         /* ensures cards are readable */
 	flex: 0 0 auto;           /* don't shrink - keep width for horizontal scroll */
 	box-shadow: 0 4px 10px rgba(16, 42, 67, 0.06);
-	transition: transform 180ms ease, box-shadow 180ms ease;
+	transition: transform 220ms cubic-bezier(.2,.8,.2,1), box-shadow 220ms ease;
 	scroll-snap-align: center; /* aligns card when scrolling */
+	will-change: transform;    /* hint to browser for smoother animations */
 }
 .milestone img {
 	width: 100%;
@@ -87,9 +88,16 @@ body {
 
 /* Hover effect for interactivity: subtle lift and stronger shadow */
 .milestone:hover,
-.milestone:focus-within {
-	transform: translateY(-6px);
-	box-shadow: 0 12px 24px rgba(16, 42, 67, 0.12);
+.milestone:focus-within,
+.milestone:focus {
+	transform: translateY(-8px) scale(1.02);
+	box-shadow: 0 14px 28px rgba(16, 42, 67, 0.14);
+}
+
+/* Keyboard focus state: helps with accessibility and keyboard users */
+.milestone:focus {
+	outline: 3px solid rgba(15,98,254,0.12);
+	outline-offset: 4px;
 }
 
 /* .more contains extra details that are hidden initially */
