@@ -1,1 +1,146 @@
-/* Add your CSS here */
+/* Beginner-friendly CSS with comments to explain each part.
+	 We use simple layout methods (Flexbox) and avoid Grid for clarity.
+*/
+
+/* Basic page reset to keep spacing consistent for beginners */
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/* Page body: choose a neutral background and readable font */
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	line-height: 1.45;
+	background: #f5f8fb; /* light neutral background */
+	color: #102a43; /* dark blue-gray text for good contrast */
+	padding: 20px;
+}
+
+/* HERO SECTION
+	 - center content, give a subtle blue background and rounded corners
+*/
+.hero {
+	background: linear-gradient(180deg, #0f62fe 0%, #2e8bff 100%);
+	color: white;
+	border-radius: 10px;
+	padding: 28px 16px;
+	margin-bottom: 20px;
+}
+.hero-inner {
+	max-width: 980px; /* keeps content from getting too wide on large screens */
+	margin: 0 auto;   /* centers content */
+	text-align: left;
+}
+.logo {
+	height: 48px; /* small, beginner-friendly logo size */
+	display: block;
+	margin-bottom: 12px;
+}
+.hero h1 {
+	font-size: 28px;
+	margin-bottom: 8px;
+}
+.lead {
+	opacity: 0.95;
+	max-width: 720px;
+}
+
+/* MAIN TIMELINE
+	 - use Flexbox to lay out cards in a row
+	 - allow horizontal scrolling on narrow windows
+*/
+.timeline {
+	display: flex;             /* place cards in a row */
+	gap: 16px;                 /* space between cards */
+	overflow-x: auto;         /* allow horizontal scroll if needed */
+	padding: 18px 8px;
+	max-width: 980px;
+	margin: 0 auto 18px auto; /* center timeline */
+	scroll-behavior: smooth;  /* smooth scrolling for a nicer feel */
+	-webkit-overflow-scrolling: touch;
+	/* Optional: enable scroll snapping for a nicer horizontal scroll */
+	scroll-snap-type: x proximity;
+}
+
+/* Each milestone card */
+.milestone {
+	background: white;
+	border-radius: 8px;
+	padding: 12px;
+	min-width: 260px;         /* ensures cards are readable */
+	flex: 0 0 auto;           /* don't shrink - keep width for horizontal scroll */
+	box-shadow: 0 4px 10px rgba(16, 42, 67, 0.06);
+	transition: transform 180ms ease, box-shadow 180ms ease;
+	scroll-snap-align: center; /* aligns card when scrolling */
+}
+.milestone img {
+	width: 100%;
+	height: auto; /* keep image aspect ratio */
+	border-radius: 6px;
+	margin-bottom: 8px;
+}
+.milestone h2 { font-size: 16px; color: #0f62fe; margin-bottom: 4px; }
+.milestone h3 { font-size: 14px; margin-bottom: 8px; }
+.milestone p { font-size: 14px; color: #16324f; }
+
+/* Hover effect for interactivity: subtle lift and stronger shadow */
+.milestone:hover,
+.milestone:focus-within {
+	transform: translateY(-6px);
+	box-shadow: 0 12px 24px rgba(16, 42, 67, 0.12);
+}
+
+/* .more contains extra details that are hidden initially */
+.more {
+	max-height: 0;           /* hide by clipping height */
+	overflow: hidden;
+	transition: max-height 220ms ease;
+	margin-top: 8px;
+}
+.milestone:hover .more,
+.milestone:focus-within .more {
+	max-height: 240px;       /* expand to reveal extra text */
+}
+
+/* Small helper hint text */
+.hint {
+	max-width: 980px;
+	margin: 0 auto 32px auto;
+	text-align: center;
+	color: #184e77;
+}
+
+/* Footer */
+.site-footer {
+	max-width: 980px;
+	margin: 0 auto;
+	padding: 12px 0;
+	color: #0b2545;
+	font-size: 13px;
+	text-align: center;
+}
+
+/* Responsive rules for smaller screens: stack cards vertically */
+@media (max-width: 720px) {
+	.hero h1 { font-size: 22px; }
+	.timeline {
+		display: block;      /* stack vertically on mobile for simple reading */
+		overflow-x: visible;
+		padding: 0;
+	}
+	.milestone {
+		width: 100%;
+		min-width: auto;
+		margin: 12px 0;
+	}
+}
+
+/* Very small screens: slightly smaller text */
+@media (max-width: 420px) {
+	.hero h1 { font-size: 20px; }
+	.milestone h2, .milestone h3, .milestone p { font-size: 13px; }
+}
+
+/* End of CSS */
