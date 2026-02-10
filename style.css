@@ -1,1 +1,211 @@
-/* Add your CSS here */
+/* Basic reset */
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #0c2f2c;
+	background-color: #f2f8f6;
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+/* Hero section */
+.hero {
+	background: linear-gradient(135deg, #0b5f5a 0%, #12807b 55%, #1fb8aa 100%);
+	color: #ffffff;
+	padding: 60px 20px 70px;
+}
+
+.hero-content {
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+.logo {
+	width: 160px;
+	margin-bottom: 20px;
+}
+
+.hero h1 {
+	font-size: 42px;
+	margin: 0 0 10px;
+}
+
+.hero p {
+	max-width: 680px;
+	font-size: 18px;
+	line-height: 1.6;
+	margin: 0;
+}
+
+/* Cards section */
+.timeline {
+	max-width: 1100px;
+	margin: 40px auto 10px;
+	overflow-x: auto;
+	/* Snap each card cleanly while scrolling */
+	scroll-snap-type: x mandatory;
+	padding: 0 20px 20px;
+	scroll-behavior: smooth;
+}
+
+/* Track holds the cards and the line */
+.timeline-track {
+	position: relative;
+	display: flex;
+	gap: 20px;
+	padding: 30px 0 20px;
+	width: max-content;
+	min-width: 100%;
+}
+
+/* Timeline horizontal line */
+.timeline-track::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 20px;
+	height: 2px;
+	background-color: #c7e2dd;
+}
+
+.card {
+	background-color: #ffffff;
+	border: 1px solid #dfeae7;
+	border-radius: 12px;
+	padding: 18px;
+	margin: 0;
+	position: relative;
+	box-shadow: 0 6px 14px rgba(12, 47, 44, 0.12);
+	flex: 0 0 260px;
+	scroll-snap-align: start;
+	scroll-snap-stop: always;
+	transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Timeline dot for each card */
+.card::before {
+	content: "";
+	position: absolute;
+	left: 20px;
+	top: -18px;
+	width: 14px;
+	height: 14px;
+	border-radius: 50%;
+	background-color: #1e9a8e;
+	border: 3px solid #ffffff;
+	box-shadow: 0 0 0 2px #c7e2dd;
+}
+
+.card-image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	transition: transform 0.35s ease;
+}
+
+.card-media {
+	position: relative;
+	overflow: hidden;
+	border-radius: 10px;
+	height: 230px;
+	margin-top: 8px;
+}
+
+.card-overlay {
+	position: absolute;
+	inset: 0;
+	background-color: rgba(11, 45, 42, 0.75);
+	color: #ffffff;
+	padding: 12px 12px 16px;
+	display: block;
+	opacity: 0;
+	transition: opacity 0.35s ease;
+	overflow-y: auto;
+}
+
+.card h2 {
+	font-size: 22px;
+	margin: 0 0 6px;
+	color: #137c73;
+}
+
+.card h3 {
+	margin: 0 0 10px;
+	font-size: 18px;
+	color: #0c2f2c;
+}
+
+.card-overlay p {
+	margin: 0;
+	line-height: 1.5;
+}
+
+.card:hover {
+	transform: translateY(-6px) scale(1.01);
+	box-shadow: 0 16px 28px rgba(12, 47, 44, 0.22);
+}
+
+.card:hover .card-image {
+	transform: scale(1.03);
+}
+
+.card:hover .card-overlay {
+	opacity: 1;
+}
+
+.card:focus-within .card-overlay {
+	opacity: 1;
+}
+
+.card:focus-within {
+	outline: 2px solid #1fb8aa;
+	outline-offset: 2px;
+}
+
+/* Small helper text */
+.tip {
+	text-align: center;
+	margin: 10px 0 40px;
+	font-size: 14px;
+	color: #466861;
+}
+
+/* Mobile tweaks */
+@media (max-width: 700px) {
+	.hero {
+		padding: 50px 16px 60px;
+	}
+
+	.hero h1 {
+		font-size: 34px;
+	}
+
+	.hero p {
+		font-size: 16px;
+	}
+
+	/* Stack timeline cards on small screens */
+	.timeline {
+		overflow-x: visible;
+		scroll-snap-type: none;
+	}
+
+	.timeline-track {
+		flex-direction: column;
+		width: 100%;
+	}
+
+	.card {
+		flex: 1 1 auto;
+	}
+}
+
