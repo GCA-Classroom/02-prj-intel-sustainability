@@ -1,1 +1,151 @@
 /* Add your CSS here */
+body {
+    font-family: roboto, sans-serif;
+    margin: 0;
+    padding: .55em;
+    background-color: #ffffff;
+    overflow-x: hidden;
+}
+header p {
+    text-align: center;
+    font-size: 1.25em;
+    color: #333;
+    padding: .55em;
+}
+nav {
+    background-color: #0071c5;
+    padding: 2em 1em;
+    text-align: center;
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.nav-logo {
+  width:7em;
+  height:auto;
+  margin-right: 10em;
+  padding-left: 1em;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: .55em;
+  margin: 0;
+  padding: .55em;
+  font-size: 1.25em;
+}
+.nav-links li {
+  margin-left: 1em;
+}
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+h1 {
+    color: #000000;
+    text-align: center;
+    margin-top: 1em;
+    padding: .50em;
+    font-size: 2em;
+}
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1em;
+    padding-right:0.5em;
+    padding-left:0.5em;
+    scroll-behavior: smooth;
+    color: #f4f4f4;
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.carousel-container {
+  overflow: hidden;
+  width: 75%;
+  display: flex;
+}
+.carousel-track {
+  display: flex;
+  gap: 1em;
+  overflow-x: auto;
+  justify-content: center;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: 3em;
+  min-width: max-content;
+}
+.card {
+    background-color: #3793d8;
+    border-radius: .75em;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+    flex: 0 0 auto;
+    width: 300px;
+    padding: 1em;
+    scroll-snap-align: start;
+    text-align: center;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    flex-shrink: 0;
+    max-width: 300px;
+  }
+.card-info {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.5s ease, max-height 0.3s ease
+}
+.card:hover .card-info {
+  opacity: 1;
+  max-height: 10em;
+}
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: .55em;
+    margin-bottom: .55em;
+    align-items: center;
+}
+.card:hover img {
+  opacity : 0.8;
+}
+
+.carousel-cards.active {
+    opacity: 1;
+    transform: scale(1.2);
+    z-index: 2;
+}
+@media (max-width: 768px) {
+    .carousel {
+        flex-direction: row;
+        align-items: center;
+    }
+    .card {
+        width: 80%;
+        margin-bottom: 1em;
+    }
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    nav {
+      flex-direction: column;
+      align-items: center;
+    }
+    .nav-links {
+        flex-direction: column;
+        gap: .25em;
+        padding: 0;
+    }
+    .nav-links li {
+        margin-left: 0;
+    }
+    .nav-logo {
+        margin-right: 0;
+        margin-bottom: 1em;
+    }
+}
+* [
+  box-sizing: border-box;
+]
