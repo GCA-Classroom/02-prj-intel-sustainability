@@ -1,1 +1,141 @@
+/* Hide card text by default */
+.card .card-text {
+  display: none;
+}
+
+/* Show card text only on hover */
+.card:hover .card-text {
+  display: block;
+}
+
 /* Add your CSS here */
+/*workflow: 1) center heading content, 2) insert cards for each decade, 3) style cards with hover effects, 4) ensure responsiveness*/
+img[src$=".svg"] {
+    width: 200px; /* Adjust the size as needed */
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    
+}
+
+h1 {
+    font-size: 2.5em;        /* Makes the title bigger */
+    color: #fffbfb;          /* Changes the text color */
+    text-align: center;      /* Centers the title */
+    margin-top: 30px;        /* Adds space above */
+    font-family: 'Courier New', Courier, monospace, sans-serif; /* Changes the font */
+    line-height: 1.6
+}
+
+.header p {
+    font-size: 1.2rem;        /* Makes the paragraph text bigger */
+    text-align: center;      /* Centers the paragraph text */
+    margin: 2rem auto 0;        /* Adds space above */
+    line-height: 1.6;        /* Improves readability with line spacing */
+}     
+
+/* Timeline Section */
+
+.timeline-section {
+    text-align: center;
+    padding: 3rem 3rem;
+    background-color: #f4f4f4;
+}
+.card-left {
+  align-self: flex-start;
+  margin-right: 0; /* space from the center line */
+}
+
+.card-right {
+  align-self: flex-end;
+  margin-left: 0; /* space from the center line */
+}
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column; /* Stack cards vertically */
+  align-items: center;
+  gap: 1.5rem;
+  width: 700px;
+  max-width: 95vw;
+  margin: 0 auto;
+  
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 10px; /* Make the vertical line wider */
+  background: #0071c5;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+.card-left::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -95px; /* 30px (connector) + 5px (half vertical line width) */
+  width: 80px;
+  height: 4px;
+  background: #0071c5;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.card-right::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -95px; /* 30px (connector) + 5px (half vertical line width) */
+  width: 80px;
+  height: 4px;
+  background: #0071c5;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+
+
+.card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 220px;
+  min-width: 220px;
+  padding: 1rem;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative; /* Needed for connector lines */
+    }
+
+  
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 6px;
+      margin-top: 0.5rem;
+    }
+
+    .year {
+      font-weight: 700;
+      color: #005eb8;
+      font-size: 1.2rem;
+    }
+
+    .note {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+
+    
