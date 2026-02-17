@@ -1,143 +1,604 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Intel: Sustainability Through the Ages</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700;800&display=swap" rel="stylesheet" />
 </head>
 <body>
 
   <!-- Header / Hero Section -->
-  <header>
-    <div>
-      <!-- Ask Copilot to teach you about `.svg`. 🙂 You'll need to resize the logo with CSS. -->
-      <img src="img/intel-header-logo.svg" alt="Intel Logo" />
-      <!-- Main Heading -->
-      <h1>
-        Sustainability Through the Ages
-      </h1>
+  <header class="hero-section" role="banner">
+    <div class="hero-background" aria-hidden="true"></div>
 
-      <!-- Subheading / Description -->
-      <p>
-        Explore Intel's journey through time, discovering how our commitment
-        to innovation has shaped a more sustainable future for technology 
-        and our planet.
-      </p>
+    <div class="hero-content">
+      <div class="logo-container">
+        <img class="intel-logo" src="img/intel-header-logo.svg" alt="Intel Logo" />
+        <span class="logo-text">Intel</span>
+      </div>
+
+      <div class="hero-text">
+        <h1 class="hero-title">Sustainability Through the Ages</h1>
+        <p class="hero-subtitle">
+          Explore Intel's journey through time, discovering how our commitment
+          to innovation has shaped a more sustainable future for technology
+          and our planet.
+        </p>
+        <div class="hero-divider" aria-hidden="true"></div>
+        <p class="hero-description">Scroll the timeline to view milestones. Click “Learn More” on a card to see extra details.</p>
+      </div>
+
+      <div class="hero-stats" aria-label="Key stats">
+        <div class="stat-item">
+          <span class="stat-number">1968</span>
+          <span class="stat-label">Starting Point</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">2040</span>
+          <span class="stat-label">Net-Zero Target</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">9</span>
+          <span class="stat-label">Milestones</span>
+        </div>
+      </div>
     </div>
+
+    <div class="hero-accent" aria-hidden="true"></div>
   </header>
 
-  <!-- Timeline Cards Section -->
-  <section>
-
-    <!-- Card 1: 1968 -->
-    <div>
-      <h2>1968</h2>
-      <h3>Intel Founded</h3>
-      <!-- Add image -->
-      <p>
-        Robert Noyce and Gordon Moore rename the newly formed company 
-        NM Electronics to Intel Corporation, laying the foundation for 
-        decades of technological innovation.
-      </p>
-    </div>
-
-    <!-- Card 2: 1971 -->
-    <div>
-      <h2>1971</h2>
-      <h3>First Microprocessor</h3>
-      <!-- Add image -->
-      <p>
-        Intel debuts the 4004, the world's first commercial microprocessor, 
-        igniting the microprocessor revolution and propelling the future 
-        of computing devices.
-      </p>
-    </div>
-
-    <!-- Card 3: 1978 -->
-    <div>
-      <h2>1978</h2>
-      <h3>8086 Processor</h3>
-      <!-- Add image -->
-      <p>
-        Launch of the 8086 processor, establishing the x86 architecture 
-        that drives countless PCs and servers in the modern era.
-      </p>
-    </div>
-
-    <!-- Card 4: 1985 -->
-    <div>
-      <h2>1985</h2>
-      <h3>386 Processor</h3>
-      <!-- Add image -->
-      <p>
-        Intel introduces the 386 processor with 32-bit architecture, 
-        ushering in a new era of performance and multitasking for 
-        personal computers.
-      </p>
-    </div>
-
-    <!-- Card 5: 2006 -->
-    <div>
-      <h2>2006</h2>
-      <h3>Peak GHG Emissions</h3>
-      <!-- Add image -->
-      <p>
-        This year marks Intel's highest annual greenhouse gas emissions 
-        for operations. Over subsequent years, Intel invests heavily in 
-        chemical abatement, renewable energy, and energy-efficient 
-        manufacturing to reverse this trend.
-      </p>
-    </div>
-
-    <!-- Card 6: 2020 -->
-    <div>
-      <h2>2020</h2>
-      <h3>RISE Strategy</h3>
-      <!-- Add image -->
-      <p>
-        Intel launches its RISE (Responsible, Inclusive, Sustainable, 
-        Enabling) strategy and 2030 goals, aiming to drive industry-wide 
-        progress on climate action, water stewardship, and waste reduction.
-      </p>
-    </div>
-
-    <!-- Card 7: 2022 -->
-    <div>
-      <h2>2022</h2>
-      <h3>Net-Zero By 2040</h3>
-      <!-- Add image -->
-      <p>
-        Intel announces its commitment to achieve net-zero greenhouse 
-        gas emissions (Scope 1 and 2) across its global operations 
-        by 2040, building on years of environmental initiatives.
-      </p>
-    </div>
-
-    <!-- Card 8: 2023 -->
-    <div>
-      <h2>2023</h2>
-      <h3>Renewable Electricity</h3>
-      <!-- Add image -->
-      <p>
-        The company achieves 99% renewable electricity usage worldwide, 
-        helping to drastically lower carbon emissions and driving progress 
-        toward Intel's long-term sustainability goals.
-      </p>
-    </div>
-
-    <!-- Card 9: 2024 -->
-    <div>
-      <h2>2024</h2>
-      <h3>Sustainability Summit</h3>
-      <!-- Add image -->
-      <p>
-        Intel hosts its first Sustainability Summit, uniting suppliers, 
-        government officials, and industry leaders to collaborate on 
-        next-generation sustainable semiconductor manufacturing.
-      </p>
+  <!-- Category Legend -->
+  <section class="legend" aria-label="Category legend">
+    <h2 class="legend-title">Categories</h2>
+    <div class="legend-items">
+      <span class="legend-pill emissions">Emissions</span>
+      <span class="legend-pill energy">Energy</span>
+      <span class="legend-pill water">Water</span>
+      <span class="legend-pill supply-chain">Supply Chain</span>
+      <span class="legend-pill origins">Origins</span>
+      <span class="legend-pill innovation">Innovation</span>
+      <span class="legend-pill architecture">Architecture</span>
+      <span class="legend-pill performance">Performance</span>
+      <span class="legend-pill climate">Climate</span>
     </div>
   </section>
-  <p>Scroll to view timeline | Hover over cards to learn more!</p>
+
+  <!-- Timeline Cards Section -->
+  <section class="timeline-wrapper" aria-label="Timeline">
+    <main class="timeline" role="main" aria-label="Timeline cards">
+
+      <article class="timeline-item" data-category="supply-chain">
+        <div class="timeline-card" tabindex="0">
+          <div class="card-image-wrapper">
+            <img class="card-image" src="img/1.jpg" alt="Intel founding era" loading="lazy" onerror="this.style.display='none'" />
+            <div class="image-overlay" aria-hidden="true"></div>
+          </div>
+          <div>
+            <div class="card-header">
+              <div class="year-badge">1968</div>
+              <div class="category-tag supply-chain">Origins</div>
+            </div>
+            <h2>Intel Founded</h2>
+            <p class="card-summary">
+              Robert Noyce and Gordon Moore rename the newly formed company
+              NM Electronics to Intel Corporation, laying the foundation for
+              decades of technological innovation.
+            </p>
+            <div class="card-details">
+              <p>Intel’s early innovations helped enable long-term performance-per-watt improvements in computing.</p>
+              <ul class="impact-list">
+                <li>Company formation and growth</li>
+                <li>Innovation groundwork</li>
+                <li>Long-term industry impact</li>
+              </ul>
+            </div>
+            <button class="expand-btn" type="button" aria-expanded="false" aria-label="Toggle additional details">
+              <span class="expand-text">Learn More</span>
+              <span class="expand-icon">+</span>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="timeline-item" data-category="energy">
+        <div class="timeline-card" tabindex="0">
+          <div class="card-image-wrapper">
+            <img class="card-image" src="img/1stmicroprocessor.jpg" alt="Intel 4004 microprocessor" loading="lazy" onerror="this.style.display='none'" />
+            <div class="image-overlay" aria-hidden="true"></div>
+          </div>
+          <div>
+            <div class="card-header">
+              <div class="year-badge">1971</div>
+              <div class="category-tag energy">Innovation</div>
+            </div>
+            <h2>First Microprocessor</h2>
+            <p class="card-summary">
+              Intel debuts the 4004, the world's first commercial microprocessor,
+              igniting the microprocessor revolution and propelling the future
+              of computing devices.
+            </p>
+            <div class="card-details">
+              <p>Smaller, more efficient computing systems became possible—setting the stage for future energy gains.</p>
+              <ul class="impact-list">
+                <li>Computing miniaturization</li>
+                <li>Performance improvements</li>
+                <li>Efficiency pathways</li>
+              </ul>
+            </div>
+            <button class="expand-btn" type="button" aria-expanded="false" aria-label="Toggle additional details">
+              <span class="expand-text">Learn More</span>
+              <span class="expand-icon">+</span>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="timeline-item" data-category="energy">
+        <div class="timeline-card" tabindex="0">
+          <div class="card-image-wrapper">
+            <img class="card-image" src="img/3.jpg" alt="x86 architecture milestone" loading="lazy" onerror="this.style.display='none'" />
+            <div class="image-overlay" aria-hidden="true"></div>
+          </div>
+          <div>
+            <div class="card-header">
+              <div class="year-badge">1978</div>
+              <div class="category-tag energy">Architecture</div>
+            </div>
+            <h2>8086 Processor</h2>
+            <p class="card-summary">
+              Launch of the 8086 processor, establishing the x86 architecture
+              that drives countless PCs and servers in the modern era.
+            </p>
+            <div class="card-details">
+              <p>x86 longevity enabled sustained innovation and efficiency gains across generations of hardware.</p>
+              <ul class="impact-list">
+                <li>Standardized platform</li>
+                <li>Long-term compatibility</li>
+                <li>Scaling performance per watt</li>
+              </ul>
+            </div>
+            <button class="expand-btn" type="button" aria-expanded="false" aria-label="Toggle additional details">
+              <span class="expand-text">Learn More</span>
+              <span class="expand-icon">+</span>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="timeline-item" data-category="energy">
+        <div class="timeline-card" tabindex="0">
+          <div class="card-image-wrapper">
+            <img class="card-image" src="img/386.jpg" alt="32-bit computing milestone" loading="lazy" onerror="this.style.display='none'" />
+            <div class="image-overlay" aria-hidden="true"></div>
+          </div>
+          <div>
+            <div class="card-header">
+              <div class="year-badge">1985</div>
+              <div class="category-tag energy">Performance</div>
+            </div>
+            <h2>386 Processor</h2>
+            <p class="card-summary">
+              Intel introduces the 386 processor with 32-bit architecture,
+              ushering in a new era of performance and multitasking for
+              personal computers.
+            </p>
+            <div class="card-details">
+              <p>More capability per chip helped reduce the need for multiple components, improving efficiency over time.</p>
+              <ul class="impact-list">
+                <li>32-bit architecture</li>
+                <li>Improved multitasking</li>
+                <li>Platform growth</li>
+              </ul>
+            </div>
+            <button class="expand-btn" type="button" aria-expanded="false" aria-label="Toggle additional details">
+              <span class="expand-text">Learn More</span>
+              <span class="expand-icon">+</span>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="timeline-item" data-category="emissions">
+        <div class="timeline-card" tabindex="0">
+          <div class="card-image-wrapper">
+            <img class="card-image" src="img/CHG emission.jpg" alt="Manufacturing emissions reduction" loading="lazy" onerror="this.style.display='none'" />
+            <div class="image-overlay" aria-hidden="true"></div>
+          </div>
+          <div>
+            <div class="card-header">
+              <div class="year-badge">2006</div>
+              <div class="category-tag emissions">Emissions</div>
+            </div>
+            <h2>Peak GHG Emissions</h2>
+            <p class="card-summary">
+              This year marks Intel's highest annual greenhouse gas emissions
+              for operations. Over subsequent years, Intel invests heavily in
+              chemical abatement, renewable energy, and energy-efficient
+              manufacturing to reverse this trend.
+            </p>
+            <div class="card-details">
+              <p>Key shift from peak emissions toward sustained reductions through technology and cleaner electricity.</p>
+              <ul class="impact-list">
+                <li>Chemical abatement investments</li>
+                <li>Renewable electricity scaling</li>
+                <li>Efficiency-focused manufacturing</li>
+              </ul>
+            </div>
+            <button class="expand-btn" type="button" aria-expanded="false" aria-label="Toggle additional details">
+              <span class="expand-text">Learn More</span>
+              <span class="expand-icon">+</span>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="timeline-item" data-category="emissions water">
+        <div class="timeline-card" tabindex="0">
+          <div class="card-image-wrapper">
+            <img class="card-image" src="img/RISE.jpg" alt="RISE strategy and 2030 goals" loading="lazy" onerror="this.style.display='none'" />
+            <div class="image-overlay" aria-hidden="true"></div>
+          </div>
+          <div>
+            <div class="card-header">
+              <div class="year-badge">2020</div>
+              <div class="category-tag emissions">Climate</div>
+              <div class="category-tag water">Water</div>
+            </div>
+            <h2>RISE Strategy</h2>
+            <p class="card-summary">
+              Intel launches its RISE (Responsible, Inclusive, Sustainable,
+              Enabling) strategy and 2030 goals, aiming to drive industry-wide
+              progress on climate action, water stewardship, and waste reduction.
+            </p>
+            <div class="card-details">
+              <p>RISE aligned goals across climate, water, and waste for measurable progress through 2030.</p>
+              <ul class="impact-list">
+                <li>Responsible, Inclusive, Sustainable, Enabling</li>
+                <li>2030 sustainability goals</li>
+                <li>Industry-wide collaboration</li>
+              </ul>
+            </div>
+            <button class="expand-btn" type="button" aria-expanded="false" aria-label="Toggle additional details">
+              <span class="expand-text">Learn More</span>
+              <span class="expand-icon">+</span>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="timeline-item" data-category="emissions">
+        <div class="timeline-card" tabindex="0">
+          <div class="card-image-wrapper">
+            <img class="card-image" src="img/Net-Zero.jpg" alt="Net-zero by 2040 announcement" loading="lazy" onerror="this.style.display='none'" />
+            <div class="image-overlay" aria-hidden="true"></div>
+          </div>
+          <div>
+            <div class="card-header">
+              <div class="year-badge">2022</div>
+              <div class="category-tag emissions">Emissions</div>
+            </div>
+            <h2>Net-Zero By 2040</h2>
+            <p class="card-summary">
+              Intel announces its commitment to achieve net-zero greenhouse
+              gas emissions (Scope 1 and 2) across its global operations
+              by 2040, building on years of environmental initiatives.
+            </p>
+            <div class="card-details">
+              <p>Set a long-term trajectory for operational decarbonization with ongoing efficiency and renewable efforts.</p>
+              <ul class="impact-list">
+                <li>Scope 1 & 2 focus</li>
+                <li>Operational efficiency</li>
+                <li>Renewable scaling</li>
+              </ul>
+            </div>
+            <button class="expand-btn" type="button" aria-expanded="false" aria-label="Toggle additional details">
+              <span class="expand-text">Learn More</span>
+              <span class="expand-icon">+</span>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="timeline-item" data-category="energy emissions">
+        <div class="timeline-card" tabindex="0">
+          <div class="card-image-wrapper">
+            <img class="card-image" src="img/Renewable_Energy.jpg" alt="Renewable electricity achievement" loading="lazy" onerror="this.style.display='none'" />
+            <div class="image-overlay" aria-hidden="true"></div>
+          </div>
+          <div>
+            <div class="card-header">
+              <div class="year-badge">2023</div>
+              <div class="category-tag energy">Energy</div>
+              <div class="category-tag emissions">Emissions</div>
+            </div>
+            <h2>Renewable Electricity</h2>
+            <p class="card-summary">
+              The company achieves 99% renewable electricity usage worldwide,
+              helping to drastically lower carbon emissions and driving progress
+              toward Intel's long-term sustainability goals.
+            </p>
+            <div class="card-details">
+              <p>Renewable electricity is a major lever for reducing operational emissions while scaling clean power globally.</p>
+              <ul class="impact-list">
+                <li>99% renewable electricity</li>
+                <li>Lower operational emissions</li>
+                <li>Scalable energy strategy</li>
+              </ul>
+            </div>
+            <button class="expand-btn" type="button" aria-expanded="false" aria-label="Toggle additional details">
+              <span class="expand-text">Learn More</span>
+              <span class="expand-icon">+</span>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="timeline-item" data-category="supply-chain">
+        <div class="timeline-card" tabindex="0">
+          <div class="card-image-wrapper">
+            <img class="card-image" src="img/Sustainability Summit.jpeg" alt="Intel sustainability summit" loading="lazy" onerror="this.style.display='none'" />
+            <div class="image-overlay" aria-hidden="true"></div>
+          </div>
+          <div>
+            <div class="card-header">
+              <div class="year-badge">2024</div>
+              <div class="category-tag supply-chain">Supply Chain</div>
+            </div>
+            <h2>Sustainability Summit</h2>
+            <p class="card-summary">
+              Intel hosts its first Sustainability Summit, uniting suppliers,
+              government officials, and industry leaders to collaborate on
+              next-generation sustainable semiconductor manufacturing.
+            </p>
+            <div class="card-details">
+              <p>Scaling sustainability requires partner alignment—this summit focused on shared progress across the supply chain.</p>
+              <ul class="impact-list">
+                <li>Supplier collaboration</li>
+                <li>Shared sustainability standards</li>
+                <li>Manufacturing innovation</li>
+              </ul>
+            </div>
+            <button class="expand-btn" type="button" aria-expanded="false" aria-label="Toggle additional details">
+              <span class="expand-text">Learn More</span>
+              <span class="expand-icon">+</span>
+            </button>
+          </div>
+        </div>
+      </article>
+
+    </main>
+  </section>
+
+  <p class="scroll-indicator" aria-hidden="true">← Scroll → • Click “Learn More” for details</p>
+
+  <!-- ===== Three Column Pillars (Arabic / RTL) ===== -->
+<section class="container my-5" dir="rtl">
+
+  <div class="row g-4">
+
+    <!-- Column 1 -->
+    <div class="col-12 col-md-4">
+      <div class="pillar-card text-center h-100 p-4">
+
+        <!-- Icon -->
+        <i class="bi bi-bar-chart-fill pillar-icon" aria-hidden="true"></i>
+
+        <!-- Heading -->
+        <h4 class="pillar-title">استراتيجية RISE</h4>
+
+        <!-- Body -->
+        <p class="pillar-text">
+          تركز استراتيجية RISE من إنتل على بناء عالم أكثر مسؤولية وشمولية واستدامة من خلال الابتكار والتعاون.
+        </p>
+
+        <!-- Button -->
+        <button
+          class="btn btn-primary"
+          aria-label="تعرف على المزيد حول استراتيجية RISE"
+        >
+          يتعلم أكثر
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Column 2 -->
+    <div class="col-12 col-md-4">
+      <div class="pillar-card text-center h-100 p-4">
+
+        <i class="bi bi-shield-check pillar-icon" aria-hidden="true"></i>
+
+        <h4 class="pillar-title">الالتزام بالاستدامة</h4>
+
+        <p class="pillar-text">
+          تلتزم إنتل بتقليل الانبعاثات الكربونية وتحسين كفاءة الطاقة في جميع عملياتها حول العالم.
+        </p>
+
+        <button
+          class="btn btn-primary"
+          aria-label="تعرف على المزيد حول التزام إنتل بالاستدامة"
+        >
+          يتعلم أكثر
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Column 3 -->
+    <div class="col-12 col-md-4">
+      <div class="pillar-card text-center h-100 p-4">
+
+        <i class="bi bi-droplet-half pillar-icon" aria-hidden="true"></i>
+
+        <h4 class="pillar-title">المياه والنفايات</h4>
+
+        <p class="pillar-text">
+          تعمل إنتل على الحفاظ على المياه وتقليل النفايات من خلال ممارسات تصنيع مسؤولة.
+        </p>
+
+        <button
+          class="btn btn-primary"
+          aria-label="تعرف على المزيد حول المياه والنفايات"
+        >
+          يتعلم أكثر
+        </button>
+
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ===== Sustainability FAQ (Accordion) ===== -->
+<section class="container my-5">
+
+  <div class="accordion" id="sustainabilityAccordion">
+
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button" type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#faq1">
+          كيف تساعد إنتل البيئة؟
+        </button>
+      </h2>
+
+      <div id="faq1" class="accordion-collapse collapse show"
+        data-bs-parent="#sustainabilityAccordion">
+        <div class="accordion-body">
+          تعمل إنتل على تقليل الانبعاثات وزيادة استخدام الطاقة المتجددة.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#faq2">
+          ما هو هدف صافي الانبعاثات؟
+        </button>
+      </h2>
+
+      <div id="faq2" class="accordion-collapse collapse"
+        data-bs-parent="#sustainabilityAccordion">
+        <div class="accordion-body">
+          الوصول إلى صافي انبعاثات صفرية بحلول عام 2040.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ===== Newsletter Subscription ===== -->
+<section class="container my-5">
+
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+
+      <h3 class="text-center mb-3">Subscribe to Sustainability Updates</h3>
+
+      <form>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email Address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="example@email.com"
+            required
+          >
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">
+          Subscribe
+        </button>
+      </form>
+
+    </div>
+  </div>
+
+</section>
+
+  <footer class="container text-center py-4 border-top">
+
+  <p>© 2026 Intel Sustainability Project</p>
+
+  <div class="d-flex justify-content-center gap-3">
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms of Use</a>
+    <a href="#">Contact</a>
+  </div>
+
+</footer>
+
+<script>
+  const observer = new MutationObserver(() => {
+    const lang = document.documentElement.lang;
+    if (lang === "ar" || lang === "he") {
+      document.documentElement.setAttribute("dir", "rtl");
+    } else {
+      document.documentElement.setAttribute("dir", "ltr");
+    }
+  });
+
+  observer.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["lang"]
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+  <script>
+    // Click “Learn More” to toggle details (no hover expansion)
+    document.addEventListener('DOMContentLoaded', () => {
+      const items = document.querySelectorAll('.timeline-item');
+
+      function collapseItem(item) {
+        item.classList.remove('expanded');
+        const btn = item.querySelector('.expand-btn');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
+      }
+
+      function expandItem(item) {
+        item.classList.add('expanded');
+        const btn = item.querySelector('.expand-btn');
+        if (btn) btn.setAttribute('aria-expanded', 'true');
+      }
+
+      document.addEventListener('click', (e) => {
+        const btn = e.target.closest('.expand-btn');
+        if (!btn) return;
+
+        const item = btn.closest('.timeline-item');
+        if (!item) return;
+
+        const isExpanded = item.classList.contains('expanded');
+
+        // Only allow one open at a time
+        items.forEach((it) => {
+          if (it !== item) collapseItem(it);
+        });
+
+        if (isExpanded) collapseItem(item);
+        else expandItem(item);
+      });
+
+      // ESC closes any expanded card
+      document.addEventListener('keydown', (e) => {
+        if (e.key !== 'Escape') return;
+        items.forEach(collapseItem);
+      });
+    });
+  </script>
 </body>
 </html>
