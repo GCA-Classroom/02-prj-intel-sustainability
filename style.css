@@ -1,11 +1,9 @@
-
 /* we need to remove the dumb defult spacing and put in some cool styling i think this font family looks nice */
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   background-color: #ffffff;
 }
-
 
 /* main header with the intel branding */
 header {
@@ -47,7 +45,6 @@ header p {
   margin: 0 auto;
 }
 
-
 /* the outer box container for the scrolll */
 .timeline-container {
   overflow-x: auto;            /* turn on scroll from computer */
@@ -61,7 +58,6 @@ header p {
   flex-wrap: nowrap;            /* we need the cards to stay inline on bigger screens cause for some reason it didn't want too */
   scroll-snap-type: x mandatory; /* turns on scroll snapping */
 }
-
 
 .card {
   background-color: #f0f4f8;  /*setting it to this cool light grey background */
@@ -101,7 +97,6 @@ header p {
   color: #333;
 }
 
-
 /* I think this is how you do the card hover thing it wasnt working but i think its good to go now */
 .card:hover {
   transform: translateY(-5px);
@@ -126,6 +121,43 @@ footer {
   text-align: center;
   padding: 20px 10px;
   font-size: 0.9rem;
+}
+
+/* =========================
+  this part confused me a little bit 
+========================= */
+.container h4 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.container p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.feature-icon img {
+  border-radius: 10px;
+}
+
+/* Bootstrap buttons override if needed */
+.btn-primary {
+  background-color: #0071C5;
+  border-color: #0071C5;
+}
+
+.btn-primary:hover {
+  background-color: #005A9C;
+  border-color: #005A9C;
+}
+
+
+form input[type="email"] {
+  max-width: 300px;
+}
+
+form button {
+  min-width: 120px;
 }
 
 
@@ -172,5 +204,13 @@ footer {
 
   .card p {
     font-size: 0.9rem;
+  }
+
+  form input[type="email"] {
+    width: 90%;
+  }
+
+  form button {
+    width: 90%;
   }
 }

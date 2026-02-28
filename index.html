@@ -1,15 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Intel: Sustainability Through the Ages</title>
+
+  <!-- Bootstrap CSS for Project 3 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <!-- Header / Hero Section -->
-  <!-- I wanted to use a custom website but it has like 4 different redirecting links to sketchy websites and the sucess rate of it pulling up the image was 1 in 4 so I guess we will stick with that placeholderdev thing he AI recommended me to use placeholdr.dev for image creation to generate AI images.-->
+  <!-- I wanted to use a custom website but it has like 4 different redirecting links to sketchy websites and the sucess rate of it pulling up the image was 1 in 4 so I guess we will stick with that placeholderdev thing he AI recommended me to use placeholdr.dev for image creation to generate AI images. It works just takes a long long time for the images to generate.-->
   <header>
     <div>
       <img src="img/intel-header-logo.svg" alt="Intel Logo" />
@@ -137,6 +141,55 @@
     </section>
   </section>
 
+  <!-- Three-Column Section (Project 3) -->
+  <section class="container my-5">
+    <div class="row text-center">
+      <!-- Column 1 -->
+      <div class="col-md-4 mb-4">
+        <div class="feature-icon mb-3">
+          <img src="https://placeholdr.dev/80x80/Solar%20Energy" alt="Solar Energy Icon">
+        </div>
+        <h4>Renewable Energy</h4>
+        <p>Intel focuses on using renewable electricity and clean energy sources across its global operations.</p>
+        <a href="#" class="btn btn-sm btn-primary">Learn More</a>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="col-md-4 mb-4">
+        <div class="feature-icon mb-3">
+          <img src="https://placeholdr.dev/80x80/Water%20Stewardship" alt="Water Stewardship Icon">
+        </div>
+        <h4>Water Stewardship</h4>
+        <p>Intel implements programs to reduce water use and improve water quality in its manufacturing and facilities.</p>
+        <a href="#" class="btn btn-sm btn-primary">Learn More</a>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="col-md-4 mb-4">
+        <div class="feature-icon mb-3">
+          <img src="https://placeholdr.dev/80x80/Waste%20Reduction" alt="Waste Reduction Icon">
+        </div>
+        <h4>Waste Reduction</h4>
+        <p>Intel works to reduce waste, recycle more, and minimize environmental impact in every operation.</p>
+        <a href="#" class="btn btn-sm btn-primary">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Subscription Form -->
+  <section class="container my-5">
+    <h3 class="text-center mb-4">Subscribe to Intel’s Sustainability Newsletter</h3>
+    <form class="row g-3 justify-content-center">
+      <div class="col-auto">
+        <label for="subscriberEmail" class="visually-hidden">Email</label>
+        <input type="email" class="form-control" id="subscriberEmail" placeholder="Enter your email" required>
+      </div>
+      <div class="col-auto">
+        <button type="submit" class="btn btn-primary mb-3">Subscribe</button>
+      </div>
+    </form>
+  </section>
+
   <p class="scroll-message">
     Scroll to view timeline | Hover over cards to learn more!
   </p>
@@ -146,5 +199,7 @@
     <p>© 2026 Intel Corporation | Sustainability Timeline Project</p>
   </footer>
 
+  <!-- Bootstrap JS Bundle (Optional for interactive components) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
