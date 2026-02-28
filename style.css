@@ -1,1 +1,176 @@
-/* Add your CSS here */
+
+/* we need to remove the dumb defult spacing and put in some cool styling i think this font family looks nice */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ffffff;
+}
+
+
+/* main header with the intel branding */
+header {
+  background: linear-gradient(to right, #0071C5, #00AEEF); /* intel colors as best as i could tel */
+  color: white;
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 70vh;  /* full height for hero MAKE SURE TO INCLUDE */
+  padding: 40px 20px;
+}
+
+/* keeps our hero content centeredd */
+header div {
+  max-width: 800px;
+}
+
+/* the intel logo style */
+header img {
+  width: 140px;
+  margin-bottom: 25px;
+}
+
+/* main headline styling COME BACK N FIX */
+header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* subheading styling COME BACK N FIX */
+header p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+
+/* the outer box container for the scrolll */
+.timeline-container {
+  overflow-x: auto;            /* turn on scroll from computer */
+  padding: 40px 20px;
+}
+
+/* the timeline uses flexbox */
+.timeline {
+  display: flex;
+  gap: 20px;                   /* gap between each card */
+  flex-wrap: nowrap;            /* we need the cards to stay inline on bigger screens cause for some reason it didn't want too */
+  scroll-snap-type: x mandatory; /* turns on scroll snapping */
+}
+
+
+.card {
+  background-color: #f0f4f8;  /*setting it to this cool light grey background */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  flex: 0 0 300px;            /* we need the width to be fixed  */
+  padding: 20px;
+  scroll-snap-align: start;   /* this aligns the cards */
+  transition: transform 0.3s, box-shadow 0.3s; /* we add tranissions with sedonds for a smoother looking transmition */
+}
+
+/* the timeline card images */
+.card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* the year heading */
+.card h2 {
+  font-size: 1.2rem;
+  color: #0071C5;             /* Intelllluh lookin blue */
+  margin-bottom: 5px;
+}
+
+/* the milestone title */
+.card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* the card description */
+.card p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #333;
+}
+
+
+/* I think this is how you do the card hover thing it wasnt working but i think its good to go now */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/*this where the scroll message needs to be*/
+/* put the small text into the timeline */
+.scroll-message {
+  text-align: center;
+  font-size: 1rem;
+  margin: 20px 0;
+  color: #555;
+}
+
+/* 
+   this my footer
+ */
+footer {
+  background-color: #0071C5;  /* Intelllluhh looking blue  */
+  color: white;
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 0.9rem;
+}
+
+
+/* for when you tab the screen I also want to add one for phones and tablets */
+@media (max-width: 1024px) {
+  .timeline {
+    gap: 15px;
+  }
+
+  .card {
+    flex: 0 0 250px;
+  }
+}
+
+/* Small screens / mobile */
+@media (max-width: 768px) {
+  .timeline {
+    flex-direction: column;   /* we want them to stack vertically */
+    align-items: center;
+  }
+
+  .card {
+    flex: 0 0 90%;            /* setting it to its full width */
+  }
+}
+
+/* Trying to optimize if you're on a phone or tablet. Not sure if this is how you do it but google says you need to format it like this??? */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  .card h2 {
+    font-size: 1rem;
+  }
+
+  .card h3 {
+    font-size: 0.9rem;
+  }
+
+  .card p {
+    font-size: 0.9rem;
+  }
+}
