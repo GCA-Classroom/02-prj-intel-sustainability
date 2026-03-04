@@ -123,6 +123,16 @@ footer {
   font-size: 0.9rem;
 }
 
+footer a {
+  color: white;
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
 /* =========================
   this part confused me a little bit 
 ========================= */
@@ -151,7 +161,6 @@ footer {
   border-color: #005A9C;
 }
 
-
 form input[type="email"] {
   max-width: 300px;
 }
@@ -160,6 +169,19 @@ form button {
   min-width: 120px;
 }
 
+/* RTL support for global languages */
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] .timeline {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .scroll-message {
+  text-align: center;
+}
 
 /* for when you tab the screen I also want to add one for phones and tablets */
 @media (max-width: 1024px) {
