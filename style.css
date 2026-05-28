@@ -1,1 +1,587 @@
 /* Add your CSS here */
+/* ============================================================
+   Intel Sustainability Timeline — style.css
+   Dark tech aesthetic with Intel blue accents
+   ============================================================ */
+
+/* --- CSS Variables --- */
+:root {
+  --intel-blue: #0071C5;
+  --intel-blue-light: #00AEEF;
+  --intel-blue-glow: rgba(0, 113, 197, 0.35);
+  --green: #22C55E;
+  --green-dim: rgba(34, 197, 94, 0.15);
+  --amber: #F59E0B;
+  --amber-dim: rgba(245, 158, 11, 0.15);
+
+  --bg: #050C14;
+  --bg-card: #0A1628;
+  --bg-card-hover: #0E1E38;
+  --border: rgba(0, 113, 197, 0.18);
+  --border-hover: rgba(0, 174, 239, 0.5);
+
+  --text-primary: #E8F0FA;
+  --text-secondary: #7A9CBF;
+  --text-muted: #3A5470;
+
+  --font-display: 'Rajdhani', sans-serif;
+  --font-body: 'Source Serif 4', Georgia, serif;
+
+  --radius: 2px;
+  --card-w: 340px;
+  --transition: 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* --- Reset & Base --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.65;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* --- Animated Background Grid --- */
+.bg-grid {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(0,113,197,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,113,197,0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.bg-glow {
+  position: fixed;
+  top: -20vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80vw;
+  height: 60vh;
+  background: radial-gradient(ellipse at center, rgba(0,113,197,0.18) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* --- Header --- */
+header {
+  position: relative;
+  z-index: 1;
+  padding: 80px 5vw 60px;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(0,113,197,0.07) 0%, transparent 100%);
+}
+
+.header-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.intel-logo-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.intel-logo {
+  width: 110px;
+  height: auto;
+}
+
+.header-eyebrow {
+  font-family: var(--font-display);
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--intel-blue-light);
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+h1 em {
+  font-style: italic;
+  font-family: var(--font-body);
+  font-weight: 300;
+  color: var(--intel-blue-light);
+}
+
+.header-desc {
+  max-width: 540px;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  margin-top: 18px;
+}
+
+/* Stats Row */
+.header-stat-row {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  padding: 0 32px 0 0;
+}
+
+.stat:first-child { padding-left: 0; }
+
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--intel-blue-light);
+  line-height: 1;
+}
+
+.stat-unit {
+  font-size: 1.1rem;
+  opacity: 0.7;
+  margin-left: 2px;
+}
+
+.stat-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 44px;
+  background: var(--border);
+  margin: 0 32px 0 0;
+}
+
+/* --- Scroll Hint --- */
+.scroll-hint {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  color: var(--text-muted);
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  animation: float 2.5s ease-in-out infinite;
+}
+
+.scroll-arrow {
+  display: flex;
+  align-items: center;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(5px); }
+}
+
+/* --- Timeline Section --- */
+.timeline-section {
+  position: relative;
+  z-index: 1;
+  padding: 20px 0 80px;
+}
+.timeline-track {
+  display: flex;
+  gap: 32px;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  padding: 40px 5vw 24px;
+
+  scroll-snap-type: x mandatory;
+}
+
+/* Custom Scrollbar */
+.timeline-track::-webkit-scrollbar {
+  height: 12px;
+}
+
+.timeline-track::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.04);
+  border-radius: 999px;
+  margin: 0 40px;
+}
+
+.timeline-track::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    90deg,
+    var(--intel-blue),
+    var(--intel-blue-light)
+  );
+
+  border-radius: 999px;
+
+  border: 2px solid rgba(5,12,20,0.9);
+
+  transition: background 0.3s ease;
+}
+
+.timeline-track::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    90deg,
+    var(--intel-blue-light),
+    #5CD6FF
+  );
+}
+
+
+
+/* --- Properly Scaled Images --- */
+.card-img {
+  width: 100%;
+  height: 220px;
+
+  object-fit: cover;
+
+  border-radius: 4px;
+
+  margin-bottom: 16px;
+
+  background: #08111f;
+}
+
+/* Optional hover effect */
+.card:hover .card-img {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+.card {
+  flex: 0 0 360px;
+  height: auto;
+  display: flex;
+  scroll-snap-align: center;
+}
+
+.card {
+  scroll-snap-stop: always;
+}
+/* Card Content */
+.card-content {
+  width: 100%;
+  height: auto;
+
+  display: flex;
+  flex-direction: column;
+
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--intel-blue);
+
+  margin: 0;
+  padding: 28px 32px 28px 28px;
+
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+
+  transition:
+    background var(--transition),
+    border-color var(--transition),
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+/* Shimmer hover effect */
+.card-content::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(125deg, transparent 30%, rgba(0,174,239,0.05) 60%, transparent 80%);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.card:hover .card-content {
+  background: var(--bg-card-hover);
+  border-color: var(--border-hover);
+  border-left-color: var(--intel-blue-light);
+  transform: translateY(6px);
+  box-shadow: -4px 0 32px rgba(0,113,197,0.15), 0 8px 40px rgba(0,0,0,0.3);
+}
+
+.card:hover .card-content::after {
+  opacity: 1;
+}
+
+/* Card variants */
+.card--green .card-content {
+  border-left-color: var(--green);
+}
+
+.card--green:hover .card-content {
+  border-left-color: #4ADE80;
+  box-shadow: -4px 0 32px rgba(34,197,94,0.12), 0 8px 40px rgba(0,0,0,0.3);
+}
+
+.card--green .card-year-side::before {
+  background: var(--green);
+  box-shadow: 0 0 12px rgba(34,197,94,0.4);
+}
+
+.card--warning .card-content {
+  border-left-color: var(--amber);
+}
+
+.card--warning:hover .card-content {
+  border-left-color: #FCD34D;
+  box-shadow: -4px 0 32px rgba(245,158,11,0.12), 0 8px 40px rgba(0,0,0,0.3);
+}
+
+.card--warning .card-year-side::before {
+  background: var(--amber);
+  box-shadow: 0 0 12px rgba(245,158,11,0.4);
+}
+
+/* Card elements */
+.card-icon {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+  display: inline-block;
+  transition: transform var(--transition);
+}
+
+.card:hover .card-icon {
+  transform: scale(1.15) rotate(-5deg);
+}
+
+.card-tag {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--intel-blue-light);
+  border: 1px solid rgba(0,174,239,0.3);
+  padding: 2px 8px;
+  border-radius: 2px;
+  margin-bottom: 12px;
+}
+
+.card-tag--green {
+  color: var(--green);
+  border-color: rgba(34,197,94,0.3);
+}
+
+.card-tag--warn {
+  color: var(--amber);
+  border-color: rgba(245,158,11,0.3);
+}
+
+.card-year {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.06);
+  line-height: 1;
+  position: absolute;
+  top: 16px;
+  right: 24px;
+  pointer-events: none;
+  transition: color var(--transition);
+  letter-spacing: -0.02em;
+}
+
+.card:hover .card-year {
+  color: rgba(255,255,255,0.1);
+}
+
+.card-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+}
+
+.card-body {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  transition: color var(--transition);
+}
+
+.card:hover .card-body {
+  color: #9CB8D8;
+}
+
+.card-body strong {
+  color: var(--text-primary);
+  font-weight: 400;
+}
+
+.card-line {
+  height: 1px;
+  background: linear-gradient(90deg, var(--border) 0%, transparent 60%);
+  margin-top: 20px;
+}
+
+/* --- Footer --- */
+footer {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid var(--border);
+  padding: 40px 5vw;
+  background: linear-gradient(0deg, rgba(0,113,197,0.05) 0%, transparent 100%);
+}
+
+.footer-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+     
+.card:hover .card-img {
+  opacity: 1;
+}
+.footer-logo {
+  width: 70px;
+  height: auto;
+  opacity: 0.7;
+}
+
+footer p {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+/* --- Responsive --- */
+@media (max-width: 600px) {
+  h1 { font-size: 2.5rem; }
+
+  .header-stat-row { gap: 16px 0; }
+  .stat { padding-right: 20px; }
+  .stat-divider { margin-right: 20px; }
+
+  .timeline-section::before {
+    left: calc(5vw + 20px);
+  }
+
+  .card-content {
+    padding: 20px 18px 20px 18px;
+  }
+
+  .card-year {
+    font-size: 2rem;
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+  }
+}
+/* Small screens: cards stack vertically */
+@media (max-width: 600px) {
+  .timeline-track {
+    flex-direction: column;
+    overflow-x: visible;
+    overflow-y: visible;
+    padding: 16px;
+  }
+
+  .card {
+    flex: none;
+    width: 100%;
+    height: auto;
+  }
+  .card-content {
+    height: auto;
+  }
+  .scroll-hint {
+    display: none;
+  }
+}
+
+/* Hide the extra information by default */
+.card-tag,
+.card-title,
+.card-body,
+.card-line {
+  opacity: 0;
+  max-height: 0;
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  overflow: hidden;
+  transition:
+    opacity 0.3s ease,
+    max-height 0.35s ease,
+    margin 0.3s ease,
+    padding 0.3s ease;
+}
+
+/* Keep the image visible */
+.card-img {
+  margin-bottom: 0;
+}
+
+/* Reveal the information when hovering over a card */
+.card:hover .card-tag,
+.card:hover .card-title,
+.card:hover .card-body,
+.card:hover .card-line {
+  opacity: 1;
+  max-height: 300px;
+}
+
+/* Restore spacing only when revealed */
+.card:hover .card-tag {
+  margin-bottom: 12px;
+  padding: 2px 8px;
+}
+
+.card:hover .card-title {
+  margin-bottom: 10px;
+}
+
+.card:hover .card-img {
+  margin-bottom: 16px;
+}
+
+.card:hover .card-line {
+  margin-top: 20px;
+}
+.timeline-track {
+  transform: rotateX(180deg);
+}
+
+.card {
+  transform: rotateX(180deg);
+}
