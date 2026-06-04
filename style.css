@@ -1,1 +1,52 @@
-/* Add your CSS here */
+/* SVG images are vector graphics that scale smoothly at any size.
+   That makes them great for logos because they stay sharp on all screens. */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  background: #f4f6f8;
+  color: #1a1a1a;
+}
+
+header {
+  background: linear-gradient(135deg, #0068B5, #004A86);
+  padding: 2rem;
+  text-align: center;
+  color: white;
+}
+
+header img {
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.35));
+  width: 320px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 1.5rem;
+}
+
+section {
+  padding: 2rem;
+}
+
+section div {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin: 0.75rem 0;
+}
+
+.hero-header :after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 6px;
+  background: rgb(255, 255, 255);
+  margin: 1rem auto 0;
+  border-radius: 3px;
+}
