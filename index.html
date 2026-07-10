@@ -1,143 +1,509 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Intel: Sustainability Through the Ages</title>
+
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Bootstrap Icons -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    rel="stylesheet"
+  />
+
+  <!-- Your CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-
-  <!-- Header / Hero Section -->
-  <header>
-    <div>
-      <!-- Ask Copilot to teach you about `.svg`. 🙂 You'll need to resize the logo with CSS. -->
+  <header class="hero-header">
+    <div class="hero-logo">
       <img src="img/intel-header-logo.svg" alt="Intel Logo" />
-      <!-- Main Heading -->
-      <h1>
-        Sustainability Through the Ages
-      </h1>
+    </div>
 
-      <!-- Subheading / Description -->
+    <div class="hero-content">
+      <h1>Sustainability Through the Ages</h1>
       <p>
         Explore Intel's journey through time, discovering how our commitment
-        to innovation has shaped a more sustainable future for technology 
+        to innovation has shaped a more sustainable future for technology
         and our planet.
       </p>
     </div>
   </header>
 
-  <!-- Timeline Cards Section -->
-  <section>
+  <main>
+    <section class="timeline-section" aria-label="Intel sustainability timeline">
+      <div class="timeline-card">
+        <div class="timeline-date">
+          <h2>1968</h2>
+        </div>
 
-    <!-- Card 1: 1968 -->
-    <div>
-      <h2>1968</h2>
-      <h3>Intel Founded</h3>
-      <!-- Add image -->
-      <p>
-        Robert Noyce and Gordon Moore rename the newly formed company 
-        NM Electronics to Intel Corporation, laying the foundation for 
-        decades of technological innovation.
-      </p>
-    </div>
+        <div class="timeline-marker"><span></span></div>
 
-    <!-- Card 2: 1971 -->
-    <div>
-      <h2>1971</h2>
-      <h3>First Microprocessor</h3>
-      <!-- Add image -->
-      <p>
-        Intel debuts the 4004, the world's first commercial microprocessor, 
-        igniting the microprocessor revolution and propelling the future 
-        of computing devices.
-      </p>
-    </div>
+        <div class="timeline-body">
+          <h3>Intel Founded</h3>
+          <p>
+            Robert Noyce and Gordon Moore rename the newly formed company
+            NM Electronics to Intel Corporation, laying the foundation for
+            decades of technological innovation.
+          </p>
+          <img src="img/1.jpg" alt="Historic technology workspace" class="timeline-photo" />
+        </div>
+      </div>
 
-    <!-- Card 3: 1978 -->
-    <div>
-      <h2>1978</h2>
-      <h3>8086 Processor</h3>
-      <!-- Add image -->
-      <p>
-        Launch of the 8086 processor, establishing the x86 architecture 
-        that drives countless PCs and servers in the modern era.
-      </p>
-    </div>
+      <div class="timeline-card">
+        <div class="timeline-date">
+          <h2>1971</h2>
+        </div>
 
-    <!-- Card 4: 1985 -->
-    <div>
-      <h2>1985</h2>
-      <h3>386 Processor</h3>
-      <!-- Add image -->
-      <p>
-        Intel introduces the 386 processor with 32-bit architecture, 
-        ushering in a new era of performance and multitasking for 
-        personal computers.
-      </p>
-    </div>
+        <div class="timeline-marker"><span></span></div>
 
-    <!-- Card 5: 2006 -->
-    <div>
-      <h2>2006</h2>
-      <h3>Peak GHG Emissions</h3>
-      <!-- Add image -->
-      <p>
-        This year marks Intel's highest annual greenhouse gas emissions 
-        for operations. Over subsequent years, Intel invests heavily in 
-        chemical abatement, renewable energy, and energy-efficient 
-        manufacturing to reverse this trend.
-      </p>
-    </div>
+        <div class="timeline-body">
+          <h3>First Microprocessor</h3>
+          <p>
+            Intel debuts the 4004, the world's first commercial microprocessor,
+            igniting the microprocessor revolution and propelling the future
+            of computing devices.
+          </p>
+          <img src="img/2.jpg" alt="Technology and electronics" class="timeline-photo" />
+        </div>
+      </div>
 
-    <!-- Card 6: 2020 -->
-    <div>
-      <h2>2020</h2>
-      <h3>RISE Strategy</h3>
-      <!-- Add image -->
-      <p>
-        Intel launches its RISE (Responsible, Inclusive, Sustainable, 
-        Enabling) strategy and 2030 goals, aiming to drive industry-wide 
-        progress on climate action, water stewardship, and waste reduction.
-      </p>
-    </div>
+      <div class="timeline-card">
+        <div class="timeline-date">
+          <h2>1978</h2>
+        </div>
 
-    <!-- Card 7: 2022 -->
-    <div>
-      <h2>2022</h2>
-      <h3>Net-Zero By 2040</h3>
-      <!-- Add image -->
-      <p>
-        Intel announces its commitment to achieve net-zero greenhouse 
-        gas emissions (Scope 1 and 2) across its global operations 
-        by 2040, building on years of environmental initiatives.
-      </p>
-    </div>
+        <div class="timeline-marker"><span></span></div>
 
-    <!-- Card 8: 2023 -->
-    <div>
-      <h2>2023</h2>
-      <h3>Renewable Electricity</h3>
-      <!-- Add image -->
-      <p>
-        The company achieves 99% renewable electricity usage worldwide, 
-        helping to drastically lower carbon emissions and driving progress 
-        toward Intel's long-term sustainability goals.
-      </p>
-    </div>
+        <div class="timeline-body">
+          <h3>8086 Processor</h3>
+          <p>
+            Launch of the 8086 processor, establishing the x86 architecture
+            that drives countless PCs and servers in the modern era.
+          </p>
+          <img src="img/3.jpg" alt="Computer processor technology" class="timeline-photo" />
+        </div>
+      </div>
 
-    <!-- Card 9: 2024 -->
-    <div>
-      <h2>2024</h2>
-      <h3>Sustainability Summit</h3>
-      <!-- Add image -->
-      <p>
-        Intel hosts its first Sustainability Summit, uniting suppliers, 
-        government officials, and industry leaders to collaborate on 
-        next-generation sustainable semiconductor manufacturing.
-      </p>
+      <div class="timeline-card">
+        <div class="timeline-date">
+          <h2>1985</h2>
+        </div>
+
+        <div class="timeline-marker"><span></span></div>
+
+        <div class="timeline-body">
+          <h3>386 Processor</h3>
+          <p>
+            Intel introduces the 386 processor with 32-bit architecture,
+            ushering in a new era of performance and multitasking for
+            personal computers.
+          </p>
+          <img src="img/4.jpg" alt="Modern computing hardware" class="timeline-photo" />
+        </div>
+      </div>
+
+      <div class="timeline-card">
+        <div class="timeline-date">
+          <h2>2006</h2>
+        </div>
+
+        <div class="timeline-marker"><span></span></div>
+
+        <div class="timeline-body">
+          <h3>Peak GHG Emissions</h3>
+          <p>
+            This year marks Intel's highest annual greenhouse gas emissions
+            for operations. Over subsequent years, Intel invests heavily in
+            chemical abatement, renewable energy, and energy-efficient
+            manufacturing to reverse this trend.
+          </p>
+          <img
+            src="img/boliviainteligente-JMi-5VXOLEs-unsplash.jpg"
+            alt="Industrial sustainability and technology"
+            class="timeline-photo"
+          />
+        </div>
+      </div>
+
+      <div class="timeline-card">
+        <div class="timeline-date">
+          <h2>2020</h2>
+        </div>
+
+        <div class="timeline-marker"><span></span></div>
+
+        <div class="timeline-body">
+          <h3>RISE Strategy</h3>
+          <p>
+            Intel launches its RISE (Responsible, Inclusive, Sustainable,
+            Enabling) strategy and 2030 goals, aiming to drive industry-wide
+            progress on climate action, water stewardship, and waste reduction.
+          </p>
+          <img
+            src="img/brecht-corbeel-eNWh3WgxAK8-unsplash.jpg"
+            alt="Sustainable technology environment"
+            class="timeline-photo"
+          />
+        </div>
+      </div>
+
+      <div class="timeline-card">
+        <div class="timeline-date">
+          <h2>2022</h2>
+        </div>
+
+        <div class="timeline-marker"><span></span></div>
+
+        <div class="timeline-body">
+          <h3>Net-Zero By 2040</h3>
+          <p>
+            Intel announces its commitment to achieve net-zero greenhouse
+            gas emissions Scope 1 and 2 across its global operations
+            by 2040, building on years of environmental initiatives.
+          </p>
+          <img
+            src="img/lazar-andy-X3tdWB-jfFw-unsplash.jpg"
+            alt="Clean energy and sustainability"
+            class="timeline-photo"
+          />
+        </div>
+      </div>
+
+      <div class="timeline-card">
+        <div class="timeline-date">
+          <h2>2023</h2>
+        </div>
+
+        <div class="timeline-marker"><span></span></div>
+
+        <div class="timeline-body">
+          <h3>Renewable Electricity</h3>
+          <p>
+            The company achieves 99% renewable electricity usage worldwide,
+            helping to drastically lower carbon emissions and driving progress
+            toward Intel's long-term sustainability goals.
+          </p>
+          <img
+            src="img/rubaitul-azad-3WhPfoOX888-unsplash.jpg"
+            alt="Renewable electricity and clean energy"
+            class="timeline-photo"
+          />
+        </div>
+      </div>
+
+      <div class="timeline-card">
+        <div class="timeline-date">
+          <h2>2024</h2>
+        </div>
+
+        <div class="timeline-marker"><span></span></div>
+
+        <div class="timeline-body">
+          <h3>Sustainability Summit</h3>
+          <p>
+            Intel hosts its first Sustainability Summit, uniting suppliers,
+            government officials, and industry leaders to collaborate on
+            next-generation sustainable semiconductor manufacturing.
+          </p>
+          <img
+            src="img/rubaitul-azad-yYqJKJ0GO64-unsplash.jpg"
+            alt="Sustainability collaboration and innovation"
+            class="timeline-photo"
+          />
+        </div>
+      </div>
+    </section>
+
+    <p class="timeline-footer">
+      Scroll to view timeline | Hover over cards to learn more!
+    </p>
+
+    <!-- Three-column Bootstrap section -->
+    <section class="info-section py-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2>Building a More Sustainable Future</h2>
+          <p class="section-intro">
+            Intel’s sustainability work focuses on responsible operations,
+            smarter technology, and collaboration across the industry.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-12 col-md-4">
+            <article class="info-card h-100">
+              <div class="info-icon" aria-hidden="true">
+                <i class="bi bi-globe-americas"></i>
+              </div>
+
+              <h3>Climate Action</h3>
+              <p>
+                Intel continues to reduce emissions, improve efficiency,
+                and support long-term environmental responsibility.
+              </p>
+
+              <a href="#" class="learn-more-link">
+                Learn More
+                <i class="bi bi-arrow-right-short" aria-hidden="true"></i>
+              </a>
+            </article>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <article class="info-card h-100">
+              <div class="info-icon" aria-hidden="true">
+                <i class="bi bi-droplet-half"></i>
+              </div>
+
+              <h3>Water Stewardship</h3>
+              <p>
+                Intel invests in water conservation, restoration, and
+                responsible water use across its global operations.
+              </p>
+
+              <a href="#" class="learn-more-link">
+                Learn More
+                <i class="bi bi-arrow-right-short" aria-hidden="true"></i>
+              </a>
+            </article>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <article class="info-card h-100">
+              <div class="info-icon" aria-hidden="true">
+                <i class="bi bi-recycle"></i>
+              </div>
+
+              <h3>Waste Reduction</h3>
+              <p>
+                Intel works to reduce waste, increase reuse, and support
+                more circular manufacturing practices.
+              </p>
+
+              <a href="#" class="learn-more-link">
+                Learn More
+                <i class="bi bi-arrow-right-short" aria-hidden="true"></i>
+              </a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bootstrap accordion component -->
+    <section class="accordion-section py-5">
+      <div class="container">
+        <div class="text-center mb-4">
+          <h2>Frequently Asked Questions</h2>
+          <p class="section-intro">
+            Learn more about Intel’s sustainability goals and initiatives.
+          </p>
+        </div>
+
+        <div class="accordion" id="sustainabilityAccordion">
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingOne">
+              <button
+                class="accordion-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseOne"
+                aria-expanded="true"
+                aria-controls="collapseOne"
+              >
+                What does sustainability mean for Intel?
+              </button>
+            </h3>
+
+            <div
+              id="collapseOne"
+              class="accordion-collapse collapse show"
+              aria-labelledby="headingOne"
+              data-bs-parent="#sustainabilityAccordion"
+            >
+              <div class="accordion-body">
+                Sustainability means designing technology, operations, and
+                manufacturing practices that reduce environmental impact while
+                supporting long-term innovation.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingTwo">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo"
+                aria-expanded="false"
+                aria-controls="collapseTwo"
+              >
+                Why is renewable electricity important?
+              </button>
+            </h3>
+
+            <div
+              id="collapseTwo"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingTwo"
+              data-bs-parent="#sustainabilityAccordion"
+            >
+              <div class="accordion-body">
+                Renewable electricity helps reduce greenhouse gas emissions
+                from operations and supports cleaner energy systems.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingThree">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseThree"
+                aria-expanded="false"
+                aria-controls="collapseThree"
+              >
+                How does localization improve accessibility?
+              </button>
+            </h3>
+
+            <div
+              id="collapseThree"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingThree"
+              data-bs-parent="#sustainabilityAccordion"
+            >
+              <div class="accordion-body">
+                Localization helps users read content in their preferred
+                language. Supporting right-to-left layouts also improves
+                usability for languages such as Arabic, Hebrew, Persian, and Urdu.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Subscription form -->
+    <section class="subscribe-section py-5">
+      <div class="container">
+        <div class="subscribe-box">
+          <div class="row align-items-center g-4">
+            <div class="col-12 col-lg-5">
+              <h2>Subscribe to Sustainability Updates</h2>
+              <p>
+                Get the latest news about Intel’s environmental goals,
+                innovation, and sustainability progress.
+              </p>
+            </div>
+
+            <div class="col-12 col-lg-7">
+              <form class="row g-3" aria-label="Sustainability newsletter subscription form">
+                <div class="col-12 col-md-6">
+                  <label for="subscriberName" class="form-label">Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="subscriberName"
+                    name="subscriberName"
+                    placeholder="Enter your name"
+                    autocomplete="name"
+                    required
+                  />
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <label for="subscriberEmail" class="form-label">Email address</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="subscriberEmail"
+                    name="subscriberEmail"
+                    placeholder="name@example.com"
+                    autocomplete="email"
+                    required
+                  />
+                </div>
+
+                <div class="col-12">
+                  <label for="sustainabilityInterest" class="form-label">
+                    Area of Interest
+                  </label>
+
+                  <select
+                    id="sustainabilityInterest"
+                    name="sustainabilityInterest"
+                    class="form-select"
+                    required
+                  >
+                    <option value="">Choose one...</option>
+                    <option value="climate">Climate Action</option>
+                    <option value="water">Water Stewardship</option>
+                    <option value="waste">Waste Reduction</option>
+                    <option value="general">General Sustainability News</option>
+                  </select>
+                </div>
+
+                <div class="col-12">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="emailConsent"
+                      required
+                    />
+                    <label class="form-check-label" for="emailConsent">
+                      I agree to receive sustainability updates by email.
+                    </label>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <button type="submit" class="btn btn-intel">
+                    Subscribe
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <p>&copy; 2026 Intel Sustainability Timeline. All rights reserved.</p>
+
+        <nav aria-label="Footer navigation">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Contact</a>
+        </nav>
+      </div>
     </div>
-  </section>
-  <p>Scroll to view timeline | Hover over cards to learn more!</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+  ></script>
+
+  <script src="script.js"></script>
 </body>
 </html>
