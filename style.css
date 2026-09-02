@@ -1,1 +1,295 @@
-/* Add your CSS here */
+/* =========================================================
+   INTEL SUSTAINABILITY TIMELINE — STYLES
+   Organized in sections: Variables, Base, Hero, Timeline,
+   Cards, Icon Tiles, Hover Effects, Responsive (mobile)
+   ========================================================= */
+
+/* -----------------------------
+   1. Variables (Intel brand colors)
+   ----------------------------- */
+:root {
+  --intel-blue-dark: #001f3f;   /* deep navy for backgrounds */
+  --intel-blue: #0068b5;        /* primary Intel blue */
+  --intel-blue-bright: #00c7fd; /* Intel's light "accent" blue (from the logo) */
+  --intel-green: #4cb963;       /* sustainability accent for icons */
+  --card-bg: #ffffff;
+  --text-dark: #101820;
+  --text-light: #f4f8fb;
+  --radius: 14px;
+  --shadow-soft: 0 6px 18px rgba(0, 0, 0, 0.12);
+  --shadow-hover: 0 18px 34px rgba(0, 31, 63, 0.28);
+}
+
+/* -----------------------------
+   2. Base / Reset
+   ----------------------------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+  background-color: #eef2f6;
+  color: var(--text-dark);
+  line-height: 1.5;
+}
+
+/* -----------------------------
+   3. Hero Section
+   ----------------------------- */
+.hero {
+  background: radial-gradient(circle at 20% 20%, #002e5d 0%, var(--intel-blue-dark) 55%, #000a17 100%);
+  color: var(--text-light);
+  padding: 5rem 1.5rem 4rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle glowing accent shapes in the background */
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: var(--intel-blue-bright);
+  opacity: 0.12;
+  filter: blur(60px);
+}
+
+.hero::before {
+  width: 320px;
+  height: 320px;
+  top: -100px;
+  right: -80px;
+}
+
+.hero::after {
+  width: 260px;
+  height: 260px;
+  bottom: -120px;
+  left: -60px;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-logo {
+  width: 140px;
+  margin-bottom: 1.75rem;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.4));
+}
+
+.hero-title {
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: #cfe3f5;
+  max-width: 560px;
+  margin: 0 auto 2rem;
+}
+
+.hero-scroll-cue {
+  display: inline-block;
+  color: var(--intel-blue-bright);
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid rgba(0, 199, 253, 0.5);
+  border-radius: 999px;
+  padding: 0.6rem 1.4rem;
+  transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.hero-scroll-cue:hover {
+  background-color: rgba(0, 199, 253, 0.15);
+  transform: translateY(3px);
+}
+
+/* -----------------------------
+   4. Timeline Section (Flexbox)
+   ----------------------------- */
+.timeline {
+  display: flex;
+  flex-direction: row;          /* cards line up horizontally on desktop */
+  align-items: stretch;
+  gap: 1.75rem;
+  overflow-x: auto;             /* enables horizontal scrolling */
+  padding: 3.5rem 6vw;
+
+  /* Extra Credit: Scroll Snap Effect */
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: 6vw;
+}
+
+/* nicer-looking horizontal scrollbar (desktop / Chromium) */
+.timeline::-webkit-scrollbar {
+  height: 10px;
+}
+.timeline::-webkit-scrollbar-track {
+  background: #dfe7ee;
+  border-radius: 10px;
+}
+.timeline::-webkit-scrollbar-thumb {
+  background: var(--intel-blue);
+  border-radius: 10px;
+}
+
+.timeline-hint {
+  text-align: center;
+  color: #5c6b7a;
+  font-size: 0.9rem;
+  padding-bottom: 2.5rem;
+}
+
+/* -----------------------------
+   5. Milestone Cards
+   ----------------------------- */
+.card {
+  flex: 0 0 260px;              /* fixed width so the row scrolls nicely */
+  background-color: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+  scroll-snap-align: start;     /* Extra Credit: Scroll Snap Effect */
+
+  /* Extra Credit: CSS Transforms — smooth lift on hover */
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: var(--shadow-hover);
+}
+
+.card-media {
+  position: relative;
+  height: 170px;
+  overflow: hidden;
+  background-color: var(--intel-blue-dark);
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .card-image {
+  transform: scale(1.1);        /* Extra Credit: CSS Transforms */
+}
+
+.card-header {
+  padding: 1.1rem 1.25rem 1.4rem;
+}
+
+.card-year {
+  display: inline-block;
+  background-color: var(--intel-blue);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  margin-bottom: 0.6rem;
+}
+
+.card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+/* -----------------------------
+   6. Hover-Reveal Overlay
+   Milestone detail text is hidden until the card is hovered.
+   ----------------------------- */
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 31, 63, 0.55) 0%, rgba(0, 31, 63, 0.92) 100%);
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.card:hover .card-overlay,
+.card:focus-within .card-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card-overlay p {
+  color: var(--text-light);
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+
+/* -----------------------------
+   7. Icon Tiles
+   Stand-in graphics for milestones that don't yet have a
+   custom photo (cards 5-9). Swap for an <img> to claim the
+   "Custom Images" extra credit — see comments in index.html.
+   ----------------------------- */
+.icon-tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-icon {
+  width: 64px;
+  height: 64px;
+  color: #ffffff;
+  opacity: 0.9;
+}
+
+.icon-tile--emissions { background: linear-gradient(135deg, #21506b, #12314a); }
+.icon-tile--rise       { background: linear-gradient(135deg, var(--intel-blue), #013a63); }
+.icon-tile--netzero    { background: linear-gradient(135deg, #1f7a54, #0f4a35); }
+.icon-tile--renewable  { background: linear-gradient(135deg, #0090c8, #005b8f); }
+.icon-tile--summit     { background: linear-gradient(135deg, #294a80, #0d1f3d); }
+
+/* -----------------------------
+   8. Responsive — stack vertically on smaller screens
+   ----------------------------- */
+@media (max-width: 768px) {
+  .timeline {
+    flex-direction: column;     /* stack cards instead of scrolling sideways */
+    overflow-x: visible;
+    scroll-snap-type: none;
+    padding: 2.5rem 6vw;
+  }
+
+  .card {
+    flex: 1 1 auto;             /* let each card take the full row width */
+  }
+
+  .hero {
+    padding: 3.5rem 1.25rem 3rem;
+  }
+
+  .hero-logo {
+    width: 110px;
+  }
+}
