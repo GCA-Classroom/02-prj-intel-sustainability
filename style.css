@@ -293,3 +293,207 @@ body {
     width: 110px;
   }
 }
+
+/* =========================================================
+   PROJECT 3 ADDITIONS — Localization, RTL, Bootstrap sections
+   Sections below use Bootstrap utility/grid classes for layout
+   and structure; the rules here handle branding, spacing, and
+   accessibility details Bootstrap doesn't provide out of the box.
+   ========================================================= */
+
+/* -----------------------------
+   9. Skip Link (accessibility)
+   ----------------------------- */
+.skip-link {
+  position: absolute;
+  top: -3rem;
+  left: 1rem;
+  background: var(--intel-blue-dark);
+  color: var(--text-light);
+  padding: 0.6rem 1.1rem;
+  border-radius: 0 0 8px 8px;
+  z-index: 2000;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* -----------------------------
+   10. Utility / Localization Nav
+   ----------------------------- */
+.site-nav {
+  background-color: var(--intel-blue-dark);
+  padding: 0.75rem 0;
+}
+
+.site-nav .navbar-brand {
+  color: var(--text-light);
+  font-weight: 700;
+}
+
+.google-translate-mount {
+  min-height: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Google's injected widget markup is styled by their own script; this
+   just keeps it visually aligned with the rest of the toolbar. */
+.google-translate-mount .goog-te-gadget {
+  color: var(--text-light) !important;
+  font-size: 0.8rem !important;
+}
+
+.btn-rtl-toggle {
+  background-color: transparent;
+  color: var(--text-light);
+  border: 1px solid rgba(0, 199, 253, 0.6);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  padding: 0.4rem 0.9rem;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-rtl-toggle:hover,
+.btn-rtl-toggle:focus-visible {
+  background-color: rgba(0, 199, 253, 0.18);
+  color: var(--text-light);
+}
+
+.btn-rtl-toggle[aria-pressed="true"] {
+  background-color: var(--intel-blue-bright);
+  color: var(--intel-blue-dark);
+  border-color: var(--intel-blue-bright);
+  font-weight: 600;
+}
+
+/* -----------------------------
+   11. RISE Pillars (three-column section)
+   ----------------------------- */
+.pillars {
+  background-color: #eef2f6;
+}
+
+.pillars-subtitle {
+  color: #5c6b7a;
+}
+
+.pillar-card {
+  background-color: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pillar-card:hover,
+.pillar-card:focus-within {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+}
+
+.pillar-icon {
+  font-size: 2.5rem;
+  color: var(--intel-blue);
+}
+
+.learn-more-link {
+  color: var(--intel-blue-dark);
+  font-weight: 600;
+  padding: 0.4rem 0.25rem;
+  text-decoration: underline;
+}
+
+.learn-more-link:hover,
+.learn-more-link:focus-visible {
+  color: var(--intel-blue);
+}
+
+/* -----------------------------
+   12. Newsletter Section
+   ----------------------------- */
+.newsletter {
+  background-color: #ffffff;
+}
+
+.newsletter-form .form-label {
+  font-weight: 600;
+}
+
+.newsletter .btn-primary {
+  background-color: var(--intel-blue);
+  border-color: var(--intel-blue);
+}
+
+.newsletter .btn-primary:hover,
+.newsletter .btn-primary:focus-visible {
+  background-color: var(--intel-blue-dark);
+  border-color: var(--intel-blue-dark);
+}
+
+.newsletter-success {
+  color: #1f7a54;
+  font-weight: 600;
+  min-height: 1.5rem;
+}
+
+/* -----------------------------
+   13. Footer
+   ----------------------------- */
+.site-footer {
+  background-color: var(--intel-blue-dark);
+  color: var(--text-light);
+  padding: 1.75rem 0;
+  font-size: 0.9rem;
+}
+
+.footer-disclaimer {
+  color: #cfe3f5;
+}
+
+.footer-links a {
+  color: var(--intel-blue-bright);
+  text-decoration: underline;
+}
+
+.footer-links a:hover,
+.footer-links a:focus-visible {
+  color: var(--text-light);
+}
+
+.footer-links .list-inline-item:not(:last-child) {
+  margin-inline-end: 1rem;
+}
+
+/* -----------------------------
+   14. Focus visibility (accessibility)
+   Applies across native + Bootstrap interactive elements so keyboard
+   users always get a clear, high-contrast focus indicator.
+   ----------------------------- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+.card:focus-within {
+  outline: 3px solid var(--intel-blue-bright);
+  outline-offset: 2px;
+}
+
+/* -----------------------------
+   15. RTL adjustments
+   Bootstrap's own CSS mirrors automatically via [dir="rtl"]; these
+   rules cover the handful of custom, non-Bootstrap spots (icons,
+   scroll cue) that read visually "backwards" otherwise.
+   ----------------------------- */
+html[dir="rtl"] .hero-scroll-cue::after {
+  content: "";
+}
+
+html[dir="rtl"] .learn-more-link .bi-arrow-right-short {
+  transform: scaleX(-1);
+}
+
+html[dir="rtl"] .footer-links .list-inline-item:not(:last-child) {
+  margin-inline-end: 0;
+  margin-inline-start: 1rem;
+}

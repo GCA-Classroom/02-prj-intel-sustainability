@@ -1,229 +1,458 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore Intel's sustainability journey through a visual timeline, our RISE strategy pillars, and how to stay connected with our sustainability newsletter." />
   <title>Intel: Sustainability Through the Ages</title>
+  <link rel="icon" href="img/intel-header-logo.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="vendor/bootstrap-icons/font/bootstrap-icons.min.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
+  <!-- Skip link: first focusable element, lets keyboard/screen-reader users
+       jump straight past the nav to the main content. -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
   <!-- ============================= -->
-  <!-- Header / Hero Section -->
+  <!-- Localization / Utility Nav -->
   <!-- ============================= -->
-  <header class="hero">
-    <div class="hero-content">
-      <img src="img/intel-header-logo.svg" alt="Intel Logo" class="hero-logo" />
+  <nav class="navbar navbar-expand-md navbar-dark site-nav" aria-label="Site utility navigation">
+    <div class="container flex-wrap gap-2">
+      <a class="navbar-brand" href="#top">Intel Sustainability Journey</a>
 
-      <!-- Main Heading -->
-      <h1 class="hero-title">
-        Sustainability Through the Ages
-      </h1>
+      <div class="d-flex align-items-center gap-2 flex-wrap ms-md-auto">
+        <!-- Google "Website Translator" widget mounts here. Translating to an
+             RTL language (Arabic, Hebrew, etc.) adds a translated-rtl class
+             to <html>, which script.js watches for (see LevelUp script). -->
+        <div id="google_translate_element" class="google-translate-mount"></div>
 
-      <!-- Subheading / Description -->
-      <p class="hero-subtitle">
-        Explore Intel's journey through time, discovering how our commitment
-        to innovation has shaped a more sustainable future for technology
-        and our planet.
-      </p>
-
-      <a href="#timeline" class="hero-scroll-cue">Scroll to explore &darr;</a>
+        <!-- Manual RTL toggle: lets anyone (or an evaluator) preview the RTL
+             layout instantly without needing to run a translation. -->
+        <button type="button" id="rtl-toggle" class="btn btn-rtl-toggle btn-sm" aria-pressed="false">
+          <i class="bi bi-arrow-left-right" aria-hidden="true"></i>
+          <span id="rtl-toggle-label">Switch to RTL (Arabic demo)</span>
+        </button>
+      </div>
     </div>
-  </header>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- ============================= -->
+    <!-- Header / Hero Section -->
+    <!-- ============================= -->
+    <header class="hero" id="top">
+      <div class="hero-content">
+        <img src="img/intel-header-logo.svg" alt="Intel logo" class="hero-logo" />
+
+        <!-- Main Heading -->
+        <h1 class="hero-title">
+          Sustainability Through the Ages
+        </h1>
+
+        <!-- Subheading / Description -->
+        <p class="hero-subtitle">
+          Explore Intel's journey through time, discovering how our commitment
+          to innovation has shaped a more sustainable future for technology
+          and our planet.
+        </p>
+
+        <a href="#timeline" class="hero-scroll-cue">Scroll to explore &darr;</a>
+      </div>
+    </header>
+
+    <!-- ============================= -->
+    <!-- Timeline Cards Section -->
+    <!-- (Existing flexbox layout — left as-is per project instructions) -->
+    <!-- ============================= -->
+    <section class="timeline" id="timeline" tabindex="0" aria-label="Sustainability milestones timeline, scrollable with arrow keys">
+
+      <!-- Card 1: 1968 -->
+      <article class="card">
+        <div class="card-media">
+          <img src="img/1.jpg" alt="Illustration of Intel's early lab in 1968" class="card-image" />
+          <div class="card-overlay">
+            <p>
+              Robert Noyce and Gordon Moore rename the newly formed company
+              NM Electronics to Intel Corporation, laying the foundation for
+              decades of technological innovation.
+            </p>
+          </div>
+        </div>
+        <div class="card-header">
+          <span class="card-year">1968</span>
+          <h2 class="card-title">Intel Founded</h2>
+        </div>
+      </article>
+
+      <!-- Card 2: 1971 -->
+      <article class="card">
+        <div class="card-media">
+          <img src="img/2.jpg" alt="Close-up of an early Intel microprocessor chip" class="card-image" />
+          <div class="card-overlay">
+            <p>
+              Intel debuts the 4004, the world's first commercial microprocessor,
+              igniting the microprocessor revolution and propelling the future
+              of computing devices.
+            </p>
+          </div>
+        </div>
+        <div class="card-header">
+          <span class="card-year">1971</span>
+          <h2 class="card-title">First Microprocessor</h2>
+        </div>
+      </article>
+
+      <!-- Card 3: 1978 -->
+      <article class="card">
+        <div class="card-media">
+          <img src="img/3.jpg" alt="Intel 8086 processor chip, 1978" class="card-image" />
+          <div class="card-overlay">
+            <p>
+              Launch of the 8086 processor, establishing the x86 architecture
+              that drives countless PCs and servers in the modern era.
+            </p>
+          </div>
+        </div>
+        <div class="card-header">
+          <span class="card-year">1978</span>
+          <h2 class="card-title">8086 Processor</h2>
+        </div>
+      </article>
+
+      <!-- Card 4: 1985 -->
+      <article class="card">
+        <div class="card-media">
+          <img src="img/4.jpg" alt="Intel 386 processor chip, 1985" class="card-image" />
+          <div class="card-overlay">
+            <p>
+              Intel introduces the 386 processor with 32-bit architecture,
+              ushering in a new era of performance and multitasking for
+              personal computers.
+            </p>
+          </div>
+        </div>
+        <div class="card-header">
+          <span class="card-year">1985</span>
+          <h2 class="card-title">386 Processor</h2>
+        </div>
+      </article>
+
+      <!-- Card 5: 2006 -->
+      <article class="card">
+        <div class="card-media icon-tile icon-tile--emissions">
+          <!-- Swap this .icon-tile div for an <img class="card-image" src="img/5.jpg"> to claim the Custom Images extra credit -->
+          <svg class="card-icon" viewBox="0 0 64 64" aria-hidden="true">
+            <path d="M8 52h48M14 52V28l8-10 8 10v24M30 52V18l8-10 8 10v34" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M46 20c3-3 3-8 0-12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          <div class="card-overlay">
+            <p>
+              This year marks Intel's highest annual greenhouse gas emissions
+              for operations. Over subsequent years, Intel invests heavily in
+              chemical abatement, renewable energy, and energy-efficient
+              manufacturing to reverse this trend.
+            </p>
+          </div>
+        </div>
+        <div class="card-header">
+          <span class="card-year">2006</span>
+          <h2 class="card-title">Peak GHG Emissions</h2>
+        </div>
+      </article>
+
+      <!-- Card 6: 2020 -->
+      <article class="card">
+        <div class="card-media icon-tile icon-tile--rise">
+          <!-- Swap this .icon-tile div for an <img class="card-image" src="img/6.jpg"> to claim the Custom Images extra credit -->
+          <svg class="card-icon" viewBox="0 0 64 64" aria-hidden="true">
+            <circle cx="32" cy="32" r="22" fill="none" stroke="currentColor" stroke-width="3"/>
+            <circle cx="32" cy="32" r="12" fill="none" stroke="currentColor" stroke-width="3"/>
+            <circle cx="32" cy="32" r="3" fill="currentColor"/>
+            <path d="M32 4v8M32 52v8M4 32h8M52 32h8" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          <div class="card-overlay">
+            <p>
+              Intel launches its RISE (Responsible, Inclusive, Sustainable,
+              Enabling) strategy and 2030 goals, aiming to drive industry-wide
+              progress on climate action, water stewardship, and waste reduction.
+            </p>
+          </div>
+        </div>
+        <div class="card-header">
+          <span class="card-year">2020</span>
+          <h2 class="card-title">RISE Strategy</h2>
+        </div>
+      </article>
+
+      <!-- Card 7: 2022 -->
+      <article class="card">
+        <div class="card-media icon-tile icon-tile--netzero">
+          <!-- Swap this .icon-tile div for an <img class="card-image" src="img/7.jpg"> to claim the Custom Images extra credit -->
+          <svg class="card-icon" viewBox="0 0 64 64" aria-hidden="true">
+            <path d="M32 8c11 6 18 16 18 26a18 18 0 1 1-36 0c0-10 7-20 18-26z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+            <path d="M24 34c4 6 12 6 16 0" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          <div class="card-overlay">
+            <p>
+              Intel announces its commitment to achieve net-zero greenhouse
+              gas emissions (Scope 1 and 2) across its global operations
+              by 2040, building on years of environmental initiatives.
+            </p>
+          </div>
+        </div>
+        <div class="card-header">
+          <span class="card-year">2022</span>
+          <h2 class="card-title">Net-Zero By 2040</h2>
+        </div>
+      </article>
+
+      <!-- Card 8: 2023 -->
+      <article class="card">
+        <div class="card-media icon-tile icon-tile--renewable">
+          <!-- Swap this .icon-tile div for an <img class="card-image" src="img/8.jpg"> to claim the Custom Images extra credit -->
+          <svg class="card-icon" viewBox="0 0 64 64" aria-hidden="true">
+            <circle cx="32" cy="32" r="10" fill="none" stroke="currentColor" stroke-width="3"/>
+            <path d="M32 6v8M32 50v8M6 32h8M50 32h8M14 14l6 6M44 44l6 6M50 14l-6 6M20 44l-6 6" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          <div class="card-overlay">
+            <p>
+              The company achieves 99% renewable electricity usage worldwide,
+              helping to drastically lower carbon emissions and driving progress
+              toward Intel's long-term sustainability goals.
+            </p>
+          </div>
+        </div>
+        <div class="card-header">
+          <span class="card-year">2023</span>
+          <h2 class="card-title">Renewable Electricity</h2>
+        </div>
+      </article>
+
+      <!-- Card 9: 2024 -->
+      <article class="card">
+        <div class="card-media icon-tile icon-tile--summit">
+          <!-- Swap this .icon-tile div for an <img class="card-image" src="img/9.jpg"> to claim the Custom Images extra credit -->
+          <svg class="card-icon" viewBox="0 0 64 64" aria-hidden="true">
+            <circle cx="20" cy="24" r="7" fill="none" stroke="currentColor" stroke-width="3"/>
+            <circle cx="44" cy="24" r="7" fill="none" stroke="currentColor" stroke-width="3"/>
+            <path d="M8 52c0-9 6-16 12-16s12 7 12 16M32 52c0-9 6-16 12-16s12 7 12 16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          <div class="card-overlay">
+            <p>
+              Intel hosts its first Sustainability Summit, uniting suppliers,
+              government officials, and industry leaders to collaborate on
+              next-generation sustainable semiconductor manufacturing.
+            </p>
+          </div>
+        </div>
+        <div class="card-header">
+          <span class="card-year">2024</span>
+          <h2 class="card-title">Sustainability Summit</h2>
+        </div>
+      </article>
+
+    </section>
+
+    <p class="timeline-hint">Scroll to view timeline | Hover over cards to learn more!</p>
+
+    <!-- ============================= -->
+    <!-- Three-Column "RISE Pillars" Section (Bootstrap grid) -->
+    <!-- ============================= -->
+    <section class="pillars py-5" id="pillars" aria-labelledby="pillars-heading">
+      <div class="container">
+        <h2 id="pillars-heading" class="text-center">Our RISE Strategy Pillars</h2>
+        <p class="text-center pillars-subtitle mb-5">
+          Three focus areas driving Intel's 2030 sustainability goals.
+        </p>
+
+        <div class="row g-4">
+          <!-- Column 1: Climate Action -->
+          <div class="col-12 col-md-4">
+            <div class="pillar-card h-100 p-4 text-center">
+              <i class="bi bi-cloud-sun pillar-icon" aria-hidden="true"></i>
+              <h3 class="h5 mt-3">Climate Action</h3>
+              <p>
+                From reducing operational emissions to investing in
+                energy-efficient manufacturing, we're working toward
+                net-zero greenhouse gas emissions across our global
+                operations by 2040.
+              </p>
+              <button type="button" class="btn learn-more-link" data-bs-toggle="modal" data-bs-target="#climateModal" aria-haspopup="dialog">
+                Learn More <i class="bi bi-arrow-right-short" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Column 2: Water Stewardship -->
+          <div class="col-12 col-md-4">
+            <div class="pillar-card h-100 p-4 text-center">
+              <i class="bi bi-droplet pillar-icon" aria-hidden="true"></i>
+              <h3 class="h5 mt-3">Water Stewardship</h3>
+              <p>
+                Water is essential to semiconductor manufacturing. We invest
+                in conservation, reuse, and local watershed restoration to
+                help protect this shared resource for the long term.
+              </p>
+              <button type="button" class="btn learn-more-link" data-bs-toggle="modal" data-bs-target="#waterModal" aria-haspopup="dialog">
+                Learn More <i class="bi bi-arrow-right-short" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Column 3: Waste Reduction -->
+          <div class="col-12 col-md-4">
+            <div class="pillar-card h-100 p-4 text-center">
+              <i class="bi bi-recycle pillar-icon" aria-hidden="true"></i>
+              <h3 class="h5 mt-3">Waste Reduction</h3>
+              <p>
+                We're working toward sending zero waste to landfill by
+                finding innovative ways to reduce, reuse, recycle, and
+                repurpose manufacturing byproducts.
+              </p>
+              <button type="button" class="btn learn-more-link" data-bs-toggle="modal" data-bs-target="#wasteModal" aria-haspopup="dialog">
+                Learn More <i class="bi bi-arrow-right-short" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- Newsletter Subscription Form -->
+    <!-- ============================= -->
+    <section class="newsletter py-5" id="newsletter" aria-labelledby="newsletter-heading">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-7 text-center">
+            <h2 id="newsletter-heading">Stay Connected</h2>
+            <p class="mb-4">
+              Subscribe to Intel's sustainability newsletter for periodic
+              updates on our climate, water, and waste-reduction progress.
+            </p>
+
+            <form class="newsletter-form text-start needs-validation" id="newsletter-form" novalidate>
+              <div class="row g-3">
+                <div class="col-12 col-sm-6">
+                  <label for="subscriber-name" class="form-label">Full name</label>
+                  <input type="text" class="form-control" id="subscriber-name" name="name" autocomplete="name" required />
+                  <div class="invalid-feedback">Please enter your name.</div>
+                </div>
+
+                <div class="col-12 col-sm-6">
+                  <label for="subscriber-email" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="subscriber-email" name="email" autocomplete="email" required aria-describedby="email-help" />
+                  <div id="email-help" class="form-text">We'll never share your email with anyone else.</div>
+                  <div class="invalid-feedback">Please enter a valid email address.</div>
+                </div>
+
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="newsletter-consent" required />
+                    <label class="form-check-label" for="newsletter-consent">
+                      I agree to receive sustainability updates by email.
+                    </label>
+                    <div class="invalid-feedback">Please check this box to subscribe.</div>
+                  </div>
+                </div>
+
+                <div class="col-12 text-center mt-2">
+                  <button type="submit" class="btn btn-primary px-4">Subscribe</button>
+                </div>
+
+                <!-- Polite live region so screen-reader users hear the
+                     confirmation message without losing focus/keyboard place. -->
+                <div class="col-12">
+                  <p id="newsletter-success" class="newsletter-success mt-3" role="status" aria-live="polite"></p>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
 
   <!-- ============================= -->
-  <!-- Timeline Cards Section -->
+  <!-- Footer -->
   <!-- ============================= -->
-  <section class="timeline" id="timeline">
+  <footer class="site-footer">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+      <p class="mb-0">&copy; <span id="current-year"></span> Intel Corporation. All rights reserved. <span class="footer-disclaimer">(Student project — unaffiliated with Intel)</span></p>
+      <nav aria-label="Footer">
+        <ul class="footer-links list-inline mb-0">
+          <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+          <li class="list-inline-item"><a href="#">Terms of Use</a></li>
+          <li class="list-inline-item"><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
 
-    <!-- Card 1: 1968 -->
-    <article class="card">
-      <div class="card-media">
-        <img src="img/1.jpg" alt="Illustration of Intel's early lab in 1968" class="card-image" />
-        <div class="card-overlay">
-          <p>
-            Robert Noyce and Gordon Moore rename the newly formed company
-            NM Electronics to Intel Corporation, laying the foundation for
-            decades of technological innovation.
-          </p>
+  <!-- ============================= -->
+  <!-- "Learn More" Modals (Bootstrap component — LevelUp: Enhance Interactivity) -->
+  <!-- ============================= -->
+  <div class="modal fade" id="climateModal" tabindex="-1" aria-labelledby="climateModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h5" id="climateModalLabel"><i class="bi bi-cloud-sun me-2" aria-hidden="true"></i>Climate Action</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Since 2006 — our peak year for operational greenhouse gas emissions — Intel has invested in chemical abatement, renewable energy, and energy-efficient manufacturing.</p>
+          <p>In 2022, we committed to net-zero greenhouse gas emissions (Scope 1 and 2) across our global operations by 2040, building on the climate goals set by our 2020 RISE strategy.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
-      <div class="card-header">
-        <span class="card-year">1968</span>
-        <h2 class="card-title">Intel Founded</h2>
-      </div>
-    </article>
+    </div>
+  </div>
 
-    <!-- Card 2: 1971 -->
-    <article class="card">
-      <div class="card-media">
-        <img src="img/2.jpg" alt="Close-up of an early Intel microprocessor chip" class="card-image" />
-        <div class="card-overlay">
-          <p>
-            Intel debuts the 4004, the world's first commercial microprocessor,
-            igniting the microprocessor revolution and propelling the future
-            of computing devices.
-          </p>
+  <div class="modal fade" id="waterModal" tabindex="-1" aria-labelledby="waterModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h5" id="waterModalLabel"><i class="bi bi-droplet me-2" aria-hidden="true"></i>Water Stewardship</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Semiconductor manufacturing is water-intensive, so responsible water use is central to our RISE strategy's 2030 goals.</p>
+          <p>We work toward net positive water use through conservation and reuse in our own facilities, alongside restoration projects with local watershed partners in the communities where we operate.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
-      <div class="card-header">
-        <span class="card-year">1971</span>
-        <h2 class="card-title">First Microprocessor</h2>
-      </div>
-    </article>
+    </div>
+  </div>
 
-    <!-- Card 3: 1978 -->
-    <article class="card">
-      <div class="card-media">
-        <img src="img/3.jpg" alt="Intel 8086 processor chip, 1978" class="card-image" />
-        <div class="card-overlay">
-          <p>
-            Launch of the 8086 processor, establishing the x86 architecture
-            that drives countless PCs and servers in the modern era.
-          </p>
+  <div class="modal fade" id="wasteModal" tabindex="-1" aria-labelledby="wasteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h5" id="wasteModalLabel"><i class="bi bi-recycle me-2" aria-hidden="true"></i>Waste Reduction</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Our 2030 goals include sending zero waste to landfill across our manufacturing operations.</p>
+          <p>We pursue this through source reduction, reuse, and recycling programs, plus finding new ways to repurpose manufacturing byproducts instead of discarding them.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
-      <div class="card-header">
-        <span class="card-year">1978</span>
-        <h2 class="card-title">8086 Processor</h2>
-      </div>
-    </article>
+    </div>
+  </div>
 
-    <!-- Card 4: 1985 -->
-    <article class="card">
-      <div class="card-media">
-        <img src="img/4.jpg" alt="Intel 386 processor chip, 1985" class="card-image" />
-        <div class="card-overlay">
-          <p>
-            Intel introduces the 386 processor with 32-bit architecture,
-            ushering in a new era of performance and multitasking for
-            personal computers.
-          </p>
-        </div>
-      </div>
-      <div class="card-header">
-        <span class="card-year">1985</span>
-        <h2 class="card-title">386 Processor</h2>
-      </div>
-    </article>
-
-    <!-- Card 5: 2006 -->
-    <article class="card">
-      <div class="card-media icon-tile icon-tile--emissions">
-        <!-- Swap this .icon-tile div for an <img class="card-image" src="img/5.jpg"> to claim the Custom Images extra credit -->
-        <svg class="card-icon" viewBox="0 0 64 64" aria-hidden="true">
-          <path d="M8 52h48M14 52V28l8-10 8 10v24M30 52V18l8-10 8 10v34" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M46 20c3-3 3-8 0-12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-        </svg>
-        <div class="card-overlay">
-          <p>
-            This year marks Intel's highest annual greenhouse gas emissions
-            for operations. Over subsequent years, Intel invests heavily in
-            chemical abatement, renewable energy, and energy-efficient
-            manufacturing to reverse this trend.
-          </p>
-        </div>
-      </div>
-      <div class="card-header">
-        <span class="card-year">2006</span>
-        <h2 class="card-title">Peak GHG Emissions</h2>
-      </div>
-    </article>
-
-    <!-- Card 6: 2020 -->
-    <article class="card">
-      <div class="card-media icon-tile icon-tile--rise">
-        <!-- Swap this .icon-tile div for an <img class="card-image" src="img/6.jpg"> to claim the Custom Images extra credit -->
-        <svg class="card-icon" viewBox="0 0 64 64" aria-hidden="true">
-          <circle cx="32" cy="32" r="22" fill="none" stroke="currentColor" stroke-width="3"/>
-          <circle cx="32" cy="32" r="12" fill="none" stroke="currentColor" stroke-width="3"/>
-          <circle cx="32" cy="32" r="3" fill="currentColor"/>
-          <path d="M32 4v8M32 52v8M4 32h8M52 32h8" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-        </svg>
-        <div class="card-overlay">
-          <p>
-            Intel launches its RISE (Responsible, Inclusive, Sustainable,
-            Enabling) strategy and 2030 goals, aiming to drive industry-wide
-            progress on climate action, water stewardship, and waste reduction.
-          </p>
-        </div>
-      </div>
-      <div class="card-header">
-        <span class="card-year">2020</span>
-        <h2 class="card-title">RISE Strategy</h2>
-      </div>
-    </article>
-
-    <!-- Card 7: 2022 -->
-    <article class="card">
-      <div class="card-media icon-tile icon-tile--netzero">
-        <!-- Swap this .icon-tile div for an <img class="card-image" src="img/7.jpg"> to claim the Custom Images extra credit -->
-        <svg class="card-icon" viewBox="0 0 64 64" aria-hidden="true">
-          <path d="M32 8c11 6 18 16 18 26a18 18 0 1 1-36 0c0-10 7-20 18-26z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
-          <path d="M24 34c4 6 12 6 16 0" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-        </svg>
-        <div class="card-overlay">
-          <p>
-            Intel announces its commitment to achieve net-zero greenhouse
-            gas emissions (Scope 1 and 2) across its global operations
-            by 2040, building on years of environmental initiatives.
-          </p>
-        </div>
-      </div>
-      <div class="card-header">
-        <span class="card-year">2022</span>
-        <h2 class="card-title">Net-Zero By 2040</h2>
-      </div>
-    </article>
-
-    <!-- Card 8: 2023 -->
-    <article class="card">
-      <div class="card-media icon-tile icon-tile--renewable">
-        <!-- Swap this .icon-tile div for an <img class="card-image" src="img/8.jpg"> to claim the Custom Images extra credit -->
-        <svg class="card-icon" viewBox="0 0 64 64" aria-hidden="true">
-          <circle cx="32" cy="32" r="10" fill="none" stroke="currentColor" stroke-width="3"/>
-          <path d="M32 6v8M32 50v8M6 32h8M50 32h8M14 14l6 6M44 44l6 6M50 14l-6 6M20 44l-6 6" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-        </svg>
-        <div class="card-overlay">
-          <p>
-            The company achieves 99% renewable electricity usage worldwide,
-            helping to drastically lower carbon emissions and driving progress
-            toward Intel's long-term sustainability goals.
-          </p>
-        </div>
-      </div>
-      <div class="card-header">
-        <span class="card-year">2023</span>
-        <h2 class="card-title">Renewable Electricity</h2>
-      </div>
-    </article>
-
-    <!-- Card 9: 2024 -->
-    <article class="card">
-      <div class="card-media icon-tile icon-tile--summit">
-        <!-- Swap this .icon-tile div for an <img class="card-image" src="img/9.jpg"> to claim the Custom Images extra credit -->
-        <svg class="card-icon" viewBox="0 0 64 64" aria-hidden="true">
-          <circle cx="20" cy="24" r="7" fill="none" stroke="currentColor" stroke-width="3"/>
-          <circle cx="44" cy="24" r="7" fill="none" stroke="currentColor" stroke-width="3"/>
-          <path d="M8 52c0-9 6-16 12-16s12 7 12 16M32 52c0-9 6-16 12-16s12 7 12 16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-        </svg>
-        <div class="card-overlay">
-          <p>
-            Intel hosts its first Sustainability Summit, uniting suppliers,
-            government officials, and industry leaders to collaborate on
-            next-generation sustainable semiconductor manufacturing.
-          </p>
-        </div>
-      </div>
-      <div class="card-header">
-        <span class="card-year">2024</span>
-        <h2 class="card-title">Sustainability Summit</h2>
-      </div>
-    </article>
-
-  </section>
-
-  <p class="timeline-hint">Scroll to view timeline | Hover over cards to learn more!</p>
-
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
+  <script src="script.js"></script>
 </body>
 </html>
