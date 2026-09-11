@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title description">
+  <title id="title">Business presentation of the RISE strategy</title>
+  <desc id="description">A business presenter explains Intel's RISE sustainability strategy beside a conference table.</desc>
+
+  <rect width="1200" height="760" fill="#eef4f7"/>
+  <rect y="0" width="1200" height="92" fill="#0054a6"/>
+  <circle cx="1080" cy="46" r="20" fill="#00a3e0" opacity="0.9"/>
+  <circle cx="1130" cy="46" r="10" fill="#ffffff" opacity="0.8"/>
+  <text x="70" y="58" fill="#ffffff" font-family="Arial, sans-serif" font-size="30" font-weight="700">RISE Strategy</text>
+  <text x="1130" y="58" fill="#ffffff" font-family="Arial, sans-serif" font-size="17" text-anchor="end">Sustainability meeting</text>
+
+  <!-- Presentation board -->
+  <rect x="72" y="142" width="570" height="350" rx="8" fill="#ffffff" stroke="#c4d5df" stroke-width="4"/>
+  <rect x="72" y="142" width="570" height="62" rx="8" fill="#172b4d"/>
+  <text x="108" y="183" fill="#ffffff" font-family="Arial, sans-serif" font-size="26" font-weight="700">RISE 2030</text>
+  <text x="108" y="242" fill="#0054a6" font-family="Arial, sans-serif" font-size="24" font-weight="700">Responsible</text>
+  <text x="108" y="282" fill="#00a3e0" font-family="Arial, sans-serif" font-size="24" font-weight="700">Inclusive</text>
+  <text x="108" y="322" fill="#3c8c5a" font-family="Arial, sans-serif" font-size="24" font-weight="700">Sustainable</text>
+  <text x="108" y="362" fill="#e07b39" font-family="Arial, sans-serif" font-size="24" font-weight="700">Enabling</text>
+  <g fill="#536575" font-family="Arial, sans-serif" font-size="16">
+    <text x="370" y="246">Climate action</text>
+    <text x="370" y="286">People and equity</text>
+    <text x="370" y="326">Water and waste</text>
+    <text x="370" y="366">Technology for good</text>
+  </g>
+  <g fill="none" stroke="#c4d5df" stroke-width="3">
+    <line x1="346" y1="226" x2="346" y2="390"/>
+    <line x1="346" y1="266" x2="590" y2="266"/>
+    <line x1="346" y1="306" x2="590" y2="306"/>
+    <line x1="346" y1="346" x2="590" y2="346"/>
+    <line x1="346" y1="386" x2="590" y2="386"/>
+  </g>
+  <text x="108" y="440" fill="#536575" font-family="Arial, sans-serif" font-size="17">Building a more sustainable future together</text>
+
+  <!-- Presenter -->
+  <circle cx="692" cy="264" r="34" fill="#8e5d45"/>
+  <path d="M657 254 Q692 208 727 254 Q709 232 676 239 Z" fill="#263746"/>
+  <path d="M646 470 L657 314 Q692 290 727 314 L738 470 Z" fill="#172b4d"/>
+  <path d="M672 322 L692 350 L712 322 L728 470 L656 470 Z" fill="#ffffff"/>
+  <path d="M660 330 L624 382 L640 393 L679 355" fill="#172b4d"/>
+  <path d="M724 330 L759 350 L753 365 L708 350" fill="#172b4d"/>
+  <circle cx="760" cy="350" r="8" fill="#e07b39"/>
+  <text x="660" y="520" fill="#172b4d" font-family="Arial, sans-serif" font-size="18" font-weight="700">Presenter</text>
+
+  <!-- Conference table -->
+  <ellipse cx="790" cy="650" rx="342" ry="70" fill="#b57952"/>
+  <ellipse cx="790" cy="634" rx="342" ry="70" fill="#d39a6c" stroke="#8a5b42" stroke-width="5"/>
+  <ellipse cx="790" cy="632" rx="275" ry="48" fill="#eef4f7" stroke="#c58b64" stroke-width="3"/>
+
+  <!-- Meeting materials -->
+  <rect x="746" y="607" width="88" height="38" rx="3" fill="#ffffff" stroke="#c4d5df" stroke-width="2" transform="rotate(-8 790 626)"/>
+  <text x="790" y="630" fill="#0054a6" font-family="Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" transform="rotate(-8 790 626)">RISE</text>
+  <rect x="850" y="614" width="48" height="30" rx="3" fill="#ffffff" stroke="#c4d5df" stroke-width="2"/>
+  <line x1="860" y1="624" x2="888" y2="624" stroke="#00a3e0" stroke-width="3"/>
+  <line x1="860" y1="633" x2="882" y2="633" stroke="#c4d5df" stroke-width="3"/>
+
+  <text x="600" y="724" fill="#536575" font-family="Arial, sans-serif" font-size="18" text-anchor="middle">Collaborating on climate action, inclusion, and responsible innovation</text>
+</svg>

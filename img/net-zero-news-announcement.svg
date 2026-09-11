@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title description">
+  <title id="title">Intel announces its net-zero commitment by 2040</title>
+  <desc id="description">A friendly blue Intel box character with arms announces on a news broadcast that Intel is committed to net-zero greenhouse gas emissions across global operations by 2040.</desc>
+
+  <rect width="1200" height="760" fill="#eef4f7"/>
+  <rect y="0" width="1200" height="92" fill="#0054a6"/>
+  <text x="70" y="58" fill="#ffffff" font-family="Arial, sans-serif" font-size="30" font-weight="700">2022 Sustainability News</text>
+  <circle cx="1080" cy="46" r="20" fill="#00a3e0"/>
+  <circle cx="1130" cy="46" r="10" fill="#ffffff" opacity="0.8"/>
+
+  <!-- News screen -->
+  <rect x="360" y="132" width="770" height="360" rx="12" fill="#172b4d" stroke="#536575" stroke-width="8"/>
+  <rect x="390" y="162" width="710" height="300" rx="5" fill="#ffffff"/>
+  <rect x="390" y="162" width="710" height="54" fill="#e23d50"/>
+  <circle cx="422" cy="189" r="12" fill="#ffffff"/>
+  <text x="448" y="198" fill="#ffffff" font-family="Arial, sans-serif" font-size="22" font-weight="700">BREAKING NEWS</text>
+  <text x="430" y="270" fill="#172b4d" font-family="Arial, sans-serif" font-size="32" font-weight="700">INTEL ANNOUNCES</text>
+  <text x="430" y="316" fill="#0054a6" font-family="Arial, sans-serif" font-size="38" font-weight="700">NET-ZERO BY 2040</text>
+  <line x1="430" y1="342" x2="1060" y2="342" stroke="#c4d5df" stroke-width="3"/>
+  <text x="430" y="380" fill="#536575" font-family="Arial, sans-serif" font-size="20">A commitment across global operations</text>
+  <text x="430" y="414" fill="#536575" font-family="Arial, sans-serif" font-size="18">Scope 1 and 2 greenhouse gas emissions</text>
+
+  <!-- Box character moved beside the screen so the announcement stays visible. -->
+  <g transform="translate(-150 40)">
+    <path d="M210 360 L126 414" stroke="#172b4d" stroke-width="18" stroke-linecap="round"/>
+    <path d="M210 360 L126 414" stroke="#00a3e0" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="120" cy="418" r="12" fill="#00a3e0" stroke="#172b4d" stroke-width="5"/>
+    <path d="M475 360 L540 315" stroke="#172b4d" stroke-width="18" stroke-linecap="round"/>
+    <path d="M475 360 L540 315" stroke="#00a3e0" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="546" cy="310" r="12" fill="#00a3e0" stroke="#172b4d" stroke-width="5"/>
+    <rect x="105" y="286" width="390" height="250" rx="18" fill="#0054a6" stroke="#172b4d" stroke-width="8"/>
+    <path d="M125 307 L475 307" stroke="#00a3e0" stroke-width="6" opacity="0.8"/>
+    <text x="300" y="410" fill="#ffffff" font-family="Arial, sans-serif" font-size="52" font-weight="700" text-anchor="middle">intel</text>
+    <text x="300" y="450" fill="#bfe9f5" font-family="Arial, sans-serif" font-size="22" text-anchor="middle">NET-ZERO 2040</text>
+    <circle cx="220" cy="482" r="12" fill="#ffffff"/>
+    <circle cx="380" cy="482" r="12" fill="#ffffff"/>
+    <path d="M220 510 Q300 555 380 510" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round"/>
+  </g>
+
+  <!-- News desk and microphone -->
+  <path d="M90 575 Q600 510 1110 575 L1080 675 Q600 720 120 675 Z" fill="#d39a6c" stroke="#8a5b42" stroke-width="6"/>
+  <path d="M90 575 Q600 510 1110 575" fill="none" stroke="#f0c091" stroke-width="12"/>
+  <rect x="794" y="518" width="20" height="90" rx="10" fill="#536575"/>
+  <ellipse cx="804" cy="512" rx="29" ry="16" fill="#172b4d"/>
+  <text x="845" y="608" fill="#172b4d" font-family="Arial, sans-serif" font-size="20" font-weight="700">GLOBAL OPERATIONS</text>
+  <text x="600" y="730" fill="#536575" font-family="Arial, sans-serif" font-size="19" text-anchor="middle">Moving toward a more sustainable future</text>
+</svg>
