@@ -1,1 +1,493 @@
 /* Add your CSS here */
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #07162f;
+  background: #ffffff;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navbar {
+  height: 82px;
+  width: 100%;
+  background: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 6.5%;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  border-bottom: 1px solid #eeeeee;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.intel-logo {
+  width: 58px;
+  height: auto;
+  margin-right: 28px;
+}
+
+.nav-left a {
+  font-size: 15px;
+  font-weight: 600;
+  color: #07162f;
+  transition: color 0.2s ease;
+}
+
+.nav-left a:hover {
+  color: #0068d9;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-icon {
+  font-size: 24px;
+  color: #07162f;
+}
+
+.ask-intel {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  min-height: 420px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  background: #ffffff;
+
+  padding: 80px 20px 60px;
+}
+
+.hero-content {
+  max-width: 1050px;
+}
+
+.hero h1 {
+  font-size: clamp(48px, 6vw, 78px);
+  line-height: 1.03;
+  letter-spacing: -3px;
+  font-weight: 700;
+  margin-bottom: 28px;
+}
+
+.hero p {
+  max-width: 760px;
+  margin: auto;
+
+  font-size: 19px;
+  line-height: 1.7;
+  color: #42526a;
+}
+
+.intel-inside {
+  margin-top: 35px;
+
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.intel-inside span {
+  font-weight: 400;
+}
+
+.intel-inside sup {
+  font-size: 13px;
+}
+
+
+/* =========================
+   QUICK LINK CARDS
+========================= */
+
+.quick-card {
+  min-height: 420px;
+
+  background: #eef4fc;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.quick-card:hover {
+  transform: translateY(-7px);
+
+  box-shadow: 0 15px 35px rgba(0, 30, 70, 0.15);
+}
+
+
+/* Images */
+
+.card-image {
+  width: 100%;
+  height: 190px;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition: transform 0.4s ease;
+}
+
+.quick-card:hover .card-image {
+  transform: scale(1.05);
+}
+
+
+/* Card text */
+
+.card-content {
+  padding: 28px;
+
+  display: flex;
+  flex-direction: column;
+
+  flex: 1;
+}
+
+.quick-card h3 {
+  font-size: 23px;
+  margin-bottom: 10px;
+}
+
+.quick-card p {
+  color: #526174;
+  font-size: 15px;
+
+  margin-bottom: 20px;
+}
+
+.quick-card a {
+  color: #0059d6;
+  font-weight: 700;
+
+  margin-top: auto;
+}
+
+/* =========================
+   TIMELINE SECTION
+========================= */
+
+main {
+  background: #f7f9fc;
+  padding: 100px 7%;
+}
+
+.section-heading {
+  max-width: 850px;
+  margin: 0 auto 70px;
+  text-align: center;
+}
+
+.eyebrow {
+  color: #0068d9;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.section-heading h2 {
+  font-size: clamp(38px, 5vw, 58px);
+  line-height: 1.1;
+  letter-spacing: -2px;
+  margin-bottom: 20px;
+}
+
+.section-heading > p:last-child {
+  color: #5a687b;
+  font-size: 17px;
+}
+
+
+/* =========================
+   TIMELINE
+========================= */
+
+.timeline {
+  max-width: 1050px;
+  margin: auto;
+
+  position: relative;
+}
+
+.timeline::before {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  top: 0;
+  bottom: 0;
+
+  width: 3px;
+
+  background: #cbd8e8;
+
+  transform: translateX(-50%);
+}
+
+.timeline-card {
+  width: 45%;
+
+  background: #ffffff;
+
+  padding: 35px;
+
+  margin-bottom: 50px;
+
+  border: 1px solid #e1e7ef;
+
+  box-shadow: 0 5px 20px rgba(0, 25, 60, 0.06);
+
+  position: relative;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.timeline-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 15px 35px rgba(0, 25, 60, 0.12);
+}
+
+.timeline-card:nth-child(odd) {
+  margin-right: auto;
+}
+
+.timeline-card:nth-child(even) {
+  margin-left: auto;
+}
+
+.timeline-card::after {
+  content: "";
+
+  position: absolute;
+
+  top: 38px;
+
+  width: 15px;
+  height: 15px;
+
+  border-radius: 50%;
+
+  background: #0068d9;
+
+  border: 4px solid #ffffff;
+
+  box-shadow: 0 0 0 2px #0068d9;
+}
+
+.timeline-card:nth-child(odd)::after {
+  right: -63px;
+}
+
+.timeline-card:nth-child(even)::after {
+  left: -63px;
+}
+
+.year {
+  color: #0068d9;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  margin-bottom: 7px;
+}
+
+.timeline-content h3 {
+  font-size: 27px;
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+
+.timeline-content p {
+  color: #59687b;
+  font-size: 15px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  text-align: center;
+
+  padding: 35px;
+
+  background: #07162f;
+
+  color: #ffffff;
+
+  font-size: 14px;
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 1100px) {
+
+  .navbar {
+    padding: 0 4%;
+  }
+
+  .nav-left {
+    gap: 18px;
+  }
+
+  .intel-logo {
+    margin-right: 10px;
+  }
+
+  .quick-links {
+    width: 92%;
+  }
+
+}
+
+
+@media (max-width: 850px) {
+
+  .navbar {
+    height: auto;
+    padding: 20px;
+
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .nav-left {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-right {
+    display: none;
+  }
+
+  .hero {
+    padding-top: 70px;
+  }
+
+  .hero h1 {
+    letter-spacing: -2px;
+  }
+
+  .quick-links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .timeline::before {
+    left: 10px;
+  }
+
+  .timeline-card,
+  .timeline-card:nth-child(odd),
+  .timeline-card:nth-child(even) {
+    width: calc(100% - 40px);
+    margin-left: 40px;
+    margin-right: 0;
+  }
+
+  .timeline-card::after,
+  .timeline-card:nth-child(odd)::after,
+  .timeline-card:nth-child(even)::after {
+    left: -39px;
+    right: auto;
+  }
+
+}
+
+
+@media (max-width: 550px) {
+
+  .nav-left a {
+    font-size: 13px;
+  }
+
+  .hero {
+    min-height: 400px;
+  }
+
+  .hero h1 {
+    font-size: 44px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .quick-links {
+    grid-template-columns: 1fr;
+  }
+
+  .quick-card {
+    min-height: 250px;
+  }
+
+  main {
+    padding: 70px 5%;
+  }
+
+}
