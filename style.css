@@ -1,1 +1,275 @@
-/* Add your CSS here */
+:root {
+	--navy: #092b4c;
+	--blue: #1478b8;
+	--sky: #dff3f7;
+	--paper: #f7f5ef;
+	--ink: #173148;
+	--line: #b7d7dc;
+	--white: #ffffff;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	color: var(--ink);
+	background: var(--paper);
+	font-family: "Trebuchet MS", Verdana, sans-serif;
+	line-height: 1.6;
+}
+
+.hero {
+	min-height: 620px;
+	padding: 64px max(7vw, 24px) 72px;
+	color: var(--white);
+	background: linear-gradient(120deg, #092b4c 0%, #0d507a 62%, #2a9ab2 100%);
+}
+
+.intel-logo {
+	width: 124px;
+	filter: brightness(0) invert(1);
+}
+
+.eyebrow,
+.year {
+	margin: 0;
+	color: var(--blue);
+	font-size: 0.78rem;
+	font-weight: bold;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+}
+
+.hero .eyebrow {
+	margin-top: 108px;
+	color: #a9e7ed;
+}
+
+h1,
+h2,
+h3 {
+	margin-top: 0;
+	line-height: 1.1;
+}
+
+h1 {
+	max-width: 780px;
+	margin-bottom: 28px;
+	font-family: Georgia, serif;
+	font-size: clamp(3.2rem, 8vw, 7rem);
+	font-weight: normal;
+}
+
+.intro {
+	max-width: 530px;
+	margin: 0;
+	color: #e5f5f6;
+	font-size: 1.1rem;
+}
+
+.start-link {
+	display: inline-block;
+	margin-top: 44px;
+	padding-bottom: 8px;
+	color: var(--white);
+	border-bottom: 1px solid #a9e7ed;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.start-link span {
+	display: inline-block;
+	margin-left: 12px;
+	font-size: 1.4rem;
+}
+
+.timeline {
+	max-width: 1320px;
+	margin: 0 auto;
+	padding: 100px 24px 120px;
+}
+
+.section-heading {
+	max-width: 500px;
+	margin-bottom: 64px;
+}
+
+.section-heading h2 {
+	margin: 8px 0 0;
+	color: var(--navy);
+	font-family: Georgia, serif;
+	font-size: clamp(2.2rem, 5vw, 4rem);
+	font-weight: normal;
+}
+
+.timeline-list {
+	position: relative;
+	display: flex;
+	gap: 30px;
+	overflow-x: auto;
+	padding: 40px 4px 28px;
+	scroll-snap-type: x proximity;
+}
+
+.timeline-list::before {
+	position: absolute;
+	top: 20px;
+	right: 0;
+	left: 0;
+	height: 2px;
+	background: var(--line);
+	content: "";
+}
+
+.timeline-item {
+	position: relative;
+	z-index: 1;
+	flex: 0 0 360px;
+	scroll-snap-align: start;
+}
+
+.timeline-item::after {
+	position: absolute;
+	top: -26px;
+	left: 24px;
+	width: 14px;
+	height: 14px;
+	border: 4px solid var(--paper);
+	border-radius: 50%;
+	background: var(--blue);
+	content: "";
+}
+
+.timeline-card {
+	width: 100%;
+	overflow: hidden;
+	background: var(--white);
+	border: 1px solid #d8e5e5;
+	box-shadow: 0 14px 30px rgba(9, 43, 76, 0.09);
+	transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.timeline-card:hover {
+	transform: translateY(-6px);
+	box-shadow: 0 20px 36px rgba(9, 43, 76, 0.16);
+}
+
+.timeline-card img {
+	display: block;
+	width: 100%;
+	height: 230px;
+	object-fit: contain;
+	background: var(--sky);
+}
+
+.timeline-card .transparent-image {
+	height: 230px;
+	padding: 22px;
+	object-fit: contain;
+	background: var(--sky);
+}
+
+.timeline-card .rise-image {
+	padding: 34px 70px;
+}
+
+.card-content {
+	padding: 24px 26px 28px;
+}
+
+.card-content .year {
+	margin-bottom: 6px;
+}
+
+.card-content h3 {
+	margin-bottom: 12px;
+	color: var(--navy);
+	font-family: Georgia, serif;
+	font-size: 1.7rem;
+	font-weight: normal;
+}
+
+.card-content p:last-child {
+  margin: 0;
+  color: #4d6472;
+  font-size: 0.95rem;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease, margin-top 0.3s ease;
+}
+
+.timeline-card:hover .card-content p:last-child {
+	max-height: 200px;
+  opacity: 1;
+  margin-top: 12px;
+}
+
+footer {
+	padding: 28px 24px;
+	color: #c5e8eb;
+	background: var(--navy);
+	font-size: 0.82rem;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 0.12em;
+}
+
+footer span {
+	margin: 0 8px;
+	color: #63c6d1;
+}
+
+@media (max-width: 700px) {
+	.hero {
+		min-height: 600px;
+		padding-top: 38px;
+	}
+
+	.hero .eyebrow {
+		margin-top: 88px;
+	}
+
+	.timeline {
+		padding-top: 72px;
+	}
+
+	.timeline-list {
+		display: block;
+		overflow-x: visible;
+		padding-left: 28px;
+		padding-top: 8px;
+		scroll-snap-type: none;
+	}
+
+	.timeline-list::before {
+		top: 0;
+		right: auto;
+		left: 7px;
+		width: 2px;
+		height: auto;
+	}
+
+	.timeline-item {
+		display: block;
+		width: 100%;
+		padding: 0 0 42px 24px;
+		margin-left: 0;
+	}
+
+	.timeline-item::after {
+		top: 26px;
+		left: -28px;
+	}
+
+	.timeline-card img,
+	.timeline-card .transparent-image {
+		height: 160px;
+	}
+}
