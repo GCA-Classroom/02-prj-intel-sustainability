@@ -7,137 +7,143 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- Header / Hero Section -->
-  <header>
-    <div>
-      <!-- Ask Copilot to teach you about `.svg`. 🙂 You'll need to resize the logo with CSS. -->
-      <img src="img/intel-header-logo.svg" alt="Intel Logo" />
-      <!-- Main Heading -->
-      <h1>
-        Sustainability Through the Ages
-      </h1>
-
-      <!-- Subheading / Description -->
-      <p>
-        Explore Intel's journey through time, discovering how our commitment
-        to innovation has shaped a more sustainable future for technology 
-        and our planet.
-      </p>
+  <!-- The intro stays visible as the timeline scrolls past it. -->
+  <header class="intro" id="top">
+    <div class="intro-copy">
+      <p class="eyebrow">1968 &mdash; today</p>
+      <h1>Sustainability<br /><span>through the ages</span></h1>
+      <p class="intro-text">A timeline of the ideas, inventions, and commitments shaping a more sustainable future for technology.</p>
     </div>
+    <div class="intro-logo">
+      <img src="img/intel-header-logo.svg" alt="Intel Logo" />
+    </div>
+    <p class="scroll-hint">Scroll to explore <span aria-hidden="true">&darr;</span></p>
   </header>
 
-  <!-- Timeline Cards Section -->
-  <section>
+  <!-- Each section is one snap point in the timeline. -->
+  <main class="timeline" id="timeline">
+    <section class="timeline-phase image-phase phase-blue" id="phase-one" aria-labelledby="phase-one-title">
+      <div class="phase-image"><img src="img/new 1.png" alt="Illustration of Intel's early semiconductor technology in 1968" /></div>
+      <div class="phase-content">
+        <p class="phase-label">01 / origins</p>
+        <p class="year">1968</p>
+        <h2 id="phase-one-title">A company<br />takes shape.</h2>
+        <p>Robert Noyce and Gordon Moore rename NM Electronics to Intel Corporation, laying the foundation for decades of technological innovation.</p>
+        <p class="milestone">Intel is founded</p>
+        <div class="phase-actions">
+          <a class="next-step" href="#phase-two">Next step <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+    </section>
 
-    <!-- Card 1: 1968 -->
-    <div>
-      <h2>1968</h2>
-      <h3>Intel Founded</h3>
-      <!-- Add image -->
-      <p>
-        Robert Noyce and Gordon Moore rename the newly formed company 
-        NM Electronics to Intel Corporation, laying the foundation for 
-        decades of technological innovation.
-      </p>
-    </div>
+    <section class="timeline-phase image-phase phase-silver" id="phase-two" aria-labelledby="phase-two-title">
+      <div class="phase-content">
+        <p class="phase-label">02 / the breakthrough</p>
+        <p class="year">1971</p>
+        <h2 id="phase-two-title">Small chip.<br />Big change.</h2>
+        <p>Intel debuts the 4004, the world's first commercial microprocessor, igniting a revolution that would put computing into more hands.</p>
+        <p class="milestone">The 4004 arrives</p>
+        <div class="phase-actions">
+          <a class="back-step" href="#phase-one">Go back</a>
+          <a class="next-step" href="#phase-three">Next step <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+      <div class="phase-image"><img src="img/new 2.png" alt="Close-up illustration of an Intel microprocessor" /></div>
+    </section>
 
-    <!-- Card 2: 1971 -->
-    <div>
-      <h2>1971</h2>
-      <h3>First Microprocessor</h3>
-      <!-- Add image -->
-      <p>
-        Intel debuts the 4004, the world's first commercial microprocessor, 
-        igniting the microprocessor revolution and propelling the future 
-        of computing devices.
-      </p>
-    </div>
+    <section class="timeline-phase image-phase phase-teal" id="phase-three" aria-labelledby="phase-three-title">
+      <div class="phase-image"><img src="img/new 3.png" alt="Intel 8086 processor illustration from 1978" /></div>
+      <div class="phase-content">
+        <p class="phase-label">03 / architecture</p>
+        <p class="year">1978</p>
+        <h2 id="phase-three-title">The language<br />of modern PCs.</h2>
+        <p>The 8086 establishes the x86 architecture that will drive countless personal computers and servers into the modern era.</p>
+        <p class="milestone">x86 architecture begins</p>
+        <div class="phase-actions">
+          <a class="back-step" href="#phase-two">Go back</a>
+          <a class="next-step" href="#phase-four">Next step <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+    </section>
 
-    <!-- Card 3: 1978 -->
-    <div>
-      <h2>1978</h2>
-      <h3>8086 Processor</h3>
-      <!-- Add image -->
-      <p>
-        Launch of the 8086 processor, establishing the x86 architecture 
-        that drives countless PCs and servers in the modern era.
-      </p>
-    </div>
+    <section class="timeline-phase image-phase phase-copper" id="phase-four" aria-labelledby="phase-four-title">
+      <div class="phase-content">
+        <p class="phase-label">04 / a new dimension</p>
+        <p class="year">1985</p>
+        <h2 id="phase-four-title">More power.<br />More possibility.</h2>
+        <p>With 32-bit architecture, the 386 ushers in a new era of performance and multitasking for personal computers.</p>
+        <p class="milestone">The 386 launches</p>
+        <div class="phase-actions">
+          <a class="back-step" href="#phase-three">Go back</a>
+          <a class="next-step" href="#phase-five">Next step <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+      <div class="phase-image"><img src="img/new 4.png" alt="Intel 386 processor illustration from 1985" /></div>
+    </section>
 
-    <!-- Card 4: 1985 -->
-    <div>
-      <h2>1985</h2>
-      <h3>386 Processor</h3>
-      <!-- Add image -->
-      <p>
-        Intel introduces the 386 processor with 32-bit architecture, 
-        ushering in a new era of performance and multitasking for 
-        personal computers.
-      </p>
-    </div>
+    <section class="timeline-phase image-phase phase-dark" id="phase-five" aria-labelledby="phase-five-title">
+      <div class="phase-image"><img src="img/5.png" alt="Illustration showing Intel's emissions reduction efforts in 2006" /></div>
+      <div class="phase-content">
+        <p class="phase-label">05 / the turning point</p>
+        <p class="year">2006</p>
+        <h2 id="phase-five-title">Measure the impact.<br />Change the course.</h2>
+        <p>Intel reaches its highest annual operational greenhouse gas emissions, then begins investing in chemical abatement, renewable energy, and efficient manufacturing.</p>
+        <p class="milestone">Peak operational emissions</p>
+        <div class="phase-actions">
+          <a class="back-step" href="#phase-four">Go back</a>
+          <a class="next-step" href="#phase-six">Next step <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+    </section>
 
-    <!-- Card 5: 2006 -->
-    <div>
-      <h2>2006</h2>
-      <h3>Peak GHG Emissions</h3>
-      <!-- Add image -->
-      <p>
-        This year marks Intel's highest annual greenhouse gas emissions 
-        for operations. Over subsequent years, Intel invests heavily in 
-        chemical abatement, renewable energy, and energy-efficient 
-        manufacturing to reverse this trend.
-      </p>
-    </div>
+    <section class="timeline-phase image-phase phase-green" id="phase-six" aria-labelledby="phase-six-title">
+      <div class="phase-content">
+        <p class="phase-label">06 / a shared commitment</p>
+        <p class="year">2020</p>
+        <h2 id="phase-six-title">RISE to the<br />challenge.</h2>
+        <p>Intel launches its RISE strategy and 2030 goals for climate action, water stewardship, waste reduction, and inclusive progress.</p>
+        <p class="milestone">RISE strategy launches</p>
+        <div class="phase-actions">
+          <a class="back-step" href="#phase-five">Go back</a>
+          <a class="next-step" href="#phase-seven">Next step <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+      <div class="phase-image"><img src="img/6.png" alt="Illustration of Intel's RISE sustainability strategy in 2020" /></div>
+    </section>
 
-    <!-- Card 6: 2020 -->
-    <div>
-      <h2>2020</h2>
-      <h3>RISE Strategy</h3>
-      <!-- Add image -->
-      <p>
-        Intel launches its RISE (Responsible, Inclusive, Sustainable, 
-        Enabling) strategy and 2030 goals, aiming to drive industry-wide 
-        progress on climate action, water stewardship, and waste reduction.
-      </p>
-    </div>
+    <section class="timeline-phase image-phase phase-light" id="phase-seven" aria-labelledby="phase-seven-title">
+      <div class="phase-image"><img src="img/7.png" alt="Illustration showing Intel's sustainability progress and net-zero commitment" /></div>
+      <div class="phase-content">
+        <p class="phase-label">07 / looking ahead</p>
+        <p class="year">2022 &mdash; 2024</p>
+        <h2 id="phase-seven-title">Progress is<br />a practice.</h2>
+        <p>Intel commits to net-zero Scope 1 and 2 emissions by 2040, reaches 99% renewable electricity worldwide, and brings the industry together at its first Sustainability Summit.</p>
+        <p class="milestone">Net-zero operations target</p>
+        <div class="phase-actions">
+          <a class="back-step" href="#phase-six">Go back</a>
+          <a class="next-step back-to-start" href="#phase-one">Back to beginning <span aria-hidden="true">&uarr;</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    <!-- Card 7: 2022 -->
-    <div>
-      <h2>2022</h2>
-      <h3>Net-Zero By 2040</h3>
-      <!-- Add image -->
-      <p>
-        Intel announces its commitment to achieve net-zero greenhouse 
-        gas emissions (Scope 1 and 2) across its global operations 
-        by 2040, building on years of environmental initiatives.
-      </p>
-    </div>
+  <script>
+    const timeline = document.getElementById('timeline');
+    const sectionLinks = document.querySelectorAll('a[href^="#phase-"]');
 
-    <!-- Card 8: 2023 -->
-    <div>
-      <h2>2023</h2>
-      <h3>Renewable Electricity</h3>
-      <!-- Add image -->
-      <p>
-        The company achieves 99% renewable electricity usage worldwide, 
-        helping to drastically lower carbon emissions and driving progress 
-        toward Intel's long-term sustainability goals.
-      </p>
-    </div>
+    sectionLinks.forEach((link) => {
+      link.addEventListener('click', (event) => {
+        const targetId = link.getAttribute('href');
+        const target = targetId ? document.getElementById(targetId.replace('#', '')) : null;
 
-    <!-- Card 9: 2024 -->
-    <div>
-      <h2>2024</h2>
-      <h3>Sustainability Summit</h3>
-      <!-- Add image -->
-      <p>
-        Intel hosts its first Sustainability Summit, uniting suppliers, 
-        government officials, and industry leaders to collaborate on 
-        next-generation sustainable semiconductor manufacturing.
-      </p>
-    </div>
-  </section>
-  <p>Scroll to view timeline | Hover over cards to learn more!</p>
+        if (!timeline || !target) return;
+
+        event.preventDefault();
+        const left = target.offsetLeft - timeline.offsetLeft;
+        timeline.scrollTo({ left, top: 0, behavior: 'smooth' });
+        history.replaceState(null, '', targetId);
+      });
+    });
+  </script>
 </body>
 </html>

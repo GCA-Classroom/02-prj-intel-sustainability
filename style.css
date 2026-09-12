@@ -1,1 +1,125 @@
-/* Add your CSS here */
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+	--ink: #102c3a;
+	--blue: #0071c5;
+	--cream: #f4f0e9;
+	--line: rgba(16, 44, 58, 0.25);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: auto; }
+
+body {
+	background: var(--cream);
+	color: var(--ink);
+	font-family: 'Space Grotesk', sans-serif;
+	margin: 0;
+	overflow-x: hidden;
+}
+
+.intro, .timeline-phase {
+	min-height: 100vh;
+	scroll-snap-align: start;
+}
+
+.intro {
+	align-items: center;
+	display: flex;
+	gap: 8vw;
+	justify-content: space-between;
+	padding: 7vw 12vw;
+	background: linear-gradient(135deg, #e9f3f1 0%, #f4f0e9 65%, #dceef4 100%);
+	position: relative;
+}
+
+.intro-copy { flex: 1 1 65%; }
+.intro-logo { flex: 0 1 35%; text-align: right; }
+.intro-logo img { width: min(34vw, 400px); }
+.eyebrow, .phase-label, .scroll-hint, .milestone { font-family: 'DM Mono', monospace; text-transform: uppercase; letter-spacing: 0.08em; }
+.eyebrow, .phase-label { color: var(--blue); font-size: 0.75rem; }
+h1, h2, p { margin-top: 0; }
+h1 { font-size: clamp(3.4rem, 8vw, 8.5rem); line-height: 0.88; letter-spacing: -0.06em; max-width: 900px; margin-bottom: 2rem; }
+h1 span { color: var(--blue); }
+.intro-text { font-size: clamp(1rem, 1.5vw, 1.35rem); line-height: 1.5; max-width: 510px; }
+.scroll-hint { bottom: 7vh; font-size: 0.7rem; position: absolute; }
+.scroll-hint span { color: var(--blue); font-size: 1.4rem; margin-left: 8px; }
+
+.timeline {
+	display: flex;
+	overflow-x: auto;
+	scroll-behavior: smooth;
+	scroll-snap-type: x mandatory;
+	scrollbar-width: thin;
+	overscroll-behavior-x: contain;
+	position: relative;
+}
+.timeline-phase {
+	align-items: center;
+	display: flex;
+	flex: 0 0 100vw;
+	gap: 8vw;
+	min-width: 100vw;
+	scroll-snap-align: start;
+	padding: 8vw 12vw;
+}
+.phase-image { flex: 1 1 62%; }
+.phase-image img { display: block; height: auto; margin: 0 auto; max-width: 100%; width: min(100%, 820px); }
+.phase-content { flex: 1 1 38%; max-width: 580px; }
+.phase-label { border-bottom: 1px solid currentColor; padding-bottom: 14px; }
+.year { font-family: 'DM Mono', monospace; font-size: 1rem; margin-bottom: 1.2rem; }
+h2 { font-size: clamp(2.4rem, 5vw, 5.8rem); line-height: 0.95; letter-spacing: -0.055em; margin-bottom: 2rem; }
+.phase-content > p:not(.phase-label):not(.year):not(.milestone) { font-size: 1.05rem; line-height: 1.65; max-width: 440px; }
+.milestone { border-top: 1px solid var(--line); font-size: 0.7rem; margin-top: 3rem; padding-top: 14px; }
+.phase-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.2rem 1.5rem;
+	margin-top: 2.5rem;
+}
+.next-step, .back-step {
+	display: inline-flex;
+	align-items: center;
+	gap: 18px;
+	border-bottom: 1px solid currentColor;
+	color: inherit;
+	font-family: 'DM Mono', monospace;
+	font-size: 0.7rem;
+	padding-bottom: 10px;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: gap 180ms ease, color 180ms ease, opacity 180ms ease;
+}
+.back-step { opacity: 0.8; }
+.next-step span { color: var(--blue); font-size: 1.2rem; line-height: 0.5; }
+.next-step:hover, .next-step:focus-visible, .back-step:hover, .back-step:focus-visible { color: var(--blue); gap: 25px; }
+.next-step:focus-visible, .back-step:focus-visible { outline: 2px solid currentColor; outline-offset: 6px; }
+
+.phase-blue { background: #c9e5ee; }
+.phase-silver { background: #d9ddda; }
+.phase-teal { background: #b5d8d2; }
+.phase-copper { background: #d9c5ae; }
+.phase-dark { background: #153946; color: #f4f0e9; }
+.phase-dark .phase-label, .phase-dark .milestone strong { color: #73d4ca; }
+.phase-dark .milestone { border-color: rgba(244, 240, 233, 0.3); }
+.phase-green { background: #6fae8b; }
+.phase-light { background: #f3ead7; }
+
+@media (max-width: 700px) {
+	.intro, .timeline-phase { min-height: 100svh; padding: 12vw 8vw; }
+	.intro { align-items: flex-start; display: flex; flex-direction: column; gap: 9vh; justify-content: center; }
+	.intro-logo { flex: none; text-align: left; }
+	.intro-logo img { width: min(52vw, 240px); }
+	.timeline-phase { display: flex; padding-top: 18vw; padding-bottom: 18vw; }
+	.phase-image { margin: 0; }
+	.phase-content { max-width: none; }
+	h2 { font-size: clamp(2.8rem, 14vw, 5rem); }
+	.image-phase .phase-image { order: -1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html { scroll-behavior: auto; }
+	.timeline { scroll-snap-type: none; }
+	.next-step { transition: none; }
+}
