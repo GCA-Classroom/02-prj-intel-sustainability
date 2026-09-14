@@ -1,1 +1,393 @@
-/* Add your CSS here */
+/* ================================
+   GENERAL STYLES
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f3f3f3;
+    color: #222;
+}
+
+
+/* ================================
+   HERO SECTION
+================================ */
+
+.hero {
+    width: 100%;
+    min-height: 330px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    color: white;
+
+    background: linear-gradient(
+        115deg,
+        #0085ca 0%,
+        #0068a9 45%,
+        #004481 100%
+    );
+
+    padding: 40px 20px;
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 650px;
+}
+
+
+/* Intel logo */
+
+.intel-logo {
+    width: 65px;
+    height: auto;
+    margin-bottom: 18px;
+
+    filter: brightness(0) invert(1);
+}
+
+
+/* Main heading */
+
+.hero h1 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    line-height: 1.05;
+
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+
+/* Small blue divider */
+
+.divider {
+    width: 55px;
+    height: 3px;
+
+    margin: 18px auto;
+
+    background-color: #00aeef;
+}
+
+
+/* Description */
+
+.hero p {
+    max-width: 575px;
+
+    margin: 0 auto;
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* ================================
+   TIMELINE SECTION
+================================ */
+
+.timeline-section {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 28px 40px 30px;
+}
+
+
+/* Timeline row */
+
+.timeline {
+    display: flex;
+
+    gap: 14px;
+
+    overflow-x: auto;
+
+    padding: 10px 0 20px;
+
+    scroll-snap-type: x mandatory;
+
+    scrollbar-width: thin;
+
+    scroll-behavior: smooth;
+}
+
+
+/* Individual cards */
+
+.timeline-card {
+    position: relative;
+
+    flex: 0 0 260px;
+
+    height: 250px;
+
+    background-color: white;
+
+    overflow: hidden;
+
+    scroll-snap-align: start;
+
+    box-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.12);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Card hover */
+
+.timeline-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 10px 22px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ================================
+   CARD CONTENT
+================================ */
+
+.card-content {
+    padding: 14px;
+}
+
+
+/* Year */
+
+.year {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #003f78;
+
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+/* Card title */
+
+.card-content h2 {
+    margin-bottom: 9px;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* Card image */
+
+.card-content img {
+    display: block;
+
+    width: 100%;
+    height: 150px;
+
+    object-fit: cover;
+}
+
+
+/* ================================
+   HOVER OVERLAY
+================================ */
+
+.card-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    color: white;
+
+    background-color: rgba(0, 63, 120, 0.94);
+
+    opacity: 0;
+
+    transform: translateY(20px);
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* Show overlay when hovering */
+
+.timeline-card:hover .card-overlay {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* Overlay year */
+
+.overlay-year {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #7ddcff;
+
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+/* Overlay heading */
+
+.card-overlay h2 {
+    margin-bottom: 12px;
+
+    font-size: 18px;
+}
+
+
+/* Overlay paragraph */
+
+.card-overlay p {
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* ================================
+   INSTRUCTION
+================================ */
+
+.instruction {
+    margin-top: 5px;
+
+    text-align: center;
+
+    color: #333;
+
+    font-size: 12px;
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 700px) {
+
+    .hero {
+        min-height: 300px;
+
+        padding: 40px 20px;
+    }
+
+
+    .intel-logo {
+        width: 60px;
+    }
+
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+
+    .hero p {
+        font-size: 13px;
+    }
+
+
+    .timeline-section {
+        padding: 25px 20px 30px;
+    }
+
+
+    /* Stack cards vertically */
+
+    .timeline {
+        display: flex;
+
+        flex-direction: column;
+
+        overflow-x: visible;
+
+        gap: 20px;
+
+        padding: 5px 0;
+    }
+
+
+    .timeline-card {
+        width: 100%;
+
+        height: 270px;
+
+        flex: none;
+    }
+
+
+    .timeline-card:hover {
+        transform: translateY(-4px);
+    }
+
+
+    .card-content img {
+        height: 175px;
+    }
+
+
+    /* Don't show desktop scroll instruction */
+
+    .instruction {
+        display: none;
+    }
+}
+
+
+/* ================================
+   SMALL PHONES
+================================ */
+
+@media (max-width: 400px) {
+
+    .hero {
+        min-height: 280px;
+    }
+
+    .hero h1 {
+        font-size: 1.75rem;
+    }
+
+    .hero p {
+        font-size: 12px;
+    }
+
+    .timeline-section {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .timeline-card {
+        height: 260px;
+    }
+}
