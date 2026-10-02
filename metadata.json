@@ -1,0 +1,8 @@
+{
+  "name": "Intel: Sustainability Through the Ages",
+  "description": "Explore Intel's journey through time, discovering how our commitment to innovation has shaped a more sustainable future for technology and our planet.",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
